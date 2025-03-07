@@ -4,31 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Your Name</title>
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
-    <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="experiences.html">Research & Projects</a></li>
-                <li><a href="life.html">Life Timeline</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <!-- 左侧固定导航栏 -->
+        <aside class="sidebar">
+            <h1>Your Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="experiences.html">Research & Projects</a></li>
+                    <li><a href="life.html">Life Timeline</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main>
-        <section id="publications-list">
-            <h2>Publications</h2>
-            <ul id="publications">
-                <!-- Publications will be dynamically loaded here -->
-            </ul>
-        </section>
-    </main>
+        <!-- 主要内容区域 -->
+        <main class="content">
+            <section id="publications-list">
+                <h2>Publications</h2>
+                <ul id="publications">
+                    <li class="publication-card">
+                        <h3>Title of Paper</h3>
+                        <p><strong>Authors:</strong> A. Author, B. Author</p>
+                        <p><strong>Journal:</strong> Example Journal, 2025</p>
+                        <a href="#" class="btn">Read More</a>
+                    </li>
+                    <li class="publication-card">
+                        <h3>Another Research Paper</h3>
+                        <p><strong>Authors:</strong> X. Author, Y. Author</p>
+                        <p><strong>Conference:</strong> Major Conference, 2024</p>
+                        <a href="#" class="btn">Read More</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>© 2025 Your Name. All Rights Reserved.</p>
