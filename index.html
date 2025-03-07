@@ -4,237 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Academic Portfolio</title>
-  <style>
-    /* Reset and Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-color: #0F2027; /* Deep navy backdrop */
-      font-family: 'Roboto', sans-serif;
-      color: #E0E0E0;
-      line-height: 1.6;
-    }
-    .container {
-      display: flex;
-      max-width: 1200px;
-      margin: 0 auto;
-      height: 100vh;
-    }
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: linear-gradient(180deg, #0F2027, #203A43);
-      padding: 30px 20px;
-      position: sticky;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .sidebar .logo {
-      width: 150px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
-    }
-    .sidebar h1 {
-      font-family: 'Orbitron', sans-serif;
-      color: #F0F0F0;
-      font-size: 24px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .menu ul {
-      list-style: none;
-    }
-    .menu li {
-      margin: 20px 0;
-    }
-    .menu a {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #A0AEC0;
-      padding: 10px;
-      border-radius: 6px;
-      text-align: center;
-      transition: background 0.3s, color 0.3s;
-      display: block;
-      cursor: pointer;
-    }
-    .menu a:hover,
-    .menu a.active {
-      background: #00C9A7; /* Fresh teal accent */
-      color: #0F2027;
-    }
-    .sidebar .footer {
-      text-align: center;
-      font-size: 14px;
-      color: #888;
-      margin-top: 20px;
-    }
-    /* Content Area */
-    .content {
-      flex: 1;
-      padding: 40px 60px;
-      margin: 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      background: linear-gradient(135deg, #F7FAFC, #EDF2F7); /* Soft, canvas-like gradient */
-      border: 1px solid #CBD5E0;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      overflow-y: auto;
-      position: relative;
-      font-family: 'Merriweather', serif;
-      color: #2D3748;
-    }
-    .content header {
-      text-align: center;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .content header img.logo-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 10px;
-    }
-    .content header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 36px;
-      margin: 0;
-    }
-    /* Brushstroke underline effect */
-    .content header h1::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 6px;
-      margin: 10px auto 0;
-      background: linear-gradient(90deg, transparent, #00C9A7, transparent);
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    .section h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #00C9A7;
-      border-bottom: 2px solid #00C9A7;
-      padding-bottom: 6px;
-      margin-bottom: 15px;
-    }
-    .section p {
-      margin: 15px 0;
-      line-height: 1.8;
-    }
-    /* Education Section: Include School Logos */
-    .school {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .school-logo {
-      width: 50px;
-      height: 50px;
-      margin-right: 10px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    /* Life Section: Timeline Style */
-    .timeline {
-      border-left: 2px solid #00C9A7;
-      margin-left: 20px;
-      padding-left: 20px;
-    }
-    .timeline-item {
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .timeline-date {
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #00C9A7;
-    }
-    .timeline-content {
-      display: flex;
-      align-items: center;
-    }
-    .timeline-image {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 10px;
-    }
-    /* Life header for personal bio */
-    .life-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .life-header img.avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-right: 20px;
-      object-fit: cover;
-    }
-    /* Life image styling */
-    .life-image {
-      width: 300px;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 8px;
-    }
-    /* Recent Updates Section */
-    .update-item {
-      margin-bottom: 20px;
-      padding: 10px;
-      border-bottom: 1px solid #CBD5E0;
-    }
-    .update-item img {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-right: 10px;
-    }
-    .update-item .update-content {
-      display: inline-block;
-      vertical-align: middle;
-      max-width: 680px;
-    }
-    /* Custom Scrollbar */
-    .content::-webkit-scrollbar {
-      width: 8px;
-    }
-    .content::-webkit-scrollbar-track {
-      background: #EDF2F7;
-      border-radius: 10px;
-    }
-    .content::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #A0AEC0, #2D3748);
-      border-radius: 10px;
-    }
-    .content::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, #2D3748, #A0AEC0);
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <!-- Online Logo Image -->
-      <img src="https://picsum.photos/seed/logo/150/75" alt="Logo" class="logo">
+      <!-- Logo Image -->
+      <img src="images/logo.png" alt="Logo" class="logo">
       <h1>Academic Portfolio</h1>
       <nav class="menu">
         <ul>
@@ -253,15 +30,15 @@
     <!-- Content Area -->
     <main class="content">
       <header>
-        <!-- Online Icon Image -->
-        <img src="https://picsum.photos/seed/icon/50/50" alt="Icon" class="logo-icon">
+        <!-- Icon Image -->
+        <img src="images/icon.png" alt="Icon" class="logo-icon">
         <h1>Professional Experiences</h1>
       </header>
       <!-- Home Section: Education with School Logos -->
       <section class="section" id="home">
         <h2>Education</h2>
         <div class="school">
-          <img src="https://via.placeholder.com/50x50?text=Stanford" alt="Stanford Logo" class="school-logo">
+          <img src="images/stanford_logo.png" alt="Stanford Logo" class="school-logo">
           <div class="school-info">
             <p><strong>Stanford University</strong> <br>
                2022 - Present, Ph.D. in Developmental and Psychological Science <br>
@@ -270,7 +47,7 @@
           </div>
         </div>
         <div class="school">
-          <img src="https://via.placeholder.com/50x50?text=SYSU" alt="Sun Yat-sen Logo" class="school-logo">
+          <img src="images/sysu_logo.png" alt="Sun Yat-sen University Logo" class="school-logo">
           <div class="school-info">
             <p><strong>Sun Yat-sen University</strong> <br>
                2019 - 2022, M.S. in Psychology <br>
@@ -293,42 +70,42 @@
       <section class="section" id="life" style="display:none;">
         <h2>Personal Life & Timeline</h2>
         <div class="life-header">
-          <img src="https://picsum.photos/seed/avatar/80/80" alt="Avatar" class="avatar">
+          <img src="images/avatar.png" alt="Avatar" class="avatar">
           <h3>About Me</h3>
         </div>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-date">2000</div>
             <div class="timeline-content">
-              <img src="https://via.placeholder.com/50?text=Birth" alt="Birth" class="timeline-image">
+              <img src="images/birth.png" alt="Birth" class="timeline-image">
               <p>Born and began my journey.</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2015</div>
             <div class="timeline-content">
-              <img src="https://via.placeholder.com/50?text=HS" alt="High School" class="timeline-image">
+              <img src="images/high_school.png" alt="High School" class="timeline-image">
               <p>Graduated high school and set off on new adventures.</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2019</div>
             <div class="timeline-content">
-              <img src="https://via.placeholder.com/50?text=Undergrad" alt="Undergraduate" class="timeline-image">
+              <img src="images/undergraduate.png" alt="Undergraduate" class="timeline-image">
               <p>Completed my undergraduate studies.</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2022</div>
             <div class="timeline-content">
-              <img src="https://via.placeholder.com/50?text=Grad" alt="Graduate" class="timeline-image">
+              <img src="images/graduate.png" alt="Graduate" class="timeline-image">
               <p>Started graduate research in flexible electronics & bio-health.</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2025</div>
             <div class="timeline-content">
-              <img src="https://via.placeholder.com/50?text=BMIs" alt="BMIs" class="timeline-image">
+              <img src="images/bmi.png" alt="BMIs" class="timeline-image">
               <p>Launched pioneering work on brain–machine interfaces.</p>
             </div>
           </div>
@@ -338,42 +115,13 @@
       <section class="section" id="updates" style="display:none;">
         <h2>Recent Updates</h2>
         <div class="update-item">
-          <img src="https://via.placeholder.com/80?text=Update1" alt="Update 1">
+          <img src="images/update1.png" alt="Update 1">
           <div class="update-content">
             <p><strong>April 2025:</strong> Achieved a breakthrough in flexible sensor design that could transform bio-health monitoring.</p>
           </div>
         </div>
         <div class="update-item">
-          <img src="https://via.placeholder.com/80?text=Update2" alt="Update 2">
-          <div class="update-content">
-            <p><strong>March 2025:</strong> Initiated a collaborative project on brain–machine interfaces with leading institutions.</p>
-          </div>
-        </div>
-      </section>
-      <!-- Contact Section -->
-      <section class="section" id="contact" style="display:none;">
-        <h2>Contact & Networking</h2>
-        <p>For inquiries regarding research collaborations, publications, or speaking engagements, please reach out via email or connect on social media.</p>
-        <p>Contact details and professional networking links will be updated here.</p>
-      </section>
-    </main>
-  </div>
-  <script>
-    // Navigation: Show corresponding section and toggle active state
-    document.querySelectorAll('.nav-btn').forEach(function(button) {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelectorAll('.nav-btn').forEach(function(btn) {
-          btn.classList.remove('active');
-        });
-        this.classList.add('active');
-        document.querySelectorAll('.section').forEach(function(section) {
-          section.style.display = 'none';
-        });
-        var sectionId = this.getAttribute('data-section');
-        document.getElementById(sectionId).style.display = 'block';
-      });
-    });
-  </script>
-</body>
-</html>
+          <img src="images/update2.png" alt="Update 2">
+
+::contentReference[oaicite:1]{index=1}
+ 
