@@ -30,22 +30,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 加载 Publications 数据
 function loadPublications() {
-    fetch('data/publications.json')
+    fetch("../data/publications.json")
         .then(response => response.json())
         .then(data => {
-            const publicationsList = document.getElementById('publications');
+            const publicationsList = document.getElementById("publications");
+            publicationsList.innerHTML = "";
+
             data.forEach(pub => {
-                const li = document.createElement('li');
+                let li = document.createElement("li");
+                li.classList.add("publication-card");
                 li.innerHTML = `
-                    <h3>${pub.title}</h3>
+                    <h3><a href="${pub.url}" target="_blank">${pub.title}</a></h3>
                     <p><strong>Authors:</strong> ${pub.authors}</p>
-                    <p><strong>Journal:</strong> ${pub.journal}, <strong>Year:</strong> ${pub.year}</p>
-                    <a href="${pub.url}" target="_blank">Read more</a>
+                    <p><strong>Year:</strong> ${pub.year}</p>
+                    <p><strong>Journal:</strong> ${pub.journal}</p>
+                    <p><strong>DOI:</strong> <a href="${pub.url}" target="_blank">${pub.doi}</a></p>
+                    <p>${pub.abstract}</p>
                 `;
                 publicationsList.appendChild(li);
             });
         })
-        .catch(error => console.error('Error loading publications:', error));
+        .catch(error => console.error("Error loading publications:", error));
 }
 
 // 加载 Experiences 数据
