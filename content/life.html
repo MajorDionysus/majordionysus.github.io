@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Timeline | Renjie Mei</title>
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->     
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
     <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
 </head>
 <body>
     <div class="container">
         <!-- 左侧固定导航栏 -->
         <aside class="sidebar">
-        <h1>Renjie Mei</h1>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="experiences.html">Research & Projects</a></li>
-                <li><a href="life.html">Life Timeline</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- 主要内容区域 -->
-    <main class="main-content">
-        <section id="timeline-list">
-            <h2>Life Timeline</h2>
-            <div id="timeline"></div>
-        </section>
+            <h1>Renjie Mei</h1>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="experiences.html">Research & Projects</a></li>
+                    <li><a href="life.html" class="active">Life Timeline</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    </main>
-    <script src="assets/js/main.js"></script>
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <section id="timeline-section">
+                <h2>Life Timeline</h2>
+                <ul id="life-timeline" class="timeline-container"></ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 Renjie Mei. All rights reserved.</p>
+    </footer>
 </body>
 </html>
