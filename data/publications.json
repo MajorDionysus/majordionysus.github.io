@@ -1,1 +1,17 @@
 
+[
+    {
+        "title": "Research Paper 1",
+        "authors": "Your Name, Co-author 1",
+        "journal": "Journal Name",
+        "year": "2024",
+        "url": "link-to-paper.com"
+    },
+    {
+        "title": "Research Paper 2",
+        "authors": "Your Name, Co-author 2",
+        "journal": "Journal Name",
+        "year": "2023",
+        "url": "link-to-paper2.com"
+    }
+]
