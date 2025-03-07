@@ -1,18 +1,16 @@
 [
     {
-        "title": "Flexible Bioelectronic Sensors",
-        "description": "Developing novel bioelectronic sensors for real-time health monitoring.",
-        "year": "2024",
-        "category": "Biomedical Engineering",
-        "url": "https://example.com/flexible-sensors",
-        "image": "../assets/images/flexible-sensors.jpg"
+        "title": "AI Research Project",
+        "role": "Lead Researcher",
+        "description": "Conducted cutting-edge research on natural language processing and machine learning.",
+        "year": "2023",
+        "image": "projects/ai-research.jpg"
     },
     {
-        "title": "Neural Signal Processing",
-        "description": "Creating an advanced neural interface for decoding brain signals.",
-        "year": "2023",
-        "category": "Neural Engineering",
-        "url": "https://example.com/neural-interface",
-        "image": "../assets/images/neural-interface.jpg"
+        "title": "Data Visualization Tool",
+        "role": "Developer",
+        "description": "Developed an interactive data visualization tool for large datasets.",
+        "year": "2022",
+        "image": "projects/data-viz.jpg"
     }
 ]
