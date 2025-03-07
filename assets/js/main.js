@@ -1,47 +1,88 @@
-// 确保 DOM 加载完成后再执行
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("JavaScript loaded successfully!");
+// main.js
 
-    // 1️⃣ 处理移动端导航菜单
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-
-    if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-        });
+// 页面加载完成后执行
+document.addEventListener("DOMContentLoaded", function() {
+    // 加载并显示 Publications 页面的内容
+    if (document.getElementById('publications')) {
+        loadPublications();
     }
 
-    // 2️⃣ 暗色模式切换
-    const themeToggle = document.getElementById("theme-toggle");
-    if (themeToggle) {
-        themeToggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            // 记住用户的偏好
-            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-        });
-
-        // 加载用户的主题偏好
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
-        }
+    // 加载并显示 Experiences 页面的内容
+    if (document.getElementById('experiences')) {
+        loadExperiences();
     }
 
-    // 3️⃣ 平滑滚动效果
-    const links = document.querySelectorAll("a[href^='#']");
-    links.forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
+    // 加载并显示 Life Timeline 页面的内容
+    if (document.getElementById('life-timeline')) {
+        loadLifeTimeline();
+    }
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 50,
-                    behavior: "smooth"
-                });
-            }
+    // 处理导航栏的显示/隐藏逻辑
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
         });
-    });
+    }
 });
 
+// 加载 Publications 数据
+function loadPublications() {
+    fetch('data/publications.json')
+        .then(response => response.json())
+        .then(data => {
+            const publicationsList = document.getElementById('publications');
+            data.forEach(pub => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <h3>${pub.title}</h3>
+                    <p><strong>Authors:</strong> ${pub.authors}</p>
+                    <p><strong>Journal:</strong> ${pub.journal}, <strong>Year:</strong> ${pub.year}</p>
+                    <a href="${pub.url}" target="_blank">Read more</a>
+                `;
+                publicationsList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error loading publications:', error));
+}
+
+// 加载 Experiences 数据
+function loadExperiences() {
+    fetch('data/experiences.json')
+        .then(response => response.json())
+        .then(data => {
+            const experiencesList = document.getElementById('experiences');
+            data.forEach(exp => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <h3>${exp.title}</h3>
+                    <p><strong>Role:</strong> ${exp.role}</p>
+                    <p><strong>Description:</strong> ${exp.description}</p>
+                    <p><strong>Year:</strong> ${exp.year}</p>
+                `;
+                experiencesList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error loading experiences:', error));
+}
+
+// 加载 Life Timeline 数据
+function loadLifeTimeline() {
+    fetch('data/life.json')
+        .then(response => response.json())
+        .then(data => {
+            const timelineList = document.getElementById('timeline');
+            data.forEach(event => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <h3>${event.title}</h3>
+                    <p><strong>Date:</strong> ${event.date}</p>
+                    <p>${event.description}</p>
+                `;
+                timelineList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error loading life events:', error));
+}
