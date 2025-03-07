@@ -1,118 +1,131 @@
-/* 全局基础样式 */
+/* 全局样式 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather", serif;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* 布局容器：左右分栏 */
+/* 布局 */
 .container {
-  display: flex;
-  min-height: 100vh;
+    display: flex;
+    width: 100%;
 }
 
-/* 左侧导航栏 */
+/* 侧边栏 */
 .sidebar {
-  background: #002244;
-  color: #fff;
-  width: 250px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar .logo {
-  text-align: center;
-  margin-bottom: 30px;
+    width: 280px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar .logo img {
-  max-width: 120px;
-  height: auto;
-  object-fit: contain;
+    width: 120px;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 .sidebar nav ul {
-  list-style: none;
+    list-style: none;
+    width: 100%;
 }
 
 .sidebar nav ul li {
-  margin: 15px 0;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .sidebar nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
-.sidebar nav ul li a:hover {
-  color: #ffcc00;
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    color: #ffcc00;
+    transform: scale(1.1);
 }
 
-/* 右侧主要内容 */
+/* 主要内容 */
 .main-content {
-  flex: 1;
-  padding: 40px;
-  background: #fff;
-}
-
-.welcome {
-  margin-bottom: 40px;
+    flex: 1;
+    margin-left: 280px;
+    padding: 60px;
+    overflow-y: auto;
+    max-height: 100vh;
 }
 
 .welcome h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #002244;
+    font-size: 2.5rem;
+    color: #f8fafc;
+    margin-bottom: 20px;
 }
 
 .welcome p {
-  font-size: 1.1rem;
-  color: #555;
+    font-size: 1.2rem;
+    color: #d1d5db;
+    max-width: 700px;
 }
 
 .research h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #002244;
+    font-size: 2rem;
+    color: #facc15;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .research p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #555;
+    font-size: 1rem;
+    color: #e2e8f0;
+    max-width: 700px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #002244;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: background 0.3s ease-in-out;
 }
 
 .btn:hover {
-  background: #004080;
+    background: #facc15;
 }
 
 /* 页脚 */
 footer {
-  background: #ccc;
-  text-align: center;
-  padding: 15px 20px;
-  font-size: 14px;
-  color: #333;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #94a3b8;
 }
 
 
