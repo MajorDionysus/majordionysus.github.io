@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
 }
 
+/* 容器布局 */
 .container {
     display: flex;
     width: 100%;
@@ -59,7 +60,7 @@ body {
 
 /* 主要内容区域 */
 .content {
-    margin-left: 270px;
+    margin-left: 270px;  /* 增加左侧导航栏的宽度，避免重叠 */
     padding: 30px;
     flex-grow: 1;
     max-width: 900px;
@@ -70,6 +71,7 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Publications */
 #publications {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -101,6 +103,7 @@ h2 {
     font-size: 14px;
 }
 
+/* 按钮样式 */
 .btn {
     display: inline-block;
     margin-top: 10px;
