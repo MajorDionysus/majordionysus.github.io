@@ -1,7 +1,9 @@
-{
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "phone": "+86 123 4567 8901",
-    "linkedin": "https://linkedin.com/in/yourname",
-    "github": "https://github.com/yourname"
-}
+[
+    {
+        "name": "Renjie Mei",
+        "email": "renjie.mei@example.com",
+        "phone": "+1 (123) 456-7890",
+        "linkedin": "https://linkedin.com/in/renjiemei",
+        "github": "https://github.com/renjiemei"
+    }
+]
