@@ -67,3 +67,65 @@ footer {
     font-size: 14px;
     color: #666;
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    /* 修改导航栏为垂直排列 */
+    nav ul {
+        display: none; /* 隐藏菜单项 */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav.active ul {
+        display: flex; /* 当 active 类加上时显示菜单 */
+    }
+
+    nav a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #fff;
+    }
+
+    /* 导航切换按钮 */
+    #nav-toggle {
+        display: block; /* 显示切换按钮 */
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /* 改变页面主要内容布局 */
+    main {
+        margin: 10px;
+    }
+
+    /* 调整字体大小和间距 */
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* 更小屏幕（如手机）适应 */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1, h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+}
