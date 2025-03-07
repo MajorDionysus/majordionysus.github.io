@@ -3,32 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Academic Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Link to the main stylesheet -->
+    <script src="assets/js/main.js" defer></script> <!-- Link to the main JavaScript file -->
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <img src="assets/images/logo.png" alt="Logo" class="logo">
-        <h1>Academic Portfolio</h1>
-        <nav>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <div id="nav-toggle">☰</div> <!-- Navigation toggle button -->
+        <nav id="nav-menu">
             <ul>
-                <li><a href="content/home.html">Home</a></li>
-                <li><a href="content/publications.html">Publications</a></li>
-                <li><a href="content/experiences.html">Experiences</a></li>
-                <li><a href="content/life.html">Life</a></li>
-                <li><a href="content/updates.html">Updates</a></li>
-                <li><a href="content/contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="experiences.html">Research & Projects</a></li>
+                <li><a href="life.html">Life Timeline</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <h2>Welcome to My Academic Portfolio</h2>
-        <p>This is a collection of my research, publications, and personal projects.</p>
+        <section>
+            <h1>Welcome to My Academic Portfolio</h1>
+            <p>Here, you can find my research achievements, project experiences, and latest updates. Feel free to explore!</p>
+        </section>
+
+        <section>
+            <h2>Latest Updates</h2>
+            <p>Check out the latest progress and updates on my research.</p>
+            <a href="updates.html">See All Updates</a>
+        </section>
+
+        <section>
+            <h2>My Research & Projects</h2>
+            <p>My current research focuses on flexible electronics, brain-machine interfaces, and more. Visit the research page for more details.</p>
+            <a href="experiences.html">View My Research Projects</a>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Academic Portfolio</p>
+        <p>© 2025 Academic Portfolio. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
