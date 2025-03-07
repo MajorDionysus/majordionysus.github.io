@@ -1,71 +1,125 @@
-/* 赛博朋克 2077 主题配色：红色 + 蓝绿色 + 噪点背景 */
+/* 赛博朋克 2077 主题样式 */
 
-/* 全局基础样式 */
+/* 全局样式 */
 body {
     font-family: 'Arial', sans-serif;
-    background: #0d0d0d url('../images/noise-bg.png'); /* 黑色+噪点 */
-    color: #e0e0e0;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}
-
-/* 赛博朋克风格的高亮配色 */
-a {
-    color: #ff004d; /* 亮红色 */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-a:hover {
-    color: #00eaff; /* 亮蓝绿 */
-}
-
-/* 页面主容器 */
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* 赛博朋克按钮 */
-.button {
-    background: linear-gradient(45deg, #ff004d, #00eaff);
-    border: none;
-    padding: 10px 20px;
+    background: #000;
     color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    text-transform: uppercase;
+    overflow-x: hidden;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #ff004d, #00ffff);
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar .menu li {
+    margin: 15px 0;
+}
+
+.sidebar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
     transition: 0.3s;
 }
-.button:hover {
-    filter: brightness(1.3);
+
+.sidebar .menu a:hover {
+    color: #00ffff;
 }
 
-/* 头部导航栏 */
-nav {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-bottom: 2px solid #ff004d;
-}
-nav a {
-    margin: 0 15px;
-    font-weight: bold;
-    text-transform: uppercase;
+/* 主内容区 */
+.content {
+    margin-left: 270px;
+    padding: 40px;
+    background: url('../images/noise-bg.png'); /* 略微噪点的背景 */
 }
 
-/* 标题样式 */
-h1, h2, h3 {
+.content h1 {
+    font-size: 32px;
     color: #ff004d;
-    text-shadow: 0 0 5px rgba(255, 0, 77, 0.8);
+    text-shadow: 0 0 5px #ff004d;
 }
 
-/* 页脚 */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    border-top: 2px solid #00eaff;
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* 教育信息 */
+.school {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-left: 4px solid #00ffff;
+}
+
+.school-logo {
+    width: 80px;
+    margin-right: 15px;
+}
+
+/* 时间轴样式 */
+.timeline {
+    border-left: 3px solid #ff004d;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.timeline-date {
+    color: #00ffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.timeline-content {
+    background: rgba(255, 0, 77, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+    }
 }
