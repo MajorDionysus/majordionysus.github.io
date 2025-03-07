@@ -24,9 +24,17 @@ header {
     border-bottom: 2px solid #ccc;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
 .logo img {
-    max-width: 60px; /* Set a maximum width for the logo */
-    height: auto; /* Maintain the aspect ratio */
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
 }
 
 nav ul {
@@ -44,10 +52,13 @@ nav ul li a {
     color: #004080;
     font-weight: bold;
     font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background: #ddd;
 }
 
 /* 主体内容 */
@@ -109,7 +120,6 @@ footer {
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    /* 修改导航栏为垂直排列 */
     nav ul {
         display: none;
         flex-direction: column;
@@ -129,7 +139,6 @@ footer {
         border-bottom: 1px solid #fff;
     }
 
-    /* 导航切换按钮 */
     #nav-toggle {
         display: block;
         background-color: #333;
@@ -139,12 +148,10 @@ footer {
         cursor: pointer;
     }
 
-    /* 改变页面主要内容布局 */
     main {
         margin: 10px;
     }
 
-    /* 调整字体大小和间距 */
     h1, h2 {
         font-size: 1.5rem;
     }
@@ -154,7 +161,6 @@ footer {
     }
 }
 
-/* 更小屏幕（如手机）适应 */
 @media (max-width: 480px) {
     body {
         font-size: 14px;
