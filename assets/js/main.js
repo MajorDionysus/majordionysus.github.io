@@ -21,7 +21,7 @@ function initializePage() {
     const pageId = Object.keys(PAGE_DATA_MAP).find(id => document.getElementById(id));
     if (pageId) {
         const { file, format } = PAGE_DATA_MAP[pageId];
-        loadData(pageId, `${DATA_BASE_PATH}${file}`, format);
+        loadData(pageId, file, format);
     }
 }
 
@@ -41,17 +41,17 @@ function setupNavigation() {
 /**
  * 通用数据加载函数
  * @param {string} elementId - 容器元素的 ID
- * @param {string} url - JSON 文件的路径
+ * @param {string} fileName - JSON 文件名
  * @param {Function} formatFunction - 数据格式化函数
  */
-function loadData(elementId, url, formatFunction) {
+function loadData(elementId, fileName, formatFunction) {
     const container = document.getElementById(elementId);
     if (!container) {
         console.warn(`Container with ID "${elementId}" not found.`);
         return;
     }
 
-    fetch(url)
+    fetch(`${DATA_BASE_PATH}${fileName}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load data: ${response.statusText}`);
@@ -59,6 +59,7 @@ function loadData(elementId, url, formatFunction) {
             return response.json();
         })
         .then(data => {
+            console.log(`Loaded data for ${elementId}:`, data); // 调试信息
             if (!Array.isArray(data)) {
                 throw new Error('Loaded data is not an array.');
             }
