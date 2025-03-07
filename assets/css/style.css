@@ -1,84 +1,120 @@
 /* 全局基础样式 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* 头部样式 */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 0;
-    border-bottom: 2px solid #ccc;
+/* 布局容器：左右分栏 */
+.container {
+  display: flex;
+  min-height: 100vh;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
+/* 左侧导航栏 */
+.sidebar {
+  background: #002244;
+  color: #fff;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo img {
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+.sidebar .logo img {
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
 }
 
-nav ul li {
-    display: inline;
+.sidebar nav ul {
+  list-style: none;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #004080;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s;
+.sidebar nav ul li {
+  margin: 15px 0;
 }
 
-nav ul li a:hover {
-    background: #ddd;
+.sidebar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-/* 主体内容 */
-main {
-    padding: 30px 0;
+.sidebar nav ul li a:hover {
+  color: #ffcc00;
 }
 
-h1, h2 {
-    color: #002244;
+/* 右侧主要内容 */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+}
+
+.welcome {
+  margin-bottom: 40px;
+}
+
+.welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #002244;
+}
+
+.welcome p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.research h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #002244;
+}
+
+.research p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #002244;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #004080;
 }
 
 /* 页脚 */
 footer {
-    margin-top: 40px;
-    text-align: center;
-    padding-top: 10px;
-    border-top: 2px solid #ccc;
-    font-size: 14px;
-    color: #666;
+  background: #ccc;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #333;
 }
+
 
 /* Publications & Projects Card Layout */
 #publications-list, #projects-list {
