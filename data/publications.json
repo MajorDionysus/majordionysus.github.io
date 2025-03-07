@@ -1,17 +1,20 @@
-
 [
     {
-        "title": "Research Paper 1",
-        "authors": "Your Name, Co-author 1",
-        "journal": "Journal Name",
+        "title": "A Novel Approach to Flexible Bioelectronics",
+        "authors": "John Doe, Jane Smith",
         "year": "2024",
-        "url": "link-to-paper.com"
+        "journal": "Nature Electronics",
+        "doi": "10.1038/s41565-024-00001",
+        "url": "https://doi.org/10.1038/s41565-024-00001",
+        "abstract": "This paper presents a new method for designing highly flexible bioelectronic devices..."
     },
     {
-        "title": "Research Paper 2",
-        "authors": "Your Name, Co-author 2",
-        "journal": "Journal Name",
+        "title": "Neural Interfaces for Brain-Machine Communication",
+        "authors": "Alice Brown, Bob White",
         "year": "2023",
-        "url": "link-to-paper2.com"
+        "journal": "IEEE Transactions on Neural Systems",
+        "doi": "10.1109/TNSRE.2023.1234567",
+        "url": "https://doi.org/10.1109/TNSRE.2023.1234567",
+        "abstract": "This study explores the development of high-fidelity neural interfaces..."
     }
 ]
