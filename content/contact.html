@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Renjie Mei</title>
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->     
+    <title>Contact | Renjie Mei</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
     <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
 </head>
 <body>
     <div class="container">
         <!-- 左侧固定导航栏 -->
         <aside class="sidebar">
-        <h1>Renjie Mei</h1>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="experiences.html">Research & Projects</a></li>
-                <li><a href="life.html">Life Timeline</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- 主要内容区域 -->
-    <main class="main-content">
-        <section id="contact-info">
-            <h2>Contact</h2>
-            <p><strong>Name:</strong> <span id="contact-name"></span></p>
-            <p><strong>Email:</strong> <span id="contact-email"></span></p>
-            <p><strong>Phone:</strong> <span id="contact-phone"></span></p>
-            <p><strong>LinkedIn:</strong> <span id="contact-linkedin"></span></p>
-            <p><strong>GitHub:</strong> <span id="contact-github"></span></p>
-        </section>
+            <h1>Renjie Mei</h1>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="experiences.html">Research & Projects</a></li>
+                    <li><a href="life.html">Life Timeline</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    </main>
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <section id="contact-section">
+                <h2>Contact</h2>
+                <div id="contact"></div> <!-- 动态加载联系信息 -->
+            </section>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 Renjie Mei. All rights reserved.</p>
+    </footer>
 </body>
 </html>
