@@ -4,7 +4,7 @@
     --secondary: #00BFA6;     /* 清新的青绿色 */
     --accent: #FF6F61;        /* 温暖的珊瑚红 */
     --text: #F0F4F8;         /* 浅灰色 */
-    --background: #1E1E1E;   /* 深色背景 */
+    --background: #1A1A2E;   /* 深蓝色背景 */
     --card-bg: #2A2A2A;      /* 卡片背景 */
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
     --border: #444;           /* 边框颜色 */
@@ -223,7 +223,7 @@ body {
     object-fit: contain;
 }
 
-/* ==================== Timeline 竖直时间线 ==================== */
+/* ==================== Timeline 卡片堆叠式时间线 ==================== */
 .timeline-section {
     margin: 2rem 0;
     padding: 2rem;
@@ -270,7 +270,7 @@ body {
 
 .timeline-content {
     background: var(--card-bg);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1.5rem;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
