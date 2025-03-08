@@ -6,7 +6,7 @@
     --text: #F0F4F8;         /* 浅灰色 */
     --background: #1A1A2E;   /* 深蓝色背景 */
     --card-bg: #2A2A2A;      /* 卡片背景 */
-    --shadow: 0 6px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.4); /* 深色阴影，更柔和 */
     --border: #444;           /* 边框颜色 */
     --muted-text: #8B949E;   /* 次要文字颜色 */
     --link-blue: #64B5F6;    /* 更亮的蓝色，适合暗色主题 */
@@ -110,11 +110,17 @@ body {
 /* 卡片效果 */
 .card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
     padding: 2rem;
     margin: 2rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 /* 欢迎部分 */
@@ -122,7 +128,7 @@ body {
     text-align: center;
     padding: 4rem 2rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     margin: 2rem 0;
     border: 1px solid var(--border);
 }
@@ -147,7 +153,7 @@ body {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
 }
@@ -188,7 +194,7 @@ body {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
 }
@@ -198,7 +204,7 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
+    gap: 1.5rem; /* 调整间距 */
     margin-top: 1.5rem;
 }
 
@@ -208,7 +214,7 @@ body {
     gap: 1rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    border-radius: 8px; /* 统一圆角 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border);
 }
@@ -229,7 +235,7 @@ body {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
 }
@@ -237,7 +243,7 @@ body {
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.5rem; /* 调整间距 */
     margin-top: 1.5rem;
 }
 
@@ -246,7 +252,7 @@ body {
     align-items: center;
     gap: 1.5rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     padding: 1.5rem;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
@@ -262,7 +268,7 @@ body {
 .timeline-item img {
     width: 150px;
     height: 150px;
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     object-fit: cover;
 }
 
@@ -286,7 +292,7 @@ body {
 .publication-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
@@ -339,7 +345,7 @@ body {
 .experience-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
@@ -383,7 +389,7 @@ body {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
 }
@@ -410,7 +416,7 @@ body {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 2rem; /* 调整间距 */
     margin-top: 1.5rem;
 }
 
@@ -420,7 +426,7 @@ body {
     gap: 1.5rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -437,7 +443,7 @@ body {
     align-items: center;
     justify-content: center;
     background: var(--primary);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     color: var(--white);
     font-size: 1.5rem;
     box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
@@ -479,7 +485,7 @@ footer {
     font-size: 0.875rem;
     opacity: 0.8;
     margin-left: 280px; /* 留出 sidebar 的宽度 */
-    box-shadow: var(--shadow); /* 可选：增加阴影效果 */
+    box-shadow: var(--shadow); /* 增加阴影效果 */
 }
 
 /* ==================== 响应式设计 ==================== */
