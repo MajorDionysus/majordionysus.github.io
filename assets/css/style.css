@@ -1,15 +1,15 @@
 /* ==================== 全局样式 ==================== */
 :root {
-    --primary: #6C63FF;       /* 柔和的紫色 */
-    --secondary: #00BFA6;     /* 清新的青绿色 */
-    --accent: #FF6F61;        /* 温暖的珊瑚红 */
-    --text: #F0F4F8;         /* 浅灰色 */
-    --background: #1A1A2E;   /* 深蓝色背景 */
-    --card-bg: #2A2A2A;      /* 卡片背景 */
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
-    --border: #444;           /* 边框颜色 */
-    --muted-text: #8B949E;   /* 次要文字颜色 */
-    --link-blue: #64B5F6;    /* 更亮的蓝色，适合暗色主题 */
+    --primary: #4A90E2;       /* 柔和的蓝色 */
+    --secondary: #50E3C2;     /* 清新的绿色 */
+    --accent: #FF6F61;        /* 温暖的橙色 */
+    --text: #2D3748;         /* 深灰色 */
+    --background: #F7FAFC;   /* 浅色背景 */
+    --card-bg: #FFFFFF;      /* 卡片背景 */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 浅色阴影 */
+    --border: #E2E8F0;        /* 边框颜色 */
+    --muted-text: #718096;   /* 次要文字颜色 */
+    --link-blue: #4299E1;    /* 亮蓝色，适合浅色主题 */
 }
 
 * {
@@ -223,68 +223,22 @@ body {
     object-fit: contain;
 }
 
-/* ==================== Timeline 卡片交错式时间线 ==================== */
+/* ==================== Timeline 普通卡片格式 ==================== */
 .timeline-section {
     margin: 2rem 0;
     padding: 2rem;
-    background: var(--card-bg);
+    background: var(--background);
     border-radius: 12px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
 }
 
 .timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: var(--primary);
-    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    width: 50%;
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-
-.timeline-item:nth-child(odd) {
-    margin-left: 0;
-    margin-right: auto;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    margin-left: auto;
-    margin-right: 0;
-    text-align: left;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    background: var(--primary);
-    border-radius: 50%;
-    border: 2px solid var(--background);
-    transform: translate(-50%, -50%);
-}
-
-.timeline-content {
     background: var(--card-bg);
     border-radius: 12px;
     padding: 1.5rem;
@@ -293,18 +247,18 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-content:hover {
+.timeline-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-content h3 {
+.timeline-item h3 {
     font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 0.5rem;
 }
 
-.timeline-content p {
+.timeline-item p {
     font-size: 1rem;
     color: var(--text);
     line-height: 1.6;
