@@ -38,26 +38,6 @@ function setupNavigation() {
     }
 }
 
-// main.js
-const timelineData = [
-    {
-        year: "2023 - Present",
-        description: "Working as a Research Scientist at XYZ Lab, focusing on AI and Machine Learning."
-    },
-    {
-        year: "2020 - 2023",
-        description: "Completed PhD in Computer Science at ABC University, specializing in Natural Language Processing."
-    },
-    {
-        year: "2016 - 2020",
-        description: "Graduated with a Bachelor's degree in Computer Science from DEF University."
-    },
-    {
-        year: "2014 - 2016",
-        description: "Completed high school with a focus on Mathematics and Science."
-    }
-];
-
 const timelineContainer = document.querySelector(".timeline");
 
 timelineData.forEach((item, index) => {
