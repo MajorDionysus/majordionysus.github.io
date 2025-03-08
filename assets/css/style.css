@@ -257,7 +257,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem; /* 增加卡片间距 */
+    margin-bottom: 2.5rem; /* 增加卡片间距 */
 }
 
 .publication-card::before {
@@ -310,7 +310,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem; /* 增加卡片间距 */
+    margin-bottom: 2.5rem; /* 增加卡片间距 */
 }
 
 .experience-card::before {
