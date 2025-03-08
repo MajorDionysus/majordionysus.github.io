@@ -224,8 +224,8 @@ body {
     object-fit: contain;
 }
 
-/* 学术背景部分 */
-.academic-background {
+/* ==================== Timeline 错落卡片格式 ==================== */
+.timeline-section {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
@@ -235,55 +235,43 @@ body {
 }
 
 .timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
 .timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 2rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -6px;
-    width: 12px;
-    height: 12px;
-    background: var(--primary);
-    border-radius: 50%;
-    border: 2px solid var(--background);
-}
-
-.timeline-content {
-    background: var(--card-bg);
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
     padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
     border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 10%;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
     box-shadow: var(--shadow);
 }
 
-.timeline-content h3 {
+.timeline-item h3 {
     font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 0.5rem;
 }
 
-.timeline-content p {
+.timeline-item p {
     font-size: 1rem;
     color: var(--text);
     line-height: 1.6;
@@ -532,6 +520,10 @@ footer {
         width: 24px;
         height: 24px;
         fill: var(--white);
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
     }
 }
 
