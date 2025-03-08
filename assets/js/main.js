@@ -38,6 +38,45 @@ function setupNavigation() {
     }
 }
 
+// main.js
+const timelineData = [
+    {
+        year: "2023 - Present",
+        description: "Working as a Research Scientist at XYZ Lab, focusing on AI and Machine Learning."
+    },
+    {
+        year: "2020 - 2023",
+        description: "Completed PhD in Computer Science at ABC University, specializing in Natural Language Processing."
+    },
+    {
+        year: "2016 - 2020",
+        description: "Graduated with a Bachelor's degree in Computer Science from DEF University."
+    },
+    {
+        year: "2014 - 2016",
+        description: "Completed high school with a focus on Mathematics and Science."
+    }
+];
+
+const timelineContainer = document.querySelector(".timeline");
+
+timelineData.forEach((item, index) => {
+    const timelineItem = document.createElement("div");
+    timelineItem.classList.add("timeline-item");
+
+    // 错落效果：偶数项向右偏移
+    if (index % 2 === 1) {
+        timelineItem.style.marginLeft = "10%";
+    }
+
+    timelineItem.innerHTML = `
+        <h3>${item.year}</h3>
+        <p>${item.description}</p>
+    `;
+
+    timelineContainer.appendChild(timelineItem);
+});
+
 /**
  * 通用数据加载函数
  * @param {string} elementId - 容器元素的 ID
