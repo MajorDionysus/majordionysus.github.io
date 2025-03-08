@@ -53,7 +53,7 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-    text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+    text-shadow: 0 0 3px var(--primary), 0 0 10px var(--primary);
 }
 
 .sidebar h1::after {
@@ -262,7 +262,6 @@ body {
     height: 150px;
     border-radius: 12px;
     object-fit: cover;
-    border: 2px solid var(--primary);
 }
 
 .timeline-content {
