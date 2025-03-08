@@ -38,25 +38,6 @@ function setupNavigation() {
     }
 }
 
-const timelineContainer = document.querySelector(".timeline");
-
-timelineData.forEach((item, index) => {
-    const timelineItem = document.createElement("div");
-    timelineItem.classList.add("timeline-item");
-
-    // 错落效果：偶数项向右偏移
-    if (index % 2 === 1) {
-        timelineItem.style.marginLeft = "10%";
-    }
-
-    timelineItem.innerHTML = `
-        <h3>${item.year}</h3>
-        <p>${item.description}</p>
-    `;
-
-    timelineContainer.appendChild(timelineItem);
-});
-
 /**
  * 通用数据加载函数
  * @param {string} elementId - 容器元素的 ID
