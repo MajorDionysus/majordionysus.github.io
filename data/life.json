@@ -3,12 +3,12 @@
         "date": "2023-09",
         "title": "Started PhD Program",
         "description": "Began my doctoral studies at XYZ University, focusing on AI and Machine Learning.",
-        "image": "../assets/images/school/sustech-university.png"
+        "image": "school/sustech-university.png"
     },
     {
         "date": "2022-09",
         "title": "Started Msc Program",
         "description": "Began my master studies at ABC University, focusing on AI and Machine Learning.",
-        "image": "../assets/images/school/sustech-university.png"
+        "image": "school/sustech-university.png"
     }
 ]
