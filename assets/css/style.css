@@ -40,6 +40,8 @@ body {
     background: var(--card-bg);
     padding: 2rem 1.5rem;
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
     box-shadow: var(--shadow);
     border-right: 1px solid var(--border);
@@ -99,7 +101,7 @@ body {
 
 /* ==================== 主要内容区域 ==================== */
 .main-content {
-    margin-left: 280px;
+    margin-left: 280px; /* 留出 sidebar 的宽度 */
     padding: 3rem 4rem;
     flex: 1;
     max-width: 1200px;
@@ -466,15 +468,16 @@ body {
 /* ==================== 页脚 ==================== */
 footer {
     text-align: center;
-    padding: 0.5rem;
+    padding: 1rem;
     background: var(--card-bg);
     color: var(--text);
     margin-top: auto;
     position: relative; /* 保持相对定位 */
     z-index: 10; /* 确保 footer 在 sidebar 之下 */
     border-top: 1px solid var(--border);
-    font-size: 0.75rem;
-    opacity: 0.72;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-left: 280px; /* 留出 sidebar 的宽度 */
 }
 
 /* ==================== 响应式设计 ==================== */
