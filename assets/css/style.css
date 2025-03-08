@@ -223,7 +223,7 @@ body {
     object-fit: contain;
 }
 
-/* ==================== Timeline 卡片堆叠式时间线 ==================== */
+/* ==================== Timeline 卡片交错式时间线 ==================== */
 .timeline-section {
     margin: 2rem 0;
     padding: 2rem;
@@ -244,28 +244,44 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     width: 2px;
     height: 100%;
     background: var(--primary);
+    transform: translateX(-50%);
 }
 
 .timeline-item {
     position: relative;
     margin-bottom: 2rem;
-    padding-left: 2rem;
+    width: 50%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -6px;
+    top: 50%;
+    left: 50%;
     width: 12px;
     height: 12px;
     background: var(--primary);
     border-radius: 50%;
     border: 2px solid var(--background);
+    transform: translate(-50%, -50%);
 }
 
 .timeline-content {
