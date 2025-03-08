@@ -4,7 +4,7 @@
     --secondary: #718096;     /* 中灰色 */
     --accent: #A0AEC0;        /* 浅灰色 */
     --text: #2D3748;         /* 深色文字 */
-    --background: #F7FAFC;   /* 浅色背景 */
+    --background: #EDF2F7;   /* 浅色背景，稍微深一点 */
     --white: #FFFFFF;         /* 白色 */
     --card-bg: #FFFFFF;      /* 卡片背景 */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 浅色阴影 */
@@ -45,6 +45,7 @@ body {
     box-shadow: var(--shadow);
     border-right: 1px solid var(--border);
     backdrop-filter: blur(10px);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); /* 多边形效果 */
 }
 
 .sidebar h1 {
@@ -102,6 +103,16 @@ body {
     padding: 3rem 4rem;
     flex: 1;
     max-width: 1200px;
+}
+
+/* 卡片效果 */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin: 2rem 0;
 }
 
 /* 欢迎部分 */
@@ -382,13 +393,15 @@ body {
 /* ==================== 页脚 ==================== */
 footer {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
     background: var(--card-bg);
     color: var(--text);
     margin-top: auto;
     position: relative;
     z-index: 2;
     border-top: 1px solid var(--border);
+    font-size: 0.875rem;
+    opacity: 0.8;
 }
 
 /* ==================== 响应式设计 ==================== */
