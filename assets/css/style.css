@@ -1,15 +1,15 @@
 /* ==================== 全局样式 ==================== */
 :root {
-    --primary: #4A90E2;       /* 柔和的蓝色 */
-    --secondary: #50E3C2;     /* 清新的绿色 */
-    --accent: #FF6F61;        /* 温暖的橙色 */
-    --text: #2D3748;         /* 深灰色 */
-    --background: #F7FAFC;   /* 浅色背景 */
-    --card-bg: #FFFFFF;      /* 卡片背景 */
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 浅色阴影 */
-    --border: #E2E8F0;        /* 边框颜色 */
-    --muted-text: #718096;   /* 次要文字颜色 */
-    --link-blue: #4299E1;    /* 亮蓝色，适合浅色主题 */
+    --primary: #6C63FF;       /* 柔和的紫色 */
+    --secondary: #00BFA6;     /* 清新的青绿色 */
+    --accent: #FF6F61;        /* 温暖的珊瑚红 */
+    --text: #F0F4F8;         /* 浅灰色 */
+    --background: #1A1A2E;   /* 深蓝色背景 */
+    --card-bg: #2A2A2A;      /* 卡片背景 */
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
+    --border: #444;           /* 边框颜色 */
+    --muted-text: #8B949E;   /* 次要文字颜色 */
+    --link-blue: #64B5F6;    /* 更亮的蓝色，适合暗色主题 */
 }
 
 * {
@@ -48,13 +48,11 @@ body {
 }
 
 .sidebar h1 {
-    font-family: 'Space Mono', monospace; /* 赛博风格字体 */
     font-size: 2.5rem;
     color: var(--primary);
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-    text-shadow: 0 0 3px rgba(74, 144, 226, 0.3), 0 0 10px rgba(74, 144, 226, 0.3);
 }
 
 .sidebar h1::after {
@@ -66,7 +64,7 @@ body {
     height: 3px;
     background: var(--accent);
     transform: translateX(-50%);
-    box-shadow: 0 0 5px rgba(255, 111, 97, 0.3), 0 0 10px rgba(255, 111, 97, 0.3);
+    box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
 }
 
 .sidebar nav ul {
@@ -95,7 +93,7 @@ body {
 
 .sidebar nav a.active,
 .sidebar nav a:hover {
-    background: rgba(74, 144, 226, 0.1); /* 柔和的蓝色背景 */
+    background: rgba(108, 99, 255, 0.1); /* 柔和的紫色背景 */
     box-shadow: inset 3px 0 0 var(--accent);
 }
 
@@ -440,7 +438,7 @@ body {
     border-radius: 12px;
     color: var(--white);
     font-size: 1.5rem;
-    box-shadow: 0 0 10px rgba(31, 111, 235, 0.3);
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
 }
 
 .contact-item-content h4 {
@@ -456,7 +454,7 @@ body {
 }
 
 .contact-item-content a {
-    color: var(--link-blue); /* 使用更亮的蓝色 */
+    color: var(--link-blue);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
