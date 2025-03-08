@@ -8,9 +8,8 @@
     --white: #FFFFFF;         /* 白色 */
     --card-bg: #161B22;      /* 卡片背景 */
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
-    --cyber-blue: #00FFFF;    /* 赛博蓝 */
-    --cyber-pink: #FF00FF;    /* 赛博粉 */
     --border: #30363D;        /* 边框颜色 */
+    --muted-text: #8B949E;   /* 次要文字颜色 */
 }
 
 * {
@@ -248,125 +247,111 @@ body {
     border-radius: 8px;
 }
 
-/* ==================== Publications 卡片 ==================== */
-.publication-card {
+/* ==================== Life 模块 ==================== */
+.life-timeline {
+    margin: 2rem 0;
+    padding: 2rem;
     background: var(--card-bg);
-    border: 1px solid var(--border);
     border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.timeline-event {
+    display: flex;
+    gap: 2rem;
     padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.publication-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
+.timeline-event:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.timeline-event-date {
+    flex: 0 0 120px;
+    text-align: right;
+    color: var(--muted-text);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.timeline-event-content {
+    flex: 1;
+}
+
+.timeline-event-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-event-content p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ==================== Contact 模块 ==================== */
+.contact-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.contact-item-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--primary);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.2rem;
 }
 
-.publication-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.publication-card:hover::before {
-    transform: scaleY(1);
-}
-
-.publication-card h3 {
+.contact-item-content h4 {
+    font-size: 1.2rem;
     color: var(--primary);
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
-.publication-card p {
+.contact-item-content p {
+    font-size: 1rem;
     color: var(--text);
-    font-size: 14px;
-}
-
-/* ==================== Experiences 卡片 ==================== */
-.experience-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.experience-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.experience-card:hover::before {
-    transform: scaleY(1);
-}
-
-.experience-card h3 {
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-.experience-card p {
-    color: var(--text);
-    font-size: 14px;
-}
-
-/* ==================== Contact 卡片 ==================== */
-.contact-info {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background: var(--cyber-blue);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-
-.contact-info:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.contact-info:hover::before {
-    transform: scaleY(1);
-}
-
-.contact-info p {
-    color: var(--text);
-    font-size: 14px;
 }
 
 /* ==================== 页脚 ==================== */
