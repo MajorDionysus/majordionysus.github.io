@@ -1,21 +1,23 @@
 /* ==================== 全局样式 ==================== */
 :root {
-    --primary: #2A5C8D;       /* 主色调 */
-    --secondary: #3A7CA5;     /* 辅色调 */
-    --accent: #D9DCD6;        /* 强调色 */
-    --text: #333F48;         /* 正文颜色 */
-    --background: #f8f9fa;   /* 背景颜色 */
-    --white: #ffffff;         /* 白色 */
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影 */
+    --primary: #1F6FEB;       /* GitHub 蓝 */
+    --secondary: #238636;     /* GitHub 绿 */
+    --accent: #FF7B72;        /* GitHub 红 */
+    --text: #E6EDF3;         /* 浅灰色 */
+    --background: #0D1117;   /* 深色背景 */
+    --white: #FFFFFF;         /* 白色 */
+    --card-bg: #161B22;      /* 卡片背景 */
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
     --cyber-blue: #00FFFF;    /* 赛博蓝 */
     --cyber-pink: #FF00FF;    /* 赛博粉 */
+    --border: #30363D;        /* 边框颜色 */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif; /* 现代化字体 */
 }
 
 body {
@@ -24,6 +26,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
 }
 
 /* ==================== 容器布局 ==================== */
@@ -35,21 +38,22 @@ body {
 /* ==================== 左侧导航栏 ==================== */
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, var(--primary), #1A3B5E);
+    background: var(--card-bg);
     padding: 2rem 1.5rem;
     position: fixed;
     height: 100vh;
     box-shadow: var(--shadow);
+    border-right: 1px solid var(--border);
 }
 
 .sidebar h1 {
-    font-family: 'Orbitron', sans-serif; /* 赛博风格字体 */
+    font-family: 'Space Mono', monospace; /* 赛博风格字体 */
     font-size: 2.5rem;
-    color: var(--cyber-blue);
+    color: var(--primary);
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-    text-shadow: 0 0 5px var(--cyber-blue), 0 0 10px var(--cyber-blue);
+    text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
 }
 
 .sidebar h1::after {
@@ -59,9 +63,9 @@ body {
     bottom: -10px;
     width: 60px;
     height: 3px;
-    background: var(--cyber-pink);
+    background: var(--accent);
     transform: translateX(-50%);
-    box-shadow: 0 0 5px var(--cyber-pink), 0 0 10px var(--cyber-pink);
+    box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
 }
 
 .sidebar nav ul {
@@ -78,7 +82,7 @@ body {
 }
 
 .sidebar nav a {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text);
     padding: 12px 1rem;
     border-radius: 6px;
     display: flex;
@@ -90,8 +94,8 @@ body {
 
 .sidebar nav a.active,
 .sidebar nav a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: inset 3px 0 0 var(--cyber-pink);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 3px 0 0 var(--accent);
 }
 
 /* ==================== 主要内容区域 ==================== */
@@ -106,9 +110,10 @@ body {
 .welcome {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, rgba(42, 92, 141, 0.05), rgba(58, 124, 165, 0.05));
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: 12px;
     margin: 2rem 0;
+    border: 1px solid var(--border);
 }
 
 .welcome h1 {
@@ -130,9 +135,10 @@ body {
 .profile {
     margin: 2rem 0;
     padding: 2rem;
-    background: var(--white);
+    background: var(--card-bg);
     border-radius: 12px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .profile-content {
@@ -170,9 +176,10 @@ body {
 .research-interests {
     margin: 2rem 0;
     padding: 2rem;
-    background: var(--white);
+    background: var(--card-bg);
     border-radius: 12px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .interests-list {
@@ -189,9 +196,10 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background: rgba(42, 92, 141, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
 }
 
 .interests-list li:hover {
@@ -209,9 +217,10 @@ body {
 .academic-background {
     margin: 2rem 0;
     padding: 2rem;
-    background: var(--white);
+    background: var(--card-bg);
     border-radius: 12px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .timeline {
@@ -226,9 +235,10 @@ body {
     align-items: center;
     gap: 1.5rem;
     padding: 1.5rem;
-    background: rgba(42, 92, 141, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     border-left: 4px solid var(--primary);
+    border: 1px solid var(--border);
 }
 
 .school-logo {
@@ -240,8 +250,8 @@ body {
 
 /* ==================== Publications 卡片 ==================== */
 .publication-card {
-    background: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
     position: relative;
@@ -256,14 +266,14 @@ body {
     top: 0;
     height: 100%;
     width: 4px;
-    background: var(--cyber-blue);
+    background: var(--primary);
     transform: scaleY(0);
     transition: transform 0.3s ease;
 }
 
 .publication-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
 }
 
 .publication-card:hover::before {
@@ -282,8 +292,8 @@ body {
 
 /* ==================== Experiences 卡片 ==================== */
 .experience-card {
-    background: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
     position: relative;
@@ -298,14 +308,14 @@ body {
     top: 0;
     height: 100%;
     width: 4px;
-    background: var(--cyber-pink);
+    background: var(--accent);
     transform: scaleY(0);
     transition: transform 0.3s ease;
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
 }
 
 .experience-card:hover::before {
@@ -324,8 +334,8 @@ body {
 
 /* ==================== Contact 卡片 ==================== */
 .contact-info {
-    background: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
     position: relative;
@@ -347,7 +357,7 @@ body {
 
 .contact-info:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
 }
 
 .contact-info:hover::before {
@@ -363,11 +373,12 @@ body {
 footer {
     text-align: center;
     padding: 1.5rem;
-    background: var(--primary);
-    color: var(--white);
+    background: var(--card-bg);
+    color: var(--text);
     margin-top: auto;
     position: relative;
     z-index: 2;
+    border-top: 1px solid var(--border);
 }
 
 /* ==================== 响应式设计 ==================== */
