@@ -43,9 +43,9 @@ body {
     height: 100vh;
     box-shadow: var(--shadow);
     border-right: 1px solid var(--border);
-    border-radius: 0 20px 20px 0; /* 右侧圆角 */
+    border-radius: 0 24px 24px 0; /* 右侧圆角 */
+    z-index: 100; /* 确保 sidebar 在最上层 */
 }
-
 .sidebar h1 {
     font-family: 'Space Mono', monospace; /* 赛博风格字体 */
     font-size: 2.5rem;
@@ -470,11 +470,11 @@ footer {
     background: var(--card-bg);
     color: var(--text);
     margin-top: auto;
-    position: relative;
-    z-index: 2;
+    position: relative; /* 保持相对定位 */
+    z-index: 10; /* 确保 footer 在 sidebar 之下 */
     border-top: 1px solid var(--border);
     font-size: 0.75rem;
-    opacity: 0.8;
+    opacity: 0.72;
 }
 
 /* ==================== 响应式设计 ==================== */
