@@ -1,16 +1,15 @@
 /* ==================== 全局样式 ==================== */
 :root {
-    --primary: #1F6FEB;       /* GitHub 蓝 */
-    --secondary: #238636;     /* GitHub 绿 */
-    --accent: #FF7B72;        /* GitHub 红 */
-    --text: #E6EDF3;         /* 浅灰色 */
-    --background: #0D1117;   /* 深色背景 */
+    --primary: #6C63FF;       /* 柔和的紫色 */
+    --secondary: #00BFA6;     /* 清新的青绿色 */
+    --accent: #FF6F61;        /* 温暖的珊瑚红 */
+    --text: #F0F4F8;         /* 浅灰色 */
+    --background: #121212;   /* 深色背景 */
     --white: #FFFFFF;         /* 白色 */
-    --card-bg: #161B22;      /* 卡片背景 */
+    --card-bg: #1E1E1E;      /* 卡片背景 */
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
-    --cyber-blue: #00FFFF;    /* 赛博蓝 */
-    --cyber-pink: #FF00FF;    /* 赛博粉 */
-    --border: #30363D;        /* 边框颜色 */
+    --border: #374151;        /* 边框颜色 */
+    --muted-text: #8B949E;   /* 次要文字颜色 */
 }
 
 * {
