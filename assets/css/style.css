@@ -10,6 +10,7 @@
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.5); /* 深色阴影 */
     --border: #374151;        /* 边框颜色 */
     --muted-text: #8B949E;   /* 次要文字颜色 */
+    --link-blue: #64B5F6;    /* 更亮的蓝色，适合暗色主题 */
 }
 
 * {
@@ -256,6 +257,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem; /* 增加卡片间距 */
 }
 
 .publication-card::before {
@@ -289,6 +291,16 @@ body {
     font-size: 14px;
 }
 
+.publication-card a {
+    color: var(--link-blue); /* 使用更亮的蓝色 */
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.publication-card a:hover {
+    opacity: 0.8;
+}
+
 /* ==================== Experiences 卡片 ==================== */
 .experience-card {
     background: var(--card-bg);
@@ -298,6 +310,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem; /* 增加卡片间距 */
 }
 
 .experience-card::before {
@@ -409,7 +422,7 @@ body {
 }
 
 .contact-item-content a {
-    color: var(--primary);
+    color: var(--link-blue); /* 使用更亮的蓝色 */
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
