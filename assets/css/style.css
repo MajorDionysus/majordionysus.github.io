@@ -223,12 +223,14 @@ body {
     object-fit: contain;
 }
 
-/* ==================== Timeline 普通卡片格式 ==================== */
+/* ==================== Timeline 卡片格式 ==================== */
 .timeline-section {
     margin: 2rem 0;
     padding: 2rem;
-    background: var(--background);
+    background: var(--card-bg);
     border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .timeline {
@@ -239,6 +241,9 @@ body {
 }
 
 .timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     background: var(--card-bg);
     border-radius: 12px;
     padding: 1.5rem;
@@ -249,16 +254,28 @@ body {
 
 .timeline-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
-.timeline-item h3 {
+.timeline-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-content h3 {
     font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 0.5rem;
 }
 
-.timeline-item p {
+.timeline-content p {
     font-size: 1rem;
     color: var(--text);
     line-height: 1.6;
