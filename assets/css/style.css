@@ -45,7 +45,7 @@ body {
     height: 100vh;
     box-shadow: var(--shadow);
     border-right: 1px solid var(--border);
-    border-radius: 0 24px 48px 0; /* 右侧圆角 */
+    border-radius: 0 24px 24px 0; /* 右侧圆角 */
     z-index: 100; /* 确保 sidebar 在最上层 */
 }
 
