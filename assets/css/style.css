@@ -303,6 +303,17 @@ body {
     background: var(--accent);
 }
 
+.blog-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.blog-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ==================== Timeline 卡片格式 ==================== */
 .timeline-section {
     margin: 2rem 0;
