@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
     setupNavigation();
 });
 
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+
+// 切换 sidebar 的显示和隐藏
+mobileMenuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
 /**
  * 初始化页面内容
  */
