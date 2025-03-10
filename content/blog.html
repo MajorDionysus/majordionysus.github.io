@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog - Renjie Mei</title>
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
-    <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -26,6 +26,24 @@
 
         <main class="main-content">
             <h2>Blog</h2>
+            <div class="notion-cards">
+                <!-- Notion 页面嵌入 -->
+                <div class="notion-card">
+                    <iframe 
+                        src="https://www.notion.so/embed/your-notion-page-id" 
+                        style="width: 100%; height: 400px; border: none; border-radius: 12px;"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <!-- 添加更多 Notion 页面 -->
+                <div class="notion-card">
+                    <iframe 
+                        src="https://www.notion.so/embed/another-notion-page-id" 
+                        style="width: 100%; height: 400px; border: none; border-radius: 12px;"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
         </main>
     </div>
 
