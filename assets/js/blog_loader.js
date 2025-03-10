@@ -79,3 +79,17 @@ async function loadMarkdown(file, blogContent) {
         blogContent.innerHTML = "<p>Failed to load blog content.</p>";
     }
 }
+
+// 动态加载卡片效果
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.blog-card').forEach(card => {
+    observer.observe(card);
+});
