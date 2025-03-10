@@ -13,12 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
     setupNavigation();
 });
 
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const sidebar = document.querySelector('.sidebar');
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
 
-// 切换 sidebar 的显示和隐藏
-mobileMenuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
+    mobileMenuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+        mainContent.classList.toggle('active');
+    });
 });
 
 /**
