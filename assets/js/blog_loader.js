@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // 遍历 Markdown 文件，解析 YAML 头部信息
     for (let file of blogFiles) {
         try {
-            const response = await fetch(`data/blogs/${file}`);
+            const response = await fetch(`../data/blogs/${file}`);
             if (!response.ok) throw new Error(`Failed to load ${file}`);
 
             const markdownText = await response.text();
