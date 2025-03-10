@@ -458,16 +458,17 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 固定每个 item 的最小宽度 */
     gap: 2rem; /* 调整间距 */
     margin-top: 1.5rem;
 }
 
 .contact-item {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    flex-direction: column; /* 垂直排列内容 */
+    align-items: center; /* 内容居中 */
+    text-align: center; /* 文字居中 */
+    padding: 2rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px; /* 统一圆角 */
     border: 1px solid var(--border);
@@ -480,16 +481,17 @@ body {
 }
 
 .contact-item-icon {
-    width: 60px;
-    height: 60px;
+    width: 80px; /* 统一图标容器大小 */
+    height: 80px; /* 统一图标容器大小 */
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary);
-    border-radius: 12px; /* 统一圆角 */
-    color: var(--white);
-    font-size: 1.5rem;
+    border-radius: 50%; /* 圆形背景 */
+    color: var(--text);
+    font-size: 2rem; /* 统一图标大小 */
     box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+    margin-bottom: 1.5rem; /* 图标与文字间距 */
 }
 
 .contact-item-content h4 {
@@ -502,6 +504,7 @@ body {
     font-size: 1rem;
     color: var(--text);
     line-height: 1.6;
+    margin-bottom: 1rem; /* 文字与链接间距 */
 }
 
 .contact-item-content a {
@@ -513,5 +516,3 @@ body {
 .contact-item-content a:hover {
     opacity: 0.8;
 }
-
-
