@@ -288,6 +288,27 @@ body {
     line-height: 1.6;
 }
 
+/* ==================== Notion 卡片样式 ==================== */
+.notion-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.notion-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
 /* ==================== Publications 卡片 ==================== */
 .publication-card {
     background: var(--card-bg);
