@@ -1,15 +1,15 @@
 /* ==================== 全局样式 ==================== */
 :root {
-    --primary: #6C63FF;       /* 柔和的紫色 */
-    --secondary: #00BFA6;     /* 清新的青绿色 */
-    --accent: #FF6F61;        /* 温暖的珊瑚红 */
-    --text: #E0E0E0;         /* 浅灰色 */
-    --background: #121212;   /* 深黑色背景 */
-    --card-bg: #1E1E1E;      /* 卡片背景 */
-    --shadow: 0 6px 24px rgba(0, 0, 0, 0.4); /* 深色阴影，更柔和 */
-    --border: #333;           /* 边框颜色 */
-    --muted-text: #8B949E;   /* 次要文字颜色 */
-    --link-blue: #64B5F6;    /* 更亮的蓝色，适合暗色主题 */
+    --primary: #7B73FF;       /* 更明亮的紫色 */
+    --secondary: #00C7A8;     /* 更鲜明的青绿色 */
+    --accent: #FF786B;        /* 稍亮的珊瑚红 */
+    --text: #EDEDED;         /* 更纯净的浅灰 */
+    --background: #0D0D0D;   /* 更深的背景（原121212） */
+    --card-bg: #262626;      /* 卡片背景调亮（原1E1E1E）*/
+    --card-border: #404040;  /* 更明显的边框 */
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* 更强的阴影 */
+    --muted-text: #9CA3AF;   /* 调整后的次要文字 */
+    --link-blue: #6DBAF9;    /* 更亮的链接蓝 */
 }
 
 * {
@@ -110,8 +110,9 @@ body {
 /* 卡片效果 */
 .card {
     background: var(--card-bg);
-    border-radius: 12px; /* 统一圆角 */
+    border: 1px solid var(--card-border); /* 使用专用边框变量 */
     box-shadow: var(--shadow);
+    border-radius: 12px; /* 统一圆角 */
     border: 1px solid var(--border);
     padding: 2rem;
     margin: 2rem 0;
