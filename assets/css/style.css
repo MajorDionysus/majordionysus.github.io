@@ -3,11 +3,11 @@
     --primary: #6C63FF;       /* 柔和的紫色 */
     --secondary: #00BFA6;     /* 清新的青绿色 */
     --accent: #FF6F61;        /* 温暖的珊瑚红 */
-    --text: #F0F4F8;         /* 浅灰色 */
-    --background: #1A1A2E;   /* 深蓝色背景 */
-    --card-bg: #2A2A2A;      /* 卡片背景 */
+    --text: #E0E0E0;         /* 浅灰色 */
+    --background: #121212;   /* 深黑色背景 */
+    --card-bg: #1E1E1E;      /* 卡片背景 */
     --shadow: 0 6px 24px rgba(0, 0, 0, 0.4); /* 深色阴影，更柔和 */
-    --border: #444;           /* 边框颜色 */
+    --border: #333;           /* 边框颜色 */
     --muted-text: #8B949E;   /* 次要文字颜色 */
     --link-blue: #64B5F6;    /* 更亮的蓝色，适合暗色主题 */
 }
@@ -495,7 +495,7 @@ body {
 /* ==================== 页脚 ==================== */
 footer {
     text-align: center;
-    padding: 1rem;
+    padding: 0.75rem 1rem; /* 缩小内边距 */
     background: var(--card-bg);
     color: var(--text);
     margin-top: auto;
@@ -503,8 +503,8 @@ footer {
     z-index: 10;
     border-top: 1px solid var(--border);
     border-radius: 12px 12px 0 0; /* 上侧圆角 */
-    font-size: 0.875rem;
-    opacity: 0.64;
-    margin-left: 286px; /* 留出 sidebar 的宽度 */
+    font-size: 0.75rem; /* 缩小字体 */
+    opacity: 0.8;
+    margin-left: 280px; /* 留出 sidebar 的宽度 */
     box-shadow: var(--shadow); /* 增加阴影效果 */
 }
