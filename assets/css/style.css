@@ -231,6 +231,33 @@ body {
 }
 
 /* ==================== Timeline 卡片格式 ==================== */
+.blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.blog-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+.blog-card h3 {
+    margin: 10px 0;
+}
+.blog-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ==================== Timeline 卡片格式 ==================== */
 .timeline-section {
     margin: 2rem 0;
     padding: 2rem;
