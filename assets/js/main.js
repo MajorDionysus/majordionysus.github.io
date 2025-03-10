@@ -13,17 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setupNavigation();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.main-content');
-
-    mobileMenuToggle.addEventListener('click', function() {
-        sidebar.classList.toggle('active');
-        mainContent.classList.toggle('active');
-    });
-});
-
 /**
  * 初始化页面内容
  */
