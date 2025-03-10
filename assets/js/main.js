@@ -106,6 +106,7 @@ function formatPublication(pub) {
         <p><strong>Journal:</strong> ${pub.journal}</p>
         ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
         ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
+        ${pub.image ? `<img src="../assets/images/pubs/${pub.image}" alt="${pub.title}" class="publications-image">` : ''}
     `;
     return li;
 }
@@ -123,6 +124,7 @@ function formatExperience(exp) {
         ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
         ${exp.description ? `<p>${exp.description}</p>` : ''}
         ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
+        ${exp.image ? `<img src="../assets/images/exps/${exp.image}" alt="${exp.title}" class="experiences-image">` : ''}
     `;
     return li;
 }
