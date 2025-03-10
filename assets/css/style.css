@@ -46,13 +46,7 @@ body {
     box-shadow: var(--shadow);
     border-right: 1px solid var(--border);
     border-radius: 0 24px 24px 0; /* 右侧圆角 */
-    z-index: 1000; /* 确保 sidebar 在最上层 */
-    transform: translateX(-100%); /* 默认隐藏 */
-    transition: transform 0.3s ease;
-}
-
-.sidebar.active {
-    transform: translateX(0); /* 显示 */
+    z-index: 100; /* 确保 sidebar 在最上层 */
 }
 
 .sidebar h1 {
@@ -104,83 +98,6 @@ body {
     background: rgba(108, 99, 255, 0.1); /* 柔和的紫色背景 */
     box-shadow: inset 3px 0 0 var(--accent);
 }
-
-/* ==================== 汉堡菜单按钮 ==================== */
-.mobile-menu-toggle {
-    display: none; /* 默认隐藏 */
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001; /* 确保按钮在侧边栏之上 */
-    background: var(--primary);
-    border: none;
-    padding: 0.75rem;
-    border-radius: 6px;
-    cursor: pointer;
-    color: var(--text);
-    font-size: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: background 0.3s ease;
-}
-
-.mobile-menu-toggle:hover {
-    background: var(--accent);
-}
-
-.mobile-menu-toggle i {
-    pointer-events: none; /* 防止点击图标时触发按钮事件 */
-}
-
-/* ==================== 响应式设计 ==================== */
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block; /* 在小屏幕上显示汉堡菜单按钮 */
-    }
-
-    .sidebar {
-        transform: translateX(-100%); /* 默认隐藏 */
-    }
-
-    .sidebar.active {
-        transform: translateX(0); /* 显示 */
-    }
-
-    .main-content {
-        margin-left: 0; /* 在小屏幕上不留出侧边栏宽度 */
-    }
-
-    .sidebar.active ~ .main-content {
-        margin-left: 0; /* 显示侧边栏时不调整内容区域 */
-    }
-}
-
-@media (min-width: 769px) {
-    .sidebar {
-        transform: translateX(0); /* 在大屏幕上始终显示 */
-    }
-
-    .main-content {
-        margin-left: 280px; /* 留出侧边栏宽度 */
-    }
-
-    .mobile-menu-toggle {
-        display: none; /* 在大屏幕上隐藏汉堡菜单按钮 */
-    }
-}
-
-/* ==================== 主要内容区域 ==================== */
-.main-content {
-    margin-left: 0; /* 默认不留出 sidebar 的宽度 */
-    padding: 3rem 4rem;
-    flex: 1;
-    max-width: 1200px;
-    transition: margin-left 0.3s ease; /* 平滑过渡 */
-}
-
-.sidebar.active ~ .main-content {
-    margin-left: 280px; /* 显示 sidebar 时留出宽度 */
-}
-
 
 /* ==================== 主要内容区域 ==================== */
 .main-content {
@@ -567,30 +484,11 @@ footer {
     border-radius: 12px 12px 0 0; /* 上侧圆角 */
     font-size: 0.875rem;
     opacity: 0.8;
-    margin-left: 0; /* 默认不留出 sidebar 的宽度 */
-    transition: margin-left 0.3s ease; /* 平滑过渡 */
-}
-
-.sidebar.active ~ footer {
-    margin-left: 280px; /* 显示 sidebar 时留出宽度 */
+    margin-left: 280px; /* 留出 sidebar 的宽度 */
+    box-shadow: var(--shadow); /* 增加阴影效果 */
 }
 
 /* ==================== 响应式设计 ==================== */
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block; /* 在小屏幕上显示汉堡菜单按钮 */
-    }
-
-    .main-content {
-        padding: 1.5rem;
-    }
-
-    .sidebar.active ~ .main-content,
-    .sidebar.active ~ footer {
-        margin-left: 0; /* 在小屏幕上显示 sidebar 时不调整内容区域和页脚的宽度 */
-    }
-}
-
 @media (max-width: 1024px) {
     .sidebar {
         width: 240px;
