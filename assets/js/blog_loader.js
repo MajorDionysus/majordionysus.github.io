@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // 遍历 Markdown 文件，解析 YAML 头部信息
     for (let file of blogFiles) {
         try {
-            const response = await fetch(`../data/blogs/${file}`);
+            const response = await fetch(`/data/blogs/${file}`); // 使用绝对路径
             if (!response.ok) throw new Error(`Failed to load ${file}`);
 
             const markdownText = await response.text();
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let metadata = {};
 
             if (match) {
-                metadata = parseYAML(match[1]); // 解析 YAML 数据
+                metadata = jsyaml.load(match[1]); // 使用 js-yaml 解析 YAML 数据
             }
 
             blogs.push({
@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     blogs.sort((a, b) => b.date - a.date);
 
     // 渲染博客列表
+    renderBlogList(blogs, blogList, blogContent);
+});
+
+// 渲染博客列表
+function renderBlogList(blogs, blogList, blogContent) {
     blogs.forEach(blog => {
         const card = document.createElement("div");
         card.className = "blog-card";
@@ -50,16 +55,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         `;
         card.querySelector("button").addEventListener("click", async (event) => {
             event.preventDefault();
-            loadMarkdown(blog.file);
+            await loadMarkdown(blog.file, blogContent);
         });
         blogList.appendChild(card);
     });
-});
+}
 
 // 加载 Markdown 内容并解析
-async function loadMarkdown(file) {
+async function loadMarkdown(file, blogContent) {
     try {
-        const response = await fetch(`data/blogs/${file}`);
+        const response = await fetch(`/data/blogs/${file}`); // 使用绝对路径
         if (!response.ok) throw new Error(`Failed to load ${file}`);
 
         let markdownText = await response.text();
@@ -67,22 +72,10 @@ async function loadMarkdown(file) {
         // 移除 YAML 头部
         markdownText = markdownText.replace(/^---\s*([\s\S]*?)\s*---/, "");
 
+        // 使用 marked 解析 Markdown
         blogContent.innerHTML = marked.parse(markdownText);
     } catch (error) {
         console.error(`Error loading ${file}:`, error);
         blogContent.innerHTML = "<p>Failed to load blog content.</p>";
     }
-}
-
-// 解析 YAML 头部数据
-function parseYAML(yamlText) {
-    const lines = yamlText.split("\n");
-    const data = {};
-    lines.forEach(line => {
-        const [key, value] = line.split(":").map(str => str.trim());
-        if (key && value) {
-            data[key] = value.replace(/^"|"$/g, ""); // 去掉可能的引号
-        }
-    });
-    return data;
 }
