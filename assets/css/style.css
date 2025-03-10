@@ -46,7 +46,7 @@ body {
     box-shadow: var(--shadow);
     border-right: 1px solid var(--border);
     border-radius: 0 24px 24px 0; /* 右侧圆角 */
-    z-index: 100; /* 确保 sidebar 在最上层 */
+    z-index: 1000; /* 确保 sidebar 在最上层 */
     transform: translateX(-100%); /* 默认隐藏 */
     transition: transform 0.3s ease;
 }
@@ -111,19 +111,61 @@ body {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    z-index: 101;
+    z-index: 1001; /* 确保按钮在侧边栏之上 */
     background: var(--primary);
     border: none;
     padding: 0.75rem;
     border-radius: 6px;
     cursor: pointer;
-    color: var(--white);
+    color: var(--text);
     font-size: 1.5rem;
     box-shadow: var(--shadow);
+    transition: background 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--accent);
 }
 
 .mobile-menu-toggle i {
     pointer-events: none; /* 防止点击图标时触发按钮事件 */
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block; /* 在小屏幕上显示汉堡菜单按钮 */
+    }
+
+    .sidebar {
+        transform: translateX(-100%); /* 默认隐藏 */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* 显示 */
+    }
+
+    .main-content {
+        margin-left: 0; /* 在小屏幕上不留出侧边栏宽度 */
+    }
+
+    .sidebar.active ~ .main-content {
+        margin-left: 0; /* 显示侧边栏时不调整内容区域 */
+    }
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0); /* 在大屏幕上始终显示 */
+    }
+
+    .main-content {
+        margin-left: 280px; /* 留出侧边栏宽度 */
+    }
+
+    .mobile-menu-toggle {
+        display: none; /* 在大屏幕上隐藏汉堡菜单按钮 */
+    }
 }
 
 /* ==================== 主要内容区域 ==================== */
