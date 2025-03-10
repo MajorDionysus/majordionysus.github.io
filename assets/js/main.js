@@ -13,6 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
     setupNavigation();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop(); // 获取当前页面文件名
+    const navLinks = document.querySelectorAll(".sidebar nav a");
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop(); // 获取链接的文件名
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+
 /**
  * 初始化页面内容
  */
