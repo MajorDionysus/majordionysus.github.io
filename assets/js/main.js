@@ -52,29 +52,38 @@ function setupNavigation() {
 
 // 主题切换系统
 function setupThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    if (!themeToggle) return;
-
-    // 初始化主题状态
-    const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    const savedTheme = localStorage.getItem('theme') || getSystemTheme();
+    console.log("[Debug] Initializing theme toggle...");
     
-    // 设置初始主题
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeToggle.style.transform = `rotate(${savedTheme === 'dark' ? '-30' : '30'}deg)`;
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) {
+        console.error("Theme toggle button not found!");
+        return;
+    }
 
-    // 切换逻辑
+    // 初始化主题
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const initialTheme = savedTheme || systemTheme;
+    
+    console.log(`[Debug] Initial theme: ${initialTheme} (saved: ${savedTheme}, system: ${systemTheme})`);
+    document.documentElement.setAttribute('data-theme', initialTheme);
+
+    // 点击事件
     themeToggle.addEventListener('click', () => {
+        console.log("[Debug] Toggle button clicked");
+        
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        // 更新属性和存储
+        console.log(`[Debug] Switching theme to: ${newTheme}`);
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         
-        // 按钮动画
+        // 按钮旋转动画
         themeToggle.style.transform = `rotate(${newTheme === 'dark' ? '-30' : '30'}deg)`;
     });
+
+    console.log("[Debug] Theme toggle initialized successfully");
 }
 
 /**
