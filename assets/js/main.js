@@ -147,7 +147,11 @@ function renderData(container, data, formatFunction) {
 function formatPublication(pub) {
     const li = document.createElement('li');
     li.classList.add('publication-card');
-    li.innerHTML = `
+
+    // 文字内容容器
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('publication-card-content');
+    contentDiv.innerHTML = `
         <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
         <p><strong>Authors:</strong> ${pub.authors}</p>
         <p><strong>Year:</strong> ${pub.year}</p>
@@ -155,8 +159,24 @@ function formatPublication(pub) {
         ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
         ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
     `;
+
+    // 图片容器
+    const imageDiv = document.createElement('div');
+    imageDiv.classList.add('publication-card-image');
+    if (pub.cover) {
+        const img = document.createElement('img');
+        img.src = pub.cover;
+        img.alt = `Cover of ${pub.title}`;
+        imageDiv.appendChild(img);
+    }
+
+    // 把文字和图片都添加到 li
+    li.appendChild(contentDiv);
+    li.appendChild(imageDiv);
+
     return li;
 }
+
 
 /**
  * 格式化 Experiences 数据
@@ -166,14 +186,34 @@ function formatPublication(pub) {
 function formatExperience(exp) {
     const li = document.createElement('li');
     li.classList.add('experience-card');
-    li.innerHTML = `
+
+    // 文字内容容器
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('experience-card-content');
+    contentDiv.innerHTML = `
         <h3>${exp.title}</h3>
         ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
         ${exp.description ? `<p>${exp.description}</p>` : ''}
         ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
     `;
+
+    // 图片容器
+    const imageDiv = document.createElement('div');
+    imageDiv.classList.add('experience-card-image');
+    if (exp.image) {
+        const img = document.createElement('img');
+        img.src = exp.image;
+        img.alt = `Image for ${exp.title}`;
+        imageDiv.appendChild(img);
+    }
+
+    // 把文字和图片都添加到 li
+    li.appendChild(imageDiv);
+    li.appendChild(contentDiv);
+    
     return li;
 }
+
 
 /**
  * 格式化 Life Timeline 数据
