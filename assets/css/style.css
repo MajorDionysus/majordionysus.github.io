@@ -1,39 +1,41 @@
-/* ==================== 全局样式 ==================== */
+/* ==================== 主题变量 ==================== */
 :root {
-    --primary: #7B73FF;       /* 更明亮的紫色 */
-    --secondary: #00C7A8;     /* 更鲜明的青绿色 */
-    --accent: #FF786B;        /* 稍亮的珊瑚红 */
-    --text: #EDEDED;         /* 更纯净的浅灰 */
-    --background: #0D0D0D;   /* 更深的背景（原121212） */
-    --card-bg: #262626;      /* 卡片背景调亮（原1E1E1E）*/
-    --card-border: #404040;  /* 更明显的边框 */
-    --shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* 更强的阴影 */
-    --muted-text: #9CA3AF;   /* 调整后的次要文字 */
-    --link-blue: #6DBAF9;    /* 更亮的链接蓝 */
+    /* 暗色主题默认值 */
+    --primary: #7B73FF;
+    --secondary: #00C7A8;
+    --accent: #FF786B;
+    --text: #EDEDED;
+    --background: #0D0D0D;
+    --card-bg: #262626;
+    --card-border: #404040;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --muted-text: #9CA3AF;
+    --link-blue: #6DBAF9;
 }
 
-/* ==================== 主题切换 ==================== */
+/* 系统浅色主题偏好 */
 @media (prefers-color-scheme: light) {
-  :root {
-    --text: #1A1A1A;         /* 深灰文字 */
-    --background: #FFFFFF;   /* 纯白背景 */
-    --card-bg: #F5F5F5;     /* 浅灰卡片背景 */
-    --card-border: #E0E0E0; /* 浅边框 */
-    --muted-text: #666666;   /* 中等灰文字 */
-  }
+    :root:not([data-theme]) {
+        --text: #1A1A1A;
+        --background: #FFFFFF;
+        --card-bg: #F5F5F5;
+        --card-border: #E0E0E0;
+        --muted-text: #666666;
+    }
 }
 
+/* 手动浅色主题 */
 [data-theme="light"] {
-    --primary: #6A64F0;       /* 稍柔和的紫色 */
-    --secondary: #00B39E;     /* 稍深的青绿 */
-    --accent: #FF6B6B;        /* 标准红色 */
-    --text: #1A1A1A;         /* 深灰文字 */
-    --background: #FFFFFF;    /* 纯白背景 */
-    --card-bg: #F5F5F5;      /* 浅灰卡片背景 */
-    --card-border: #E0E0E0;  /* 浅边框 */
-    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* 更柔和的阴影 */
-    --muted-text: #666666;    /* 中等灰文字 */
-    --link-blue: #4299E1;     /* 标准链接蓝 */
+    --primary: #6A64F0;
+    --secondary: #00B39E;
+    --accent: #FF6B6B;
+    --text: #1A1A1A;
+    --background: #FFFFFF;
+    --card-bg: #F5F5F5;
+    --card-border: #E0E0E0;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --muted-text: #666666;
+    --link-blue: #4299E1;
 }
 
 /* 主题切换按钮 */
@@ -56,7 +58,7 @@
 }
 
 .theme-toggle:hover {
-    transform: scale(1.1) rotate(15deg);
+    transform: scale(1.1) rotate(24deg);
 }
 
 .theme-toggle svg {
@@ -433,8 +435,8 @@ body {
 /* ==================== Publications 卡片 ==================== */
 .publication-card {
     display: flex;
-    justify-content: space-between; /* 让内容和图片分开 */
-    align-items: center; /* 保持垂直居中 */
+    justify-content: space-between; /* 文字左侧，图片右侧 */
+    align-items: center; /* 保持对齐 */
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -468,23 +470,23 @@ body {
 
 /* 文字部分 */
 .publication-card-content {
-    flex: 1; /* 让文字占据剩余空间 */
+    flex: 1; /* 让文字部分占满剩余空间 */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 让标题、描述等竖直排列 */
     justify-content: center;
 }
 
 .publication-card h3 {
     color: var(--primary);
-    margin-bottom: 0.75rem;
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .publication-card p {
     color: var(--text);
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .publication-card a {
@@ -497,26 +499,31 @@ body {
     opacity: 0.8;
 }
 
-/* 图片固定在右侧 */
-.publication-card img {
-    width: 100px; /* 固定大小 */
+/* 右侧图片容器 */
+.publication-card-image {
+    width: 120px; /* 限制图片大小 */
     height: auto;
-    border-radius: 8px;
-    margin-left: 1.5rem; /* 让图片和文字有间距 */
-    flex-shrink: 0; /* 防止图片缩小 */
+    flex-shrink: 0; /* 防止压缩 */
+    margin-left: 1.5rem; /* 让图片和文字部分有间距 */
 }
 
-/* 响应式适配：小屏幕下改为竖直排列 */
+.publication-card-image img {
+    width: 100%; /* 让图片填充容器 */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 响应式适配：小屏幕下改为垂直布局 */
 @media (max-width: 600px) {
     .publication-card {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .publication-card img {
+    .publication-card-image {
         margin-left: 0;
         margin-top: 1rem;
-        width: 120px; /* 适当调整大小 */
+        width: 150px; /* 小屏幕下图片稍微大一些 */
     }
 }
 
