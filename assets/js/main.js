@@ -55,18 +55,24 @@ function setupThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     if (!themeToggle) return;
 
+    // 初始化主题状态
     const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     const savedTheme = localStorage.getItem('theme') || getSystemTheme();
     
+    // 设置初始主题
     document.documentElement.setAttribute('data-theme', savedTheme);
     themeToggle.style.transform = `rotate(${savedTheme === 'dark' ? '-30' : '30'}deg)`;
 
+    // 切换逻辑
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
+        // 更新属性和存储
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        
+        // 按钮动画
         themeToggle.style.transform = `rotate(${newTheme === 'dark' ? '-30' : '30'}deg)`;
     });
 }
