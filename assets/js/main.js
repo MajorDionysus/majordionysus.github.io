@@ -4,7 +4,6 @@ const PAGE_DATA_MAP = {
     publications: { format: formatPublication, file: 'publications.json' },
     experiences: { format: formatExperience, file: 'experiences.json' },
     'life-timeline': { format: formatLifeEvent, file: 'life.json' },
-    contact: { format: formatContact, file: 'contact.json' }
 };
 
 // 页面加载完成后执行
