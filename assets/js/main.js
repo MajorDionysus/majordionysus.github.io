@@ -180,7 +180,7 @@ function formatExperience(exp) {
     imageContainer.classList.add('experience-image');
     if (exp.image) {
         const img = document.createElement('img');
-        img.src = exp.image;
+        img.src = "../assets/images/${exp.image}";
         img.alt = `Image for ${exp.title}`;
         imageContainer.appendChild(img);
     }
