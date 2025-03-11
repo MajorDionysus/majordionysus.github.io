@@ -598,6 +598,8 @@ body {
 
 /* ==================== Experiences 卡片 ==================== */
 .experience-card {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -606,12 +608,8 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 1.5rem;
-    display: flex; /* 使用 flex 布局 */
-    gap: 1.5rem; /* 图片与文字间距 */
-    align-items: flex-start; /* 顶部对齐 */
 }
 
-/* 左侧彩色指示条 */
 .experience-card::before {
     content: '';
     position: absolute;
@@ -624,64 +622,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* 图片容器 */
-.experience-image {
-    flex: 0 0 120px; /* 固定宽度 */
-    position: relative;
-    align-self: flex-start; /* 顶部对齐 */
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid var(--card-border);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-/* 图片样式 */
-.experience-image img {
-    width: 100%;
-    height: 120px; /* 固定高度 */
-    object-fit: cover; /* 保持比例 */
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-/* 文字内容区域 */
-.experience-content {
-    flex: 1;
-    min-width: 0; /* 防止内容溢出 */
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-/* 标题 */
-.experience-content h3 {
-    color: var(--primary);
-    margin: 0;
-    font-size: 1.5rem;
-    line-height: 1.3;
-}
-
-/* 描述 */
-.experience-content p {
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* 链接 */
-.experience-content a {
-    color: var(--link-blue);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.experience-content a:hover {
-    opacity: 0.8;
-}
-
-/* Hover 效果 */
 .experience-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
@@ -691,60 +631,61 @@ body {
     transform: scaleY(1);
 }
 
-.experience-card:hover .experience-image {
-    transform: scale(1.03);
+/* 图片放置在左侧 */
+.experience-card img {
+    width: 120px; /* 适当调整图片尺寸 */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 1.5rem; /* 与文字保持间距 */
+    flex-shrink: 0; /* 防止图片缩小 */
 }
 
-/* 响应式布局 */
-@media (max-width: 768px) {
+/* 文字部分 */
+.experience-card-content {
+    flex: 1; /* 让文字区域填充剩余空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.experience-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.experience-card p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.experience-card a {
+    color: var(--link-blue);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.experience-card a:hover {
+    opacity: 0.8;
+}
+
+/* 响应式适配：在小屏幕上改回垂直排列 */
+@media (max-width: 600px) {
     .experience-card {
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+        align-items: flex-start;
     }
 
-    .experience-image {
-        flex: none;
-        width: 100px;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    .experience-image img {
-        height: 100px;
-    }
-
-    .experience-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .experience-content p {
-        font-size: 0.95rem;
+    .experience-card img {
+        margin-bottom: 1rem;
+        margin-right: 0;
+        width: 100%; /* 在小屏幕下拉伸适配 */
+        max-width: 200px;
     }
 }
 
-/* 小屏幕优化 */
-@media (max-width: 480px) {
-    .experience-card {
-        padding: 1rem;
-    }
-
-    .experience-image {
-        width: 80px;
-    }
-
-    .experience-image img {
-        height: 80px;
-    }
-
-    .experience-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .experience-content p {
-        font-size: 0.9rem;
-    }
-}
 
 /* ==================== Contact 模块 ==================== */
 .contact-section {
