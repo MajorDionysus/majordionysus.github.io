@@ -68,16 +68,22 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        console.log("切换主题到:", newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
+         // 同时更新本地存储和DOM属性
         localStorage.setItem('theme', newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
         
         // 添加旋转动画
         this.style.transform = `rotate(${newTheme === 'dark' ? '-30' : '30'}deg)`;
     });
     
     console.log("主题切换功能已初始化");
+});
+
+// 监听存储变化（确保多标签页同步）
+window.addEventListener('storage', (event) => {
+    if (event.key === 'theme') {
+        document.documentElement.setAttribute('data-theme', event.newValue);
+    }
 });
 
 /**
