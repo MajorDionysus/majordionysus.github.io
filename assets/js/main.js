@@ -165,34 +165,14 @@ function formatPublication(pub) {
 function formatExperience(exp) {
     const li = document.createElement('li');
     li.classList.add('experience-card');
-
-    // 文字部分（竖直排列）
-    const textContainer = document.createElement('div');
-    textContainer.classList.add('experience-text');
-    textContainer.innerHTML = `
-        <p><strong>${exp.title}</strong></p>
-        ${exp.role ? `<p>Role: ${exp.role}</p>` : ''}
-        ${exp.year ? `<p>Year: ${exp.year}</p>` : ''}
+    li.innerHTML = `
+        <h3>${exp.title}</h3>
+        ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
         ${exp.description ? `<p>${exp.description}</p>` : ''}
+        ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
     `;
-
-    // 图片部分
-    const imageContainer = document.createElement('div');
-    imageContainer.classList.add('experience-image');
-    if (exp.image) {
-        const img = document.createElement('img');
-        img.src = "../assets/images/${exp.image}";
-        img.alt = `Image for ${exp.title}`;
-        imageContainer.appendChild(img);
-    }
-
-    // 把文字和图片加入主容器
-    li.appendChild(textContainer);
-    li.appendChild(imageContainer);
-
     return li;
 }
-
 
 
 /**
