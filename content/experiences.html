@@ -6,6 +6,14 @@
     <title>Research & Projects | Renjie Mei</title>
     <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
     <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
+    <script>
+    // 全局主题初始化（必须放在所有页面）
+    document.addEventListener('DOMContentLoaded', function() {
+        // 从localStorage读取主题状态
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    });
+    </script>
 </head>
 <body>
     <div class="container">
