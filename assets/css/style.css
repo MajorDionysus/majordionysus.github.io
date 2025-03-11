@@ -122,10 +122,10 @@ body {
 
 /* ==================== 主要内容区域 ==================== */
 .main-content {
-    margin-left: 320px; /* 留出 sidebar 的宽度 */
+    margin-left: 321px; /* 留出 sidebar 的宽度 */
     padding: 3rem 4rem;
     flex: 1;
-    max-width: 1380px;
+    max-width: 1320px;
 }
 
 /* 卡片效果 */
