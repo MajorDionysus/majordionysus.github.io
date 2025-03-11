@@ -433,15 +433,19 @@ body {
 /* ==================== Publications 卡片 ==================== */
 .publication-card {
     background: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start; /* 顶部对齐 */
 }
 
+/* 左侧彩色指示条 */
 .publication-card::before {
     content: '';
     position: absolute;
@@ -454,6 +458,72 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* 图片容器 */
+.publication-image {
+    flex: 0 0 150px; /* 固定宽度 */
+    position: relative;
+    align-self: flex-start; /* 顶部对齐 */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--card-border);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+/* 图片样式 */
+.publication-image img {
+    width: 100%;
+    height: 200px; /* 固定高度 */
+    object-fit: cover; /* 保持比例 */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* 文字内容区域 */
+.publication-content {
+    flex: 1;
+    min-width: 0; /* 防止内容溢出 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* 标题 */
+.publication-content h3 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+/* 作者、年份等信息 */
+.publication-content p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 摘要 */
+.publication-content .abstract {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
+/* 链接 */
+.publication-content a {
+    color: var(--link-blue);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.publication-content a:hover {
+    opacity: 0.8;
+}
+
+/* Hover 效果 */
 .publication-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
@@ -463,36 +533,67 @@ body {
     transform: scaleY(1);
 }
 
-.publication-card h3 {
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-    font-size: 1.5rem;
+.publication-card:hover .publication-image {
+    transform: scale(1.03);
 }
 
-.publication-card p {
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .publication-card {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .publication-image {
+        flex: none;
+        width: 120px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .publication-image img {
+        height: 160px;
+    }
+
+    .publication-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .publication-content p {
+        font-size: 0.95rem;
+    }
+
+    .publication-content .abstract {
+        font-size: 0.9rem;
+    }
 }
 
-.publication-card a {
-    color: var(--link-blue);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
+/* 小屏幕优化 */
+@media (max-width: 480px) {
+    .publication-card {
+        padding: 1rem;
+    }
 
-.publication-card a:hover {
-    opacity: 0.8;
-}
+    .publication-image {
+        width: 100px;
+    }
 
-/* 如果有图片 */
-.publication-card img {
-    width: 100%;
-    max-width: 200px; /* 限制图片宽度 */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    .publication-image img {
+        height: 140px;
+    }
+
+    .publication-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .publication-content p {
+        font-size: 0.9rem;
+    }
+
+    .publication-content .abstract {
+        font-size: 0.85rem;
+    }
 }
 
 /* ==================== Experiences 卡片 ==================== */
@@ -505,8 +606,12 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 1.5rem;
+    display: flex; /* 使用 flex 布局 */
+    gap: 1.5rem; /* 图片与文字间距 */
+    align-items: flex-start; /* 顶部对齐 */
 }
 
+/* 左侧彩色指示条 */
 .experience-card::before {
     content: '';
     position: absolute;
@@ -519,6 +624,64 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* 图片容器 */
+.experience-image {
+    flex: 0 0 120px; /* 固定宽度 */
+    position: relative;
+    align-self: flex-start; /* 顶部对齐 */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--card-border);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+/* 图片样式 */
+.experience-image img {
+    width: 100%;
+    height: 120px; /* 固定高度 */
+    object-fit: cover; /* 保持比例 */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* 文字内容区域 */
+.experience-content {
+    flex: 1;
+    min-width: 0; /* 防止内容溢出 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* 标题 */
+.experience-content h3 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+/* 描述 */
+.experience-content p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 链接 */
+.experience-content a {
+    color: var(--link-blue);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.experience-content a:hover {
+    opacity: 0.8;
+}
+
+/* Hover 效果 */
 .experience-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
@@ -528,36 +691,59 @@ body {
     transform: scaleY(1);
 }
 
-.experience-card h3 {
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-    font-size: 1.5rem;
+.experience-card:hover .experience-image {
+    transform: scale(1.03);
 }
 
-.experience-card p {
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .experience-card {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .experience-image {
+        flex: none;
+        width: 100px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .experience-image img {
+        height: 100px;
+    }
+
+    .experience-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .experience-content p {
+        font-size: 0.95rem;
+    }
 }
 
-.experience-card a {
-    color: var(--link-blue);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
+/* 小屏幕优化 */
+@media (max-width: 480px) {
+    .experience-card {
+        padding: 1rem;
+    }
 
-.experience-card a:hover {
-    opacity: 0.8;
-}
+    .experience-image {
+        width: 80px;
+    }
 
-/* 如果有图片 */
-.experience-card img {
-    width: 100%;
-    max-width: 150px; /* 限制图片宽度 */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    .experience-image img {
+        height: 80px;
+    }
+
+    .experience-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .experience-content p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ==================== Contact 模块 ==================== */
