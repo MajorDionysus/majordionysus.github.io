@@ -289,24 +289,10 @@ body {
     box-shadow: var(--shadow);
 }
 
-/* 图标衬底容器 */
-.interests-list .icon-container {
-    width: 50px; /* 固定宽度 */
-    height: 50px; /* 固定高度 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary); /* 衬底背景色 */
-    border-radius: 8px; /* 圆角 */
-    box-shadow: 0 0 8px rgba(123, 115, 255, 0.3); /* 添加阴影 */
-}
-
-/* 图标 */
 .interests-list img {
-    width: 30px; /* 图标尺寸 */
-    height: 30px; /* 图标尺寸 */
-    object-fit: contain; /* 保持图标比例 */
-    /* 不需要 filter，保持图标原始颜色 */
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 /* ==================== Timeline 卡片格式 ==================== */
@@ -326,18 +312,17 @@ body {
     margin-top: 1.5rem;
 }
 
-/* Timeline 卡片 */
 .timeline-item {
     display: flex;
-    align-items: flex-start; /* 顶部对齐 */
-    gap: 1.5rem; /* 图片和内容的间距 */
+    align-items: center;
+    gap: 1.5rem;
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     padding: 1.5rem;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* 增加卡片间距 */
 }
 
 .timeline-item:hover {
@@ -345,58 +330,27 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
-/* 图片部分 */
 .timeline-item img {
-    width: 118px; /* 固定图片宽度 */
-    height: auto; /* 固定图片高度 */
+    width: 150px;
+    height: 150px;
     border-radius: 12px; /* 统一圆角 */
-    object-fit: cover; /* 保持图片比例 */
-    flex-shrink: 0; /* 防止图片被压缩 */
+    object-fit: cover;
 }
 
-/* 文字内容部分 */
 .timeline-content {
-    flex: 1; /* 内容占据剩余空间 */
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* 标题、时间和描述之间的间距 */
+    flex: 1;
 }
 
-/* 标题 */
 .timeline-content h3 {
     font-size: 1.5rem;
     color: var(--primary);
-    margin: 0; /* 去除默认 margin */
-    line-height: 1.3; /* 调整行高 */
+    margin-bottom: 0.5rem;
 }
 
-/* 时间 */
-.timeline-content .timeline-time {
-    font-size: 0.9rem;
-    color: var(--muted-text);
-    font-weight: 500; /* 中等字重 */
-    margin: 0; /* 去除默认 margin */
-}
-
-/* 描述 */
 .timeline-content p {
     font-size: 1rem;
     color: var(--text);
-    line-height: 1.6; /* 增加行高，提升可读性 */
-    margin: 0; /* 去除默认 margin */
-}
-
-/* 链接 */
-.timeline-content a {
-    color: var(--link-blue);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-    font-size: 0.9rem;
-    margin-top: 0.5rem; /* 链接与描述的间距 */
-}
-
-.timeline-content a:hover {
-    opacity: 0.8;
+    line-height: 1.6;
 }
 
 /* ==================== Notion 卡片样式 ==================== */
@@ -424,15 +378,12 @@ body {
 .publication-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: flex-start; /* 顶部对齐 */
-    gap: 1.5rem; /* 图片和内容的间距 */
+    margin-bottom: 1.5rem; /* 增加卡片间距 */
 }
 
 .publication-card::before {
@@ -456,37 +407,23 @@ body {
     transform: scaleY(1);
 }
 
-.publication-card img {
-    width: 120px; /* 固定图片宽度 */
-    height: 120px; /* 固定图片高度 */
-    border-radius: 12px; /* 统一圆角 */
-    object-fit: cover; /* 保持图片比例 */
-}
-
-.publication-content {
-    flex: 1; /* 内容占据剩余空间 */
-}
-
-.publication-content h3 {
-    font-size: 1.5rem;
+.publication-card h3 {
     color: var(--primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
 }
 
-.publication-content p {
-    font-size: 1rem;
+.publication-card p {
     color: var(--text);
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
+    font-size: 14px;
 }
 
-.publication-content a {
-    color: var(--link-blue);
+.publication-card a {
+    color: var(--link-blue); /* 使用更亮的蓝色 */
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
 
-.publication-content a:hover {
+.publication-card a:hover {
     opacity: 0.8;
 }
 
@@ -494,12 +431,12 @@ body {
 .experience-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 12px; /* 统一圆角 */
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* 增加卡片间距 */
 }
 
 .experience-card::before {
@@ -525,34 +462,12 @@ body {
 
 .experience-card h3 {
     color: var(--primary);
-    margin-bottom: 0.75rem;
-    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .experience-card p {
     color: var(--text);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-}
-
-.experience-card a {
-    color: var(--link-blue);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.experience-card a:hover {
-    opacity: 0.8;
-}
-
-/* 如果有图片 */
-.experience-card img {
-    width: 100%;
-    max-width: 150px; /* 限制图片宽度 */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    font-size: 14px;
 }
 
 /* ==================== Contact 模块 ==================== */
