@@ -3,7 +3,7 @@ const DATA_BASE_PATH = '../data/'; // JSON 数据文件的基础路径
 const PAGE_DATA_MAP = {
     publications: { format: formatPublication, file: 'publications.json' },
     experiences: { format: formatExperience, file: 'experiences.json' },
-    'life-timeline': { format: formatLifeEvent, file: 'life.json' },
+    'life-timeline': { format: formatLifeEvent, file: 'life.json' }
 };
 
 // 页面加载完成后执行
