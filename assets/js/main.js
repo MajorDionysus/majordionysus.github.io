@@ -154,7 +154,6 @@ function formatPublication(pub) {
         <p><strong>Journal:</strong> ${pub.journal}</p>
         ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
         ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
-        ${pub.image ? `<img src="../assets/images/${pub.image}" alt="${pub.title}" class="publication-image">` : ''}
     `;
     return li;
 }
@@ -172,7 +171,6 @@ function formatExperience(exp) {
         ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
         ${exp.description ? `<p>${exp.description}</p>` : ''}
         ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
-        ${exp.image ? `<img src="../assets/images/${exp.image}" alt="${exp.title}" class="experience-image">` : ''}
     `;
     return li;
 }
@@ -193,20 +191,4 @@ function formatLifeEvent(event) {
     return li;
 }
 
-/**
- * 格式化 Contact 数据
- * @param {Object} contact - 单条联系信息数据
- * @returns {HTMLElement}
- */
-function formatContact(contact) {
-    const container = document.createElement('div');
-    container.classList.add('contact-info');
-    container.innerHTML = `
-        ${contact.name ? `<p><strong>Name:</strong> ${contact.name}</p>` : ''}
-        ${contact.email ? `<p><strong>Email:</strong> <a href="mailto:${contact.email}">${contact.email}</a></p>` : ''}
-        ${contact.phone ? `<p><strong>Phone:</strong> ${contact.phone}</p>` : ''}
-        ${contact.linkedin ? `<p><strong>LinkedIn:</strong> <a href="${contact.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>` : ''}
-        ${contact.github ? `<p><strong>GitHub:</strong> <a href="${contact.github}" target="_blank" rel="noopener noreferrer">GitHub</a></p>` : ''}
-    `;
-    return container;
-}
+
