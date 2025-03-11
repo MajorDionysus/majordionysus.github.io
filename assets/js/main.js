@@ -139,21 +139,21 @@ function renderData(container, data, formatFunction) {
 // ==================== 数据格式化函数 ====================
 
 /**
-* 格式化 Publications 数据
+ * 格式化 Publications 数据
  * @param {Object} pub - 单条出版物数据
  * @returns {HTMLElement}
  */
 function formatPublication(pub) {
     const li = document.createElement('li');
     li.classList.add('publication-card');
-    li.innerHTML = 
+    li.innerHTML = `
         <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
         <p><strong>Authors:</strong> ${pub.authors}</p>
         <p><strong>Year:</strong> ${pub.year}</p>
         <p><strong>Journal:</strong> ${pub.journal}</p>
-        ${pub.doi ? <p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p> : ''}
-        ${pub.abstract ? <p class="abstract">${pub.abstract}</p> : ''}
-    ;
+        ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
+        ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
+    `;
     return li;
 }
 
