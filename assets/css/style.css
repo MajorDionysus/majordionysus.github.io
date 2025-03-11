@@ -246,10 +246,24 @@ body {
     box-shadow: var(--shadow);
 }
 
+/* 图标容器 */
+.interests-list .icon-container {
+    width: 50px; /* 固定宽度 */
+    height: 50px; /* 固定高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary); /* 使用主色调作为背景 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 0 8px rgba(123, 115, 255, 0.3); /* 添加阴影 */
+}
+
+/* 图标 */
 .interests-list img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+    width: 30px; /* 图标尺寸 */
+    height: 30px; /* 图标尺寸 */
+    object-fit: contain; /* 保持图标比例 */
+    filter: brightness(0) invert(1); /* 将图标颜色反转为白色 */
 }
 
 /* ==================== Timeline 卡片格式 ==================== */
