@@ -357,7 +357,7 @@ body {
 
 /* 图片部分 */
 .timeline-item img {
-    width: 108px; /* 固定图片宽度 */
+    width: 118px; /* 固定图片宽度 */
     height: auto; /* 固定图片高度 */
     border-radius: 12px; /* 统一圆角 */
     object-fit: cover; /* 保持图片比例 */
