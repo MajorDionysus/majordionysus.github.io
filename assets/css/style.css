@@ -596,3 +596,56 @@ body {
 .contact-item-content a:hover {
     opacity: 0.8;
 }
+
+/* ==================== 主题切换 ==================== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #1A1A1A;         /* 深灰文字 */
+    --background: #FFFFFF;   /* 纯白背景 */
+    --card-bg: #F5F5F5;     /* 浅灰卡片背景 */
+    --card-border: #E0E0E0; /* 浅边框 */
+    --muted-text: #666666;   /* 中等灰文字 */
+  }
+}
+
+[data-theme="light"] {
+    --primary: #6A64F0;       /* 稍柔和的紫色 */
+    --secondary: #00B39E;     /* 稍深的青绿 */
+    --accent: #FF6B6B;        /* 标准红色 */
+    --text: #1A1A1A;         /* 深灰文字 */
+    --background: #FFFFFF;    /* 纯白背景 */
+    --card-bg: #F5F5F5;      /* 浅灰卡片背景 */
+    --card-border: #E0E0E0;  /* 浅边框 */
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* 更柔和的阴影 */
+    --muted-text: #666666;    /* 中等灰文字 */
+    --link-blue: #4299E1;     /* 标准链接蓝 */
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent);
+}
