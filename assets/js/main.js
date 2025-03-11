@@ -50,6 +50,27 @@ function setupNavigation() {
     }
 }
 
+// 主题切换系统
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const savedTheme = localStorage.getItem('theme') || getSystemTheme();
+    
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggle.style.transform = `rotate(${savedTheme === 'dark' ? '-30' : '30'}deg)`;
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.style.transform = `rotate(${newTheme === 'dark' ? '-30' : '30'}deg)`;
+    });
+}
+
 /**
  * 通用数据加载函数
  * @param {string} elementId - 容器元素的 ID
