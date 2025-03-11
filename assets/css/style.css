@@ -430,6 +430,9 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start; /* 顶部对齐 */
+    gap: 1.5rem; /* 图片和内容的间距 */
 }
 
 .publication-card::before {
@@ -453,36 +456,38 @@ body {
     transform: scaleY(1);
 }
 
-.publication-card h3 {
-    color: var(--primary);
-    margin-bottom: 0.75rem;
+.publication-card img {
+    width: 120px; /* 固定图片宽度 */
+    height: 120px; /* 固定图片高度 */
+    border-radius: 12px; /* 统一圆角 */
+    object-fit: cover; /* 保持图片比例 */
+}
+
+.publication-content {
+    flex: 1; /* 内容占据剩余空间 */
+}
+
+.publication-content h3 {
     font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
 }
 
-.publication-card p {
-    color: var(--text);
+.publication-content p {
     font-size: 1rem;
+    color: var(--text);
     line-height: 1.6;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
-.publication-card a {
+.publication-content a {
     color: var(--link-blue);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
 
-.publication-card a:hover {
+.publication-content a:hover {
     opacity: 0.8;
-}
-
-/* 如果有图片 */
-.publication-card img {
-    width: 100%;
-    max-width: 200px; /* 限制图片宽度 */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
 }
 
 /* ==================== Experiences 卡片 ==================== */
