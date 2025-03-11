@@ -138,44 +138,23 @@ function renderData(container, data, formatFunction) {
 
 // ==================== 数据格式化函数 ====================
 
-/**
- * 格式化 Publications 数据
+* 格式化 Publications 数据
  * @param {Object} pub - 单条出版物数据
  * @returns {HTMLElement}
  */
 function formatPublication(pub) {
     const li = document.createElement('li');
     li.classList.add('publication-card');
-
-    // 文字内容容器
-    const contentDiv = document.createElement('div');
-    contentDiv.classList.add('publication-card-content');
-    contentDiv.innerHTML = `
+    li.innerHTML = 
         <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
         <p><strong>Authors:</strong> ${pub.authors}</p>
         <p><strong>Year:</strong> ${pub.year}</p>
         <p><strong>Journal:</strong> ${pub.journal}</p>
-        ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
-        ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
-    `;
-
-    // 图片容器
-    const imageDiv = document.createElement('div');
-    imageDiv.classList.add('publication-card-image');
-    if (pub.cover) {
-        const img = document.createElement('img');
-        img.src = pub.cover;
-        img.alt = `Cover of ${pub.title}`;
-        imageDiv.appendChild(img);
-    }
-
-    // 把文字和图片都添加到 li
-    li.appendChild(contentDiv);
-    li.appendChild(imageDiv);
-
+        ${pub.doi ? <p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p> : ''}
+        ${pub.abstract ? <p class="abstract">${pub.abstract}</p> : ''}
+    ;
     return li;
 }
-
 
 /**
  * 格式化 Experiences 数据
@@ -186,32 +165,33 @@ function formatExperience(exp) {
     const li = document.createElement('li');
     li.classList.add('experience-card');
 
-    // 文字内容容器
-    const contentDiv = document.createElement('div');
-    contentDiv.classList.add('experience-card-content');
-    contentDiv.innerHTML = `
-        <h3>${exp.title}</h3>
-        ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
+    // 文字部分（竖直排列）
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('experience-text');
+    textContainer.innerHTML = `
+        <p><strong>${exp.title}</strong></p>
+        ${exp.role ? `<p>Role: ${exp.role}</p>` : ''}
+        ${exp.year ? `<p>Year: ${exp.year}</p>` : ''}
         ${exp.description ? `<p>${exp.description}</p>` : ''}
-        ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
     `;
 
-    // 图片容器
-    const imageDiv = document.createElement('div');
-    imageDiv.classList.add('experience-card-image');
+    // 图片部分
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('experience-image');
     if (exp.image) {
         const img = document.createElement('img');
         img.src = exp.image;
         img.alt = `Image for ${exp.title}`;
-        imageDiv.appendChild(img);
+        imageContainer.appendChild(img);
     }
 
-    // 把文字和图片都添加到 li
-    li.appendChild(imageDiv);
-    li.appendChild(contentDiv);
-    
+    // 把文字和图片加入主容器
+    li.appendChild(textContainer);
+    li.appendChild(imageContainer);
+
     return li;
 }
+
 
 
 /**
