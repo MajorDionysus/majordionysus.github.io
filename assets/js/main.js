@@ -138,6 +138,7 @@ function renderData(container, data, formatFunction) {
 
 // ==================== 数据格式化函数 ====================
 
+/**
 * 格式化 Publications 数据
  * @param {Object} pub - 单条出版物数据
  * @returns {HTMLElement}
