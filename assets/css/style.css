@@ -402,7 +402,7 @@ body {
 .skills-icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
     justify-items: center;
 }
 
@@ -469,15 +469,6 @@ body {
     font-size: 14px;
 }
 
-.publication-card a {
-    color: var(--link-blue); /* 使用更亮的蓝色 */
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.publication-card a:hover {
-    opacity: 0.8;
-}
 
 /* ==================== Experiences 卡片 ==================== */
 .experience-section {
