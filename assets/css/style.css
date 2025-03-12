@@ -221,7 +221,7 @@ body {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
@@ -262,7 +262,7 @@ body {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
@@ -303,7 +303,7 @@ body {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
@@ -392,7 +392,7 @@ body {
 }
 
 .skills-card h3 {
-    color: #ffffff;
+    color: var(--text);
     font-size: 16px;
     margin-bottom: 12px;
     font-weight: 600;
@@ -402,7 +402,7 @@ body {
 .skills-icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
     justify-items: center;
 }
 
@@ -423,7 +423,7 @@ body {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
@@ -476,7 +476,7 @@ body {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
@@ -528,7 +528,7 @@ body {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
