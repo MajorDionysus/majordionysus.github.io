@@ -383,7 +383,7 @@ body {
     right: 20px; /* 让它固定在页面右侧 */
     transform: translateY(-50%);
     width: 160px;
-    background: rgba(30, 30, 30, 0.9);
+    background: var(--card-bg);
     border-radius: 12px;
     padding: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
