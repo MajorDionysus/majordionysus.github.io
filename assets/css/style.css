@@ -1,31 +1,31 @@
-/* ==================== 高级学术风格  ==================== */
+/* ==================== 主题变量 ==================== */
 :root {
-    /* 暗色主题 */
-    --primary: #3A5A99; /* 低饱和深蓝 */
-    --secondary: #5F7E97; /* 冷灰蓝 */
-    --accent: #B85C5C; /* 低调深酒红 */
-    --text: #EAEAEA; /* 暖白 */
-    --background: #181A1B; /* 深灰黑 */
-    --card-bg: #222427; /* 稳重深灰 */
-    --card-border: #3A3D40; /* 柔和分割线 */
-    --shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
-    --muted-text: #A0A5AB;
-    --link-blue: #648CD3; /* 科研网站风格的冷色超链接 */
+    /* 暗色主题（Cyberpunk 2077 风格） */
+    --primary: #FFD700;  /* 赛博朋克黄 */
+    --secondary: #00E0E0;  /* 霓虹青 */
+    --accent: #FF3864;  /* 亮红色 */
+    --text: #EAEAEA;  /* 亮灰 */
+    --background: #0A0A0A;  /* 深黑 */
+    --card-bg: #151515;  /* 次深黑 */
+    --card-border: #2E2E2E;  /* 细灰线 */
+    --shadow: 0 10px 30px rgba(255, 215, 0, 0.3); /* 赛博朋克黄色阴影 */
+    --muted-text: #A0A0A0;
+    --link-blue: #00A3FF;
 }
 
 [data-theme="light"] {
-    --primary: #2F4A75; /* 低饱和蓝 */
-    --secondary: #8098B1; /* 高级冷灰 */
-    --accent: #A14444; /* 暖色点缀 */
-    --text: #2A2A2A; /* 深灰，减少高对比 */
-    --background: #F8F9FA; /* 高端米白 */
-    --card-bg: #FFFFFF; /* 亮色模式下卡片为纯白 */
-    --card-border: #D1D5DB; /* 轻柔分割线 */
-    --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    /* 亮色主题（Minimal 主题风格） */
+    --primary: #2E5EAA;  /* 深蓝 */
+    --secondary: #8ECAE6;  /* 柔和青 */
+    --accent: #E63946;  /* 低饱和红 */
+    --text: #222222;  /* 深灰 */
+    --background: #F7F7F7;  /* 纯白 */
+    --card-bg: #FFFFFF;  /* 卡片白 */
+    --card-border: #DADADA;  /* 低对比灰 */
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
     --muted-text: #666666;
-    --link-blue: #3B6DBD; /* 科学期刊常用蓝色 */
+    --link-blue: #1D3557;  /* 深蓝 */
 }
-
 
 
 /* 主题切换按钮 */
