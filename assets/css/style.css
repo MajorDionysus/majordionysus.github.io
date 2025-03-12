@@ -420,6 +420,10 @@ body {
     border-radius: 2px; /* 圆角效果 */
 }
 
+.skills-lists img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
 
 /* ==================== Publications 卡片 ==================== */
 .publication-section {
