@@ -1,32 +1,31 @@
 /* ==================== 主题变量 ==================== */
 :root {
-    /* 暗色主题（Cyberpunk 2077 风格） */
-    --primary: #FFD700;  /* 赛博朋克黄 */
-    --secondary: #00E0E0;  /* 霓虹青 */
-    --accent: #FF3864;  /* 亮红色 */
-    --text: #EAEAEA;  /* 亮灰 */
-    --background: #0A0A0A;  /* 深黑 */
-    --card-bg: #151515;  /* 次深黑 */
-    --card-border: #2E2E2E;  /* 细灰线 */
-    --shadow: 0 10px 30px rgba(255, 215, 0, 0.3); /* 赛博朋克黄色阴影 */
+    /* 🌃 暗色主题（Cyberpunk 2077 风格） */
+    --primary: #FFCC00;   /* 赛博朋克黄 */
+    --secondary: #00FFFF; /* 霓虹蓝 */
+    --accent: #FF003C;    /* 亮红 */
+    --text: #EAEAEA;      /* 亮灰 */
+    --background: #080A0E; /* 深黑 */
+    --card-bg: #12151C;   /* 次黑 */
+    --card-border: #2E2E2E; /* 低对比边框 */
+    --shadow: 0 0 20px rgba(255, 204, 0, 0.4); /* 霓虹黄光晕 */
     --muted-text: #A0A0A0;
     --link-blue: #00A3FF;
 }
 
 [data-theme="light"] {
-    /* 亮色主题（Minimal 主题风格） */
-    --primary: #2E5EAA;  /* 深蓝 */
-    --secondary: #8ECAE6;  /* 柔和青 */
-    --accent: #E63946;  /* 低饱和红 */
-    --text: #222222;  /* 深灰 */
-    --background: #F7F7F7;  /* 纯白 */
-    --card-bg: #FFFFFF;  /* 卡片白 */
-    --card-border: #DADADA;  /* 低对比灰 */
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+    /* ☀️ 亮色主题（Minimal 风格） */
+    --primary: #2E5EAA;   /* 低饱和蓝 */
+    --secondary: #8ECAE6; /* 柔和青 */
+    --accent: #E63946;    /* 低饱和红 */
+    --text: #222222;      /* 深灰 */
+    --background: #FDFDFD; /* 米白 */
+    --card-bg: #FFFFFF;   /* 纯白 */
+    --card-border: #E5E5E5; /* 低对比边框 */
+    --shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* 柔和阴影 */
     --muted-text: #666666;
-    --link-blue: #1D3557;  /* 深蓝 */
+    --link-blue: #1D3557; /* 深蓝 */
 }
-
 
 /* 主题切换按钮 */
 .theme-toggle {
