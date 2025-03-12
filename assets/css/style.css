@@ -393,10 +393,10 @@ body {
 }
 
 .skills-card h3 {
-    color: var(--accent);
-    font-size: 16px;
+    color: var(--text);
+    font-size: 18px;
     margin-bottom: 12px;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .skills-icons img:hover {
