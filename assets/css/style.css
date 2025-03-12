@@ -383,7 +383,7 @@ body {
     transform: translateY(-50%);
     width: 160px;
     background: var(--card-bg);
-    border-radius: 12px;
+    border: 1px solid var(--card-border);
     padding: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
@@ -397,24 +397,33 @@ body {
     font-weight: 600;
 }
 
-/* 图标网格布局 */
-.skills-icons {
+.skills-icons img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+
+.skills-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     justify-items: center;
 }
 
-.skills-icons img {
+.skills-list img {
     width: 40px;
     height: 40px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: transform 0.2s ease;
 }
 
-.skills-icons img:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
+
+/* 🌃 暗色模式 - 增强对比度 */
+[data-theme="dark"] .skills-list img {
+    filter: brightness(1.5) contrast(1.2);
 }
+
 
 /* ==================== Publications 卡片 ==================== */
 .publication-section {
