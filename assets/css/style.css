@@ -10,7 +10,7 @@
     --card-border: #2E2E2E; /* 低对比边框 */
     --shadow: 0 0 20px rgba(255, 204, 0, 0.4); /* 霓虹黄光晕 */
     --muted-text: #A0A0A0;
-    --link-blue: #00A3FF;
+    --link-blue: #FF003C;
 }
 
 [data-theme="light"] {
@@ -24,7 +24,7 @@
     --card-border: #E5E5E5; /* 低对比边框 */
     --shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* 柔和阴影 */
     --muted-text: #666666;
-    --link-blue: #1D3557; /* 深蓝 */
+    --link-blue: #E63946; /* 深蓝 */
 }
 
 /* 主题切换按钮 */
