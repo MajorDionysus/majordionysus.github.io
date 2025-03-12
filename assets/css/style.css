@@ -376,6 +376,47 @@ body {
     box-shadow: var(--shadow);
 }
 
+/* ==================== Skills 卡片模块 ==================== */
+.skills-card {
+    position: fixed;
+    top: 50%;
+    right: 20px; /* 让它固定在页面右侧 */
+    transform: translateY(-50%);
+    width: 160px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.skills-card h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* 图标网格布局 */
+.skills-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.skills-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.skills-icons img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
 /* ==================== Publications 卡片 ==================== */
 .publication-section {
     margin: 2rem 0;
