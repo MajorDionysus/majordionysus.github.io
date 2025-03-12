@@ -1,8 +1,8 @@
 [
     {
-        "title": "ECG signal Acquisition, Denoising and Information Parsing",
+        "title": "Course Project：ECG signal Acquisition, Denoising and Information Parsing",
         "role": "Main member",
-        "description": "This project enables ECG signal acquisition, storage, and analysis through a MATLAB-based data collection system and a Django web interface, providing a streamlined workflow for real-time biomedical signal processing.",
+        "description": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
         "year": "2024",
         "url": "https://github.com/MajorDionysus/IME_Expriment_I_Lab2",
         "image": "pro/ecg_imelab.png"
