@@ -1,11 +1,11 @@
 [
     {
-        "title": "AI Research Project",
-        "role": "Lead Researcher",
-        "description": "Conducted cutting-edge research on natural language processing and machine learning.",
-        "year": "2023",
-        "url": "https://doi.org/10.1038/s41565-024-00001",
-        "image": "school/sustech-university.png"
+        "title": "ECG signal Acquisition, Denoising and Information Parsing",
+        "role": "Main member",
+        "description": "This project enables ECG signal acquisition, storage, and analysis through a MATLAB-based data collection system and a Django web interface, providing a streamlined workflow for real-time biomedical signal processing.",
+        "year": "2024",
+        "url": "https://github.com/MajorDionysus/IME_Expriment_I_Lab2",
+        "image": "pro/ecg_imelab.png"
     },
        {
         "title": "AI Research Project",
