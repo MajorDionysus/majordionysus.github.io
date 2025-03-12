@@ -1,30 +1,30 @@
 /* ==================== 主题变量 ==================== */
 :root {
-    /* 🌃 暗色主题（Cyberpunk 2077 风格） */
-    --primary: #FFCC00;   /* 赛博朋克黄 */
-    --secondary: #00FFFF; /* 霓虹蓝 */
-    --accent: #FF003C;    /* 亮红 */
-    --text: #EAEAEA;      /* 亮灰 */
-    --background: #080A0E; /* 深黑 */
-    --card-bg: #12151C;   /* 次黑 */
-    --card-border: #2E2E2E; /* 低对比边框 */
-    --shadow: 0 0 20px rgba(255, 204, 0, 0.4); /* 霓虹黄光晕 */
-    --muted-text: #A0A0A0;
-    --link-blue: #FF003C;
+    /* 🌃 赛博朋克 2077 高级版 */
+    --primary: #D4AF37;   /* 深金色 */
+    --secondary: #00B4D8; /* 霓虹青蓝 */
+    --accent: #D72638;    /* 深红 */
+    --text: #E0E0E0;      /* 柔和亮灰 */
+    --background: #0A0F1E; /* 深蓝黑 */
+    --card-bg: #1B1F2A;   /* 深石墨灰 */
+    --card-border: #313645; /* 低对比边框 */
+    --shadow: 0 0 20px rgba(212, 175, 55, 0.4); /* 低饱和金色光晕 */
+    --muted-text: #A5A5A5;
+    --link-blue: #D72638; /* 深红 */
 }
 
 [data-theme="light"] {
-    /* ☀️ 亮色主题（Minimal 风格） */
+    /* ☀️ 亮色主题（更优雅的 Minimal 方案） */
     --primary: #2E5EAA;   /* 低饱和蓝 */
     --secondary: #8ECAE6; /* 柔和青 */
-    --accent: #E63946;    /* 低饱和红 */
+    --accent: #D72638;    /* 低饱和红 */
     --text: #222222;      /* 深灰 */
     --background: #FDFDFD; /* 米白 */
     --card-bg: #FFFFFF;   /* 纯白 */
     --card-border: #E5E5E5; /* 低对比边框 */
     --shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* 柔和阴影 */
     --muted-text: #666666;
-    --link-blue: #E63946; /* 深蓝 */
+    --link-blue: #D72638;
 }
 
 /* 主题切换按钮 */
@@ -420,30 +420,25 @@ body {
     border-radius: 2px; /* 圆角效果 */
 }
 
-.skills-lists img:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
-
 /* ==================== Publications 卡片 ==================== */
 .publication-section {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 12px; /* 统一圆角 */
+    border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border);
+    border: 1px solid var(--card-border);
 }
 
 .publication-card {
     background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px; /* 统一圆角 */
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem; /* 增加卡片间距 */
+    margin-bottom: 1.5rem;
 }
 
 .publication-card::before {
@@ -476,7 +471,6 @@ body {
     color: var(--text);
     font-size: 14px;
 }
-
 
 /* ==================== Experiences 卡片 ==================== */
 .experience-section {
