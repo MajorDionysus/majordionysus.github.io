@@ -400,11 +400,6 @@ body {
     font-weight: 800;
 }
 
-.skills-icons img:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
-
 .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -417,8 +412,13 @@ body {
     height: 50px;
     object-fit: contain;
     filter: brightness(1);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
     border-radius: 2px; /* 圆角效果 */
+}
+
+.skills-list img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 /* ==================== Publications 卡片 ==================== */
