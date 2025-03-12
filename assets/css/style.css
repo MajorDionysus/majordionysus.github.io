@@ -375,6 +375,15 @@ body {
 }
 
 /* ==================== Publications 卡片 ==================== */
+.publication-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px; /* 统一圆角 */
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
 .publication-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -428,6 +437,15 @@ body {
 }
 
 /* ==================== Experiences 卡片 ==================== */
+.experience-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px; /* 统一圆角 */
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
 .experience-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
