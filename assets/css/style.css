@@ -420,10 +420,6 @@ body {
     border-radius: 2px; /* 圆角效果 */
 }
 
-/* 🌃 暗色模式 - 增强对比度 */
-[data-theme="dark"] .skills-list img {
-    filter: brightness(1.2) contrast(1.2);
-}
 
 /* ==================== Publications 卡片 ==================== */
 .publication-section {
