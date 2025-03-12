@@ -389,10 +389,11 @@ body {
     backdrop-filter: blur(10px);
     text-align: center;
     border-radius: 12px; /* 圆角效果 */
+    backdrop-filter: blur(18px); /* 更强的模糊效果 */
 }
 
 .skills-card h3 {
-    color: var(--text);
+    color: var(--accent);
     font-size: 16px;
     margin-bottom: 12px;
     font-weight: 600;
@@ -416,19 +417,12 @@ body {
     object-fit: contain;
     filter: brightness(1);
     transition: transform 0.2s ease;
-    border-radius: 8px; /* 圆角效果 */
+    border-radius: 2px; /* 圆角效果 */
 }
 
 /* 🌃 暗色模式 - 增强对比度 */
 [data-theme="dark"] .skills-list img {
-    filter: brightness(1.5) contrast(1.2);
-}
-
-/* 🌃 暗色模式下的卡片样式 - 圆角与毛玻璃效果 */
-[data-theme="dark"] .skills-card {
-    background: rgba(0, 0, 0, 0.6); /* 胶片效果背景 */
-    border-color: rgba(255, 255, 255, 0.2); /* 更细的边框 */
-    backdrop-filter: blur(12px); /* 更强的模糊效果 */
+    filter: brightness(1.2) contrast(1.2);
 }
 
 /* ==================== Publications 卡片 ==================== */
