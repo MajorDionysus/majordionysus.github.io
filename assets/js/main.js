@@ -167,7 +167,7 @@ function formatExperience(exp) {
     const li = document.createElement('li');
     li.classList.add('experience-card');
     li.innerHTML = `
-        <h3>${exp.title}</h3>
+        <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
         ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
         ${exp.description ? `<p>${exp.description}</p>` : ''}
         ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
