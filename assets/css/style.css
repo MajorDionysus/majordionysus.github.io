@@ -541,6 +541,22 @@ body {
     font-size: 14px;
 }
 
+.experience-card a {
+    color: var(--link-blue); /* 继承主题中的链接颜色 */
+    text-decoration: none; /* 去掉默认下划线 */
+    font-weight: 600; /* 增加字体粗细，让链接更明显 */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.experience-card a:hover {
+    color: var(--primary); /* 悬停时变为主题主色 */
+    text-shadow: 0 0 10px var(--primary); /* 添加霓虹光晕效果 */
+}
+
+.experience-card a:active {
+    color: var(--accent); /* 点击时变为强调色 */
+}
+
 /* ==================== Contact 模块 ==================== */
 .contact-section {
     margin: 2rem 0;
