@@ -474,7 +474,7 @@ body {
 }
 
 .publication-card h3 {
-    color: var(--primary);
+    color: var(--accent);
     margin-bottom: 10px;
 }
 
