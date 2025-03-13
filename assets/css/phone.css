@@ -2,7 +2,17 @@
 @media (max-width: 768px) {
   /* 隐藏桌面版侧边栏 */
   .sidebar {
-    display: none;
+    background: var(--card-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-shadow: var(--shadow);
+    border-right: 1px solid var(--border);
+    border-radius: 0 24px 24px 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row; /* 垂直排列内容 */
   }
 
   /* 调整主内容区 */
