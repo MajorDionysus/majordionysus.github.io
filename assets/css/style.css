@@ -8,7 +8,7 @@
     --background: #121212; /* 古绢黑 */
     --card-bg: #1E1E1E;   /* 古典石墨灰 */
     --card-border: #5A5A5A; /* 温润金灰 */
-    --shadow: 0 0 15px rgba(62, 146, 204, 0.5); /* 青金石微光 */
+    --shadow: 0 0 20px rgba(0, 255, 242, 0.5); /* 未来电光青蓝 */
     --muted-text: #A0A0A0;
     --link-blue: #8C2F39; /* 深石榴红 */
 }
@@ -22,7 +22,7 @@
     --background: #FAFAFA; /* 宣纸白 */
     --card-bg: #FFFFFF;   /* 纯白 */
     --card-border: #D9D9D9; /* 低对比灰 */
-    --shadow: 0 5px 15px rgba(29, 78, 216, 0.15); /* 深靛蓝微光 */
+    --shadow: 0 5px 20px rgba(60, 60, 60, 0.2); /* 低调柔和灰影 */
     --muted-text: #666666;
     --link-blue: #8C2F39; /* 深石榴红 */
 }
