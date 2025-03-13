@@ -1,0 +1,165 @@
+/* mobile.css - 针对移动设备的响应式样式 */
+@media (max-width: 768px) {
+  /* 隐藏桌面版侧边栏 */
+  .sidebar {
+    display: none;
+  }
+
+  /* 调整主内容区 */
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  /* 移动端顶部导航 */
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--card-border);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .mobile-nav h1 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text);
+  }
+
+  /* 移动菜单 */
+  .mobile-menu {
+    position: fixed;
+    top: 56px;
+    left: -100%;
+    width: 100%;
+    background: var(--card-bg);
+    transition: 0.3s ease;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .mobile-menu.active {
+    left: 0;
+  }
+
+  .mobile-menu nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu nav li {
+    margin: 0.5rem 0;
+  }
+
+  .mobile-menu nav a {
+    display: block;
+    padding: 1rem;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 8px;
+  }
+
+  /* 调整内容布局 */
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* 时间轴调整 */
+  .timeline-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timeline-item img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  /* 兴趣列表调整为单列 */
+  .interests-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* 技能卡片调整 */
+  .skills-card {
+    position: static;
+    transform: none;
+    width: auto;
+    margin: 2rem 0;
+  }
+
+  /* 联系信息网格调整 */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 卡片通用调整 */
+  .card, .welcome, .profile, .research-interests, .timeline-section, .contact-section {
+    margin: 1rem 0;
+    padding: 1.5rem;
+  }
+
+  /* 调整文字大小 */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.5rem !important; }
+  p { font-size: 0.9rem; }
+
+  /* 主题切换按钮调整 */
+  .theme-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* 小屏幕横向适配 */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .welcome h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .timeline-item img {
+    max-width: 150px;
+  }
+
+  .interests-list li {
+    flex-direction: column;
+    text-align: center;
+  }
+}
