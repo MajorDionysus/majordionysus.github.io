@@ -1,1 +1,18 @@
-
+{
+    "blog": [
+        {
+            "title": "The Art of Living in the Moment",
+            "description": "The blog explores the transformative power of mindfulness in daily life.",
+            "image": "../assets/images/logo.jpg",
+            "tags": ["Mindfulness", "Mental Health"],
+            "date": "2023-12-07"
+        },
+        {
+            "title": "My Top 10 Books and Why I Love Them",
+            "description": "Discover my top 10 favorite books and the profound impact they've had on me.",
+            "image": "../assets/images/logo.jpg",
+            "tags": ["Books", "Learning"],
+            "date": "2023-10-11"
+        }
+    ]
+}
