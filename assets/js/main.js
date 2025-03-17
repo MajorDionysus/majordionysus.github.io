@@ -201,17 +201,21 @@ function formatLifeEvent(event) {
 function formatBlogCard(post) {
     const card = document.createElement('div');
     card.classList.add('blog-card');
+
     card.innerHTML = `
-        <img src="${post.image}" alt="${post.title}">
-        <div class="blog-content">
-            <h3 class="blog-title">${post.title}</h3>
-            ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
-            <div class="blog-tags">
-                ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
+        <a href="${post.link}" class="blog-card-link">
+            <img src="${post.image}" alt="${post.title}">
+            <div class="blog-content">
+                <h3 class="blog-title">${post.title}</h3>
+                ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
+                <div class="blog-tags">
+                    ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
+                </div>
+                <p class="blog-date">${post.date}</p>
             </div>
-            <p class="blog-date">${post.date}</p>
-        </div>
+        </a>
     `;
+
     return card;
 }
 
