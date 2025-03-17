@@ -93,7 +93,7 @@ body {
     border-radius: 0 24px 24px 0;
     z-index: 100;
     display: flex;
-    flex-direction: column; /* 垂直排列内容 */
+    flex-direction: column; /* 确保内容垂直排列 */
 }
 
 .sidebar h1 {
@@ -116,8 +116,29 @@ body {
     box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
 }
 
+/* 确保头像居中 */
+.sidebar-content {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: var(--shadow);
+}
+
+/* 导航栏样式 */
 .sidebar nav {
-    flex: 1; /* 导航栏占据剩余空间 */
+    flex: 1; /* 占据剩余空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 居中显示 */
 }
 
 .sidebar nav ul {
@@ -142,34 +163,14 @@ body {
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .sidebar nav a.active,
 .sidebar nav a:hover {
-    background: rgba(108, 99, 255, 0.1); /* 柔和的紫色背景 */
-    box-shadow: inset 3px 0 0 var(--accent);
-}
-
-.sidebar-content {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 1.5rem;
-}
-
-.sidebar-image {
-    flex: 0 0 160px;
-    text-align: center;
-}
-
-.siderbar avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 20%;
-    object-fit: cover;
-    border: 4px solid var(--primary);
-    box-shadow: var(--shadow);
+    background: rgba(108, 99, 255, 0.15); /* 让 hover 效果更明显 */
+    box-shadow: inset 4px 0 0 var(--accent);
+    transform: translateX(5px);
 }
 
 /* ==================== Sidebar Footer ==================== */
@@ -179,12 +180,13 @@ body {
     color: var(--muted-text);
     font-size: 0.75rem;
     border-top: 1px solid var(--border);
-    margin-top: auto; /* 将 footer 推到 sidebar 底部 */
+    margin-top: auto; /* 让 footer 贴底 */
 }
 
 .sidebar-footer p {
     margin: 0;
 }
+
 
 /* ==================== blog card ==================== */
 /* 卡片容器布局 */
