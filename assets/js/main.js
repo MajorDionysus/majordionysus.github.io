@@ -3,7 +3,8 @@ const DATA_BASE_PATH = '../data/'; // JSON 数据文件的基础路径
 const PAGE_DATA_MAP = {
     publications: { format: formatPublication, file: 'publications.json' },
     experiences: { format: formatExperience, file: 'experiences.json' },
-    'life-timeline': { format: formatLifeEvent, file: 'life.json' }
+    'life-timeline': { format: formatLifeEvent, file: 'life.json' },
+    blog: { format: formatBlogCard, file: 'blogs.json' } // 添加博客数据源
 };
 
 // 页面加载完成后执行
@@ -192,4 +193,25 @@ function formatLifeEvent(event) {
     return li;
 }
 
+/**
+ * 格式化博客卡片数据
+ * @param {Object} post - 单篇博客数据
+ * @returns {HTMLElement}
+ */
+function formatBlogCard(post) {
+    const card = document.createElement('div');
+    card.classList.add('blog-card');
+    card.innerHTML = `
+        <img src="${post.image}" alt="${post.title}">
+        <div class="blog-content">
+            <h3 class="blog-title">${post.title}</h3>
+            ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
+            <div class="blog-tags">
+                ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
+            </div>
+            <p class="blog-date">${post.date}</p>
+        </div>
+    `;
+    return card;
+}
 
