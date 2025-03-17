@@ -176,7 +176,8 @@ body {
 
 /* 单个卡片样式 */
 .blog-card {
-    background: white;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border); 
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
