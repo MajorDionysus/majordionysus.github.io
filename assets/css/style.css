@@ -165,6 +165,77 @@ body {
     margin: 0;
 }
 
+/* ==================== blog card ==================== */
+/* 卡片容器布局 */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 单个卡片样式 */
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 卡片图片样式 */
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* 文字内容区域 */
+.blog-content {
+    padding: 15px;
+}
+
+.blog-title {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.blog-description {
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0;
+}
+
+/* 标签样式 */
+.blog-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.blog-tags span {
+    font-size: 12px;
+    background: #f3f3f3;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* 日期样式 */
+.blog-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
 /* ==================== 主要内容区域 ==================== */
 .main-content {
     margin-left: 280px; /* 留出 sidebar 的宽度 */
