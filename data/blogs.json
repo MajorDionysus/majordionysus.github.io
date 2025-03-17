@@ -4,13 +4,15 @@
             "description": "The blog explores the transformative power of mindfulness in daily life.",
             "image": "../assets/images/logo.png",
             "tags": ["Mindfulness", "Mental Health"],
-            "date": "2023-12-07"
+            "date": "2023-12-07",
+                "link": "www.google.com"
         },
         {
             "title": "My Top 10 Books and Why I Love Them",
             "description": "Discover my top 10 favorite books and the profound impact they've had on me.",
             "image": "../assets/images/logo.png",
             "tags": ["Books", "Learning"],
-            "date": "2023-10-11"
+            "date": "2023-10-11",
+                "link": "www.google.com"
         }
 ]
