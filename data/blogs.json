@@ -5,7 +5,7 @@
             "image": "../assets/images/logo.png",
             "tags": ["Mindfulness", "Mental Health"],
             "date": "2023-12-07",
-                "link": "www.google.com"
+                "link": "Blogs/test.md"
         },
         {
             "title": "My Top 10 Books and Why I Love Them",
@@ -13,6 +13,6 @@
             "image": "../assets/images/logo.png",
             "tags": ["Books", "Learning"],
             "date": "2023-10-11",
-                "link": "www.google.com"
+                "link": "http://www.google.com"
         }
 ]
