@@ -1,5 +1,4 @@
-{
-    [
+[
         {
             "title": "The Art of Living in the Moment",
             "description": "The blog explores the transformative power of mindfulness in daily life.",
@@ -14,5 +13,4 @@
             "tags": ["Books", "Learning"],
             "date": "2023-10-11"
         }
-    ]
-}
+]
