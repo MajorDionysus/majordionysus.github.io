@@ -3,17 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>404 - Page Not Found</title>
+    <style>
+        /* 404 页面全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff003c, #00d4ff);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 120px;
+            margin: 0;
+            font-weight: 900;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px 0 20px;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff003c;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* SVG 效果 */
+        .glitch {
+            font-size: 100px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* 未来感背景动画 */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .background span {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: floating 6s infinite ease-in-out alternate;
+        }
+
+        .background span:nth-child(1) { top: 10%; left: 15%; animation-duration: 8s; }
+        .background span:nth-child(2) { top: 40%; left: 70%; animation-duration: 10s; }
+        .background span:nth-child(3) { top: 60%; left: 30%; animation-duration: 7s; }
+        .background span:nth-child(4) { top: 80%; left: 50%; animation-duration: 12s; }
+
+        @keyframes floating {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-20px) scale(1.2); }
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Oops!</h1>
-    </header>
-    <main>
-        <h2>404 - Page Not Found</h2>
-        <p>Sorry, the page you're looking for doesn't exist.</p>
-        <a href="index.html">Go Back to Home</a>
-    </main>
+    <div class="background">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="container">
+        <h1 class="glitch">404</h1>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <a href="index.html" class="home-button">Go Back Home</a>
+    </div>
 </body>
 </html>
