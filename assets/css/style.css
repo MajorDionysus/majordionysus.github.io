@@ -10,7 +10,7 @@
     --card-border: #5A5A5A; /* 温润金灰 */
     --shadow: 0 0 20px rgba(0, 255, 242, 0.5); /* 未来电光青蓝 */
     --muted-text: #A0A0A0;
-    --link-blue: #8C2F39; /* 深石榴红 */
+    --link-blue: #21ffcc; 
 }
 
 [data-theme="light"] {
