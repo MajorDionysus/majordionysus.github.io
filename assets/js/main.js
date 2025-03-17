@@ -193,17 +193,18 @@ function formatLifeEvent(event) {
     return li;
 }
 
-/**
- * 格式化博客卡片数据
- * @param {Object} post - 单篇博客数据
- * @returns {HTMLElement}
- */
+async function fetchAndRenderMarkdown(mdFile) {
+    const response = await fetch(mdFile);
+    const text = await response.text();
+    const converter = new showdown.Converter();
+    document.querySelector('#blog-content').innerHTML = converter.makeHtml(text);
+}
+
 function formatBlogCard(post) {
     const card = document.createElement('div');
     card.classList.add('blog-card');
-
     card.innerHTML = `
-        <a href="${post.link}" class="blog-card-link">
+        <a href="#" class="blog-card-link" data-md="${post.link}">
             <img src="${post.image}" alt="${post.title}">
             <div class="blog-content">
                 <h3 class="blog-title">${post.title}</h3>
@@ -215,7 +216,11 @@ function formatBlogCard(post) {
             </div>
         </a>
     `;
-
+    card.querySelector('.blog-card-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        fetchAndRenderMarkdown(this.dataset.md);
+    });
     return card;
 }
+
 
