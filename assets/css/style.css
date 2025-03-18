@@ -195,6 +195,14 @@ body {
     margin: 0;
 }
 
+/* ==================== blog card ==================== */
+/* 卡片容器布局 */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 /* ==================== 博客卡片优化 ==================== */
 .blog-card {
     background: var(--card-bg);
@@ -226,47 +234,74 @@ body {
     transform: translateY(-4px);
 }
 
-/* 卡片内容排版优化 */
-.blog-content {
-    padding: 1.5rem;
+/* 让整个卡片成为可点击区域 */
+.blog-card a.blog-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 避免文本被默认超链接高亮 */
+.blog-card a.blog-card-link:focus,
+.blog-card a.blog-card-link:active {
+    outline: none;
+}
+
+/* 卡片图片样式 */
+.blog-card a.blog-card-link img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* 文字内容区域 */
+.blog-card a.blog-card-link .blog-content {
+    padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
-.blog-title {
+.blog-card a.blog-card-link .blog-title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 1.25rem;
-    font-weight: 600;
     color: var(--primary);
-    line-height: 1.4;
-    margin: 0;
 }
 
-.blog-description {
-    font-size: 0.925rem;
+.blog-card a.blog-card-link .blog-description {
+    font-size: 14px;
+    margin: 8px 0;
     color: var(--text);
     opacity: 0.9;
-    line-height: 1.6;
-    margin: 0;
 }
 
-.blog-tags span {
+/* 标签样式 */
+.blog-card a.blog-card-link .blog-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.blog-card a.blog-card-link .blog-tags span {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
     background: rgba(var(--primary-rgb), 0.1);
     color: var(--primary);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
 }
 
-/* 新增日期样式 */
-.blog-meta {
+/* 日期样式 */
+.blog-card a.blog-card-link .blog-date {
+    font-size: 12px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
     color: var(--muted-text);
-    margin-top: 1rem;
 }
 
 /* ==================== 背景墙优化 ==================== */
