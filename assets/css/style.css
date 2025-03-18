@@ -356,8 +356,8 @@ body {
 
 /* ==================== 作品集头像 ==================== */
 .profile-image img {
-    width: 150px;  /* 放大作品集头像尺寸 */
-    height: 150px;
+    width: 200px;  /* 放大作品集头像尺寸 */
+    height: 200px;
     border-radius: 50%;  /* 正圆形 */
     object-fit: cover;
     border: 4px solid var(--primary);
