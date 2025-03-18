@@ -127,8 +127,8 @@ body {
 
 /* ==================== 侧边栏头像 ==================== */
 .sidebar .avatar {
-    width: 100px;  /* 缩小侧边栏头像尺寸 */
-    height: 100px;
+    width: 160px;  /* 缩小侧边栏头像尺寸 */
+    height: 160px;
     border-radius: 50%;  /* 改为正圆形 */
     object-fit: cover;
     border: 3px solid var(--primary);
