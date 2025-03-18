@@ -125,13 +125,15 @@ body {
     margin-bottom: 1rem;
 }
 
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 20%;
+/* ==================== 侧边栏头像 ==================== */
+.sidebar .avatar {
+    width: 100px;  /* 缩小侧边栏头像尺寸 */
+    height: 100px;
+    border-radius: 50%;  /* 改为正圆形 */
     object-fit: cover;
-    border: 4px solid var(--primary);
+    border: 3px solid var(--primary);
     box-shadow: var(--shadow);
+    margin: 1rem 0;  /* 增加上下间距 */
 }
 
 /* 导航栏样式 */
@@ -336,12 +338,6 @@ body {
     border: 1px solid var(--border);
 }
 
-.profile-content {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 1.5rem;
-}
 
 .profile-text {
     flex: 1;
@@ -356,6 +352,30 @@ body {
 .profile-image {
     flex: 0 0 250px;
     text-align: center;
+}
+
+/* ==================== 作品集头像 ==================== */
+.profile-image img {
+    width: 150px;  /* 放大作品集头像尺寸 */
+    height: 150px;
+    border-radius: 50%;  /* 正圆形 */
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 20px rgba(62, 146, 204, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.05);  /* 添加悬停动画 */
+}
+
+/* 调整头像容器布局 */
+.profile-content {
+    display: flex;
+    gap: 3rem;  /* 增大间距 */
+    align-items: center;
+    flex-wrap: wrap;  /* 响应式换行 */
+    justify-content: center;  /* 居中显示 */
 }
 
 /* 研究兴趣部分 */
