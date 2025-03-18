@@ -1,30 +1,35 @@
+
 /* ==================== 主题变量 ==================== */
 :root {
-    /* 🎨 壁画风 + 未来极简 */
-    --primary: #3E92CC;   /* 亮青金石蓝 */
-    --secondary: #60BFC1; /* 秘银青 */
-    --accent: #A23E48;    /* 朱砂红 */
-    --text: #E8E6E3;      /* 宣纸白 */
-    --background: #121212; /* 古绢黑 */
-    --card-bg: #1E1E1E;   /* 古典石墨灰 */
-    --card-border: #5A5A5A; /* 温润金灰 */
-    --shadow: 0 0 20px rgba(0, 255, 242, 0.5); /* 未来电光青蓝 */
-    --muted-text: #A0A0A0;
-    --link-blue: #21ffcc; 
+    /* 🎨 深色主题 - 午夜蓝 + 琥珀金 */
+    --primary: #2A5C7D;       /* 深海蓝 */
+    --secondary: #3D7B8C;     /* 岩层青 */
+    --accent: #FFB86C;        /* 琥珀金 */
+    --text: #E0E0E0;          /* 浅灰 */
+    --background: #1A1A1A;    /* 深黑 */
+    --card-bg: #262626;       /* 炭灰 */
+    --card-border: #404040;   /* 中灰 */
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --muted-text: #888888;
+    --link: #FFB86C;          /* 使用强调色作为链接 */
+    --primary-rgb: 42, 92, 125;
+    --background-rgb: 26, 26, 26;
 }
 
 [data-theme="light"] {
-    /* ☀️ 极简科技 + 壁画艺术 */
-    --primary: #3E92CC;   /* 亮青金石蓝 */
-    --secondary: #5BA4CF; /* 柔和湖蓝 */
-    --accent: #A23E48;    /* 朱砂红 */
-    --text: #222222;      /* 墨灰 */
-    --background: #FAFAFA; /* 宣纸白 */
-    --card-bg: #FFFFFF;   /* 纯白 */
-    --card-border: #D9D9D9; /* 低对比灰 */
-    --shadow: 0 5px 20px rgba(60, 60, 60, 0.2); /* 低调柔和灰影 */
+    /* ☀️ 浅色主题 - 珍珠白 + 雾蓝 */
+    --primary: #4A728C;       /* 雾蓝 */
+    --secondary: #6B8A9E;     /* 浅岩青 */
+    --accent: #D46B4F;        /* 陶土红 */
+    --text: #333333;          /* 深灰 */
+    --background: #F8F9FA;    /* 珍珠白 */
+    --card-bg: #FFFFFF;       /* 纯白 */
+    --card-border: #E0E0E0;   /* 浅灰 */
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
     --muted-text: #666666;
-    --link-blue: #8C2F39; /* 深石榴红 */
+    --link: #4A728C;          /* 使用主色作为链接 */
+    --primary-rgb: 74, 114, 140;
+    --background-rgb: 248, 249, 250;
 }
 
 
@@ -190,100 +195,111 @@ body {
     margin: 0;
 }
 
-
-/* ==================== blog card ==================== */
-/* 卡片容器布局 */
-.blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-/* 单个卡片样式 */
+/* ==================== 博客卡片优化 ==================== */
 .blog-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* 新增卡片悬浮效果 */
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card:hover::before {
+    opacity: 1;
 }
 
 .blog-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
-/* 让整个卡片成为可点击区域 */
-.blog-card a.blog-card-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 避免文本被默认超链接高亮 */
-.blog-card a.blog-card-link:focus,
-.blog-card a.blog-card-link:active {
-    outline: none;
-}
-
-/* 卡片图片样式 */
-.blog-card a.blog-card-link img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* 文字内容区域 */
-.blog-card a.blog-card-link .blog-content {
-    padding: 15px;
-}
-
-.blog-card a.blog-card-link .blog-title {
-    font-size: 18px;
-    font-weight: bold;
+/* 卡片内容排版优化 */
+.blog-content {
+    padding: 1.5rem;
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.blog-card a.blog-card-link .blog-description {
-    font-size: 14px;
-    color: #666;
-    margin: 8px 0;
+.blog-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.4;
+    margin: 0;
 }
 
-/* 标签样式 */
-.blog-card a.blog-card-link .blog-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
+.blog-description {
+    font-size: 0.925rem;
+    color: var(--text);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.blog-card a.blog-card-link .blog-tags span {
-    font-size: 12px;
-    background: #f3f3f3;
-    color: #555;
-    padding: 4px 10px;
+.blog-tags span {
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    padding: 4px 12px;
     border-radius: 20px;
-    font-weight: bold;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-/* 日期样式 */
-.blog-card a.blog-card-link .blog-date {
-    font-size: 12px;
-    color: #aaa;
+/* 新增日期样式 */
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    margin-top: 1rem;
 }
 
-
-/* ==================== 主要内容区域 ==================== */
+/* ==================== 背景墙优化 ==================== */
 .main-content {
-    margin-left: 280px; /* 留出 sidebar 的宽度 */
-    padding: 3rem 4rem;
-    flex: 1;
-    max-width: 1240px;
+    background: 
+        linear-gradient(
+            rgba(var(--background-rgb), 0.8),
+            rgba(var(--background-rgb), 0.8)
+        ),
+        url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="%23000000" opacity="0.02" d="M44.6,-58.9C56.8,-53.7,64.6,-38.2,69.3,-21.5C74,-4.8,75.6,13.1,70.8,28.6C66,44.1,54.9,57.1,41.3,63.8C27.7,70.5,11.9,70.9,-2.8,74.7C-17.5,78.5,-35,85.7,-46.1,79.3C-57.3,72.9,-62.1,52.9,-67.3,34.4C-72.5,15.9,-78.1,-1.1,-74.4,-15.1C-70.7,-29.1,-57.7,-40.1,-44.3,-44.9C-30.9,-49.8,-17,-48.5,0.2,-48.8C17.4,-49.1,34.8,-51,44.6,-58.9Z"/></svg>');
+    background-size: cover;
+    padding: 4rem 2rem;
+}
+
+/* ==================== 其他优化 ==================== */
+/* 统一按钮样式 */
+.button {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* 优化卡片间距 */
+.blog-container {
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 /* 卡片效果 */
