@@ -1,37 +1,48 @@
 
 /* ==================== 主题变量 ==================== */
 :root {
-    /* 🎨 深色主题 - 午夜蓝 + 琥珀金 */
-    --primary: #2A5C7D;       /* 深海蓝 */
-    --secondary: #3D7B8C;     /* 岩层青 */
-    --accent: #FFB86C;        /* 琥珀金 */
-    --text: #E0E0E0;          /* 浅灰 */
-    --background: #1A1A1A;    /* 深黑 */
-    --card-bg: #262626;       /* 炭灰 */
-    --card-border: #404040;   /* 中灰 */
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-    --muted-text: #888888;
-    --link: #FFB86C;          /* 使用强调色作为链接 */
-    --primary-rgb: 42, 92, 125;
-    --background-rgb: 26, 26, 26;
+    /* 🎨 深色主题 - 增强对比度 */
+    --primary: #2A6B8F;       /* 深海蓝 */
+    --secondary: #3E8DA6;     /* 岩层青 */
+    --accent: #FFC078;        /* 琥珀金 */
+    --text: #F0F0F0;          /* 亮灰 (对比度提升) */
+    --background: #141414;    /* 更深背景 */
+    --card-bg: #222222;       /* 提高对比度 */
+    --card-border: #383838;   
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --muted-text: #8A8A8A;
+    --link: #FFC078;
 }
 
 [data-theme="light"] {
-    /* ☀️ 浅色主题 - 珍珠白 + 雾蓝 */
-    --primary: #4A728C;       /* 雾蓝 */
-    --secondary: #6B8A9E;     /* 浅岩青 */
-    --accent: #D46B4F;        /* 陶土红 */
-    --text: #333333;          /* 深灰 */
-    --background: #F8F9FA;    /* 珍珠白 */
-    --card-bg: #FFFFFF;       /* 纯白 */
-    --card-border: #E0E0E0;   /* 浅灰 */
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    /* ☀️ 浅色主题 - 增强对比度 */
+    --primary: #3B6F8C;       
+    --secondary: #5A8B9E;     
+    --accent: #D45F40;        /* 更醒目的强调色 */
+    --text: #2D2D2D;          /* 深灰 */
+    --background: #F5F5F5;    
+    --card-bg: #FFFFFF;       
+    --card-border: #D0D0D0;   
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
     --muted-text: #666666;
-    --link: #4A728C;          /* 使用主色作为链接 */
-    --primary-rgb: 74, 114, 140;
-    --background-rgb: 248, 249, 250;
+    --link: #3B6F8C;
 }
 
+/* ==================== 修正背景纹理 ==================== */
+.main-content {
+    background: 
+        linear-gradient(
+            rgba(var(--background-rgb), 0.98),
+            rgba(var(--background-rgb), 0.98)
+        ),
+        url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="%23000000" opacity="0.03"/></svg>');
+    background-size: cover;
+    background-position: 0 0;
+    margin-left: 280px; /* 留出 sidebar 的宽度 */
+    padding: 3rem 4rem;
+    flex: 1;
+    max-width: 1240px;
+}
 
 /* 主题切换按钮 */
 .theme-toggle {
@@ -303,22 +314,6 @@ body {
     justify-content: space-between;
     color: var(--muted-text);
 }
-
-/* ==================== 背景墙优化 ==================== */
-.main-content {
-    background: 
-        linear-gradient(
-            rgba(var(--background-rgb), 0.8),
-            rgba(var(--background-rgb), 0.8)
-        ),
-        url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="%23000000" opacity="0.02" d="M44.6,-58.9C56.8,-53.7,64.6,-38.2,69.3,-21.5C74,-4.8,75.6,13.1,70.8,28.6C66,44.1,54.9,57.1,41.3,63.8C27.7,70.5,11.9,70.9,-2.8,74.7C-17.5,78.5,-35,85.7,-46.1,79.3C-57.3,72.9,-62.1,52.9,-67.3,34.4C-72.5,15.9,-78.1,-1.1,-74.4,-15.1C-70.7,-29.1,-57.7,-40.1,-44.3,-44.9C-30.9,-49.8,-17,-48.5,0.2,-48.8C17.4,-49.1,34.8,-51,44.6,-58.9Z"/></svg>');
-    background-size: cover;
-    margin-left: 280px; /* 留出 sidebar 的宽度 */
-    padding: 3rem 4rem;
-    flex: 1;
-    max-width: 1240px;
-}
-
 
 /* ==================== 其他优化 ==================== */
 /* 统一按钮样式 */
