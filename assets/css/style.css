@@ -250,7 +250,7 @@ body {
 }
 
 .blog-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
 }
 
 /* 让整个卡片成为可点击区域 */
@@ -739,8 +739,12 @@ body {
 
 /* ==================== 联系模块优化 ==================== */
 .contact-section {
-    border: 1px solid var(--card-border); /* 统一使用卡片边框变量 */
-    background: var(--card-bg); /* 使用卡片背景增强一致性 */
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px; /* 统一圆角 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
 }
 
 /* 深色主题增强 */
