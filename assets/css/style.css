@@ -856,7 +856,7 @@ body {
     background: rgba(var(--primary-rgb), 0.08); /* 改用主色半透明背景 */
     border: 1px solid rgba(var(--primary-rgb), 0.15); /* 微妙的边框 */
     border-radius: 12px; /* 统一圆角 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-item:hover {
@@ -876,6 +876,7 @@ body {
     color: var(--text);
     font-size: 2rem; /* 统一图标大小 */
     margin-bottom: 1.5rem; /* 图标与文字间距 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-item-content h4 {
