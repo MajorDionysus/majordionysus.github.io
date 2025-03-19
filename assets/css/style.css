@@ -33,7 +33,7 @@
     --background-rgb: 245, 245, 245;
 }
 
-/* ==================== 最终版纯CSS动态背景 ==================== */
+/* ==================== 全局SVG背景 ==================== */
 html {
     min-height: 100vh;
     background: 
@@ -42,56 +42,38 @@ html {
             var(--background) 0%,
             rgba(var(--primary-rgb), 0.02) 100%
         ),
-        /* 动态点阵层 */
-        radial-gradient(
-            circle at var(--x, 50%) var(--y, 50%),
-            rgba(var(--text-rgb), 0.05) 10%,
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at var(--x2, 20%) var(--y2, 80%),
-            rgba(var(--text-rgb), 0.03) 15%,
-            transparent 35%
-        );
-    background-size: 40px 40px, 200% 200%, 200% 200%;
-    background-position: 0 0, 0 0, 0 0;
-    animation: moveBackground 20s infinite linear;
-    will-change: background-position;
-    backface-visibility: hidden;
+        /* SVG纹理层 */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="8" fill="%23000000" opacity="0.05" shape-rendering="crispEdges"/></svg>');
+    background-size: 40px 40px; /* 控制纹理密度 */
+    background-repeat: repeat; /* 平铺整个页面 */
+    background-attachment: fixed; /* 固定背景，避免滚动时移动 */
+    background-blend-mode: multiply; /* 混合模式增强效果 */
 }
 
-/* 动态光点动画 */
-@keyframes moveBackground {
-    0% {
-        --x: 0%;
-        --y: 0%;
-        --x2: 100%;
-        --y2: 100%;
-        background-position: 0 0, 0 0, 100% 100%;
-    }
-    50% {
-        --x: 100%;
-        --y: 100%;
-        --x2: 0%;
-        --y2: 0%;
-        background-position: 0 0, 100% 100%, 0 0;
-    }
-    100% {
-        --x: 0%;
-        --y: 0%;
-        --x2: 100%;
-        --y2: 100%;
-        background-position: 0 0, 0 0, 100% 100%;
-    }
-}
-
-/* 主题适配 */
-:root {
-    --text-rgb: 255, 255, 255; /* 深色主题白色 */
-}
-
+/* 深色主题适配 */
 [data-theme="dark"] {
-    --text-rgb: 0, 0, 0; /* 默认黑色 */
+    --text-rgb: 255, 255, 255; /* 白色纹理 */
+}
+
+/* 浅色主题适配 */
+[data-theme="light"] {
+    --text-rgb: 0, 0, 0; /* 黑色纹理 */
+}
+
+/* 动态调整SVG颜色 */
+html::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="8" fill="rgb(var(--text-rgb))" opacity="0.05" shape-rendering="crispEdges"/></svg>');
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    z-index: -1; /* 置于最底层 */
+    pointer-events: none; /* 防止交互干扰 */
 }
 
 /* ==================== 主要内容区域 ==================== */
