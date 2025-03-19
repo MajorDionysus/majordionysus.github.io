@@ -33,6 +33,67 @@
     --background-rgb: 245, 245, 245;
 }
 
+/* ==================== 最终版纯CSS动态背景 ==================== */
+html {
+    min-height: 100vh;
+    background: 
+        /* 基础渐变层 */
+        linear-gradient(
+            var(--background) 0%,
+            rgba(var(--primary-rgb), 0.02) 100%
+        ),
+        /* 动态点阵层 */
+        radial-gradient(
+            circle at var(--x, 50%) var(--y, 50%),
+            rgba(var(--text-rgb), 0.05) 10%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at var(--x2, 20%) var(--y2, 80%),
+            rgba(var(--text-rgb), 0.03) 15%,
+            transparent 35%
+        );
+    background-size: 40px 40px, 200% 200%, 200% 200%;
+    background-position: 0 0, 0 0, 0 0;
+    animation: moveBackground 20s infinite linear;
+    will-change: background-position;
+    backface-visibility: hidden;
+}
+
+/* 动态光点动画 */
+@keyframes moveBackground {
+    0% {
+        --x: 0%;
+        --y: 0%;
+        --x2: 100%;
+        --y2: 100%;
+        background-position: 0 0, 0 0, 100% 100%;
+    }
+    50% {
+        --x: 100%;
+        --y: 100%;
+        --x2: 0%;
+        --y2: 0%;
+        background-position: 0 0, 100% 100%, 0 0;
+    }
+    100% {
+        --x: 0%;
+        --y: 0%;
+        --x2: 100%;
+        --y2: 100%;
+        background-position: 0 0, 0 0, 100% 100%;
+    }
+}
+
+/* 主题适配 */
+:root {
+    --text-rgb: 255, 255, 255; /* 深色主题白色 */
+}
+
+[data-theme="dark"] {
+    --text-rgb: 0, 0, 0; /* 默认黑色 */
+}
+
 /* ==================== 主要内容区域 ==================== */
 .main-content {
     margin-left: 280px; /* 留出 sidebar 的宽度 */
@@ -738,12 +799,26 @@ body {
     border: 1px solid var(--border);
 }
 
-/* 深色主题增强 */
+/* 深色主题 */
 [data-theme="dark"] .contact-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03); /* 降低透明度 */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* 更柔和的边框 */
 }
+
 [data-theme="dark"] .contact-item-icon {
-    background: var(--accent); /* 使用强调色提升视觉焦点 */
+    background: rgba(var(--accent-rgb), 0.8); /* 降低强调色饱和度 */
+    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.2); /* 柔和的投影 */
+}
+
+/* 浅色主题 */
+[data-theme="light"] .contact-item {
+    background: rgba(0, 0, 0, 0.03); /* 浅色模式使用黑色透明 */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .contact-item-icon {
+    background: rgba(var(--accent-rgb), 0.9); /* 稍高的透明度 */
+    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.15);
 }
 
 .contact-header {
