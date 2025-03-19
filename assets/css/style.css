@@ -33,18 +33,9 @@
     --background-rgb: 245, 245, 245;
 }
 
-/* ==================== 修正背景纹理 ==================== */
+/* ==================== 主要内容区域 ==================== */
 .main-content {
-    background: 
-        linear-gradient(
-            rgba(var(--background-rgb), 0.93),
-            rgba(var(--background-rgb), 0.93)
-        ),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><circle cx="18" cy="18" r="16" fill="%23000000" opacity="0.04" shape-rendering="crispEdges"/></svg>');
-    background-size: 36px 36px;
-    background-repeat: repeat;
-    background-blend-mode: multiply;
-    margin-left: 280px;
+    margin-left: 280px; /* 留出 sidebar 的宽度 */
     padding: 3rem 4rem;
     flex: 1;
     max-width: 1240px;
@@ -105,7 +96,7 @@ body {
 /* ==================== 左侧导航栏 ==================== */
 .sidebar {
     width: 280px;
-    background: var(--card-bg);
+    background: rgba(var(--card-bg), 0.96);
     padding: 2rem 1.5rem;
     position: fixed;
     top: 0;
