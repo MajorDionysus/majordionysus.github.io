@@ -39,9 +39,9 @@
 }
 
 body {
-  background: linear-gradient(to bottom, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.4), rgba(0, 255, 255, 0.1));
-  background-size: 100% 300%;
-  animation: scan 3s linear infinite;
+  background: linear-gradient(to bottom, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.4), rgba(0, 255, 255, 0.1)) !important;
+  background-size: 100% 300% !important;
+  animation: scan 3s linear infinite !important;
 }
 
 /* ==================== 主要内容区域 ==================== */
