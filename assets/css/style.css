@@ -4,6 +4,7 @@
     --primary: #2A6B8F;       /* 深海蓝 */
     --secondary: #3E8DA6;     /* 岩层青 */
     --accent: #FFC078;        /* 琥珀金 */
+    --accent-rgb: 255, 192, 120; /* 琥珀金RGB值 */
     --text: #F0F0F0;          /* 亮灰 */
     --background: #141414;    /* 深灰 */
     --card-bg: #222222;       /* 炭灰 */
@@ -20,6 +21,7 @@
     --primary: #4A728C;       /* 雾蓝 */
     --secondary: #6B8A9E;     /* 浅岩青 */
     --accent: #D45F40;        /* 陶土红 */
+    --accent-rgb: 212, 95, 64; /* 陶土红RGB值 */
     --text: #333333;          /* 深灰 */
     --background: #FAFAFA;    /* 珍珠白 */
     --card-bg: #FFFFFF;       /* 纯白 */
@@ -209,7 +211,7 @@ body {
     margin: 0;
 }
 
-/* ==================== blog card ==================== */
+/* ==================== 博客卡片优化 ==================== */
 /* 卡片容器布局 */
 .blog-container {
     display: grid;
@@ -218,7 +220,9 @@ body {
     padding: 20px;
 }
 /* ==================== 博客卡片优化 ==================== */
-.blog-card {
+
+
+.blog-card { 
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
@@ -252,8 +256,12 @@ body {
 .blog-card a.blog-card-link {
     display: block;
     text-decoration: none;
-    color: inherit;
+    color: var(--text);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover .blog-title {
+    color: var(--accent); /* 悬停时使用强调色 */
 }
 
 /* 避免文本被默认超链接高亮 */
@@ -302,12 +310,13 @@ body {
 }
 
 .blog-card a.blog-card-link .blog-tags span {
+    background: rgba(var(--accent-rgb), 0.15); /* 使用强调色作为标签背景 */
+    color: var(--accent); /* 强调色文字 */
+    border: 1px solid rgba(var(--accent-rgb), 0.3); /* 添加边框 */
     font-size: 12px;
     padding: 4px 10px;
     border-radius: 20px;
     font-weight: bold;
-    background: rgba(var(--primary-rgb), 0.1);
-    color: var(--primary);
 }
 
 /* 日期样式 */
@@ -727,14 +736,18 @@ body {
     color: var(--accent); /* 点击时变为强调色 */
 }
 
-/* ==================== Contact 模块 ==================== */
+/* ==================== 联系模块优化 ==================== */
 .contact-section {
-    margin: 2rem 0;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 12px; /* 统一圆角 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border);
+    border: 1px solid var(--card-border); /* 统一使用卡片边框变量 */
+    background: var(--card-bg); /* 使用卡片背景增强一致性 */
+}
+
+/* 深色主题增强 */
+[data-theme="dark"] .contact-item {
+    background: rgba(255, 255, 255, 0.05);
+}
+[data-theme="dark"] .contact-item-icon {
+    background: var(--accent); /* 使用强调色提升视觉焦点 */
 }
 
 .contact-header {
@@ -769,9 +782,9 @@ body {
     align-items: center; /* 内容居中 */
     text-align: center; /* 文字居中 */
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(var(--primary-rgb), 0.08); /* 改用主色半透明背景 */
+    border: 1px solid rgba(var(--primary-rgb), 0.15); /* 微妙的边框 */
     border-radius: 12px; /* 统一圆角 */
-    border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -786,11 +799,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--secondary)); /* 渐变增加层次 */
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.2); /* 动态投影 */
     border-radius: 50%; /* 圆形背景 */
     color: var(--text);
     font-size: 2rem; /* 统一图标大小 */
-    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
     margin-bottom: 1.5rem; /* 图标与文字间距 */
 }
 
