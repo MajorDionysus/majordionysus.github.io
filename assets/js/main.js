@@ -40,39 +40,33 @@ document.addEventListener('DOMContentLoaded', function () {
         const publicationCount = publications.length;
         const experienceCount = experiences.length;
 
-        // 近15日内 Blog 的时间序列图数据
-        const recentBlogs = blogs.filter(blog => {
+        // 获取今年的 Blog 数据（按月份分组）
+        const currentYear = new Date().getFullYear();
+        const thisYearBlogs = blogs.filter(blog => {
             const blogDate = new Date(blog.date);
-            const fifteenDaysAgo = new Date();
-            fifteenDaysAgo.setDate(fifteenDaysAgo.getDate() - 15);
-            return blogDate >= fifteenDaysAgo;
+            return blogDate.getFullYear() === currentYear;
         });
 
-        const recentBlogDates = recentBlogs.map(blog => blog.date);
-        const blogTrendData = recentBlogDates.reduce((acc, date) => {
-            const dateKey = date.split('T')[0];  // yyyy-mm-dd
-            if (!acc[dateKey]) {
-                acc[dateKey] = 1;
-            } else {
-                acc[dateKey]++;
-            }
-            return acc;
-        }, {});
+        const monthlyBlogCounts = Array(12).fill(0); // 用于存储12个月份的博客数量
+        thisYearBlogs.forEach(blog => {
+            const blogDate = new Date(blog.date);
+            const month = blogDate.getMonth(); // 获取月份（0-11）
+            monthlyBlogCounts[month]++;
+        });
 
-        const blogTrendLabels = Object.keys(blogTrendData);
-        const blogTrendValues = Object.values(blogTrendData);
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
         // 图表配置
         // 1. 绘制 Blog 时间序列图（图一）
         new Chart(blogTrendCtx, {
             type: 'line',
             data: {
-                labels: blogTrendLabels,
+                labels: months,
                 datasets: [{
-                    label: 'Blog Posts in Last 15 Days',
-                    data: blogTrendValues,
-                    borderColor: '#ff6384',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    label: 'Blog Posts in ' + currentYear,
+                    data: monthlyBlogCounts,
+                    borderColor: '#4e73df',
+                    backgroundColor: 'rgba(78, 115, 223, 0.2)',
                     fill: true,
                     tension: 0.4
                 }]
@@ -95,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     x: {
                         title: {
                             display: true,
-                            text: 'Date'
+                            text: 'Month'
                         }
                     },
                     y: {
@@ -111,14 +105,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 2. 绘制 Publications & Experiences 分类占比柱状图（图二）
         new Chart(publicationsCtx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ['Blogs', 'Publications', 'Experiences'],
                 datasets: [{
                     label: 'Total Entries',
                     data: [blogCount, publicationCount, experienceCount],
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56'],
-                    borderColor: ['#ff6384', '#36a2eb', '#ffcd56'],
+                    backgroundColor: ['#4e73df', '#36b9cc', '#ffcc5c'],
+                    borderColor: ['#4e73df', '#36b9cc', '#ffcc5c'],
                     borderWidth: 1
                 }]
             },
@@ -172,23 +166,29 @@ document.addEventListener('DOMContentLoaded', function () {
         const publicationData = years.map(year => publicationCounts[year] || 0);
 
         new Chart(trendCtx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: years,
-                datasets: [{
-                    label: 'Experiences',
-                    data: experienceData,
-                    backgroundColor: '#ffcd56',
-                    borderColor: '#ffcd56',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Publications',
-                    data: publicationData,
-                    backgroundColor: '#36a2eb',
-                    borderColor: '#36a2eb',
-                    borderWidth: 1
-                }]
+                datasets: [
+                    {
+                        label: 'Experiences',
+                        data: experienceData,
+                        borderColor: '#4e73df',
+                        backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Publications',
+                        data: publicationData,
+                        borderColor: '#36b9cc',
+                        backgroundColor: 'rgba(54, 185, 204, 0.2)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4
+                    }
+                ]
             },
             options: {
                 responsive: true,
@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Error loading JSON:', error);
     });
 });
+
 
 /**
  * 初始化页面内容
