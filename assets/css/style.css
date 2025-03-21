@@ -87,18 +87,26 @@ body {
     line-height: 1.6;
 }
 
-.chart-container {
+.charts-container {
     display: flex;
-    flex-direction: row;  /* 横向排列 */
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    gap: 30px;  /* 图表间距 */
     padding: 20px;
-    flex-wrap: wrap;  /* 适配小屏幕 */
 }
 
-canvas {
-    width: 250px;  /* 适当缩小尺寸 */
-    height: 250px;
+.chart-box {
+    width: 300px; /* 限制单个图表大小 */
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.wide-chart {
+    width: 100%;
+    max-width: 700px; /* 让折线图稍微宽一些 */
 }
 
 /* ==================== 容器布局 ==================== */
