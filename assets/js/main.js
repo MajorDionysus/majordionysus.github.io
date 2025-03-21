@@ -261,10 +261,10 @@ function formatBlogCard(post) {
                     <a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a>
                 </h3>
                 ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
-                <div class="blog-tags">
-                    ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
-                </div>
                 <div class="blog-footer">
+                    <div class="blog-tags">
+                        ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
+                    </div>
                     <p class="blog-date">${post.date}</p>
                     <a href="${post.link}" class="button" target="_blank" rel="noopener noreferrer">Read More →</a>
                 </div>
