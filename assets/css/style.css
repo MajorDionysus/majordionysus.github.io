@@ -112,6 +112,8 @@ body {
 
 .chart-container canvas{
     color: var(--text);
+    border: 1px solid var(--card-border);; /* 添加黑色边框 */
+    background-color: rgba(var(--card-bg), 0.28);
 }
 
 /* ==================== 容器布局 ==================== */
