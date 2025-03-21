@@ -89,13 +89,10 @@ body {
 
 /* 图表区域：使用 academic 主题变量，考虑左右边栏 */
 .chart-area {
-    margin-left: 280px;               /* 留出左侧 sidebar 宽度 */
-    margin-right: 100px;              /* 留出右侧栏宽度 */
     padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: calc(100% - 380px);     /* 总宽度扣除左右边栏 */
     background: var(--background);    /* 背景色使用深灰 */
     color: var(--text);               /* 文字颜色 */
 }
@@ -107,14 +104,6 @@ body {
     border-radius: 10px;
     padding: 20px;
     box-shadow: var(--shadow);        /* 投影效果 */
-}
-
-/* 图表标题（可根据需要进一步调整） */
-.chart-container h2 {
-    text-align: center;
-    font-size: 24px;
-    color: var(--primary);            /* 采用主题主色调 */
-    margin-bottom: 20px;
 }
 
 /* 图表 canvas 样式 */
@@ -144,7 +133,7 @@ body {
         max-width: 100%;
     }
     .chart-container h2 {
-        font-size: 20px;
+        font-size: 8px;
     }
 }
 
