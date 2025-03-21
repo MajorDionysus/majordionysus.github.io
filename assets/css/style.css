@@ -336,7 +336,7 @@ body {
 .blog-info {
     display: flex;
     flex-direction: column; /* 日期在上，标签在下 */
-    gap: 6px;
+    gap: 12px;
 }
 
 .blog-date {
