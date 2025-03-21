@@ -223,136 +223,69 @@ body {
     gap: 20px;
     padding: 20px;
 }
-/* ==================== 博客卡片优化 ==================== */
 
-
-.blog-card { 
+/* 让卡片样式不受超链接影响 */
+.blog-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease;
     position: relative;
-}
-
-/* 新增卡片悬浮效果 */
-.blog-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: var(--shadow);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.blog-card:hover::before {
-    opacity: 1;
 }
 
 .blog-card:hover {
     transform: translateY(-2px);
 }
 
-/* 让整个卡片成为可点击区域 */
-.blog-card a.blog-card-link {
-    display: block;
+/* 让标题超链接有样式 */
+.blog-title a {
     text-decoration: none;
-    color: var(--text);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card:hover .blog-title {
-    color: var(--accent); /* 悬停时使用强调色 */
-}
-
-/* 避免文本被默认超链接高亮 */
-.blog-card a.blog-card-link:focus,
-.blog-card a.blog-card-link:active {
-    outline: none;
-}
-
-/* 卡片图片样式 */
-.blog-card a.blog-card-link img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* 文字内容区域 */
-.blog-card a.blog-card-link .blog-content {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.blog-card a.blog-card-link .blog-title {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 1.25rem;
     color: var(--primary);
+    transition: color 0.3s ease;
 }
 
-.blog-card a.blog-card-link .blog-description {
-    font-size: 14px;
-    margin: 4px 0;
-    color: var(--text);
-    opacity: 0.9;
+.blog-title a:hover {
+    color: var(--accent);
 }
 
-/* 标签样式 */
-.blog-card a.blog-card-link .blog-tags {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    color: var(--accent)
-}
-
-.blog-card a.blog-card-link .blog-tags span {
-    background: rgba(var(--accent-rgb), 0.15); /* 使用强调色作为标签背景 */
-    color: var(--accent); /* 强调色文字 */
-    border: 1px solid rgba(var(--accent-rgb), 0.3); /* 添加边框 */
+/* 让标签格式化 */
+.blog-tags span {
+    background: rgba(var(--accent-rgb), 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
     font-size: 12px;
     padding: 4px 10px;
     border-radius: 20px;
     font-weight: bold;
 }
 
-/* 日期样式 */
-.blog-card a.blog-card-link .blog-date {
-    font-size: 12px;
+/* 让 footer 里日期和按钮同行 */
+.blog-footer {
     display: flex;
     justify-content: space-between;
-    color: var(--muted-text);
+    align-items: center;
 }
 
-/* ==================== 其他优化 ==================== */
-/* 统一按钮样式 */
+/* 按钮样式 */
 .button {
     background: var(--primary);
     color: white;
-    padding: 10px 16px;
+    padding: 8px 14px;
     font-size: 14px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    border-radius: 8px;
-    display: inline-block;
+    border-radius: 6px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
-    filter: brightness(1.15);
+    filter: brightness(1.1);
     transform: translateY(-2px);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 
 /* 卡片效果 */
 .card {
