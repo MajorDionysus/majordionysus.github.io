@@ -346,12 +346,12 @@ body {
 
 /* 按钮样式：Read More */
 .button {
-    background: rgba(var(--primary), 0.35);
+    background: rgba(var(--accent), 0.15);
     color: var(--text);
     padding: 8px 14px;
     font-size: 18px;
     font-weight: bold;
-    border: 1px solid rgba(var(--accent-rgb), 0.5);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
     cursor: pointer;
     border-radius: 12px;
     text-align: center;
@@ -360,6 +360,7 @@ body {
 }
 
 .button:hover {
+    background: rgba(var(--primary), 0.15);
     filter: brightness(1.1);
     transform: translateY(-1.2px);
 }
