@@ -26,101 +26,198 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 获取 canvas 元素
-    const blogsCtx = document.getElementById('blogsChart').getContext('2d');
+    const blogTrendCtx = document.getElementById('blogTrendChart').getContext('2d');
     const publicationsCtx = document.getElementById('publicationsChart').getContext('2d');
     const trendCtx = document.getElementById('trendChart').getContext('2d');
 
-    // 读取 JSON 数据
     Promise.all([
         fetch('data/blogs.json').then(response => response.json()),
         fetch('data/publications.json').then(response => response.json()),
         fetch('data/experiences.json').then(response => response.json())
     ]).then(([blogs, publications, experiences]) => {
-        // 统计数据（按年份分组）
-        const blogCountsByYear = {};
-        blogs.forEach(blog => {
-            const year = blog.date.split('-')[0]; // 提取年份
-            blogCountsByYear[year] = (blogCountsByYear[year] || 0) + 1;
+        // 统计数据
+        const blogCount = blogs.length;
+        const publicationCount = publications.length;
+        const experienceCount = experiences.length;
+
+        // 近15日内 Blog 的时间序列图数据
+        const recentBlogs = blogs.filter(blog => {
+            const blogDate = new Date(blog.date);
+            const fifteenDaysAgo = new Date();
+            fifteenDaysAgo.setDate(fifteenDaysAgo.getDate() - 15);
+            return blogDate >= fifteenDaysAgo;
         });
 
-        const pubCountsByYear = {};
-        publications.forEach(pub => {
-            pubCountsByYear[pub.year] = (pubCountsByYear[pub.year] || 0) + 1;
-        });
+        const recentBlogDates = recentBlogs.map(blog => blog.date);
+        const blogTrendData = recentBlogDates.reduce((acc, date) => {
+            const dateKey = date.split('T')[0];  // yyyy-mm-dd
+            if (!acc[dateKey]) {
+                acc[dateKey] = 1;
+            } else {
+                acc[dateKey]++;
+            }
+            return acc;
+        }, {});
 
-        const expCountsByYear = {};
-        experiences.forEach(exp => {
-            expCountsByYear[exp.year] = (expCountsByYear[exp.year] || 0) + 1;
-        });
+        const blogTrendLabels = Object.keys(blogTrendData);
+        const blogTrendValues = Object.values(blogTrendData);
 
-        // 获取所有年份（去重 & 排序）
-        const allYears = [...new Set([
-            ...Object.keys(blogCountsByYear),
-            ...Object.keys(pubCountsByYear),
-            ...Object.keys(expCountsByYear)
-        ])].sort();
-
-        // 生成按年份排序的数组数据
-        const blogData = allYears.map(year => blogCountsByYear[year] || 0);
-        const pubData = allYears.map(year => pubCountsByYear[year] || 0);
-        const expData = allYears.map(year => expCountsByYear[year] || 0);
-
-        // **2. 环形图（总占比）**
-        new Chart(publicationsCtx, {
-            type: 'doughnut',
+        // 图表配置
+        // 1. 绘制 Blog 时间序列图（图一）
+        new Chart(blogTrendCtx, {
+            type: 'line',
             data: {
-                labels: ['Blogs', 'Publications', 'Experiences'],
+                labels: blogTrendLabels,
                 datasets: [{
-                    data: [blogs.length, publications.length, experiences.length],
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56']
+                    label: 'Blog Posts in Last 15 Days',
+                    data: blogTrendValues,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: true,
+                    tension: 0.4
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { position: 'top' }
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `${tooltipItem.label}: ${tooltipItem.raw} posts`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Blogs'
+                        }
+                    }
                 }
             }
         });
 
-        // **3. 折线图（按年份统计博客/论文/经历数量）**
-        new Chart(trendCtx, {
-            type: 'line',
+        // 2. 绘制 Publications & Experiences 分类占比柱状图（图二）
+        new Chart(publicationsCtx, {
+            type: 'bar',
             data: {
-                labels: allYears,
-                datasets: [
-                    {
-                        label: 'Blogs',
-                        data: blogData,
-                        borderColor: '#ff6384',
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        fill: true
-                    },
-                    {
-                        label: 'Publications',
-                        data: pubData,
-                        borderColor: '#36a2eb',
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        fill: true
-                    },
-                    {
-                        label: 'Experiences',
-                        data: expData,
-                        borderColor: '#ffcd56',
-                        backgroundColor: 'rgba(255, 205, 86, 0.2)',
-                        fill: true
-                    }
-                ]
+                labels: ['Blogs', 'Publications', 'Experiences'],
+                datasets: [{
+                    label: 'Total Entries',
+                    data: [blogCount, publicationCount, experienceCount],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56'],
+                    borderColor: ['#ff6384', '#36a2eb', '#ffcd56'],
+                    borderWidth: 1
+                }]
             },
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { position: 'top' }
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `${tooltipItem.label}: ${tooltipItem.raw} entries`;
+                            }
+                        }
+                    }
                 },
                 scales: {
-                    x: { title: { display: true, text: 'Year' } },
-                    y: { title: { display: true, text: 'Count' } }
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Category'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Count'
+                        }
+                    }
+                }
+            }
+        });
+
+        // 3. 绘制 Experience / Publication Trend（图三）
+        const experienceYears = experiences.map(exp => exp.year);
+        const publicationYears = publications.map(pub => pub.year);
+
+        const experienceCounts = experienceYears.reduce((acc, year) => {
+            acc[year] = (acc[year] || 0) + 1;
+            return acc;
+        }, {});
+        const publicationCounts = publicationYears.reduce((acc, year) => {
+            acc[year] = (acc[year] || 0) + 1;
+            return acc;
+        }, {});
+
+        const years = [...new Set([...Object.keys(experienceCounts), ...Object.keys(publicationCounts)])];
+        const experienceData = years.map(year => experienceCounts[year] || 0);
+        const publicationData = years.map(year => publicationCounts[year] || 0);
+
+        new Chart(trendCtx, {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Experiences',
+                    data: experienceData,
+                    backgroundColor: '#ffcd56',
+                    borderColor: '#ffcd56',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Publications',
+                    data: publicationData,
+                    backgroundColor: '#36a2eb',
+                    borderColor: '#36a2eb',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `${tooltipItem.dataset.label}: ${tooltipItem.raw} entries`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Count'
+                        }
+                    }
                 }
             }
         });
