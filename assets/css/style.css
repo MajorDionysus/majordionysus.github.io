@@ -87,15 +87,19 @@ body {
     line-height: 1.6;
 }
 
-.dashboard {
-    background: var(--background);
+.chart-container {
+    display: flex;
+    flex-direction: row;  /* 横向排列 */
+    justify-content: center;
+    gap: 30px;  /* 图表间距 */
     padding: 20px;
-    border-radius: 10px;
-    color: var(--text);
-    text-align: center;
-    box-shadow: var(--shadow);
+    flex-wrap: wrap;  /* 适配小屏幕 */
 }
 
+canvas {
+    width: 250px;  /* 适当缩小尺寸 */
+    height: 250px;
+}
 
 /* ==================== 容器布局 ==================== */
 .container {
