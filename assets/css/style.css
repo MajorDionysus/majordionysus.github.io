@@ -393,7 +393,7 @@ body {
 
 .welcome h1 {
     font-size: 2.5rem;
-    color: var(--primary);
+    color: var(--accent);
     margin-bottom: 1.5rem;
     line-height: 1.3;
 }
@@ -438,7 +438,7 @@ body {
     height: 200px;
     border-radius: 50%;  /* 正圆形 */
     object-fit: cover;
-    border: 4px solid var(--primary);
+    border: 4px solid var(--accent);
     box-shadow: 0 0 20px rgba(62, 146, 204, 0.4);
     transition: transform 0.3s ease;
 }
