@@ -239,7 +239,7 @@ body {
     padding: 20px;
 }
 
-/* 让卡片样式不受超链接影响 */
+/* 去掉不必要的嵌套背景和边框 */
 .blog-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -247,27 +247,24 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease;
     position: relative;
-}
-
-/* 如果有残留的伪元素，先覆盖它们 */
-.blog-card::before,
-.blog-card::after {
-    content: none !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 使卡片高度自适应 */
 }
 
 .blog-card:hover {
     transform: translateY(-1px);
 }
 
-/* ========== 图片尺寸优化 ========== */
+/* 统一图片尺寸 */
 .blog-card img {
     width: 100%;
-    height: 200px;       /* 限制高度，保持统一 */
-    object-fit: cover;   /* 确保图片填充 */
+    height: 200px; /* 限制高度，保持统一 */
+    object-fit: cover; /* 确保图片填充 */
     display: block;
 }
 
-/* ========== 标题样式 ========== */
+/* 标题样式 */
 .blog-title a {
     text-decoration: none;
     color: var(--primary);
@@ -280,26 +277,30 @@ body {
     color: var(--accent);
 }
 
-/* ========== 文字内容区域 ========== */
+/* 文字内容区域 */
 .blog-content {
     padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex: 1; /* 让内容区域占据剩余高度 */
 }
 
+/* 描述文字 */
 .blog-description {
     font-size: 14px;
     color: var(--text);
     opacity: 0.9;
     line-height: 1.5;
+    flex: 1; /* 让描述文字自适应高度 */
 }
 
-/* ========== 标签样式 ========== */
+/* 标签样式 */
 .blog-tags {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
+    margin-top: auto; /* 将标签区域推到容器底部 */
 }
 
 .blog-tags span {
@@ -318,7 +319,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* ========== 底部区域：日期 + 按钮等 ========== */
+/* 底部区域：日期 + 按钮 */
 .blog-footer {
     display: flex;
     justify-content: space-between; /* 左右分布 */
@@ -327,10 +328,9 @@ body {
     gap: 10px;
 }
 
-/* 让日期和标签一起对齐，按钮独立在右侧 */
 .blog-info {
     display: flex;
-    flex-direction: column;  /* 日期在上，标签在下 */
+    flex-direction: column; /* 日期在上，标签在下 */
     gap: 6px;
 }
 
@@ -358,8 +358,6 @@ body {
     filter: brightness(1.1);
     transform: translateY(-1.2px);
 }
-
-
 
 /* 卡片效果 */
 .card {
