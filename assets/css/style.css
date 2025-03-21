@@ -97,8 +97,10 @@ body {
     color: var(--text);               /* 文字颜色 */
 }
 
-/* 图表容器：卡片风格 */
 .chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* 使卡片自适应不同屏幕大小 */
+    gap: 20px;  /* 卡片之间的间距 */
     background-color: rgba(var(--card-bg), 0.38); /* 卡片背景色 */
     border: 1px solid var(--card-border); /* 卡片边框色 */
     border-radius: 10px;
@@ -106,21 +108,10 @@ body {
     box-shadow: var(--shadow);        /* 投影效果 */
 }
 
-/* 图表 canvas 样式 */
 .chart-container canvas {
     width: 100%;
     display: block;
     margin: 0 auto;
-}
-
-/* 第一张图（时间序列图）设置为扁长型 */
-#blogTrendChart {
-    height: 150px;  /* 扁长形状 */
-}
-
-/* 其他图表默认高度 */
-.chart-container:not(#blogTrendChart) canvas {
-    height: 240px;
 }
 
 /* ==================== 容器布局 ==================== */
