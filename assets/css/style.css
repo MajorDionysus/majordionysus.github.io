@@ -239,7 +239,7 @@ body {
 /* 卡片容器布局 */
 .blog-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 20px;
     padding: 20px;
 }
