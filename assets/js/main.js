@@ -229,9 +229,7 @@ function formatBlogCard(post) {
     card.classList.add('blog-card');
 
     card.innerHTML = `
-        <div class="blog-image-container">
-            <img src="${post.image}" alt="${post.title}" class="blog-image">
-        </div>
+        <img src="${post.image}" alt="${post.title}" class="blog-image">
         <div class="blog-content">
             <h3 class="blog-title">${post.title}</h3>
             ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
