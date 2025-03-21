@@ -1,7 +1,7 @@
 /* mobile.css - 针对移动设备的响应式样式 */
 @media (max-width: 768px) {
    .chart-area {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 进一步减小列的最小宽度 */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* 进一步减小列的最小宽度 */
     padding: 1rem; /* 减小填充 */
     gap: 0.5rem; /* 减小间距 */
     flex-direction: column; /* 改为垂直布局 */
