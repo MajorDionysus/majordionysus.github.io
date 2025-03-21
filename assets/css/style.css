@@ -812,7 +812,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary), var(--secondary), var(accent)); /* 渐变增加层次 */
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)); /* 渐变增加层次 */
     box-shadow: 0 4px 12px rgba(var(--primary), 0.25); /* 动态投影 */
     border-radius: 50%; /* 圆形背景 */
     color: var(--text);
