@@ -213,6 +213,8 @@ body {
     margin: 0;
 }
 
+
+
 /* ==================== 博客卡片优化 ==================== */
 /* 卡片容器布局 */
 .blog-container {
@@ -221,8 +223,9 @@ body {
     gap: 20px;
     padding: 20px;
 }
+/* ==================== 博客卡片优化 ==================== */
 
-/* ==================== 博客卡片 ==================== */
+
 .blog-card { 
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -302,22 +305,12 @@ body {
     opacity: 0.9;
 }
 
-/* ==================== 自动分色标签样式 ==================== */
+/* 标签样式 */
 .blog-card a.blog-card-link .blog-tags {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     flex-wrap: wrap;
-    margin-top: 8px;
-}
-
-.blog-card a.blog-card-link .blog-tags span {
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+    color: var(--accent)
 }
 
 /* 自动分配颜色 */
