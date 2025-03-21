@@ -78,6 +78,12 @@
     font-family: 'Inter', sans-serif; /* 现代化字体 */
 }
 
+strong {
+    color: var(--secondary); 
+    font-weight: bold; /* 设置字体加粗 */
+    font-size: 1.2em; /* 设置字体大小为1.2倍 */
+}
+
 body {
     background: var(--background);
     color: var(--text);
