@@ -837,5 +837,6 @@ body {
 }
 
 .contact-item-content a:hover {
+    color: var(--accent);
     opacity: 0.8;
 }
