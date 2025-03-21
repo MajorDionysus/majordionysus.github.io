@@ -12,6 +12,12 @@
     width: 100%;
   }
 
+  .mobile-card h1 {
+    font-size: 0.75rem;
+    color: var(--text);
+    margin: 0;
+  }
+  
   /* 移动端顶部导航 */
   .mobile-nav {
     display: flex;
