@@ -253,8 +253,6 @@ body {
     margin: 0;
 }
 
-
-
 /* ==================== 博客卡片优化 ==================== */
 /* 卡片容器布局 */
 .blog-container {
@@ -274,6 +272,12 @@ body {
     position: relative;
 }
 
+/* 如果有残留的伪元素，先覆盖它们 */
+.blog-card::before,
+.blog-card::after {
+    content: none !important;
+}
+
 .blog-card:hover {
     transform: translateY(-1px);
 }
@@ -281,8 +285,8 @@ body {
 /* ========== 图片尺寸优化 ========== */
 .blog-card img {
     width: 100%;
-    height: 200px;  /* 限制高度，保持统一 */
-    object-fit: cover; /* 确保图片填充 */
+    height: 200px;       /* 限制高度，保持统一 */
+    object-fit: cover;   /* 确保图片填充 */
     display: block;
 }
 
@@ -311,49 +315,54 @@ body {
     font-size: 14px;
     color: var(--text);
     opacity: 0.9;
+    line-height: 1.5;
 }
 
-/* 让标签格式化 */
+/* ========== 标签样式 ========== */
+.blog-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
 .blog-tags span {
     background: rgba(var(--accent-rgb), 0.15);
     color: var(--accent);
     border: 1px solid rgba(var(--accent-rgb), 0.3);
     font-size: 12px;
-    gap: 6px;
     padding: 4px 10px;
     border-radius: 20px;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* ========== 日期和按钮同行 ========== */
-/* 让 blog-footer 变成 flex 容器 */
+.blog-tags span:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* ========== 底部区域：日期 + 按钮等 ========== */
 .blog-footer {
     display: flex;
-    justify-content: space-between; /* 左右对齐 */
-    align-items: center; /* 纵向居中 */
-    gap: 6px;
+    justify-content: space-between; /* 左右分布 */
+    align-items: center;
     margin-top: 8px;
-}
-
-/* 让 tags 和 date 垂直排列 */
-.blog-footer .blog-info {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
 }
 
-/* 按钮靠右 */
-.blog-footer .button {
-    margin-left: auto; /* 自动推到右侧 */
+/* 让日期和标签一起对齐，按钮独立在右侧 */
+.blog-info {
+    display: flex;
+    flex-direction: column;  /* 日期在上，标签在下 */
+    gap: 6px;
 }
 
-/* ========== 日期样式 ========== */
 .blog-date {
     font-size: 12px;
     color: var(--muted-text);
 }
 
-/* 按钮样式 */
+/* 按钮样式：Read More */
 .button {
     background: rgba(var(--accent-rgb), 0.15);
     color: var(--text);
@@ -365,13 +374,14 @@ body {
     border-radius: 6px;
     text-align: center;
     transition: all 0.3s ease;
-    text-decoration: none;
+    text-decoration: none; /* 让超链接按钮看起来更像按钮 */
 }
 
 .button:hover {
     filter: brightness(1.1);
     transform: translateY(-1.2px);
 }
+
 
 
 /* 卡片效果 */
