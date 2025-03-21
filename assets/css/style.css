@@ -309,7 +309,7 @@ body {
 }
 
 .blog-tags span {
-    background: rgba(var(--accent-rgb), 0.15);
+    background: rgba(var(--accent-rgb), 0.08);
     color: var(--accent);
     border: 1px solid rgba(var(--accent-rgb), 0.3);
     font-size: 12px;
@@ -347,7 +347,7 @@ body {
 /* 按钮样式：Read More */
 .button {
     background: rgba(var(--accent), 0.75);
-    color: var(--text);
+    color: var(--secondary);
     padding: 8px 14px;
     font-size: 18px;
     font-weight: bold;
