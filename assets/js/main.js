@@ -66,25 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const pubData = allYears.map(year => pubCountsByYear[year] || 0);
         const expData = allYears.map(year => expCountsByYear[year] || 0);
 
-        // **1. 柱状图（总数量对比）**
-        new Chart(blogsCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Blogs', 'Publications', 'Experiences'],
-                datasets: [{
-                    label: 'Total Entries',
-                    data: [blogs.length, publications.length, experiences.length],
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
-
         // **2. 环形图（总占比）**
         new Chart(publicationsCtx, {
             type: 'doughnut',
