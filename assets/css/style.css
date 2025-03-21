@@ -346,8 +346,8 @@ body {
 
 /* 按钮样式：Read More */
 .button {
-    background: rgba(var(--accent), 0.75);
-    color: var(--secondary);
+    background: rgba(var(--accent), 0.15);
+    color: var(--text);
     padding: 8px 14px;
     font-size: 18px;
     font-weight: bold;
@@ -360,7 +360,6 @@ body {
 }
 
 .button:hover {
-    background: var(--primary);
     filter: brightness(1.1);
     transform: translateY(-1.2px);
 }
