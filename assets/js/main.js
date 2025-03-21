@@ -254,18 +254,22 @@ function formatBlogCard(post) {
     card.classList.add('blog-card');
 
     card.innerHTML = `
-        <a href="${post.link}" class="blog-card-link" target="_blank">
+        <div class="blog-card">
             <img src="${post.image}" alt="${post.title}">
             <div class="blog-content">
-                <h3 class="blog-title">${post.title}</h3>
+                <h3 class="blog-title">
+                    <a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a>
+                </h3>
                 ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
                 <div class="blog-tags">
                     ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
                 </div>
-                <p class="blog-date">${post.date}</p>
-                <a href="${post.link}" class="button" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <div class="blog-footer">
+                    <p class="blog-date">${post.date}</p>
+                    <a href="${post.link}" class="button" target="_blank" rel="noopener noreferrer">Read More →</a>
+                </div>
             </div>
-        </a>
+        </div>
     `;
 
     return card;
