@@ -176,7 +176,7 @@ body {
     height: 160px;
     border-radius: 50%;  /* 改为正圆形 */
     object-fit: cover;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--accent);
     box-shadow: var(--shadow);
     margin: 1rem 0;  /* 增加上下间距 */
 }
