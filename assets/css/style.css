@@ -78,12 +78,6 @@
     font-family: 'Inter', sans-serif; /* 现代化字体 */
 }
 
-strong {
-    color: var(--secondary); 
-    font-weight: bold; /* 设置字体加粗 */
-    font-size: 1.2em; /* 设置字体大小为1.2倍 */
-}
-
 body {
     background: var(--background);
     color: var(--text);
@@ -769,28 +763,6 @@ body {
     border: 1px solid var(--border);
 }
 
-/* 深色主题 */
-[data-theme="dark"] .contact-item {
-    background: rgba(255, 255, 255, 0.03); /* 降低透明度 */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* 更柔和的边框 */
-}
-
-[data-theme="dark"] .contact-item-icon {
-    background: rgba(var(--accent), 0.8); /* 降低强调色饱和度 */
-    box-shadow: 0 0 12px rgba(var(--accent), 0.2); /* 柔和的投影 */
-}
-
-/* 浅色主题 */
-[data-theme="light"] .contact-item {
-    background: rgba(0, 0, 0, 0.03); /* 浅色模式使用黑色透明 */
-    border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-[data-theme="light"] .contact-item-icon {
-    background: rgba(var(--accent), 0.9); /* 稍高的透明度 */
-    box-shadow: 0 0 12px rgba(var(--accent), 0.15);
-}
-
 .contact-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -823,8 +795,8 @@ body {
     align-items: center; /* 内容居中 */
     text-align: center; /* 文字居中 */
     padding: 2rem;
-    background: rgba(var(--primary-rgb), 0.08); /* 改用主色半透明背景 */
-    border: 1px solid rgba(var(--primary-rgb), 0.15); /* 微妙的边框 */
+    background: rgba(var(--accent), 0.8); /* 改用主色半透明背景 */
+    border: 1px solid rgba(var(--accent), 0.15); /* 微妙的边框 */
     border-radius: 12px; /* 统一圆角 */
     transition: border-color 0.3s ease;
 }
