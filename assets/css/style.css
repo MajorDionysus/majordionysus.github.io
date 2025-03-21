@@ -353,7 +353,7 @@ body {
     font-weight: bold;
     border: 1px solid rgba(var(--accent-rgb), 0.5);
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 12px;
     text-align: center;
     transition: all 0.3s ease;
     text-decoration: none; /* 让超链接按钮看起来更像按钮 */
