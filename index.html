@@ -160,20 +160,25 @@
                 </div>
             </section>
                         
-            <div class="charts-container">
-                <!-- 各类别占比（环形图） -->
-                <div class="chart-box">
-                    <h3>Category Distribution</h3>
+            <div class="chart-area">
+                <!-- 第一张图: Blog 时间序列图 -->
+                <div class="chart-container">
+                    <h2>Blog Posts in Last 15 Days</h2>
+                    <canvas id="blogTrendChart"></canvas>
+                </div>
+            
+                <!-- 第二张图: 分类柱状图 -->
+                <div class="chart-container">
+                    <h2>Blog, Publications & Experiences Count</h2>
                     <canvas id="publicationsChart"></canvas>
                 </div>
             
-                <!-- 按年份趋势变化（折线图） -->
-                <div class="chart-box wide-chart">
-                    <h3>Yearly Trends</h3>
+                <!-- 第三张图: Experience/Publication 年度趋势图 -->
+                <div class="chart-container">
+                    <h2>Experience & Publications Trend</h2>
                     <canvas id="trendChart"></canvas>
                 </div>
-            </div>
-                        
+            </div>    
         </main>
     </div>
     <button class="theme-toggle" id="themeToggle">
