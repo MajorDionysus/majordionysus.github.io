@@ -87,6 +87,16 @@ body {
     line-height: 1.6;
 }
 
+.dashboard {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--text);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+
 /* ==================== 容器布局 ==================== */
 .container {
     display: flex;
