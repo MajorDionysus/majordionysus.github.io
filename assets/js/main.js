@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     // 获取 canvas 元素
-    const ctx = document.getElementById('dataChart').getContext('2d');
+    const blogsCtx = document.getElementById('blogsChart').getContext('2d');
+    const publicationsCtx = document.getElementById('publicationsChart').getContext('2d');
+    const trendCtx = document.getElementById('trendChart').getContext('2d');
 
     // 读取 JSON 数据
     Promise.all([
@@ -35,42 +37,113 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('data/publications.json').then(response => response.json()),
         fetch('data/experiences.json').then(response => response.json())
     ]).then(([blogs, publications, experiences]) => {
-        // 统计数据
-        const dataCounts = {
-            Blogs: blogs.length,
-            Publications: publications.length,
-            Experiences: experiences.length
-        };
+        // 统计数据（按年份分组）
+        const blogCountsByYear = {};
+        blogs.forEach(blog => {
+            const year = blog.date.split('-')[0]; // 提取年份
+            blogCountsByYear[year] = (blogCountsByYear[year] || 0) + 1;
+        });
 
-        // 配置 Chart.js
-        new Chart(ctx, {
-            type: 'doughnut', // 选择 doughnut 图表类型
+        const pubCountsByYear = {};
+        publications.forEach(pub => {
+            pubCountsByYear[pub.year] = (pubCountsByYear[pub.year] || 0) + 1;
+        });
+
+        const expCountsByYear = {};
+        experiences.forEach(exp => {
+            expCountsByYear[exp.year] = (expCountsByYear[exp.year] || 0) + 1;
+        });
+
+        // 获取所有年份（去重 & 排序）
+        const allYears = [...new Set([
+            ...Object.keys(blogCountsByYear),
+            ...Object.keys(pubCountsByYear),
+            ...Object.keys(expCountsByYear)
+        ])].sort();
+
+        // 生成按年份排序的数组数据
+        const blogData = allYears.map(year => blogCountsByYear[year] || 0);
+        const pubData = allYears.map(year => pubCountsByYear[year] || 0);
+        const expData = allYears.map(year => expCountsByYear[year] || 0);
+
+        // **1. 柱状图（总数量对比）**
+        new Chart(blogsCtx, {
+            type: 'bar',
             data: {
-                labels: Object.keys(dataCounts), // X轴标签
+                labels: ['Blogs', 'Publications', 'Experiences'],
                 datasets: [{
                     label: 'Total Entries',
-                    data: Object.values(dataCounts), // 数据
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56'], // 每个扇形的背景颜色
-                    borderColor: ['#ff6384', '#36a2eb', '#ffcd56'], // 每个扇形的边框颜色
-                    borderWidth: 1
+                    data: [blogs.length, publications.length, experiences.length],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56']
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
-                    legend: {
-                        position: 'top', // 图例位置
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw + ' entries';
-                            }
-                        }
-                    }
+                    legend: { display: false }
                 }
             }
         });
+
+        // **2. 环形图（总占比）**
+        new Chart(publicationsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Blogs', 'Publications', 'Experiences'],
+                datasets: [{
+                    data: [blogs.length, publications.length, experiences.length],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' }
+                }
+            }
+        });
+
+        // **3. 折线图（按年份统计博客/论文/经历数量）**
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: allYears,
+                datasets: [
+                    {
+                        label: 'Blogs',
+                        data: blogData,
+                        borderColor: '#ff6384',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true
+                    },
+                    {
+                        label: 'Publications',
+                        data: pubData,
+                        borderColor: '#36a2eb',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true
+                    },
+                    {
+                        label: 'Experiences',
+                        data: expData,
+                        borderColor: '#ffcd56',
+                        backgroundColor: 'rgba(255, 205, 86, 0.2)',
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Year' } },
+                    y: { title: { display: true, text: 'Count' } }
+                }
+            }
+        });
+
     }).catch(error => {
         console.error('Error loading JSON:', error);
     });
