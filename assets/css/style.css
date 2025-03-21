@@ -795,7 +795,7 @@ body {
     align-items: center; /* 内容居中 */
     text-align: center; /* 文字居中 */
     padding: 2rem;
-    background: rgba(var(--accent), 0.8); /* 改用主色半透明背景 */
+    background: rgba(var(--accent), 0.28); /* 改用主色半透明背景 */
     border: 1px solid rgba(var(--accent), 0.15); /* 微妙的边框 */
     border-radius: 12px; /* 统一圆角 */
     transition: border-color 0.3s ease;
@@ -812,8 +812,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary), var(--secondary)); /* 渐变增加层次 */
-    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.2); /* 动态投影 */
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(accent)); /* 渐变增加层次 */
+    box-shadow: 0 4px 12px rgba(var(--primary), 0.25); /* 动态投影 */
     border-radius: 50%; /* 圆形背景 */
     color: var(--text);
     font-size: 2rem; /* 统一图标大小 */
