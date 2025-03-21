@@ -238,15 +238,31 @@ body {
     transform: translateY(-2px);
 }
 
-/* 让标题超链接有样式 */
+/* ========== 标题样式 ========== */
 .blog-title a {
     text-decoration: none;
     color: var(--primary);
+    font-weight: bold;
+    font-size: 1.25rem;
     transition: color 0.3s ease;
 }
 
 .blog-title a:hover {
     color: var(--accent);
+}
+
+/* ========== 文字内容区域 ========== */
+.blog-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.blog-description {
+    font-size: 14px;
+    color: var(--text);
+    opacity: 0.9;
 }
 
 /* 让标签格式化 */
@@ -260,17 +276,24 @@ body {
     font-weight: bold;
 }
 
-/* 让 footer 里日期和按钮同行 */
+/* ========== 日期和按钮同行 ========== */
 .blog-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 8px;
+}
+
+/* ========== 日期样式 ========== */
+.blog-date {
+    font-size: 12px;
+    color: var(--muted-text);
 }
 
 /* 按钮样式 */
 .button {
-    background: var(--primary);
-    color: white;
+    background: var(--accent);
+    color: var(--text);
     padding: 8px 14px;
     font-size: 14px;
     font-weight: bold;
