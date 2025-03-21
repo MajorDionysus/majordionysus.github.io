@@ -160,11 +160,25 @@
                 </div>
             </section>
                         
-            <section class="dashboard">
-                <h2>Collections Overview</h2>
-                <canvas id="dataChart" style="width: 80px; height: 80px;"></canvas>
-                <p style="color: #888; font-size: 0.9em;">Real-time statistics on Blogs, Publications, and Projects help you understand what's happening in academia at a glance.</p>
-            </section>
+            <div class="charts-container">
+                <!-- 总数量对比（柱状图） -->
+                <div class="chart-box">
+                    <h3>Total Entries</h3>
+                    <canvas id="blogsChart"></canvas>
+                </div>
+            
+                <!-- 各类别占比（环形图） -->
+                <div class="chart-box">
+                    <h3>Category Distribution</h3>
+                    <canvas id="publicationsChart"></canvas>
+                </div>
+            
+                <!-- 按年份趋势变化（折线图） -->
+                <div class="chart-box wide-chart">
+                    <h3>Yearly Trends</h3>
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
                         
         </main>
     </div>
