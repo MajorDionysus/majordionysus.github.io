@@ -26,29 +26,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    var chartContainer = document.getElementById('dashboard-chart');
-    var myChart = echarts.init(chartContainer);
+    // 获取 canvas 元素
+    const ctx = document.getElementById('dataChart').getContext('2d');
 
-    var option = {
-        series: [
-            {
-                type: 'pie',
-                radius: ['60%', '80%'], // 中间镂空，形成环形
-                avoidLabelOverlap: false,
-                label: { show: false },
-                emphasis: { label: { show: true, fontSize: '16', fontWeight: 'bold' } },
-                data: [
-                    { value: 5, name: 'Blogs' },
-                    { value: 10, name: 'Publications' },
-                    { value: 7, name: 'Projects' }
-                ],
-                color: ['#00aaff', '#ffaa00', '#ff5577'], // 颜色搭配高端
-                itemStyle: { borderRadius: 8, borderColor: '#fff', borderWidth: 2 }
+    // 读取 JSON 数据
+    Promise.all([
+        fetch('data/blogs.json').then(response => response.json()),
+        fetch('data/publications.json').then(response => response.json()),
+        fetch('data/experiences.json').then(response => response.json())
+    ]).then(([blogs, publications, experiences]) => {
+        // 统计数据
+        const dataCounts = {
+            Blogs: blogs.length,
+            Publications: publications.length,
+            Experiences: experiences.length
+        };
+
+        // 配置 Chart.js
+        new Chart(ctx, {
+            type: 'doughnut', // 选择 doughnut 图表类型
+            data: {
+                labels: Object.keys(dataCounts), // X轴标签
+                datasets: [{
+                    label: 'Total Entries',
+                    data: Object.values(dataCounts), // 数据
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56'], // 每个扇形的背景颜色
+                    borderColor: ['#ff6384', '#36a2eb', '#ffcd56'], // 每个扇形的边框颜色
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top', // 图例位置
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' entries';
+                            }
+                        }
+                    }
+                }
             }
-        ]
-    };
-
-    myChart.setOption(option);
+        });
+    }).catch(error => {
+        console.error('Error loading JSON:', error);
+    });
 });
 
 /**
