@@ -87,61 +87,66 @@ body {
     line-height: 1.6;
 }
 
-/* 图表区域样式 */
+/* 图表区域：使用 academic 主题变量，考虑左右边栏 */
 .chart-area {
-    flex: 1;
-    padding: 20px;
+    margin-left: 280px;               /* 留出左侧 sidebar 宽度 */
+    margin-right: 100px;              /* 留出右侧栏宽度 */
+    padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    max-width: calc(100% - 380px); /* 考虑 sidebar 和 right-bar 的宽度 */
+    gap: 2rem;
+    max-width: calc(100% - 380px);     /* 总宽度扣除左右边栏 */
+    background: var(--background);    /* 背景色使用深灰 */
+    color: var(--text);               /* 文字颜色 */
 }
 
-/* 图表容器样式 */
+/* 图表容器：卡片风格 */
 .chart-container {
-    background-color: white;
+    background-color: var(--card-bg); /* 卡片背景色 */
+    border: 1px solid var(--card-border); /* 卡片边框色 */
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);        /* 投影效果 */
 }
 
-h2 {
+/* 图表标题（可根据需要进一步调整） */
+.chart-container h2 {
     text-align: center;
     font-size: 24px;
-    color: #333;
+    color: var(--primary);            /* 采用主题主色调 */
     margin-bottom: 20px;
 }
 
-/* 图表样式 */
-canvas {
-    max-width: 100%;
-    height: 400px;
-    margin: 0 auto;
+/* 图表 canvas 样式 */
+.chart-container canvas {
+    width: 100%;
     display: block;
+    margin: 0 auto;
 }
 
-/* 响应式设计 */
+/* 第一张图（时间序列图）设置为扁长型 */
+#blogTrendChart {
+    height: 250px;  /* 扁长形状 */
+}
+
+/* 其他图表默认高度 */
+.chart-container:not(#blogTrendChart) canvas {
+    height: 400px;
+}
+
+/* 桌面响应式调整 */
 @media (max-width: 1200px) {
     .chart-area {
-        flex-direction: column;
-        gap: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        max-width: 100%;
     }
-
-    h2 {
+    .chart-container h2 {
         font-size: 20px;
     }
 }
-
-@media (max-width: 768px) {
-    .chart-area {
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-}
-
 
 /* ==================== 容器布局 ==================== */
 .container {
