@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 2. 绘制 Publications & Experiences 分类占比柱状图（图二）
         new Chart(publicationsCtx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: ['Blogs', 'Publications', 'Experiences'],
                 datasets: [{
