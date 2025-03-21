@@ -238,6 +238,12 @@ body {
     transform: translateY(-2px);
 }
 
+.blog-card::before {
+    content: "";
+    display: none;  /* 直接隐藏，防止 hover 时残留 */
+}
+
+
 /* ========== 图片尺寸优化 ========== */
 .blog-card img {
     width: 100%;
@@ -294,7 +300,7 @@ body {
 
 /* ========== 日期样式 ========== */
 .blog-date {
-    font-size: 10px;
+    font-size: 12px;
     color: var(--muted-text);
 }
 
