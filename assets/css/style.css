@@ -18,7 +18,7 @@
 
 [data-theme="light"] {
     /* ☀️ 浅色主题 - Cell风格 */
-    --primary: #D45F40;        /* 陶土红 */
+    --primary: #ffe4e4;        /* 陶土红 */
     --secondary: #6B8A9E;     /* 浅岩青 */
     --accent: #588fd5;       /* 雾蓝 */
     --accent-rgb: 212, 95, 64; /* 陶土红RGB值 */
