@@ -92,7 +92,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 调整列的最小宽度以使其更紧凑 */
     padding: 2rem 1rem; /* 调整填充以节省空间 */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem; /* 减小间距使布局更紧凑 */
     background: var(--background); /* 背景色使用深灰 */
     color: var(--text); /* 文字颜色 */
