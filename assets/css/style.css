@@ -334,12 +334,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* 优化卡片间距 */
-.blog-container {
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
 /* 卡片效果 */
 .card {
     background: var(--card-bg);
