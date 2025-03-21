@@ -117,16 +117,6 @@ body {
     margin: 0 auto;
 }
 
-/* 第一张图（时间序列图）设置为更小的高度 */
-#blogTrendChart {
-    height: 150px; /* 更小的高度 */
-}
-
-/* 其他图表默认高度 */
-.chart-container:not(#blogTrendChart) canvas {
-    height: 200px; /* 统一其他图表的高度 */
-}
-
 /* ==================== 容器布局 ==================== */
 .container {
     display: flex;
