@@ -87,27 +87,61 @@ body {
     line-height: 1.6;
 }
 
-.charts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+/* 图表区域样式 */
+.chart-area {
+    flex: 1;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: calc(100% - 380px); /* 考虑 sidebar 和 right-bar 的宽度 */
 }
 
-.chart-box {
-    width: 300px; /* 限制单个图表大小 */
-    background: var(--card-bg);
-    padding: 15px;
+/* 图表容器样式 */
+.chart-container {
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.wide-chart {
-    width: 100%;
-    max-width: 700px; /* 让折线图稍微宽一些 */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
+
+/* 图表样式 */
+canvas {
+    max-width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .chart-area {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-area {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
 
 /* ==================== 容器布局 ==================== */
 .container {
