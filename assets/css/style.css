@@ -110,6 +110,10 @@ body {
     width: 100%;
 }
 
+.chart-container canvas{
+    color: var(--text);
+}
+
 /* ==================== 容器布局 ==================== */
 .container {
     display: flex;
