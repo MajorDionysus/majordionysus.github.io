@@ -96,6 +96,7 @@ body {
     background: var(--background); /* 背景色使用深灰 */
     flex-direction: row;
     color: var(--text); /* 文字颜色 */
+    width: 100%;
 }
 
 /* 图表容器：卡片风格 */
@@ -109,7 +110,6 @@ body {
     border-radius: 10px;
     padding: 10px; /* 减小填充以节省空间 */
     box-shadow: var(--shadow); /* 投影效果 */
-    width: 100%;
 }
 
 .chart-container canvas {
