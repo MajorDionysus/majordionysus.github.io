@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         new Chart(publicationsCtx, {
             type: 'bar',
             data: {
-                labels: ['Blogs', 'Publications', 'Experiences'],
+                labels: ['Blogs', 'Publications', 'Projects'],
                 datasets: [{
                     label: 'Total Entries',
                     data: [blogCount, publicationCount, experienceCount],
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 labels: years,
                 datasets: [
                     {
-                        label: 'Experiences',
+                        label: 'Projects',
                         data: experienceData,
                         borderColor: '#4e73df',
                         backgroundColor: 'rgba(78, 115, 223, 0.2)',
