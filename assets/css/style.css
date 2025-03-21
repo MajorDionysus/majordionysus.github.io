@@ -776,8 +776,8 @@ body {
 }
 
 [data-theme="dark"] .contact-item-icon {
-    background: rgba(var(--accent-rgb), 0.8); /* 降低强调色饱和度 */
-    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.2); /* 柔和的投影 */
+    background: rgba(var(--accent), 0.8); /* 降低强调色饱和度 */
+    box-shadow: 0 0 12px rgba(var(--accent), 0.2); /* 柔和的投影 */
 }
 
 /* 浅色主题 */
@@ -787,8 +787,8 @@ body {
 }
 
 [data-theme="light"] .contact-item-icon {
-    background: rgba(var(--accent-rgb), 0.9); /* 稍高的透明度 */
-    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.15);
+    background: rgba(var(--accent), 0.9); /* 稍高的透明度 */
+    box-shadow: 0 0 12px rgba(var(--accent), 0.15);
 }
 
 .contact-header {
@@ -798,7 +798,7 @@ body {
 
 .contact-header h2 {
     font-size: 2rem;
-    color: var(--primary);
+    color: var(--accent);
     margin-bottom: 0.5rem;
 }
 
