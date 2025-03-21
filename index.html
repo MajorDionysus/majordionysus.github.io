@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/phone.css">
     <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     // 全局主题初始化（必须放在所有页面）
     document.addEventListener('DOMContentLoaded', function() {
@@ -46,6 +47,11 @@
             <section class="welcome">
                 <h1>Welcome to My Academic Site</h1>
                 <h2><strong>M</strong>edInnovate | <strong>E</strong>volveHealth | <strong>I</strong>nspireBio</h2>
+            </section>
+
+            <section class="dashboard">
+                <h2>Academic Dashboard</h2>
+                <canvas id="dataChart"></canvas>
             </section>
 
             <!-- 个人简介部分 -->
