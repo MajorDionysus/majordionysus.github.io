@@ -26,50 +26,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 获取 canvas
-    const ctx = document.getElementById('dataChart').getContext('2d');
+    var chartContainer = document.getElementById('dashboard-chart');
+    var myChart = echarts.init(chartContainer);
 
-    // 读取 JSON 数据
-    Promise.all([
-        fetch('data/blogs.json').then(response => response.json()),
-        fetch('data/publications.json').then(response => response.json()),
-        fetch('data/experiences.json').then(response => response.json())
-    ]).then(([blogs, publications, experiences]) => {
-        // 统计数据
-        const dataCounts = {
-            Blogs: blogs.length,
-            Publications: publications.length,
-            Experiences: experiences.length
-        };
-
-        // 配置 Chart.js
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: Object.keys(dataCounts),
-                datasets: [{
-                    label: 'Total Entries',
-                    data: Object.values(dataCounts),
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56'],
-                    borderColor: ['#ff6384', '#36a2eb', '#ffcd56'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: true
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+    var option = {
+        series: [
+            {
+                type: 'pie',
+                radius: ['60%', '80%'], // 中间镂空，形成环形
+                avoidLabelOverlap: false,
+                label: { show: false },
+                emphasis: { label: { show: true, fontSize: '16', fontWeight: 'bold' } },
+                data: [
+                    { value: 5, name: 'Blogs' },
+                    { value: 10, name: 'Publications' },
+                    { value: 7, name: 'Projects' }
+                ],
+                color: ['#00aaff', '#ffaa00', '#ff5577'], // 颜色搭配高端
+                itemStyle: { borderRadius: 8, borderColor: '#fff', borderWidth: 2 }
             }
-        });
-    }).catch(error => console.error('Error loading JSON:', error));
+        ]
+    };
+
+    myChart.setOption(option);
 });
 
 /**
