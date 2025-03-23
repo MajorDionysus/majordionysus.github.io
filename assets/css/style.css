@@ -91,6 +91,7 @@ body {
 .chart-area {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 调整列的最小宽度以使其更紧凑 */
     padding: 2rem 1rem; /* 调整填充以节省空间 */
+    gap: 1rem;
     display: flex;
     background: var(--background); /* 背景色使用深灰 */
     flex-direction: row;
