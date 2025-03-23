@@ -103,9 +103,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // 2. 绘制 Publications & Experiences 分类占比柱状图（图二）
+        // 2. 绘制 Publications & Experiences 分类占比图（图二）
         new Chart(publicationsCtx, {
-            type: 'bar',
+            type: 'doughnut',
             data: {
                 labels: ['Blogs', 'Publications', 'Projects'],
                 datasets: [{
