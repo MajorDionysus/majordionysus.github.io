@@ -104,7 +104,7 @@ body {
     display: grid;
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
-    gap: 20px; /* 卡片之间的间距 */
+    gap: 10px; /* 卡片之间的间距 */
     background-color: var(--card-bg); /* 卡片背景色 */
     border: 1px solid var(--card-border); /* 卡片边框色 */
     border-radius: 10px;
