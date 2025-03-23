@@ -104,49 +104,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // 2. 绘制 Publications & Experiences 分类占比图（图二）
-        new Chart(publicationsCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Blogs', 'Publications', 'Projects'],
-                datasets: [{
-                    label: 'Total Entries',
-                    data: [blogCount, publicationCount, experienceCount],
-                    backgroundColor: ['#4e73df', '#36b9cc', '#ffcc5c'],
-                    borderColor: ['#4e73df', '#36b9cc', '#ffcc5c'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return `${tooltipItem.label}: ${tooltipItem.raw} entries`;
+       new Chart(publicationsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Blogs', 'Publications', 'Projects'],
+                    datasets: [{
+                        label: 'Total Entries',
+                        data: [blogCount, publicationCount, experienceCount],
+                        backgroundColor: ['#4e73df', '#36b9cc', '#ffcc5c'],
+                        borderColor: ['#4e73df', '#36b9cc', '#ffcc5c'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true, // Set to true to display the legend
+                            position: 'top' // Choose the position of the legend
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return `${tooltipItem.label}: ${tooltipItem.raw} entries`;
+                                }
                             }
                         }
                     }
-                },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Category'
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Count'
-                        }
-                    }
                 }
-            }
-        });
+            });
 
         // 3. 绘制 Experience / Publication Trend（图三）
         const experienceYears = experiences.map(exp => exp.year);
