@@ -16,11 +16,11 @@
                 "link": "http://www.mrj.today/HospitalManageInfo.web"
         },
         {
-            "title": "My Top 10 Books and Why I Love Them",
-            "description": "Discover my top 10 favorite books and the profound impact they've had on me.",
+            "title": "ECG signal acquisition & processing ",
+            "description": "This project integrates MATLAB-based ECG signal acquisition with a Django web interface for real-time data visualization.",
             "image": "../assets/images/logo.png",
             "tags": ["Books", "Learning"],
-            "date": "2025-3-20",
-                "link": "http://www.mrj.today/HospitalManageInfo.web"
+            "date": "2024-11-23",
+                "link": "https://www.notion.so/ECG-signal-acquisition-processing-1bffa376bdc58005a565cdf798ccd061?pvs=4"
         }
 ]
