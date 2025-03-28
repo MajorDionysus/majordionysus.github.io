@@ -14,21 +14,32 @@ document.addEventListener('DOMContentLoaded', function () {
         const publicationCount = publications.length;
         const experienceCount = experiences.length;
 
-        // 获取今年的 Blog 数据（按月份分组）
-        const currentYear = new Date().getFullYear();
-        const thisYearBlogs = blogs.filter(blog => {
-            const blogDate = new Date(blog.date);
-            return blogDate.getFullYear() === currentYear;
-        });
+       // 获取最近 12 个月的 Blog 数据（按月份分组）
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
 
-        const monthlyBlogCounts = Array(12).fill(0); // 用于存储12个月份的博客数量
-        thisYearBlogs.forEach(blog => {
-            const blogDate = new Date(blog.date);
-            const month = blogDate.getMonth(); // 获取月份（0-11）
-            monthlyBlogCounts[month]++;
-        });
+        const monthlyBlogCounts = Array(12).fill(0);
+        const months = [];
 
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        for (let i = 11; i >= 0; i--) {
+            let year = currentYear;
+            let month = currentMonth - i;
+            if (month < 0) {
+                month += 12;
+                year--;
+            }
+            months.unshift(new Date(year, month).toLocaleString('default', { month: 'short' })); // 获取月份的缩写
+            const monthStart = new Date(year, month, 1);
+            const monthEnd = new Date(year, month + 1, 0, 23, 59, 59); // 获取月份的最后一天
+
+            blogs.forEach(blog => {
+                const blogDate = new Date(blog.date);
+                if (blogDate >= monthStart && blogDate <= monthEnd) {
+                    monthlyBlogCounts[11 - i]++;
+                }
+            });
+        }
 
         // 图表配置
         // 1. 绘制 Blog 时间序列图（图一）
@@ -37,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data: {
                 labels: months,
                 datasets: [{
-                    label: 'Blog Posts in ' + currentYear,
+                    label: 'Blog Posts (Last 12 Months)',
                     data: monthlyBlogCounts,
                     borderColor: '#4e73df',
                     backgroundColor: 'rgba(78, 115, 223, 0.2)',
