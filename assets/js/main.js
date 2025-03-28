@@ -336,12 +336,15 @@ function renderData(container, data, formatFunction) {
  */
 function formatPublication(pub) {
   const li = document.createElement('li');
-  li.classList.add('publication-card');
+  li.classList.add('card');
   li.innerHTML = `
     <div class="card-image">
       <img src="${pub.imageUrl}" alt="${pub.title} 封面">
       ${pub.tag ? `<span class="tag">${pub.tag}</span>` : ''}
     </div>
+  `;
+  li.classList.add('publication-card');
+  li.innerHTML = `
     <div class="card-content">
       <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
       <p><strong>Authors:</strong> ${pub.authors}</p>
