@@ -5,7 +5,8 @@
         "description": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
         "year": "2024",
         "url": "https://github.com/MajorDionysus/IME_Expriment_I_Lab2",
-        "image": "../assets/images/pro/ecg_imelab.png"
+        "imageUrl": "../assets/images/pro/ecg_imelab.png",
+        "tag": "ECG Signal"
     },
        {
         "title": "AI Research Project",
@@ -13,6 +14,7 @@
         "description": "Conducted cutting-edge research on natural language processing and machine learning.",
         "year": "2023",
         "url": "https://doi.org/10.1038/s41565-024-00001",
-        "image": "../assets/images/school/sustech-university.png"
+        "imageUrl": "../assets/images/school/sustech-university.png",
+        "tag": "AI"
     }
 ]
