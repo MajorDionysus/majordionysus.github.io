@@ -626,19 +626,6 @@ body {
     border: 1px solid var(--card-border);
 }
 
-.card-image {
-  position: relative;
-  width: 200px;
-  margin-right: 20px;
-}
-
-.card-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-}
-
 .tag {
   position: absolute;
   top: 10px;
@@ -648,14 +635,6 @@ body {
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 14px;
-}
-
-.card-content {
-  flex: 1;
-}
-
-.card-content h3 {
-  margin-top: 0;
 }
 
 .abstract {
@@ -727,20 +706,23 @@ body {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 12px; /* 统一圆角 */
+    border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border);
 }
 
 .experience-card {
+    display: grid; /* 使用 CSS Grid 布局 */
+    grid-template-columns: 200px 1fr; /* 左侧图片列固定宽度 200px，右侧内容列占据剩余空间 */
+    gap: 10px; /* 列之间的间距 */
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px; /* 统一圆角 */
+    border-radius: 12px;
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem; /* 增加卡片间距 */
+    margin-bottom: 1.5rem;
 }
 
 .experience-card::before {
@@ -764,30 +746,41 @@ body {
     transform: scaleY(1);
 }
 
-.experience-card h3 {
+.experience-card .image-container { /* 图片容器样式 */
+    position: relative;
+}
+
+.experience-card .image-container img { /* 图片样式 */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.experience-card .content-card h3 { /* 内容卡片标题样式 */
     color: var(--accent);
     margin-bottom: 10px;
 }
 
-.experience-card p {
+.experience-card .content-card p { /* 内容卡片段落样式 */
     color: var(--text);
     font-size: 14px;
 }
 
-.experience-card a {
-    color: var(--link-blue); /* 继承主题中的链接颜色 */
-    text-decoration: none; /* 去掉默认下划线 */
-    font-weight: 600; /* 增加字体粗细，让链接更明显 */
+.experience-card .content-card a { /* 内容卡片链接样式 */
+    color: var(--link-blue);
+    text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.experience-card a:hover {
-    color: var(--primary); /* 悬停时变为主题主色 */
-    text-shadow: 0 0 10px var(--primary); /* 添加霓虹光晕效果 */
+.experience-card .content-card a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
 }
 
-.experience-card a:active {
-    color: var(--accent); /* 点击时变为强调色 */
+.experience-card .content-card a:active {
+    color: var(--accent);
 }
 
 /* ==================== 联系模块优化 ==================== */
