@@ -750,11 +750,14 @@ body {
     position: relative;
 }
 
-.experience-card .image-container img { /* 图片样式 */
-    width: 100%;
-    height: auto;
+.experience-card .image-container img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: auto; /* 高度自动调整，保持宽高比 */
+    max-width: 200px; /* 设置图片最大宽度 */
+    max-height: 150px; /* 设置图片最大高度 */
     display: block;
     border-radius: 4px;
+    object-fit: cover; /* 保持图片宽高比，并填充容器 */
 }
 
 .experience-card .content-card h3 { /* 内容卡片标题样式 */
