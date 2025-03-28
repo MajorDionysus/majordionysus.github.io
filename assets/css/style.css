@@ -626,6 +626,44 @@ body {
     border: 1px solid var(--card-border);
 }
 
+.card-image {
+  position: relative;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f0ad4e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  margin-top: 0;
+}
+
+.abstract {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+}
+
 .publication-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
