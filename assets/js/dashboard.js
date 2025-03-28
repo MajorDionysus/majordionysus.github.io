@@ -1,11 +1,3 @@
-// 配置常量
-const DATA_BASE_PATH = '../data/'; // JSON 数据文件的基础路径
-const PAGE_DATA_MAP = {
-    publications: { format: formatPublication, file: 'publications.json' },
-    experiences: { format: formatExperience, file: 'experiences.json' },
-    'life-timeline': { format: formatLifeEvent, file: 'life.json' },
-    blog: { format: formatBlogCard, file: 'blogs.json' } // 添加博客数据源
-};
 
 document.addEventListener('DOMContentLoaded', function () {
     const blogTrendCtx = document.getElementById('blogTrendChart').getContext('2d');
