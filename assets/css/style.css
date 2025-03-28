@@ -714,7 +714,7 @@ body {
     color: var(--accent);
 }
 
-.publication-card .abstract { /* 摘要样式 */
+.abstract { /* 摘要样式 */
     margin-top: 10px;
     font-style: italic;
     color: #555;
