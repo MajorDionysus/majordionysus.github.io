@@ -2,7 +2,7 @@
     {
         "title": "Course Project：ECG signal Acquisition, Denoising and Information Parsing",
         "role": "Responsible for signal denoising and web-visualization building",
-        "description": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
+        "abstract": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
         "year": "2024",
         "url": "https://github.com/MajorDionysus/IME_Expriment_I_Lab2",
         "imageUrl": "../assets/images/pro/ecg_imelab.png",
@@ -11,7 +11,7 @@
        {
         "title": "AI Research Project",
         "role": "Lead Researcher",
-        "description": "Conducted cutting-edge research on natural language processing and machine learning.",
+        "abstract": "Conducted cutting-edge research on natural language processing and machine learning.",
         "year": "2023",
         "url": "https://doi.org/10.1038/s41565-024-00001",
         "imageUrl": "../assets/images/school/sustech-university.png",
