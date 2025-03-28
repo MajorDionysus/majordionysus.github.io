@@ -409,3 +409,19 @@ function formatBlogCard(post) {
 
     return card;
 }
+
+/**
+ * 格式化 Life Timeline 数据
+ * @param {Object} event - 单条时间线事件数据
+ * @returns {HTMLElement}
+ */
+function formatLifeEvent(event) {
+    const li = document.createElement('li');
+    li.classList.add('timeline-item');
+    li.innerHTML = `
+        <h3>${event.date}: ${event.title}</h3>
+        ${event.description ? `<p>${event.description}</p>` : ''}
+        ${event.image ? `<img src="../assets/images/${event.image}" alt="${event.title}" class="timeline-image">` : ''}
+    `;
+    return li;
+}
