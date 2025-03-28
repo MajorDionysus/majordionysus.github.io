@@ -760,29 +760,29 @@ body {
     object-fit: cover; /* 保持图片宽高比，并填充容器 */
 }
 
-.experience-card h3 { /* 内容卡片标题样式 */
+.experience-card .content-card h3 { /* 内容卡片标题样式 */
     color: var(--accent);
     margin-bottom: 10px;
 }
 
-.experience-card p { /* 内容卡片段落样式 */
+.experience-card .content-card p { /* 内容卡片段落样式 */
     color: var(--text);
     font-size: 14px;
 }
 
-.experience-card a { /* 内容卡片链接样式 */
+.experience-card .content-card a { /* 内容卡片链接样式 */
     color: var(--link-blue);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.experience-card a:hover {
+.experience-card .content-card a:hover {
     color: var(--primary);
     text-shadow: 0 0 10px var(--primary);
 }
 
-.experience-card a:active {
+.experience-card .content-card a:active {
     color: var(--accent);
 }
 
