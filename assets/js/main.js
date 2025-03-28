@@ -336,16 +336,13 @@ function renderData(container, data, formatFunction) {
  */
 function formatPublication(pub) {
   const li = document.createElement('li');
-  li.classList.add('card');
-  li.innerHTML = `
-    <div class="card-image">
-      <img src="${pub.imageUrl}" alt="${pub.title} 封面">
-      ${pub.tag ? `<span class="tag">${pub.tag}</span>` : ''}
-    </div>
-  `;
   li.classList.add('publication-card');
   li.innerHTML = `
-    <div class="card-content">
+    <div class="image-container">
+      <img src="${pub.imageUrl}" alt="${pub.title} cover">
+      ${pub.tag ? `<span class="tag">${pub.tag}</span>` : ''}
+    </div>
+    <div class="content-card">
       <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
       <p><strong>Authors:</strong> ${pub.authors}</p>
       <p><strong>Year:</strong> ${pub.year}</p>
@@ -367,14 +364,14 @@ function formatExperience(exp) {
   li.classList.add('experience-card');
   li.innerHTML = `
     <div class="image-container">
-      <img src="${exp.imageUrl}" alt="${exp.title} 封面">
+      <img src="${exp.imageUrl}" alt="${exp.title} cover">
       ${exp.tag ? `<span class="tag">${exp.tag}</span>` : ''}
     </div>
     <div class="content-card">
       <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
       ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
       ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
-      ${exp.description ? `<p>${exp.description}</p>` : ''}
+      ${exp.abstract ? `<p class="abstract">${exp.abstract}</p>` : ''}
     </div>
   `;
   return li;
