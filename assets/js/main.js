@@ -335,17 +335,23 @@ function renderData(container, data, formatFunction) {
  * @returns {HTMLElement}
  */
 function formatPublication(pub) {
-    const li = document.createElement('li');
-    li.classList.add('publication-card');
-    li.innerHTML = `
-        <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
-        <p><strong>Authors:</strong> ${pub.authors}</p>
-        <p><strong>Year:</strong> ${pub.year}</p>
-        <p><strong>Journal:</strong> ${pub.journal}</p>
-        ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
-        ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
-    `;
-    return li;
+  const li = document.createElement('li');
+  li.classList.add('publication-card');
+  li.innerHTML = `
+    <div class="card-image">
+      <img src="${pub.imageUrl}" alt="${pub.title} 封面">
+      ${pub.tag ? `<span class="tag">${pub.tag}</span>` : ''}
+    </div>
+    <div class="card-content">
+      <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
+      <p><strong>Authors:</strong> ${pub.authors}</p>
+      <p><strong>Year:</strong> ${pub.year}</p>
+      <p><strong>Journal:</strong> ${pub.journal}</p>
+      ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
+      ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
+    </div>
+  `;
+  return li;
 }
 
 /**
@@ -354,32 +360,21 @@ function formatPublication(pub) {
  * @returns {HTMLElement}
  */
 function formatExperience(exp) {
-    const li = document.createElement('li');
-    li.classList.add('experience-card');
-    li.innerHTML = `
-        <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
-        ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
-        ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
-        ${exp.description ? `<p>${exp.description}</p>` : ''}
-    `;
-    return li;
-}
-
-
-/**
- * 格式化 Life Timeline 数据
- * @param {Object} event - 单条时间线事件数据
- * @returns {HTMLElement}
- */
-function formatLifeEvent(event) {
-    const li = document.createElement('li');
-    li.classList.add('timeline-item');
-    li.innerHTML = `
-        <h3>${event.date}: ${event.title}</h3>
-        ${event.description ? `<p>${event.description}</p>` : ''}
-        ${event.image ? `<img src="../assets/images/${event.image}" alt="${event.title}" class="timeline-image">` : ''}
-    `;
-    return li;
+  const li = document.createElement('li');
+  li.classList.add('experience-card');
+  li.innerHTML = `
+    <div class="card-image">
+      <img src="${exp.imageUrl}" alt="${exp.title} 封面">
+      ${exp.tag ? `<span class="tag">${exp.tag}</span>` : ''}
+    </div>
+    <div class="card-content">
+      <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
+      ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
+      ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
+      ${exp.description ? `<p>${exp.description}</p>` : ''}
+    </div>
+  `;
+  return li;
 }
 
 /**
