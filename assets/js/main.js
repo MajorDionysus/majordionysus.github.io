@@ -366,11 +366,11 @@ function formatExperience(exp) {
   const li = document.createElement('li');
   li.classList.add('experience-card');
   li.innerHTML = `
-    <div class="card-image">
+    <div class="image-container">
       <img src="${exp.imageUrl}" alt="${exp.title} 封面">
       ${exp.tag ? `<span class="tag">${exp.tag}</span>` : ''}
     </div>
-    <div class="card-content">
+    <div class="content-card">
       <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
       ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
       ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
