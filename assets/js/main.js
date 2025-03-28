@@ -151,7 +151,6 @@ function formatPublication(pub) {
   li.innerHTML = `
     <div class="image-container">
       <img src="${pub.imageUrl}" alt="${pub.title} cover">
-      ${pub.tag ? `<span class="tag">${pub.tag}</span>` : ''}
     </div>
     <div class="content-card">
       <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
@@ -176,7 +175,6 @@ function formatExperience(exp) {
   li.innerHTML = `
     <div class="image-container">
       <img src="${exp.imageUrl}" alt="${exp.title} cover">
-      ${exp.tag ? `<span class="tag">${exp.tag}</span>` : ''}
     </div>
     <div class="content-card">
       <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
