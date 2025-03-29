@@ -732,7 +732,7 @@ body {
 
 .experience-card {
     display: grid; /* 使用 CSS Grid 布局 */
-    grid-template-columns: 200px 1fr; /* 左侧图片列固定宽度 200px，右侧内容列占据剩余空间 */
+    grid-template-columns: 270px 1fr; /* 左侧图片列固定宽度 200px，右侧内容列占据剩余空间 */
     gap: 10px; /* 列之间的间距 */
     background: var(--card-bg);
     border: 1px solid var(--border);
