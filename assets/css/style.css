@@ -36,7 +36,8 @@
 /* ==================== 主要内容区域调整 ==================== */
 .main-content {
     margin-left: clamp(240px, 20vw, 280px);
-    padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 160px); /* 右侧留出技能卡片空间 */
+    /* 改为给右侧留出额外空间 */
+    padding: clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 180px) clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
     flex: 1;
     max-width: 1440px;
     position: relative;
