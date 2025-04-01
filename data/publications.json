@@ -1,6 +1,6 @@
 [
     {
-        "title": "A Novel Approach to Flexible Bioelectronics",
+        "title": "THIS IS A SAMPLE: Flexible Bioelectronics",
         "authors": "John Doe, Jane Smith",
         "year": "2024",
         "journal": "Nature Electronics",
@@ -11,7 +11,7 @@
         "imageUrl": "../assets/images/cover/pub/nc1.jpeg"
     },
     {
-        "title": "Neural Interfaces for Brain-Machine Communication",
+        "title": "THIS IS A SAMPLE: Neural Interface",
         "authors": "Alice Brown, Bob White",
         "year": "2025",
         "journal": "IEEE Transactions on Neural Systems",
