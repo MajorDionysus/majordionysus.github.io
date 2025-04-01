@@ -34,11 +34,13 @@
 }
 
 /* ==================== 主要内容区域 ==================== */
+/* ==================== 主要内容区域调整 ==================== */
 .main-content {
     margin-left: clamp(240px, 20vw, 280px);
-    padding: clamp(2rem, 4vw, 3rem);
+    padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 180px); /* 右侧留出技能卡片空间 */
     flex: 1;
     max-width: 1440px;
+    position: relative;
 }
 
 /* 主题切换按钮 */
@@ -572,21 +574,25 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ==================== Skills 卡片模块 ==================== */
+/* ==================== 技能卡片优化 ==================== */
 .skills-card {
     position: fixed;
     top: 50%;
-    right: 20px; /* 让它固定在页面右侧 */
+    right: clamp(20px, 2vw, 40px); /* 动态右边距 */
     transform: translateY(-50%);
-    width: 160px;
+    width: clamp(160px, 12vw, 200px); /* 弹性宽度 */
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    padding: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    border-radius: 12px; /* 圆角效果 */
-    backdrop-filter: blur(18px); /* 更强的模糊效果 */
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    z-index: 500; /* 确保在内容之上 */
+    backdrop-filter: blur(18px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skills-card:hover {
+    transform: translateY(-50%) scale(1.02);
 }
 
 .skills-card h3 {
