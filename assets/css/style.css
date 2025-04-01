@@ -35,10 +35,10 @@
 
 /* ==================== 主要内容区域 ==================== */
 .main-content {
-    margin-left: 280px; /* 留出 sidebar 的宽度 */
-    padding: 3rem 4rem;
+    margin-left: clamp(240px, 20vw, 280px);
+    padding: clamp(2rem, 4vw, 3rem);
     flex: 1;
-    max-width: 1240px;
+    max-width: 1440px;
 }
 
 /* 主题切换按钮 */
@@ -127,19 +127,20 @@ body {
 
 /* ==================== 左侧导航栏 ==================== */
 .sidebar {
-    width: 280px;
+    width: clamp(240px, 20vw, 280px);
     background: rgba(var(--card-bg), 0.96);
     padding: 2rem 1.5rem;
     position: fixed;
-    top: 0;
-    left: 0;
     height: 100vh;
     box-shadow: var(--shadow);
-    border-right: 1px solid var(--border);
-    border-radius: 0 24px 24px 0;
-    z-index: 100;
+    border-right: 1px solid var(--card-border);
     display: flex;
-    flex-direction: column; /* 确保内容垂直排列 */
+    flex-direction: column;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: clamp(260px, 22vw, 300px);
 }
 
 .sidebar h1 {
