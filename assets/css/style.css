@@ -39,7 +39,6 @@
     /* 改为给右侧留出额外空间 */
     padding: clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 180px) clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
     flex: 1;
-    max-width: 1440px;
     position: relative;
 }
 
@@ -578,9 +577,9 @@ body {
 .skills-card {
     position: fixed;
     top: 50%;
-    right: clamp(20px, 2vw, 40px); /* 动态右边距 */
+    right: clamp(5px, 2vw, 20px); /* 动态右边距 */
     transform: translateY(-50%) scale(0.9); /* 默认状态更小 */
-    width: clamp(160px, 12vw, 200px); /* 弹性宽度 */
+    width: clamp(120px, 12vw, 180px); /* 弹性宽度 */
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     padding: 1.5rem;
