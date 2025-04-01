@@ -140,10 +140,6 @@ body {
     transition: width 0.3s ease;
 }
 
-.sidebar:hover {
-    width: clamp(260px, 22vw, 300px);
-}
-
 .sidebar h1 {
     font-size: 2.4rem;
     color: var(--accent);
