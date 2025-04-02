@@ -17,20 +17,20 @@
 }
 
 [data-theme="light"] {
-    /* ☀️ 浅色主题 - Cell风格 */
-    --primary: #ffacac;        /* 陶土红 */
-    --secondary: #6B8A9E;     /* 浅岩青 */
-    --accent: #588fd5;       /* 雾蓝 */
-    --accent-rgb: 212, 95, 64; /* 陶土红RGB值 */
-    --text: #333333;          /* 深灰 */
-    --background: #FAFAFA;    /* 珍珠白 */
-    --card-bg: #FFFFFF;       /* 纯白 */
-    --card-border: #D0D0D0;   /* 浅灰 */
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-    --muted-text: #666666;
-    --link: #4A728C;          /* 主色作为链接 */
-    --primary-rgb: 59, 111, 140;
-    --background-rgb: 245, 245, 245;
+    /* ☀️ 浅色主题 - 古画风格 */
+    --primary: #A45A38;       /* 赭石红 */
+    --secondary: #6E8B74;     /* 岩绿 */
+    --accent: #C9A16D;        /* 旧金 */
+    --accent-rgb: 201, 161, 109; /* 旧金RGB值 */
+    --text: #4A3D32;          /* 深褐 */
+    --background: #F5E9D2;    /* 米黄 */
+    --card-bg: #F2E3C6;       /* 旧宣纸色 */
+    --card-border: #D3BFA7;   /* 纸张泛旧的边框色 */
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --muted-text: #857662;    /* 旧棕 */
+    --link: #8C6B4F;          /* 深棕色强调 */
+    --primary-rgb: 164, 90, 56;
+    --background-rgb: 245, 233, 210;
 }
 
 /* ==================== 主要内容区域调整 ==================== */
