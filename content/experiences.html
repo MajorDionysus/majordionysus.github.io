@@ -5,37 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research & Projects | Renjie Mei</title>
     <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
+    <script src="../assets/js/imgclick.js" defer></script>
+    <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("JS 已加载，等待点击事件..."); // 检测 JS 是否运行
-        
-            const lightbox = document.createElement("div");
-            lightbox.id = "lightbox";
-            lightbox.classList.add("lightbox");
-            lightbox.innerHTML = '<img id="lightbox-img" src="" alt="Preview">';
-            document.body.appendChild(lightbox);
-        
-            const lightboxImg = document.getElementById("lightbox-img");
-        
-            document.querySelectorAll(".experience-card .image-container img").forEach(img => {
-                console.log("找到图片:", img.src); // 确保 JS 找到了图片
-                img.addEventListener("click", function () {
-                    console.log("图片被点击:", this.src); // 检测点击事件
-                    lightboxImg.src = this.src;
-                    lightbox.classList.add("show");
-                });
-            });
-        
-            lightbox.addEventListener("click", function (e) {
-                if (e.target !== lightboxImg) {
-                    console.log("关闭 lightbox");
-                    lightbox.classList.remove("show");
-                }
-            });
-        });
-        </script>
-        <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
-        <script>
         // 全局主题初始化（必须放在所有页面）
         document.addEventListener('DOMContentLoaded', function() {
             // 从localStorage读取主题状态
