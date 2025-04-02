@@ -5,7 +5,7 @@
         "abstract": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
         "year": "2024",
         "url": "https://github.com/MajorDionysus/IME_Expriment_I_Lab2",
-        "imageUrl": "../assets/images/pro/ecg_imelab.png",
+        "imageUrl": "../assets/images/pro/learn2.png",
         "tag": "ECG Signal"
     },
        {
@@ -14,7 +14,7 @@
         "abstract": "The principle and procedure of fabricating metal polymer conductors utilizing micro-nano fabrication based on PDMS were mastered. In addition, numerous skills pertinent to research were acquired, thanks to Postdoc Wu Yan.",
         "year": "2023",
         "url": "https://rdcu.be/efXIq",
-        "imageUrl": "../assets/images/school/sustech-university.png",
+        "imageUrl": "../assets/images/pro/learn1.png",
         "tag": "Learning"
     }
 ]
