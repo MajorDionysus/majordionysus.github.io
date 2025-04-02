@@ -780,7 +780,7 @@ body {
     object-fit: cover;
     cursor: pointer; /* 让鼠标变为手型，表示可点击 */
     transition: transform 0.3s ease;
-    z-index: 1000;
+    z-index: 1001 !important; /* 提高层级，确保在最上方 */
 }
 
 .lightbox {
@@ -796,8 +796,9 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000; /* 确保浮层在最上方 */
+    z-index: 9999 !important; /* 提高层级，确保在最上方 */
 }
+
 
 .lightbox img {
     max-width: 90vw;
