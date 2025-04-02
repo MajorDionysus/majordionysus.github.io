@@ -1,27 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("JavaScript Loaded ✅"); // 确保 JS 被正确加载
+    console.log("✅ imgclick.js loaded!");
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
-    if (!lightbox || !lightboxImg) {
-        console.error("❌ Lightbox elements not found!");
-        return;
-    }
-
-    document.querySelectorAll(".experience-card .image-container img").forEach(img => {
-        console.log("Found image:", img.src); // 确保找到了图片
-        img.addEventListener("click", function () {
-            console.log("Image clicked:", this.src); // 监测点击事件
-            lightboxImg.src = this.src;
-            lightbox.classList.add("show");
-        });
+    // 监听 #experiences 区域的变化，确保动态加载的内容也能触发
+    const observer = new MutationObserver(() => {
+        console.log("🔄 DOM updated, re-binding click events");
+        bindClickEvents();
     });
 
-    lightbox.addEventListener("click", function (e) {
-        if (e.target !== lightboxImg) {
-            console.log("Lightbox closed");
+    observer.observe(document.getElementById("experiences"), { childList: true, subtree: true });
+
+    function bindClickEvents() {
+        const images = document.querySelectorAll(".experience-card .image-container img");
+        console.log(`🔍 Found ${images.length} images`);
+
+        images.forEach(img => {
+            img.removeEventListener("click", handleImageClick);
+            img.addEventListener("click", handleImageClick);
+        });
+    }
+
+    function handleImageClick() {
+        console.log("🔥 Image clicked!", this.src);
+        lightboxImg.src = this.src;
+        lightbox.classList.add("show");
+    }
+
+    // 🚀 点击 lightbox 周边区域即可关闭
+    lightbox.addEventListener("click", function (event) {
+        if (event.target !== lightboxImg) {
+            console.log("❌ Lightbox closed");
             lightbox.classList.remove("show");
         }
     });
+
+    // 初次绑定（如果页面已经有 .experience-card，则立即绑定）
+    bindClickEvents();
 });
