@@ -80,6 +80,7 @@
     font-family: 'Inter', sans-serif; /* 现代化字体 */
 }
 
+/* 默认亮色模式 */
 body {
     background: var(--background);
     color: var(--text);
@@ -87,6 +88,18 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+    cursor: url('../assets/cursors/light-mode.cur'), auto;
+}
+
+/* 当 `data-theme="dark"` 时，使用深色模式光标 */
+body[data-theme="dark"] {
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    cursor: url('../assets/cursors/dark-mode.cur'), auto;
 }
 
 /* 图表区域：使用 academic 主题变量，考虑左右边栏 */
