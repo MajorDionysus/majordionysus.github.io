@@ -780,6 +780,7 @@ body {
     object-fit: cover;
     cursor: pointer; /* 让鼠标变为手型，表示可点击 */
     transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
 .lightbox {
