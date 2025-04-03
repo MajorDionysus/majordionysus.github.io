@@ -1,7 +1,7 @@
 [
     {
-        "title": "Course Project：ECG signal Acquisition, Denoising and Information Parsing",
-        "role": "Responsible for signal denoising and web-visualization building",
+        "title": "A seemingly Failed Project: Organoid vascularization through perfusion vessel model utilizing mesh-MPC",
+        "role": "Assistant",
         "abstract": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
         "year": "2024",
         "url": "https://img.mrj.today/images/pro/Learn2.png",
@@ -9,7 +9,7 @@
         "tag": "ECG Signal"
     },
        {
-        "title": "Three-dimensional liquid metal-based neuro-interfaces for human hippocampal organoids",
+        "title": "Learning: From liquid metal-based neuro-interfaces for human hippocampal organoids",
         "role": "Learner",
         "abstract": "It was a very honourable experience to follow a freshly published Top subjournal to start my research journey. During the process, the principle and procedure of fabricating metal polymer conductors utilizing micro-nano fabrication based on PDMS were mastered. In addition, numerous skills pertinent to research were acquired, all thanks to Postdoc Wu Yan.",
         "year": "2023",
