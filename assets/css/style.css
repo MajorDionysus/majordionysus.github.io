@@ -576,7 +576,6 @@ body {
     position: fixed;
     top: 50%;
     right: clamp(5px, 2vw, 20px); /* 动态右边距 */
-    transform: translateY(-50%) scale(0.9); /* 默认状态更小 */
     width: clamp(120px, 12vw, 180px); /* 弹性宽度 */
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -586,10 +585,6 @@ body {
     z-index: 500; /* 确保在内容之上 */
     backdrop-filter: blur(18px);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.skills-card:hover {
-    transform: translateY(-50%) scale(1); /* hover时放大至正常大小 */
 }
 
 .skills-card h3 {
