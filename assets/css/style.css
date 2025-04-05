@@ -606,7 +606,6 @@ body {
     height: 50px;
     object-fit: contain;
     filter: brightness(1);
-    transform: translateY(-50%);
     transition: transform 0.2s ease, opacity 0.2s ease;
     border-radius: 2px; /* 圆角效果 */
 }
