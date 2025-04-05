@@ -584,7 +584,7 @@ body {
     border-radius: 12px;
     z-index: 500; /* 确保在内容之上 */
     backdrop-filter: blur(18px);
-    transform: translateY(-50%); /* ✨ 垂直居中修正 */
+    transform: translateY(-50%); /* 垂直居中修正 */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
