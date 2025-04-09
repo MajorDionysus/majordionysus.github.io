@@ -226,7 +226,7 @@ function formatBlogCard(post) {
                         </div>
                         <p class="blog-date">${post.date}</p>
                     </div>
-                    <a href="${post.link}" class="button" target="_blank" rel="noopener noreferrer">Read More</a>
+                    <button> <a href="${post.link}" class="button" target="_blank" rel="noopener noreferrer">Read More</a> </button>
                 </div>
             </div>
         </div>
