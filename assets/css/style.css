@@ -258,7 +258,7 @@ body {
 }
 
 .blog-card:hover {
-    transform: translateY(-1px);
+    transform: scale(1.05);
 }
 
 /* 统一图片尺寸 */
@@ -346,12 +346,10 @@ body {
 
 /* 按钮样式：Read More */
 .button {
-    background: rgba(var(--card-bg), 0.75);
-    color: var(--text);
+    color: var(--accent-rgb);
     padding: 8px 14px;
     font-size: 18px;
     font-weight: bold;
-    border: 2px solid rgba(var(--border), 0.8);
     cursor: pointer;
     border-radius: 12px;
     text-align: center;
@@ -361,7 +359,7 @@ body {
 
 .button:hover {
     filter: brightness(1.1);
-    transform: translateY(-1.2px);
+    transform: scale(1.05);
 }
 
 /* 卡片效果 */
