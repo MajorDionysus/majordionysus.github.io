@@ -250,7 +250,7 @@ body {
     border: 1px solid var(--card-border);
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -258,7 +258,7 @@ body {
 }
 
 .blog-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 /* 统一图片尺寸 */
@@ -293,7 +293,7 @@ body {
 
 /* 描述文字 */
 .blog-description {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text);
     opacity: 0.9;
     line-height: 1.5;
@@ -311,17 +311,16 @@ body {
 .blog-tags span {
     background: rgba(var(--accent-rgb), 0.08);
     color: var(--accent);
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border: 1.5px solid rgba(var(--accent-rgb), 0.3);
     font-size: 12px;
     padding: 4px 10px;
-    border-radius: 20px;
+    border-radius: 12px;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .blog-tags span:hover {
     filter: brightness(1.1);
-    transform: translateY(-1px);
 }
 
 /* 底部区域：日期 + 按钮 */
@@ -329,37 +328,36 @@ body {
     display: flex;
     justify-content: space-between; /* 左右分布 */
     align-items: center;
-    margin-top: 8px;
-    gap: 10px;
+    margin-top: 2px;
 }
 
 .blog-info {
     display: flex;
     flex-direction: column; /* 日期在上，标签在下 */
-    gap: 12px;
 }
 
 .blog-date {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--muted-text);
 }
 
 /* 按钮样式：Read More */
 .button {
-    color: var(--accent-rgb);
-    padding: 8px 14px;
-    font-size: 18px;
+    color: var(--text);
+    background: var(--card-bg);
+    border: var(--card-border);
+    padding: 4px 16px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease;
     text-decoration: none; /* 让超链接按钮看起来更像按钮 */
 }
 
 .button:hover {
-    filter: brightness(1.1);
-    transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 /* 卡片效果 */
