@@ -323,14 +323,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
-    // 主题切换按钮动画
-    document.getElementById('themeToggle').addEventListener('click', function() {
-        anime({
-            targets: this,
-            rotate: '+=180',
-            duration: 500,
-            easing: 'easeInOutQuad'
-        });
-    });
 });
