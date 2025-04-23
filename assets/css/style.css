@@ -34,6 +34,53 @@
 }
 
 
+.card, .contact-item, .blog-card {
+    transition: 
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease;
+    transform-origin: center;
+    will-change: transform, opacity;
+}
+
+.theme-toggle {
+    transition: 
+        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+        filter 0.3s ease;
+}
+
+.theme-toggle:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* 导航激活状态动画 */
+.sidebar nav li a.active {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 80%;
+        background: var(--accent-color);
+        border-radius: 2px;
+        animation: navActive 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+}
+
+@keyframes navActive {
+    from {
+        left: -20px;
+        opacity: 0;
+    }
+    to {
+        left: -10px;
+        opacity: 1;
+    }
+}
+
 /* ==================== 主要内容区域调整 ==================== */
 .main-content {
     margin-left: clamp(240px, 20vw, 280px);

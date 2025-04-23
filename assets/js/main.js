@@ -251,76 +251,140 @@ function formatLifeEvent(event) {
     return li;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // 侧边栏入场动画
-    anime({
-        targets: '.sidebar',
-        translateX: [-100, 0],
-        opacity: [0, 1],
-        duration: 800,
-        easing: 'easeOutExpo'
-    });
 
-    // 头像动画
-    anime({
-        targets: '.avatar',
-        scale: [0.5, 1],
-        rotate: [-180, 0],
+// 在main.js顶部添加动画配置对象
+const ANIME_CONFIG = {
+    sidebar: {
+        translateX: [-80, 0],
         opacity: [0, 1],
+        duration: 1200,
+        delay: 300,
+        easing: 'easeOutQuint'
+    },
+    avatar: {
+        scale: [0.8, 1],
+        rotate: [-360, 0],
+        opacity: [0, 1],
+        duration: 1500,
+        easing: 'easeOutElastic(1, .8)'
+    },
+    navItems: {
+        opacity: [0, 1],
+        translateY: [30, 0],
+        delay: anime.stagger(150, {start: 500}),
+        duration: 800,
+        easing: 'easeOutQuint'
+    },
+    contentSections: {
+        opacity: [0, 1],
+        translateY: [40, 0],
         duration: 1000,
-        easing: 'easeOutElastic(1, .5)'
-    });
+        delay: 800,
+        easing: 'easeOutQuint'
+    },
+    cards: {
+        in: {
+            opacity: [0, 1],
+            translateY: [50, 0],
+            scale: [0.95, 1],
+            delay: anime.stagger(100, {start: 1000}),
+            duration: 800,
+            easing: 'easeOutBack'
+        },
+        hover: {
+            scale: 1.03,
+            duration: 400,
+            boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
+            easing: 'easeOutQuad'
+        }
+    }
+};
 
-    // 导航项动画
+// 修改后的动画初始化代码
+document.addEventListener('DOMContentLoaded', function() {
+    // 层级式入场动画
+    anime({ targets: '.sidebar', ...ANIME_CONFIG.sidebar });
+    
+    anime({ targets: '.avatar', ...ANIME_CONFIG.avatar });
+    
+    anime({ targets: '.sidebar nav li', ...ANIME_CONFIG.navItems });
+    
+    // 通用内容区块动画
     anime({
-        targets: '.sidebar nav li',
-        opacity: [0, 1],
-        translateY: [20, 0],
-        delay: anime.stagger(100),
-        duration: 500,
-        easing: 'easeOutQuad'
+        targets: ['.contact-section', '.publication-card', '.experience-card', '.timeline-item', '.blog-card'],
+        ...ANIME_CONFIG.contentSections
     });
 
-    // 联系表单入场动画
-    anime({
-        targets: '.contact-section',
-        opacity: [0, 1],
-        translateY: [50, 0],
-        duration: 800,
-        easing: 'easeOutExpo'
-    });
-
-    // 联系卡片悬停动画
-    document.querySelectorAll('.contact-item').forEach(item => {
+    // 卡片悬停系统
+    document.querySelectorAll('.contact-item, .card').forEach(item => {
+        let animation;
+        
         item.addEventListener('mouseenter', () => {
-            anime({
+            animation = anime({
                 targets: item,
-                scale: 1.05,
-                boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
-                duration: 300
-            });
-            anime({
-                targets: item.querySelector('i'),
-                scale: [1, 1.2],
-                rotate: '1turn',
-                duration: 600,
-                easing: 'easeOutElastic(1, .5)'
+                ...ANIME_CONFIG.cards.hover,
+                begin: () => {
+                    anime({
+                        targets: item.querySelector('i, img'),
+                        scale: [1, 1.15],
+                        rotate: () => anime.random(-15, 15) + 'deg',
+                        duration: 600,
+                        easing: 'easeOutElastic(1, .8)'
+                    });
+                }
             });
         });
 
         item.addEventListener('mouseleave', () => {
+            animation?.pause();
             anime({
                 targets: item,
                 scale: 1,
-                boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-                duration: 300
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                duration: 600,
+                easing: 'easeOutElastic(1, .8)'
             });
             anime({
-                targets: item.querySelector('i'),
+                targets: item.querySelector('i, img'),
                 scale: 1,
-                rotate: '0turn',
-                duration: 300
+                rotate: '0deg',
+                duration: 400
             });
         });
+    });
+
+    // 增强主题切换动画
+    const themeBtn = document.getElementById('themeToggle');
+    anime.set(themeBtn, { rotate: localStorage.getItem('theme') === 'dark' ? 180 : 0 });
+    
+    themeBtn.addEventListener('click', function() {
+        anime({
+            targets: this,
+            rotate: '+=60',
+            scale: [1, 0.9, 1],
+            duration: 400,
+            easing: 'easeInOutElastic(1, .5)'
+        });
+    });
+
+    // 新增时间线动画
+    anime({
+        targets: '.timeline-item',
+        opacity: [0, 1],
+        translateX: [-50, 0],
+        delay: anime.stagger(200),
+        duration: 800,
+        easing: 'easeOutExpo'
+    });
+
+    // 博客卡片加载动画
+    anime({
+        targets: '.blog-card',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        scale: [0.98, 1],
+        delay: anime.stagger(150),
+        duration: 600,
+        easing: 'easeOutBack'
     });
 });
