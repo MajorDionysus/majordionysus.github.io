@@ -250,3 +250,87 @@ function formatLifeEvent(event) {
     `;
     return li;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 侧边栏入场动画
+    anime({
+        targets: '.sidebar',
+        translateX: [-100, 0],
+        opacity: [0, 1],
+        duration: 800,
+        easing: 'easeOutExpo'
+    });
+
+    // 头像动画
+    anime({
+        targets: '.avatar',
+        scale: [0.5, 1],
+        rotate: [-180, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        easing: 'easeOutElastic(1, .5)'
+    });
+
+    // 导航项动画
+    anime({
+        targets: '.sidebar nav li',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        delay: anime.stagger(100),
+        duration: 500,
+        easing: 'easeOutQuad'
+    });
+
+    // 联系表单入场动画
+    anime({
+        targets: '.contact-section',
+        opacity: [0, 1],
+        translateY: [50, 0],
+        duration: 800,
+        easing: 'easeOutExpo'
+    });
+
+    // 联系卡片悬停动画
+    document.querySelectorAll('.contact-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            anime({
+                targets: item,
+                scale: 1.05,
+                boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+                duration: 300
+            });
+            anime({
+                targets: item.querySelector('i'),
+                scale: [1, 1.2],
+                rotate: '1turn',
+                duration: 600,
+                easing: 'easeOutElastic(1, .5)'
+            });
+        });
+
+        item.addEventListener('mouseleave', () => {
+            anime({
+                targets: item,
+                scale: 1,
+                boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+                duration: 300
+            });
+            anime({
+                targets: item.querySelector('i'),
+                scale: 1,
+                rotate: '0turn',
+                duration: 300
+            });
+        });
+    });
+
+    // 主题切换按钮动画
+    document.getElementById('themeToggle').addEventListener('click', function() {
+        anime({
+            targets: this,
+            rotate: '+=180',
+            duration: 500,
+            easing: 'easeInOutQuad'
+        });
+    });
+});
