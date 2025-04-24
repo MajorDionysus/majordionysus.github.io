@@ -289,13 +289,7 @@ const ANIME_CONFIG = {
             scale: [0.95, 1],
             delay: anime.stagger(100, {start: 1000}),
             duration: 800,
-            easing: 'easeOutBack'
-        },
-        hover: {
-            scale: 1.03,
-            duration: 400,
-            boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
-            easing: 'easeOutQuad'
+            easing: 'easeOutElastic(1, .8)'
         }
     }
 };
@@ -327,9 +321,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     anime({
                         targets: item.querySelector('i, img'),
                         scale: [1, 1.15],
-                        rotate: () => anime.random(-15, 15) + 'deg',
+                        rotate: () => anime.random(-30, 30) + 'deg',
                         duration: 600,
-                        easing: 'easeOutElastic(1, .8)'
+                        easing: 'easeOutElastic(1, .6)'
                     });
                 }
             });
@@ -340,51 +334,25 @@ document.addEventListener('DOMContentLoaded', function() {
             anime({
                 targets: item,
                 scale: 1,
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
                 duration: 600,
-                easing: 'easeOutElastic(1, .8)'
+                easing: 'easeOutElastic(1, .6)'
             });
             anime({
                 targets: item.querySelector('i, img'),
                 scale: 1,
                 rotate: '0deg',
-                duration: 400
+                duration: 600
             });
-        });
-    });
-
-    // 增强主题切换动画
-    const themeBtn = document.getElementById('themeToggle');
-    anime.set(themeBtn, { rotate: localStorage.getItem('theme') === 'dark' ? 180 : 0 });
-    
-    themeBtn.addEventListener('click', function() {
-        anime({
-            targets: this,
-            rotate: '+=60',
-            scale: [1, 0.9, 1],
-            duration: 400,
-            easing: 'easeInOutElastic(1, .5)'
         });
     });
 
     // 新增时间线动画
     anime({
-        targets: '.timeline-item',
+        targets: '.main-content',
         opacity: [0, 1],
-        translateX: [-30, 0],
-        delay: anime.stagger(150),
+        translateX: [-100, 0],
+        delay: anime.stagger(200),
         duration: 500,
-        easing: 'easeOutExpo'
-    });
-
-    // 博客卡片加载动画
-    anime({
-        targets: '.blog-card',
-        opacity: [0, 1],
-        translateY: [-30, 0],
-        scale: [0.95, 1],
-        delay: anime.stagger(150),
-        duration: 500,
-        easing: 'easeOutBack'
+        easing: 'easeOutElastic(1, .8)'
     });
 });
