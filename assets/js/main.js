@@ -371,9 +371,9 @@ document.addEventListener('DOMContentLoaded', function() {
     anime({
         targets: '.timeline-item',
         opacity: [0, 1],
-        translateX: [-50, 0],
-        delay: anime.stagger(200),
-        duration: 800,
+        translateX: [-30, 0],
+        delay: anime.stagger(150),
+        duration: 500,
         easing: 'easeOutExpo'
     });
 
@@ -381,10 +381,10 @@ document.addEventListener('DOMContentLoaded', function() {
     anime({
         targets: '.blog-card',
         opacity: [0, 1],
-        translateY: [30, 0],
-        scale: [0.98, 1],
+        translateY: [-30, 0],
+        scale: [0.95, 1],
         delay: anime.stagger(150),
-        duration: 600,
+        duration: 500,
         easing: 'easeOutBack'
     });
 });
