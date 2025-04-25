@@ -258,38 +258,41 @@ const ANIME_CONFIG = {
         translateX: [-80, 0],
         opacity: [0, 1],
         duration: 1200,
-        delay: 300,
+        delay: anime.stagger(300),
         easing: 'easeOutQuint'
-    },
-    avatar: {
-        scale: [0.8, 1],
-        rotate: [-360, 0],
-        opacity: [0, 1],
-        duration: 1500,
-        easing: 'easeOutElastic(1, .8)'
     },
     navItems: {
         opacity: [0, 1],
         translateY: [30, 0],
-        delay: anime.stagger(150, {start: 500}),
+        delay: anime.stagger(150),
         duration: 800,
         easing: 'easeOutQuint'
     },
-    contentSections: {
+    content: {
         opacity: [0, 1],
-        translateY: [40, 0],
-        duration: 1000,
-        delay: 800,
+        translateX: [-200, 0],
+        delay: anime.stagger(100),
+        duration: 1200,
         easing: 'easeOutQuint'
     },
     cards: {
         in: {
             opacity: [0, 1],
             translateY: [50, 0],
-            scale: [0.95, 1],
-            delay: anime.stagger(100, {start: 1000}),
+            scale: [0.5, 1],
+            delay: anime.stagger(100, {start: 800}),
             duration: 800,
-            easing: 'easeOutElastic(1, .8)'
+            easing: 'easeOutQuint'
+        },
+        hover: {
+            scale: 1.15,
+            duration: 600,
+            easing: 'easeOutElastic(1, .6)'
+        },
+        out: {
+            scale: 1,
+            duration: 600,
+            easing: 'easeOutElastic(1, .6)'
         }
     }
 };
@@ -299,18 +302,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // 层级式入场动画
     anime({ targets: '.sidebar', ...ANIME_CONFIG.sidebar });
     
-    anime({ targets: '.avatar', ...ANIME_CONFIG.avatar });
-    
     anime({ targets: '.sidebar nav li', ...ANIME_CONFIG.navItems });
-    
-    // 通用内容区块动画
-    anime({
-        targets: ['.contact-section', '.publication-card', '.experience-card', '.timeline-item', '.blog-card'],
-        ...ANIME_CONFIG.contentSections
-    });
 
-    // 卡片悬停系统
-    document.querySelectorAll('.contact-item, .card').forEach(item => {
+    anime({ targets: '.main-content', ...ANIME_CONFIG.content });
+    
+    anime({ targets: '.contact-item, .publication-card, .experience-card, .chart-container, .blog-card ', ...ANIME_CONFIG.cards.in });
+
+    
+    // 卡片悬停系统  
+    document.querySelectorAll('.contact-item').forEach(item => {
         let animation;
         
         item.addEventListener('mouseenter', () => {
@@ -320,7 +320,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 begin: () => {
                     anime({
                         targets: item.querySelector('i, img'),
-                        scale: [1, 1.15],
                         rotate: () => anime.random(-30, 30) + 'deg',
                         duration: 600,
                         easing: 'easeOutElastic(1, .6)'
@@ -346,13 +345,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 新增时间线动画
-    anime({
-        targets: '.main-content',
-        opacity: [0, 1],
-        translateX: [-100, 0],
-        delay: anime.stagger(200),
-        duration: 500,
-        easing: 'easeOutElastic(1, .8)'
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        let animation;
+        
+        item.addEventListener('mouseenter', () => {
+            animation = anime({
+                targets: item,
+                begin: () => {
+                    anime({
+                        targets: item.querySelector('i, img'),
+                        rotate: () => 360 + 'deg',
+                        duration: 5400,
+                        easing: 'easeOutElastic(1, .6)'
+                    });
+                }
+            });
+        });
+
+        item.addEventListener('mouseleave', () => {
+            animation?.pause();
+            anime({
+                targets: item.querySelector('i, img'),
+                scale: 1,
+                rotate: '0deg',
+                duration: 2700,
+                easing: 'easeOutQuint'
+            });
+        });
     });
 });

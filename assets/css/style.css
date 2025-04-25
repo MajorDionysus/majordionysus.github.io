@@ -523,11 +523,6 @@ body {
     margin-bottom: 1.5rem; /* 增加卡片间距 */
 }
 
-.timeline-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
 .timeline-item img {
     width: 120px;
     height: 120px;
@@ -889,10 +884,6 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.contact-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
 
 .contact-item-icon {
     width: 80px; /* 统一图标容器大小 */
