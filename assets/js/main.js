@@ -265,15 +265,12 @@ const ANIME_CONFIG = {
         opacity: [0, 1],
         translateY: [30, 0],
         delay: anime.stagger(150),
-        duration: 800,
-        easing: 'easeOutQuint'
+        duration: 800
     },
     content: {
         opacity: [0, 1],
-        translateX: [-200, 0],
         delay: anime.stagger(100),
-        duration: 1200,
-        easing: 'easeOutQuint'
+        duration: 3600
     },
     cards: {
         in: {
