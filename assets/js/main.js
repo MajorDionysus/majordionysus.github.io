@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     anime({ targets: '.main-content', ...ANIME_CONFIG.content });
     
-    anime({ targets: '.contact-item, .publication-card, .experience-card, .chart-container, .blog-card ', ...ANIME_CONFIG.cards.in });
+    anime({ targets: '.contact-item', ...ANIME_CONFIG.cards.in });
 
     
     // 卡片悬停系统  
