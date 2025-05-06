@@ -269,7 +269,6 @@ const ANIME_CONFIG = {
     },
     content: {
         opacity: [0, 1],
-        delay: anime.stagger(100),
         duration: 3600
     },
     cards: {
@@ -278,7 +277,7 @@ const ANIME_CONFIG = {
             translateY: [50, 0],
             scale: [0.5, 1],
             delay: anime.stagger(100, {start: 800}),
-            duration: 800,
+            duration: 600,
             easing: 'easeOutQuint'
         },
         hover: {
@@ -299,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 层级式入场动画
     anime({ targets: '.sidebar', ...ANIME_CONFIG.sidebar });
     
-    anime({ targets: '.sidebar nav li', ...ANIME_CONFIG.navItems });
+    // anime({ targets: '.sidebar nav li', ...ANIME_CONFIG.navItems });
 
     anime({ targets: '.main-content', ...ANIME_CONFIG.content });
     
