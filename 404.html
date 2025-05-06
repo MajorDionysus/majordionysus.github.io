@@ -1,119 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
-    <style>
-        /* 404 页面全局样式 */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #ff003c, #00d4ff);
-            color: white;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 120px;
-            margin: 0;
-            font-weight: 900;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        p {
-            font-size: 20px;
-            margin: 10px 0 20px;
-        }
-
-        .home-button {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-            border-radius: 30px;
-            transition: 0.3s ease;
-        }
-
-        .home-button:hover {
-            background: white;
-            color: #ff003c;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* SVG 效果 */
-        .glitch {
-            font-size: 100px;
-            font-weight: bold;
-            text-transform: uppercase;
-            position: relative;
-            animation: glitch 1s infinite;
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0, 0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(2px, -2px); }
-            60% { transform: translate(-2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0, 0); }
-        }
-
-        /* 未来感背景动画 */
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .background span {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            animation: floating 6s infinite ease-in-out alternate;
-        }
-
-        .background span:nth-child(1) { top: 10%; left: 15%; animation-duration: 8s; }
-        .background span:nth-child(2) { top: 40%; left: 70%; animation-duration: 10s; }
-        .background span:nth-child(3) { top: 60%; left: 30%; animation-duration: 7s; }
-        .background span:nth-child(4) { top: 80%; left: 50%; animation-duration: 12s; }
-
-        @keyframes floating {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-20px) scale(1.2); }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Page Not Found</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+      color: #eceff4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 10rem;
+      margin: 0;
+      display: flex;
+    }
+    h1 .letter {
+      display: inline-block;
+      position: relative;
+      margin: 0 0.2rem;
+      opacity: 0;
+    }
+    #message {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      opacity: 0;
+      text-shadow: 0 0 5px rgba(236,239,244,0.7);
+    }
+    #home-button {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #3a3f4b, #585e6f);
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    #home-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.08;
+      mix-blend-mode: normal;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="background">
-        <span></span><span></span><span></span><span></span>
-    </div>
+  <h1 id="animated-404">
+    <span class="letter">4</span><span class="letter">0</span><span class="letter">4</span>
+  </h1>
+  <p id="message">Oops! The page you're looking for doesn't exist.</p>
+  <button id="home-button" onclick="location.href='index.html'">Return Home</button>
 
-    <div class="container">
-        <h1 class="glitch">404</h1>
-        <p>Oops! The page you are looking for does not exist.</p>
-        <a href="../index.html" class="home-button">Go Back Home</a>
-    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    var letters = document.querySelectorAll('#animated-404 .letter');
+    var message = document.getElementById('message');
+    var button = document.getElementById('home-button');
+
+    var palette = ['#E3B23C', '#D77FA1', '#9AC5A1', '#7B9EA8', '#C49B5A'];
+    for (var i = 0; i < 25; i++) {
+      var div = document.createElement('div');
+      div.classList.add('shape');
+      var size = anime.random(30, 120);
+      div.style.width = div.style.height = size + 'px';
+      div.style.background = palette[anime.random(0, palette.length - 1)];
+      div.style.top = anime.random(0, 100) + 'vh';
+      div.style.left = anime.random(0, 100) + 'vw';
+      document.body.appendChild(div);
+      anime({
+        targets: div,
+        translateX: function() { return anime.random(-300, 300); },
+        translateY: function() { return anime.random(-300, 300); },
+        scale: [1, 0.2],
+        opacity: [0.2, 0],
+        easing: 'easeInOutSine',
+        duration: anime.random(3000, 6000),
+        loop: true,
+        direction: 'alternate'
+      });
+    }
+
+    var introTl = anime.timeline({ loop: false });
+    introTl
+      .add({
+        targets: letters,
+        translateY: [100, 0],
+        rotate: [180, 0],
+        opacity: [0, 1],
+        color: function() { return palette[anime.random(0, palette.length - 1)]; },
+        easing: 'easeOutExpo',
+        duration: 1000,
+        delay: (el, i) => i * 200
+      })
+      .add({
+        targets: message,
+        opacity: [0, 1],
+        translateY: [30, 0],
+        easing: 'easeOutExpo',
+        duration: 800
+      }, '-=600')
+      .add({
+        targets: button,
+        opacity: [0, 1],
+        scale: [0.9, 1],
+        easing: 'easeOutBack',
+        duration: 800
+      }, '-=500');
+
+    anime({
+      targets: '#animated-404',
+      translateX: [0, 10],
+      translateY: [0, -10],
+      direction: 'alternate',
+      easing: 'easeInOutSine',
+      duration: 4000,
+      loop: true
+    });
+  </script>
 </body>
 </html>
