@@ -3,8 +3,7 @@ const DATA_BASE_PATH = '../data/'; // JSON 数据文件的基础路径
 const PAGE_DATA_MAP = {
     publications: { format: formatPublication, file: 'publications.json' },
     experiences: { format: formatExperience, file: 'experiences.json' },
-    'life-timeline': { format: formatLifeEvent, file: 'life.json' },
-    blog: { format: formatBlogCard, file: 'blogs.json' } // 添加博客数据源
+    'life-timeline': { format: formatLifeEvent, file: 'life.json' }
 };
 
 // 页面加载完成后执行
@@ -200,39 +199,6 @@ function formatLifeEvent(event) {
         ${event.image ? `<img src="../assets/images/${event.image}" alt="${event.title}" class="timeline-image">` : ''}
     `;
     return li;
-}
-
-/**
- * 格式化博客卡片数据
- * @param {Object} post - 单篇博客数据
- * @returns {HTMLElement}
- */
-function formatBlogCard(post) {
-    const card = document.createElement('div');
-    card.classList.add('blog-card');
-
-    card.innerHTML = `
-        <div class="blog-card">
-            <img src="${post.image}" alt="${post.title}">
-            <div class="blog-content">
-                <h3 class="blog-title">
-                    <a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a>
-                </h3>
-                ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
-                <div class="blog-footer">
-                    <div class="blog-block">
-                        <div class="blog-tags">
-                            ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
-                        </div>
-                        <p class="blog-date">${post.date}</p>
-                    </div>
-                    <button> <a href="${post.link}" class="button" target="_blank" rel="noopener noreferrer">Read More</a> </button>
-                </div>
-            </div>
-        </div>
-    `;
-
-    return card;
 }
 
 /**
