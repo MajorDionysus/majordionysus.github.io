@@ -24,9 +24,9 @@
 
 [data-theme="light"] {
     /* ☀️ 浅色主题 - 宋明古画风格 */
-    --primary: #e15b3d;       /* 赤茶 - 温润深棕红 */
+    --primary: #d74f31;       /* 赤茶 - 温润深棕红 */
     --secondary: #5F6D57;     /* 苍绿 - 低饱和度的青灰 */
-    --accent: #9a9b54;       
+    --accent: #8c8d51;       
     --accent-rgb: 169, 139, 102;
     --text: #4C3B2A;          /* 书墨褐 - 仿古书墨色，略带温暖感 */
     --background: #F8F4E6;    /* 岫玉白 - 温和泛黄的古画纸色 */
@@ -82,7 +82,7 @@ h4 {
 }
 h5 {
     color: var(--h5);
-    font-size: 1.25rem;
+    font-size: 1.32rem;
 }
 h6 {
     color: var(--h6);
@@ -182,7 +182,7 @@ body {
     position: fixed;
     height: 100vh;
     box-shadow: var(--shadow);
-    border-right: 5px solid var(--card-border);
+    border-right: 6px solid var(--card-border);
     border-radius: 0 25px 25px 0; /* 圆角效果 */
     display: flex;
     flex-direction: column;
@@ -465,8 +465,8 @@ body {
 }
 
 .timeline-item img {
-    width: 120px;
-    height: 120px;
+    width: 136px;
+    height: 136px;
     border-radius: 12px; /* 统一圆角 */
     object-fit: cover;
 }
@@ -475,32 +475,10 @@ body {
     flex: 1;
 }
 
-.timeline-content h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
 .timeline-content p {
     font-size: 1rem;
     color: var(--text);
     line-height: 1.6;
-}
-
-/* ==================== Notion 卡片样式 ==================== */
-.notion-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.notion-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ==================== 技能卡片优化 ==================== */
@@ -520,12 +498,6 @@ body {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.skills-card h3 {
-    color: var(--text);
-    font-size: 18px;
-    margin-bottom: 12px;
-    font-weight: 800;
-}
 
 .skills-list {
     display: grid;
@@ -664,7 +636,7 @@ body {
 
 .experience-card {
     display: grid; /* 使用 CSS Grid 布局 */
-    grid-template-columns: 270px 1fr; /* 左侧图片列固定宽度 200px，右侧内容列占据剩余空间 */
+    grid-template-columns: 360px 1fr; /* 左侧图片列固定宽度 200px，右侧内容列占据剩余空间 */
     gap: 10px; /* 列之间的间距 */
     background: var(--card-bg);
     border: 1px solid var(--border);

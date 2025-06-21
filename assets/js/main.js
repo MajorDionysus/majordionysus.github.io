@@ -176,7 +176,7 @@ function formatExperience(exp) {
       <img src="${exp.imageUrl}" alt="${exp.title} cover">
     </div>
     <div class="content-card">
-      <h3><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h3>
+      <h5><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h5>
       ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
       ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
       ${exp.abstract ? `<p class="abstract">${exp.abstract}</p>` : ''}
@@ -301,30 +301,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('.timeline-item').forEach(item => {
-        let animation;
-        
+        // 只针对图片元素
+        const img = item.querySelector('img');
+        if (!img) return;
+
+        // 移除之前的动画对象
+        let animation = null;
+
         item.addEventListener('mouseenter', () => {
+            // 移除可能存在的正在运行的动画
+            anime.remove(img);
+            
+            // 创建新的缩放动画
             animation = anime({
-                targets: item,
-                begin: () => {
-                    anime({
-                        targets: item.querySelector('i, img'),
-                        rotate: () => 360 + 'deg',
-                        duration: 1600,
-                        easing: 'easeOutElastic(1, .6)'
-                    });
-                }
+                targets: img,
+                scale: 1.3,
+                duration: 400,
+                easing: 'easeOutQuad'
             });
         });
 
         item.addEventListener('mouseleave', () => {
-            animation?.pause();
-            anime({
-                targets: item.querySelector('i, img'),
+            // 移除可能存在的正在运行的动画
+            anime.remove(img);
+            
+            // 平滑缩回原始大小
+            animation = anime({
+                targets: img,
                 scale: 1,
-                rotate: '0deg',
-                duration: 1200,
-                easing: 'easeOutQuint'
+                duration: 600,
+                easing: 'easeOutElastic'
             });
         });
     });
