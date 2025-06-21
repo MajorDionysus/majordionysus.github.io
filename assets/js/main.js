@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     anime({
                         targets: item.querySelector('i, img'),
                         rotate: () => 360 + 'deg',
-                        duration: 5400,
+                        duration: 1600,
                         easing: 'easeOutElastic(1, .6)'
                     });
                 }
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 targets: item.querySelector('i, img'),
                 scale: 1,
                 rotate: '0deg',
-                duration: 2700,
+                duration: 1200,
                 easing: 'easeOutQuint'
             });
         });
