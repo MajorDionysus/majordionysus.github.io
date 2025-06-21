@@ -2,138 +2,400 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
-      color: #eceff4;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0f1d, #080c18);
+      color: #f1f5f9;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-    h1 {
-      font-size: 10rem;
-      margin: 0;
-      display: flex;
-    }
-    h1 .letter {
-      display: inline-block;
+      padding: 20px;
       position: relative;
-      margin: 0 0.2rem;
-      opacity: 0;
+      line-height: 1.6;
+      overflow: hidden;
     }
+
+    /* 粒子背景 */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 40px;
+      background: rgba(10, 15, 29, 0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6),
+                  0 0 0 1px rgba(255, 255, 255, 0.06);
+      z-index: 10;
+      position: relative;
+      border: 1px solid rgba(94, 234, 212, 0.1);
+    }
+
+    .error-header {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 12rem;
+      margin: 0;
+      line-height: 1;
+      font-weight: 800;
+      background: linear-gradient(45deg, #818cf8, #60a5fa, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+      position: relative;
+      z-index: 2;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
     #message {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      opacity: 0;
-      text-shadow: 0 0 5px rgba(236,239,244,0.7);
+      font-size: 1.8rem;
+      margin-top: 1.5rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 20px auto 0;
+      color: #cbd5e1;
+      opacity: 0.95;
+      letter-spacing: 0.5px;
     }
-    #home-button {
-      margin-top: 2rem;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      font-weight: bold;
-      background: linear-gradient(135deg, #3a3f4b, #585e6f);
-      border: none;
-      border-radius: 2rem;
+
+    .navigation-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 10px;
       cursor: pointer;
-      color: #ffffff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      opacity: 0;
-      transform: scale(0.9);
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(18, 24, 38, 0.8);
+      border: 1px solid rgba(94, 234, 212, 0.15);
+      text-decoration: none;
     }
-    #home-button:hover {
+
+    .nav-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background: rgba(30, 41, 59, 0.9);
+      border-color: rgba(94, 234, 212, 0.3);
+    }
+
+    .nav-link i {
+      font-size: 1.2rem;
+      color: #60a5fa;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .action-button {
+      padding: 1rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .action-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #4f46e5, #7c3aed);
+      z-index: -1;
+      transition: transform 0.4s ease;
+    }
+
+    #home-button::before {
+      background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    }
+
+    #contact-button::before {
+      background: linear-gradient(45deg, #0ea5e9, #38bdf8);
+    }
+
+    .action-button:hover::before {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
+
+    .action-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .action-button:active {
+      transform: translateY(1px);
+    }
+
+    .action-button i {
+      font-size: 1.2rem;
+    }
+
+    /* 几何碎片效果 */
+    .geometric-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
     .shape {
       position: absolute;
+      opacity: 0.15;
+      filter: blur(15px);
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .shape.triangle {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background: linear-gradient(45deg, #818cf8, #60a5fa);
+    }
+
+    .shape.circle {
       border-radius: 50%;
-      opacity: 0.08;
-      mix-blend-mode: normal;
-      pointer-events: none;
+      background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+    }
+
+    .shape.square {
+      background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    }
+
+    .shape.hexagon {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: linear-gradient(45deg, #0ea5e9, #38bdf8);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(10px, 15px) rotate(5deg); }
+      50% { transform: translate(5px, -10px) rotate(-5deg); }
+      75% { transform: translate(-10px, 5px) rotate(3deg); }
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+      padding: 0 20px;
+      z-index: 5;
+    }
+
+    .footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 8rem;
+      }
+      
+      #message {
+        font-size: 1.4rem;
+      }
+      
+      .container {
+        padding: 30px;
+        border-radius: 16px;
+      }
+      
+      .navigation-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .action-button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 6rem;
+      }
+      
+      #message {
+        font-size: 1.2rem;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+      
+      .nav-link, .action-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1 id="animated-404">
-    <span class="letter">4</span><span class="letter">0</span><span class="letter">4</span>
-  </h1>
-  <p id="message">Oops! The page you're looking for doesn't exist.</p>
-  <button id="home-button" onclick="location.href='index.html'">Return Home</button>
+  <!-- 粒子背景 -->
+  <div id="particles-js"></div>
+  
+  <!-- 几何碎片 -->
+  <div class="geometric-shapes">
+    <div class="shape triangle" style="width: 180px; height: 180px; top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="shape circle" style="width: 220px; height: 220px; top: 70%; left: 10%; animation-delay: 2s;"></div>
+    <div class="shape hexagon" style="width: 160px; height: 160px; top: 20%; left: 80%; animation-delay: 4s;"></div>
+    <div class="shape square" style="width: 140px; height: 140px; top: 75%; left: 85%; animation-delay: 6s;"></div>
+    <div class="shape triangle" style="width: 120px; height: 120px; top: 50%; left: 25%; animation-delay: 1s;"></div>
+    <div class="shape circle" style="width: 200px; height: 200px; top: 15%; left: 50%; animation-delay: 3s;"></div>
+  </div>
+  
+  <div class="container">
+    <div class="error-header">
+      <h1>404</h1>
+      <p id="message">Sorry, the page you requested could not be found. You can back to:</p>
+    </div>
+    
+    <!-- Navigation Links -->
+    <div class="navigation-links">
+      <a href="content/publications.html" class="nav-link">
+        <i class="fas fa-book"></i>
+        <span>Publications</span>
+      </a>
+      
+      <a href="content/experiences.html" class="nav-link">
+        <i class="fas fa-flask"></i>
+        <span>Research & Projects</span>
+      </a>
+    </div>
+    
+    <div class="button-group">
+      <button id="home-button" class="action-button" onclick="window.location.href='index.html'">
+        <i class="fas fa-home"></i>Return Home
+      </button>
+      <button id="contact-button" class="action-button" onclick="window.location.href='content/contact.html'">
+        <i class="fas fa-headset"></i>Contact Support
+      </button>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>© 2025 RyanJay's Academic Portfolio. Need help? <a href="content/contact.html">Contact me</a></p>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <!-- 粒子库 -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
   <script>
-    var letters = document.querySelectorAll('#animated-404 .letter');
-    var message = document.getElementById('message');
-    var button = document.getElementById('home-button');
-
-    var palette = ['#E3B23C', '#D77FA1', '#9AC5A1', '#7B9EA8', '#C49B5A'];
-    for (var i = 0; i < 25; i++) {
-      var div = document.createElement('div');
-      div.classList.add('shape');
-      var size = anime.random(30, 120);
-      div.style.width = div.style.height = size + 'px';
-      div.style.background = palette[anime.random(0, palette.length - 1)];
-      div.style.top = anime.random(0, 100) + 'vh';
-      div.style.left = anime.random(0, 100) + 'vw';
-      document.body.appendChild(div);
-      anime({
-        targets: div,
-        translateX: function() { return anime.random(-300, 300); },
-        translateY: function() { return anime.random(-300, 300); },
-        scale: [1, 0.2],
-        opacity: [0.2, 0],
-        easing: 'easeInOutSine',
-        duration: anime.random(3000, 6000),
-        loop: true,
-        direction: 'alternate'
+    // 初始化粒子效果
+    document.addEventListener('DOMContentLoaded', function() {
+      // 粒子效果配置
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#60a5fa" },
+          shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
+          opacity: { value: 0.15, random: true },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#38bdf8",
+            opacity: 0.1,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          }
+        },
+        retina_detect: true
       });
-    }
-
-    var introTl = anime.timeline({ loop: false });
-    introTl
-      .add({
-        targets: letters,
-        translateY: [100, 0],
-        rotate: [180, 0],
-        opacity: [0, 1],
-        color: function() { return palette[anime.random(0, palette.length - 1)]; },
-        easing: 'easeOutExpo',
-        duration: 1000,
-        delay: (el, i) => i * 200
-      })
-      .add({
-        targets: message,
-        opacity: [0, 1],
-        translateY: [30, 0],
-        easing: 'easeOutExpo',
-        duration: 800
-      }, '-=600')
-      .add({
-        targets: button,
-        opacity: [0, 1],
-        scale: [0.9, 1],
-        easing: 'easeOutBack',
-        duration: 800
-      }, '-=500');
-
-    anime({
-      targets: '#animated-404',
-      translateX: [0, 10],
-      translateY: [0, -10],
-      direction: 'alternate',
-      easing: 'easeInOutSine',
-      duration: 4000,
-      loop: true
     });
   </script>
 </body>
