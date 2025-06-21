@@ -14,6 +14,12 @@
     --link: #FFC078;          /* 强调色作为链接 */
     --primary-rgb: 42, 107, 143;
     --background-rgb: 20, 20, 20;
+    --h1: #FFC078; /* 柔和的橙色，强调性最强 */
+    --h2: #ffffff; /* 较亮的赤红色，有冲击力 */
+    --h3: #3E8DA6; /* 冷色点缀，稳重 */
+    --h4: #E0E0E0; /* 接近白色，让小标题清晰 */
+    --h5: #A0A0A0; /* 中灰，减少对比 */
+    --h6: #707070; /* 深灰，更次要 */
 }
 
 [data-theme="light"] {
@@ -31,6 +37,12 @@
     --link: #6B5C4A;          /* 笔墨棕 - 仿旧书中墨迹渐褪的色调 */
     --primary-rgb: 127, 75, 58;
     --background-rgb: 248, 244, 230;
+    --h1: #8C8D51; /* 柔和橄榄绿，稳重 */
+    --h2: #000000; /* 偏暖的橙红色，强调感 */
+    --h3: #5F6D57; /* 灰绿色，沉稳自然 */
+    --h4: #4C3B2A; /* 深褐色，增强对比 */
+    --h5: #857667; /* 中性色，减少抢眼感 */
+    --h6: #6B5C4A; /* 稍浅，低强调度 */
 }
 
 
@@ -41,6 +53,40 @@
     padding: clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 180px) clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
     flex: 1;
     position: relative;
+}
+
+/* ==================== 定义多色h1-h6标题样式 ==================== */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.5rem 0;
+    line-height: 1;
+}
+h1 {
+    color: var(--h1);
+    font-size: 2.25rem;
+}
+h2 {
+    color: var(--h2);
+    font-size: 2.25rem;
+    /* 加外框左侧一竖 */
+    position: relative;
+    padding-left: 1rem;
+    border-left: 9px solid var(--primary);
+}
+h3 {
+    color: var(--h3);
+    font-size: 1.75rem;
+}
+h4 {
+    color: var(--h4);
+    font-size: 1.5rem;
+}
+h5 {
+    color: var(--h5);
+    font-size: 1.25rem;
+}
+h6 {
+    color: var(--h6);
+    font-size: 1rem;
 }
 
 /* 主题切换按钮 */
