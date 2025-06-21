@@ -235,7 +235,7 @@ const ANIME_CONFIG = {
             opacity: [0, 1],
             translateY: [50, 0],
             scale: [0.5, 1],
-            delay: anime.stagger(100, {start: 800}),
+            delay: anime.stagger(100, {start: 200}),
             duration: 600,
             easing: 'easeOutQuint'
         },
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     anime({
                         targets: item.querySelector('i, img'),
                         rotate: () => anime.random(-30, 30) + 'deg',
-                        duration: 600,
+                        duration: 400,
                         easing: 'easeOutElastic(1, .6)'
                     });
                 }
