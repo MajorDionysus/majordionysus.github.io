@@ -254,13 +254,6 @@ function formatLifeEvent(event) {
 
 // 在main.js顶部添加动画配置对象
 const ANIME_CONFIG = {
-    sidebar: {
-        translateX: [-80, 0],
-        opacity: [0, 1],
-        duration: 1200,
-        delay: anime.stagger(300),
-        easing: 'easeOutQuint'
-    },
     navItems: {
         opacity: [0, 1],
         translateY: [30, 0],
