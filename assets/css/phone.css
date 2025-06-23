@@ -1,192 +1,428 @@
-/* mobile.css - 针对移动设备的响应式样式 */
+/* ==================== 移动端响应式设计 (仅针对小于768px的设备) ==================== */
 @media (max-width: 768px) {
-   .chart-area {
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* 进一步减小列的最小宽度 */
-    padding: 1rem; /* 减小填充 */
-    gap: 0.5rem; /* 减小间距 */
-    flex-direction: column; /* 改为垂直布局 */
-    align-items: center; /* 水平居中对齐 */
-    justify-content: center; /* 垂直居中对齐 */
-  }
+    /* 全局重置 */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    body {
+        font-size: 15px;
+        padding-top: 60px; /* 为顶部导航栏留出空间 */
+        display: block;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* 隐藏桌面侧边栏 */
+    .sidebar {
+        display: none !important;
+    }
+    
+    /* 移动端顶部导航栏 */
+    .mobile-header {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(var(--card-bg), 0.98);
+        padding: 14px 16px;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        border-bottom: 1px solid var(--card-border);
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(8px);
+        height: 60px;
+    }
+    
+    .hamburger-menu {
+        display: flex !important;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        font-size: 1.8rem;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    
+    .hamburger-menu:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .hamburger-menu .menu-icon {
+        width: 44px;
+        height: 44px;
+        display: inline-block;
+    }
+    
+    .mobile-sidebar {
+        display: flex !important;
+        position: fixed;
+        align-items:  center;
+        top: -100%; /* 初始在屏幕上方之外 */
+        left: 0;
+        width: 100%;
+        z-index: 2000; /* 高于覆盖层 */
+        background: color-mix(in srgb, var(--card-bg) 95%, var(--primary) 5%) !important;
+        transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid var(--card-border);
+        flex-direction: column;
+        max-height: 100vh;
+        border-radius: 16px 16px 16px 16px;
+    }
 
-  /* 图表容器：手机端优化 */
-  .chart-container {
-    gap: 10px; /* 减小卡片间距 */
-    padding: 5px; /* 减小填充 */
-    font-size: 0.8rem; /* 减小字体大小 */
-  }
+    /* 头像容器样式 */
+    .mobile-sidebar-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 0 20px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 15px;
+    }
 
-  .chart-container canvas {
-    width: 100%; /* 让画布宽度自适应容器 */
-    height: auto; /* 保持画布的宽高比 */
-  }
-  
-  /* 隐藏桌面版侧边栏 */
-  .sidebar {
-    display: none;
-  }
+    .mobile-sidebar .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+        margin-bottom: 15px;
+        display: block;
+        box-shadow: var(--shadow);
+    }
 
-  /* 调整主内容区 */
-  .main-content {
-    margin-left: 0;
-    padding: 1.5rem;
-    width: 100%;
-  }
-
-  .mobile-card h1 {
-    font-size: 0.25rem;
-    color: var(--text);
-    margin: 0;
-  }
-  
-  /* 移动端顶部导航 */
-  .mobile-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: var(--card-bg);
-    border-bottom: 1px solid var(--card-border);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .mobile-nav h1 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin: 0;
-  }
-
-  .menu-toggle {
-    background: none;
-    border: none;
-    padding: 0.5rem;
-  }
-
-  .menu-toggle svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--text);
-  }
-
-  /* 移动菜单 */
-  .mobile-menu {
-    position: fixed;
-    top: 56px;
-    left: -100%;
-    width: 100%;
-    background: var(--card-bg);
-    transition: 0.3s ease;
-    padding: 1rem;
-    box-shadow: var(--shadow);
-  }
-
-  .mobile-menu.active {
-    left: 0;
-  }
-
-  .mobile-menu nav ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .mobile-menu nav li {
-    margin: 0.5rem 0;
-  }
-
-  .mobile-menu nav a {
-    display: block;
-    padding: 1rem;
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 8px;
-  }
-
-  /* 调整内容布局 */
-  .profile-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-image {
-    margin-bottom: 1.5rem;
-  }
-
-  .avatar {
-    width: 150px;
-    height: 150px;
-  }
-
-  /* 时间轴调整 */
-  .timeline-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .timeline-item img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-
-  /* 兴趣列表调整为单列 */
-  .interests-list {
-    grid-template-columns: 1fr;
-  }
-
-  /* 技能卡片调整 */
-  .skills-card {
-    position: static;
-    transform: none;
-    width: auto;
-    margin: 2rem 0;
-  }
-
-  /* 联系信息网格调整 */
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* 卡片通用调整 */
-  .card, .welcome, .profile, .research-interests, .timeline-section, .contact-section {
-    margin: 1rem 0;
-    padding: 1.5rem;
-  }
-
-  /* 调整文字大小 */
-  h1 { font-size: 2rem !important; }
-  h2 { font-size: 1.75rem !important; }
-  h3 { font-size: 1.5rem !important; }
-  p { font-size: 0.9rem; }
-
-  /* 主题切换按钮调整 */
-  .theme-toggle {
-    bottom: 1rem;
-    right: 1rem;
-    width: 40px;
-    height: 40px;
-  }
+    /* 修复问题2: 正确的激活状态 */
+    .mobile-sidebar.active {
+        top: 60px; /* 留出顶部导航栏空间 */
+        left: 10%; /* 激活时滑入 */
+    }
+    
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .mobile-nav ul li {
+        margin: 24px 0;
+    }
+    
+    .mobile-nav a {
+        color: var(--text);
+        padding: 8px 16px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        background: rgba(var(--primary-rgb), 0.12);
+        box-shadow: 0 2px 12px 0 rgba(var(--accent-rgb), 0.08), 0 1.5px 6px 0 rgba(var(--primary-rgb), 0.10);
+        backdrop-filter: blur(6px) brightness(1.15);
+        font-size: 1.1rem;
+    }
+    
+    .mobile-nav a i {
+        font-size: 1.3rem;
+        width: 28px;
+        text-align: center;
+    }
+    
+    .mobile-nav a.active,
+    .mobile-nav a:hover {
+        background: rgba(var(--accent-rgb), 0.15);
+        box-shadow: inset 4px 0 0 var(--accent);
+        transform: translateX(4px);
+    }
+    
+    /* 覆盖层样式 */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1050;
+        display: none;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    }
+    
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    
+    /* 主内容区域调整 */
+    .main-content {
+        margin-left: 0 !important;
+        padding: 70px 20px 30px !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* 正文文字排版 */
+    .main-content p {
+        line-height: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    .main-content h1, .main-content h2, .main-content h3, .main-content h4,
+    .main-content h5, .main-content h6 {
+        margin: 1.2rem 0 0.8rem;
+    }
+    
+    /* 标题调整 */
+    h1 {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 1.6rem !important;
+        padding-left: 0.8rem !important;
+        border-left: 6px solid var(--primary) !important;
+    }
+    
+    h3 {
+        font-size: 1.4rem !important;
+    }
+    
+    h4 {
+        font-size: 1.2rem !important;
+    }
+    
+    h5 {
+        font-size: 1.1rem !important;
+    }
+    
+    h6 {
+        font-size: 1rem !important;
+    }
+    
+    /* 主题切换按钮位置调整 */
+    .theme-toggle {
+        bottom: 1.2rem !important;
+        right: 1.2rem !important;
+        width: 46px !important;
+        height: 46px !important;
+    }
+    
+    /* 卡片布局调整 */
+    .card {
+        padding: 0.75rem !important;
+        margin: 0.75rem 0 !important;
+    }
+    
+    .welcome {
+        padding: 1.5rem !important;
+    }
+    
+    /* 个人简介区域 */
+    .profile-content {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    
+    .profile-image {
+        flex: 0 0 auto !important;
+        margin: 0 auto !important;
+    }
+    
+    .profile-image img {
+        width: 160px !important;
+        height: 160px !important;
+    }
+    
+    .profile-text {
+        text-align: center !important;
+    }
+    
+    /* 研究兴趣区域 */
+    .interests-list {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .interests-list li {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 0.8rem !important;
+    }
+    
+    .interests-list img {
+        width: 44px !important;
+        height: 44px !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    /* 时间线区域 */
+    .timeline-item {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .timeline-item img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 200px !important;
+    }
+    
+    /* 技能卡片调整 */
+    .skills-card {
+        position: relative !important;
+        width: 100% !important;
+        margin: 1.5rem 0 !important;
+        transform: none !important;
+        top: auto !important;
+        right: auto !important;
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 14px !important;
+    }
+    
+    .skills-list img {
+        width: 42px !important;
+        height: 42px !important;
+    }
+    
+    /* 出版物卡片调整 */
+    .publication-card {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .publication-card .image-container {
+        max-width: 100% !important;
+        margin-bottom: 1.2rem !important;
+    }
+    
+    /* 经历卡片调整 */
+    .experience-card {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .experience-card .image-container {
+        max-width: 100% !important;
+        margin-bottom: 1.2rem !important;
+    }
+    
+    /* 联系区域调整 */
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .contact-item {
+        padding: 1.5rem !important;
+    }
+    
+    .contact-item-icon {
+        width: 64px !important;
+        height: 64px !important;
+        font-size: 1.8rem !important;
+    }
+    
+    
+    /* 页脚调整 */
+    .sidebar-footer {
+        padding: 0.8rem !important;
+    }
+    
+    /* 灯箱调整 */
+    .lightbox::after {
+        top: 15px !important;
+        right: 20px !important;
+        font-size: 24px !important;
+    }
 }
 
-/* 小屏幕横向适配 */
+/* 小屏幕设备进一步优化 (<=480px) */
 @media (max-width: 480px) {
-  .main-content {
-    padding: 1rem;
-  }
+    body {
+        padding-top: 56px;
+    }
+    
+    .mobile-header {
+        padding: 10px 14px;
+        height: 56px;
+    }
+    
+    .mobile-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .mobile-sidebar {
+        width: 82%;
+        padding: 20px 16px;
+    }
+    
+    .main-content {
+        padding: 65px 16px 25px !important;
+    }
+    
+    h1 {
+        font-size: 1.7rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+        padding-left: 0.7rem !important;
+        border-left: 5px solid var(--primary) !important;
+    }
+    
+    .card {
+        padding: 1.2rem !important;
+    }
+    
+    .profile-image img {
+        width: 140px !important;
+        height: 140px !important;
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .skills-list img {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    
+    .theme-toggle {
+        width: 42px !important;
+        height: 42px !important;
+        bottom: 1rem !important;
+        right: 1rem !important;
+    }
+    
+    .contact-item {
+        padding: 1.2rem !important;
+    }
+    
+    .contact-item-icon {
+        width: 56px !important;
+        height: 56px !important;
+        font-size: 1.6rem !important;
+    }   
+}
 
-  .welcome h1 {
-    font-size: 1.8rem !important;
-  }
+/* 防止移动端滚动时出现水平滚动条 */
+html, body {
+    overflow-x: hidden;
+}
 
-  .timeline-item img {
-    max-width: 150px;
-  }
-
-  .interests-list li {
-    flex-direction: column;
-    text-align: center;
-  }
+/* 移动端滚动优化 */
+body {
+    -webkit-overflow-scrolling: touch;
 }

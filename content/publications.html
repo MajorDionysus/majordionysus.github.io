@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Renjie Mei</title>
     <link rel="stylesheet" href="../assets/css/style.css"> 
+    <link rel="stylesheet" href="../assets/css/phone.css">
     <script src="../assets/js/main.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script>
@@ -38,10 +39,41 @@
             </div>
         </aside>
 
+        <!-- 移动端导航 -->
+        <header class="mobile-header">
+            <div class="mobile-header-content">
+                <button class="hamburger-menu">
+                    <img src='../assets/images/icons/menu.png' alt="Menu Icon" class="menu-icon">
+                </button>
+            </div>
+            <h2 style="text-align: center;">Publication</h2>        
+        </header>
+        
+        <!-- 移动端侧边菜单 -->
+        <aside class="mobile-sidebar">
+            <section class="mobile-sidebar-content">
+                <img src="../assets/images/mrj_logo.jpg" alt="Renjie Mei" class="avatar">
+            </section>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="experiences.html">Research & Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- 移动端页脚 -->
+            <div class="mobile-sidebar-footer">
+                <p>© 2025 Academic for Mei <br> All rights reserved</p>
+            </div>
+        </aside>
+
+        <!-- overlay -->
+        <div class="overlay"></div>
+
         <!-- 主要内容区域 -->
         <main class="main-content">
             <section id="publication-section">
-                <h2>Publications</h2>
                 <ul id="publications" class="card-container"></ul>
             </section>
         </main>

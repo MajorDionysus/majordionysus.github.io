@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=GoogleChrome=1">
     <title>Academic Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/phone.css">
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/dashboard.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script>
     // 全局主题初始化（必须放在所有页面）
@@ -22,7 +19,7 @@
     </script>
 </head>
 <body>
-    <div class="container">       
+    <div class="container">  
        <!-- Left Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-content">
@@ -42,6 +39,39 @@
                 <p>© 2025 Academic for Mei <br> All rights reserved</p>
             </div>
         </aside>
+        
+        <!-- 移动端导航 -->
+        <header class="mobile-header">
+            <div class="mobile-header-content">
+                <button class="hamburger-menu">
+                    <img src='assets/images/icons/menu.png' alt="Menu Icon" class="menu-icon">
+                </button>
+            </div>
+            <h2 style="text-align: center;">Home</h2>        
+        </header>
+        
+        <!-- 移动端侧边菜单 -->
+        <aside class="mobile-sidebar">
+            <section class="mobile-sidebar-content">
+                <img src="assets/images/mrj_logo.jpg" alt="Renjie Mei" class="avatar">
+            </section>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="content/publications.html">Publications</a></li>
+                    <li><a href="content/experiences.html">Research & Projects</a></li>
+                    <li><a href="content/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- 移动端页脚 -->
+            <div class="mobile-sidebar-footer">
+                <p>© 2025 Academic for Mei <br> All rights reserved</p>
+            </div>
+        </aside>
+
+        <!-- overlay -->
+        <div class="overlay"></div>
+        
 
         <!-- 主要内容区域 -->
         <main class="main-content">
@@ -163,23 +193,8 @@
                 <div class="timeline-item">
                     <img src="https://img.mrj.today/images/school/%E6%9F%94%E8%84%89%E5%8C%BB%E7%96%97bg.png" alt="Roumai Medical" class="school-logo">
                     <p><strong>Roumai Medical, Shenzhen</strong> </p>
-                    <p><strong style="font-size:1.36em; color: #fd8551;">Main Work:</strong> Focus on flexible electrodes fabrication for tissue interface establishing.</p>
+                    <p><strong style="font-size:1.28em; color: #f37640;">Main Work:</strong> Focus on flexible electrodes fabrication for tissue interface establishing.</p>
                     <p>Jun. 2025 - Aug. 2025</p>
-                </div>
-            </section>
-
-            <h2>Dashboard</h2>
-            <section class="chart-area">
-                <div class="chart-container">
-                    <canvas id="blogTrendChart" width= "1072" height= "270"></canvas>
-                </div>
-            </section>
-            <section class="chart-area">
-                <div class="chart-container">
-                    <canvas id="publicationsChart" width="270" height="270"></canvas>
-                </div>
-                <div class="chart-container">
-                    <canvas id="trendChart" width="760" height="270"></canvas>
                 </div>
             </section>
         </main>

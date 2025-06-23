@@ -49,6 +49,38 @@ function setupNavigation() {
     }
 }
 
+// 移动端菜单交互
+document.addEventListener('DOMContentLoaded', function() {
+    // 汉堡菜单点击事件
+    const hamburger = document.querySelector('.hamburger-menu');
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            document.querySelector('.mobile-sidebar').classList.add('active');
+            document.querySelector('.overlay').classList.add('active');
+        });
+    }
+    
+    // 覆盖层点击事件
+    const overlay = document.querySelector('.overlay');
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            document.querySelector('.mobile-sidebar').classList.remove('active');
+            this.classList.remove('active');
+        });
+    }
+    
+    // 导航项点击事件
+    const navLinks = document.querySelectorAll('.mobile-nav a');
+    if (navLinks.length > 0) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.mobile-sidebar').classList.remove('active');
+                document.querySelector('.overlay').classList.remove('active');
+            });
+        });
+    }
+});
+
 // main.js
 document.addEventListener('DOMContentLoaded', function () {
     console.log("DOM加载完成，开始初始化");
@@ -315,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 创建新的缩放动画
             animation = anime({
                 targets: img,
-                scale: 1.3,
+                scale: 1.15,
                 duration: 400,
                 easing: 'easeOutQuad'
             });
