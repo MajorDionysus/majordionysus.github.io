@@ -1,24 +1,24 @@
 [
     {
-        "title": "THIS IS A SAMPLE: Flexible Bioelectronics",
-        "authors": "John Doe, Jane Smith",
-        "year": "2024",
-        "journal": "####",
+        "title": "Elastic TPU/Graphene Microneedle-Mesh Interfaces via Microfluidic Patterning for Electrophysiology in Neural Organoids",
+        "authors": "Yan Wu<sup>†</sup>, <b style='background: linear-gradient(135deg, #0d7b14 30%, #4caf50 100%); color: #fff; padding: 2px 6px; border-radius: 5px; box-shadow: 0 2px 8px rgba(13,123,20,0.15); font-weight: bold;'>Renjie Mei<sup>†</sup></b>, Yujie Zhou, Jie Qi, Chen Hang, and Xingyu Jiang<sup>*</sup>",
+        "year":"2025",
+        "journal": "ACS Nano",
         "doi": "10.1038/s41565-024-00001",
         "url": "https://doi.org/10.1038/s41565-024-00001",
-        "abstract": "This paper presents a new method for designing highly flexible bioelectronic devices...",
-        "tag": "Nature Commucation",
-        "imageUrl": "../assets/images/cover/pub/nc1.jpeg"
+        "abstract": "Connecting electronics to neural organoids is key for brain-machine interfaces and studying neural systems, but 3D tissue surfaces make electrophysiology difficult. We present a stretchable mesh electrode array with graphene microneedles, made via microfluidic patterning for low-cost, reproducible fabrication. The device’s microneedles and liquid metal-polymer interconnects withstand 200% strain, improving electrode-tissue contact and enabling robust multisite recordings. Over 60% of channels were activated, outperforming standard 2D electrodes. This biocompatible interface addresses mechanical mismatch issues, advancing studies of neural networks in 3D models.",
+        "tag": "ACS Nano",
+        "imageUrl": "https://img.mrj.today/images/cover/pub/ACS_Nano_Cover.png"
     },
     {
-        "title": "THIS IS A SAMPLE: Neural Interface",
-        "authors": "Alice Brown, Bob White",
-        "year": "2025",
-        "journal": "ACS Nano",
-        "doi": "10.1109/TNSRE.2023.1234567",
-        "url": "https://doi.org/10.1109/TNSRE.2023.1234567",
-        "abstract": "This study explores the development of high-fidelity neural interfaces...",
-        "tag": "Advance Materials",
-        "imageUrl": "../assets/images/cover/pub/am1.jpg"
+        "title": "Integration of 3D Mesh Interface with Transwell device for Electrophysiological Recording",
+        "authors": "<b style='background: linear-gradient(135deg, #0d7b14 30%, #4caf50 100%); color: #fff; padding: 2px 6px; border-radius: 5px; box-shadow: 0 2px 8px rgba(13,123,20,0.15); font-weight: bold;'>Renjie Mei<sup>†</sup></b> et.al.",
+        "year": "Future, 🥳but not too far",
+        "journal": "✒️TOP-TOP-TOPIC",
+        "doi": "",
+        "url": "####",
+        "abstract": "This publication is a work in progress and will be updated soon.",
+        "tag": "Unknown",
+        "imageUrl": "https://img.mrj.today/images/cover/tbc.jpg"
     }
 ]
