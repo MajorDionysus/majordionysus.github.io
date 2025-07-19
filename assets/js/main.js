@@ -184,7 +184,8 @@ function formatPublication(pub) {
       <img src="${pub.imageUrl}" alt="${pub.title} cover">
     </div>
     <div class="content-card">
-      <h3><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h3>
+      <h4><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h4>
+      <hr> <!-- 添加分割线 -->
       <p><strong>Authors:</strong> ${pub.authors}</p>
       <p><strong>Year:</strong> ${pub.year}</p>
       <p><strong>Journal:</strong> ${pub.journal}</p>

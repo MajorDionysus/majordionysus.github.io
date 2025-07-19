@@ -78,7 +78,9 @@ h3 {
 }
 h4 {
     color: var(--h4);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    /* 调整行距 */
+    line-height: 1.2
 }
 h5 {
     color: var(--h5);
@@ -313,6 +315,15 @@ html {
 
 .button:hover {
     filter: brightness(1.2);
+}
+
+/* 定义hr分割线风格 */
+hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    margin: 0.5rem 0;
+    border-radius: 2px; /* 圆角效果 */
 }
 
 /* 卡片效果 */
