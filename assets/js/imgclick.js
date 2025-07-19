@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(document.getElementById("experiences"), { childList: true, subtree: true });
 
     function bindClickEvents() {
-        const images = document.querySelectorAll(".experience-card .image-container img");
+        const images = document.querySelectorAll(".gallery-item img");
         console.log(`🔍 Found ${images.length} images`);
 
         images.forEach(img => {

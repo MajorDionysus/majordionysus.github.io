@@ -204,19 +204,41 @@ function formatPublication(pub) {
 function formatExperience(exp) {
   const li = document.createElement('li');
   li.classList.add('experience-card');
-  li.innerHTML = `
-    <div class="image-container">
-      <img src="${exp.imageUrl}" alt="${exp.title} cover">
-    </div>
+
+  // 文字区
+  const contentHTML = `
     <div class="content-card">
-      <h5><a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a></h5>
-      ${exp.role ? `<p><strong>Role:</strong> ${exp.role}</p>` : ''}
-      ${exp.year ? `<p><strong>Year:</strong> ${exp.year}</p>` : ''}
-      ${exp.abstract ? `<p class="abstract">${exp.abstract}</p>` : ''}
+      <h5>
+        ${exp.url
+          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a>`
+          : exp.title}
+      </h5>
+      ${exp.role   ? `<p><strong>Role:</strong> ${exp.role}</p>`      : ''}
+      ${exp.year   ? `<p><strong>Year:</strong> ${exp.year}</p>`      : ''}
+      ${exp.abstract ? `<p class="abstract">${exp.abstract}</p>`    : ''}
     </div>
   `;
+
+  // 相册区
+  let galleryHTML = `<div class="gallery">`;
+  if (Array.isArray(exp.images)) {
+    exp.images.forEach(img => {
+      const src       = typeof img === 'string' ? img : img.url;
+      const alt       = typeof img === 'object' ? (img.alt || '') : '';
+      galleryHTML += `
+        <div class="gallery-item">
+          <img src="${src}" alt="${alt}">
+        </div>
+      `;
+    });
+  }
+  galleryHTML += `</div>`;
+
+  li.innerHTML = contentHTML + galleryHTML;
+
   return li;
 }
+
 
 /**
  * 格式化 Life Timeline 数据

@@ -346,6 +346,14 @@
     }
 }
 
+@media (max-width: 1024px) {
+  .gallery { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .gallery { column-count: 1; }
+}
+
+
 /* 小屏幕设备进一步优化 (<=480px) */
 @media (max-width: 480px) {
     body {
