@@ -179,20 +179,20 @@ function renderData(container, data, formatFunction) {
 function formatPublication(pub) {
   const li = document.createElement('li');
   li.classList.add('publication-card');
-  li.innerHTML = `
+li.innerHTML = `
     <div class="image-container">
-      <img src="${pub.imageUrl}" alt="${pub.title} cover">
+        <img src="${pub.imageUrl}" alt="${pub.title} cover">
     </div>
     <div class="content-card">
-      <h4><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h4>
-      <hr> <!-- 添加分割线 -->
-      <p><strong>Authors:</strong> ${pub.authors}</p>
-      <p><strong>Year:</strong> ${pub.year}</p>
-      <p><strong>Journal:</strong> ${pub.journal}</p>
-      ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
-      ${pub.abstract ? `<p class="abstract">${pub.abstract}</p>` : ''}
+        <h4 style="text-align: center;"><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h4>
+        <h6 style="text-align: center;"> ${pub.authors}</h6>
+        <hr> <!-- 添加分割线 -->
+        <h6><strong>Year:</strong> ${pub.year}</h6>
+        <h6><strong>Journal:</strong> ${pub.journal}</h6>
+        ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
+        ${pub.abstract ? `<div class="abstract-box"><p class="abstract">${pub.abstract}</p></div>` : ''}
     </div>
-  `;
+`;
   return li;
 }
 
@@ -208,14 +208,15 @@ function formatExperience(exp) {
   // 文字区
   const contentHTML = `
     <div class="content-card">
-      <h5>
+      <h4 style="text-align: center;">
         ${exp.url
           ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a>`
           : exp.title}
-      </h5>
-      ${exp.role   ? `<p><strong>Role:</strong> ${exp.role}</p>`      : ''}
-      ${exp.year   ? `<p><strong>Year:</strong> ${exp.year}</p>`      : ''}
-      ${exp.abstract ? `<p class="abstract">${exp.abstract}</p>`    : ''}
+      </h4>
+      <hr>
+      ${exp.role   ? `<h6><strong>Role:</strong> ${exp.role}</h6>`      : ''}
+      ${exp.year   ? `<h6><strong>Year:</strong> ${exp.year}</h6>`      : ''}
+      ${exp.abstract ? `<div class="abstract-box"><p class="abstract">${exp.abstract}</p></div>`    : ''}
     </div>
   `;
 

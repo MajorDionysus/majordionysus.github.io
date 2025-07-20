@@ -18,8 +18,8 @@
     --h2: #ffffff; /* 较亮的赤红色，有冲击力 */
     --h3: #3E8DA6; /* 冷色点缀，稳重 */
     --h4: #E0E0E0; /* 接近白色，让小标题清晰 */
-    --h5: #A0A0A0; /* 中灰，减少对比 */
-    --h6: #707070; /* 深灰，更次要 */
+    --h5: #cecdcd; /* 中灰，减少对比 */
+    --h6: #b8b8b8; /* 深灰，更次要 */
 }
 
 [data-theme="light"] {
@@ -316,14 +316,29 @@ html {
 .button:hover {
     filter: brightness(1.2);
 }
-
-/* 定义hr分割线风格 */
+/* 优雅学术风格分割线（低调配色） */
 hr {
     border: none;
+    height: 2px;
+    width: 84%;
+    margin: 1.2rem auto;
+    background: linear-gradient(90deg, var(--card-border) 0%, var(--primary) 50%, var(--card-border) 100%);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(var(--accent-rgb), 0.10);
+    opacity: 0.6;
+    position: relative;
+}
+hr::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 28px;
     height: 4px;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    margin: 0.5rem 0;
-    border-radius: 2px; /* 圆角效果 */
+    background: var(--background);
+    border-radius: 4px;
+    position: relative;
+    top: -4px;
+    opacity: 0.5;
 }
 
 /* 卡片效果 */
@@ -557,8 +572,8 @@ hr {
 
 .publication-card {
     display: grid; /* 使用 CSS Grid 布局 */
-    grid-template-columns: 270px 1fr; /* 左侧图片列固定宽度 270px，右侧内容列占据剩余空间 */
-    gap: 10px; /* 列之间的间距 */
+    grid-template-columns: 320px 1fr; /* 左侧图片列固定宽度 270px，右侧内容列占据剩余空间 */
+    gap: 12px; /* 列之间的间距 */
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
@@ -643,10 +658,36 @@ hr {
     color: var(--accent);
 }
 
-.abstract { /* 摘要样式 */
-    margin-top: 10px;
-    font-style: italic;
-    color: #555;
+.abstract { /* 摘要样式,两端对齐*/
+    font-size: 16px !important;
+    text-align: justify; /* 两端对齐 */
+    font-family: 'Times New Romans', Times, serif;
+    font-style: bold;
+    color: var(--muted-text);
+}
+.abstract-box{ /* 边框渐变色细，透明背景填充，左上带Abstract标签（便利签式） */
+    position: relative;
+    border: 2px solid var(--card-border);
+    background: rgba(var(--card-border), 0.08);
+    border-radius: 10px;
+    padding: 1.2rem 1rem 0.5rem 1rem;
+    margin: 1.5rem 0;
+}
+
+.abstract-box::before {
+    content: "ABSTRACT";
+    position: absolute;
+    top: -14px;
+    left: 18px;
+    background: var(--card-border);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 6px 6px 6px 0;
+    box-shadow: 0 2px 8px rgba(var(--card-border), 0.18);
+    letter-spacing: 0.5px;
+    z-index: 2;
 }
 
 /* ==================== Experiences 卡片 ==================== */
@@ -696,7 +737,7 @@ hr {
 
 /* 相册区：使用 CSS Grid Masonry 效果 */
 .gallery {
-  column-count: 3;          /* 列数自动均分 */
+  column-count: 4;          /* 列数自动均分 */
   column-gap: 18px;         /* 列间距 */
   margin-top: 1.25rem;
 }
@@ -741,7 +782,8 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(20, 20, 20, 0.72);
+    backdrop-filter: blur(18px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -751,12 +793,11 @@ hr {
     z-index: 9999 !important; /* 提高层级，确保在最上方 */
 }
 
-
 .lightbox img {
     max-width: 90vw;
     max-height: 90vh;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 0 108px rgba(255, 255, 255, 0.2);
 }
 
 .lightbox.show {
