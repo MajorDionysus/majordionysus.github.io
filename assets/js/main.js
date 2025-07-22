@@ -185,7 +185,7 @@ li.innerHTML = `
     </div>
     <div class="content-card">
         <h4 style="text-align: center;"><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h4>
-        <h6 style="text-align: center;"> ${pub.authors}</h6>
+        <h6 style="text-align: center; line-height: 1.2;"> ${pub.authors}</h6>
         <hr> <!-- 添加分割线 -->
         <h6><strong>Year:</strong> ${pub.year}</h6>
         <h6><strong>Journal:</strong> ${pub.journal}</h6>
