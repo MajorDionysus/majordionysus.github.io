@@ -181,17 +181,80 @@ function formatPublication(pub) {
   li.classList.add('publication-card');
 li.innerHTML = `
     <div class="image-container">
-        <img src="${pub.imageUrl}" alt="${pub.title} cover">
+    <img src="${pub.imageUrl}" alt="${pub.title} cover">
+</div>
+
+<div class="content-card" style="
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.5;
+    padding: 1rem;
+    color: inherit;
+">
+
+    <!-- Title -->
+    <h4 style="text-align: center; margin-bottom: 0.5em;">
+        <a href="${pub.url}" target="_blank" rel="noopener noreferrer" style="
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+            transition: all 0.2s ease;
+        ">
+            ${pub.title}
+        </a>
+    </h4>
+
+    <!-- Authors -->
+    <h6 style="
+        text-align: center;
+        font-weight: normal;
+        font-size: 0.95em;
+        margin-bottom: 1em;
+    ">
+        ${pub.authors}
+    </h6>
+
+    <hr style="border-top: 1px solid #ccc;">
+
+    <!-- Journal -->
+    <div style="
+        font-size: 1em;
+        font-weight: 600;
+        padding: 0.3em 0.8em;
+        border-left: 4px solid #6c63ff;
+        background-color: rgba(108, 99, 255, 0.08);
+        border-radius: 6px;
+        margin-bottom: 0.8em;
+    ">
+        <span style="opacity: 0.85;">Journal:</span> <i>${pub.journal}</i>
     </div>
-    <div class="content-card">
-        <h4 style="text-align: center;"><a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.title}</a></h4>
-        <h6 style="text-align: center; line-height: 1.2;"> ${pub.authors}</h6>
-        <hr> <!-- 添加分割线 -->
-        <h6><strong>Year:</strong> ${pub.year}</h6>
-        <h6><strong>Journal:</strong> ${pub.journal}</h6>
-        ${pub.doi ? `<p><strong>DOI:</strong> <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ''}
-        ${pub.abstract ? `<div class="abstract-box"><p class="abstract">${pub.abstract}</p></div>` : ''}
+
+    <!-- Year -->
+    <div style="margin-bottom: 0em;">
+        <strong>Year:</strong> ${pub.year}
     </div>
+
+    <!-- DOI -->
+    ${pub.doi ? `
+        <strong>DOI:</strong>
+        <a href="${pub.url}" target="_blank" rel="noopener noreferrer" style="color: #4a4af4;">
+            ${pub.doi}
+        </a>` : ''}
+
+    <!-- Abstract -->
+    ${pub.abstract ? `
+    <div class="abstract-box" style="
+        background-color: rgba(0,0,0,0.03);
+        padding: 0.75em 1em;
+        border-left: 3px solid #aaa;
+        border-radius: 6px;
+        font-size: 0.95em;
+        color: #444;
+    ">
+        <p class="abstract" style="margin: 0;">${pub.abstract}</p>
+    </div>` : ''}
+
+</div>
+
 `;
   return li;
 }
@@ -208,14 +271,48 @@ function formatExperience(exp) {
   // 文字区
   const contentHTML = `
     <div class="content-card">
-      <h4 style="text-align: center;">
+      <h4 style="text-align: center; margin-bottom: 0.5em;">
         ${exp.url
-          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a>`
+          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer" style="border-bottom: 5px dotted #999;
+            transition: all 0.2s ease; text-decoration: none; color: inherit;">${exp.title}</a>`
           : exp.title}
       </h4>
-      <hr>
-      ${exp.role   ? `<h6><strong>Role:</strong> ${exp.role}</h6>`      : ''}
-      ${exp.year   ? `<h6><strong>Year:</strong> ${exp.year}</h6>`      : ''}
+        <div style="text-align: center; margin-bottom: 1rem;">
+        ${exp.role ? `
+            <h6 style="
+            display: inline-block;
+            background-color: var(--primary);
+            color: #F0F0F0;;
+            padding: 0.4em 1.2em;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 1em;
+            margin-right: 1em;
+            user-select: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            letter-spacing: 0.03em;
+            ">
+            <strong>Role:</strong> ${exp.role}
+            </h6>` : ''}
+
+        ${exp.year ? `
+            <h6 style="
+            display: inline-block;
+            background-color: var(--secondary);
+            color: #F0F0F0;;
+            padding: 0.4em 1.2em;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 1em;
+            user-select: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            letter-spacing: 0.03em;
+            ">
+            <strong>Year:</strong> ${exp.year}
+            </h6>` : ''}
+        </div>
+
+
       ${exp.abstract ? `<div class="abstract-box"><p class="abstract">${exp.abstract}</p></div>`    : ''}
     </div>
   `;
@@ -240,22 +337,6 @@ function formatExperience(exp) {
   return li;
 }
 
-
-/**
- * 格式化 Life Timeline 数据
- * @param {Object} event - 单条时间线事件数据
- * @returns {HTMLElement}
- */
-function formatLifeEvent(event) {
-    const li = document.createElement('li');
-    li.classList.add('timeline-item');
-    li.innerHTML = `
-        <h3>${event.date}: ${event.title}</h3>
-        ${event.description ? `<p>${event.description}</p>` : ''}
-        ${event.image ? `<img src="../assets/images/${event.image}" alt="${event.title}" class="timeline-image">` : ''}
-    `;
-    return li;
-}
 
 /**
  * 格式化 Life Timeline 数据
