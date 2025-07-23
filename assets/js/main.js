@@ -208,7 +208,8 @@ li.innerHTML = `
         text-align: center;
         font-weight: normal;
         font-size: 0.95em;
-        margin-bottom: 1em;
+        line-height: 1.4;
+        margin-bottom: 0.2em;
     ">
         ${pub.authors}
     </h6>

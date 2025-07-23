@@ -79,8 +79,6 @@ h3 {
 h4 {
     color: var(--h4);
     font-size: 1.4rem;
-    /* 调整行距 */
-    line-height: 1.2
 }
 h5 {
     color: var(--h5);
