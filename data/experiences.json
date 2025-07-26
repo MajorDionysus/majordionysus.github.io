@@ -7,9 +7,13 @@
     "year":     "2023",
     "abstract": "It was a very honourable experience to follow a freshly published paper to learn the experimental skills and start my research journey. During the process, the principle and procedure of fabricating metal polymer conductors utilizing micro-nano fabrication based on PDMS were mastered. In addition, numerous skills pertinent to research were acquired, all thanks to Postdoc Wu Yan.",
     "images": [
-      "https://img.mrj.today/images/pro/Learn1.png",
-      "https://img.mrj.today/images/pro/Learn2.png",
-      "https://img.mrj.today/images/cover/tbc.jpg"
+      "https://img.mrj.today/images/Lab/11.jpg",
+      "https://img.mrj.today/images/Lab/12.jpg",
+      "https://img.mrj.today/images/Lab/21.jpg", 
+      "https://img.mrj.today/images/Lab/22.jpg",
+      "https://img.mrj.today/images/Lab/23.jpg",
+      "https://img.mrj.today/images/Lab/24.jpg",
+      "https://img.mrj.today/images/Lab/25.jpg"
     ],
     "tag": "Learning"
   },
@@ -20,7 +24,6 @@
     "year":     "2024",
     "abstract": "The objective of this project is to simulate the implementation of a clinical ECG monitor. To this end, the project will acquire, process, and analyze ECG signals using a MATLAB-based data acquisition system and a Django web interface.",
     "images": [
-      "https://img.mrj.today/images/pro/Learn1.png",
       "https://img.mrj.today/images/pro/Learn2.png",
       "https://img.mrj.today/images/cover/tbc.jpg"
     ],

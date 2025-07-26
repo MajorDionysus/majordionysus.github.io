@@ -272,9 +272,9 @@ function formatExperience(exp) {
   // 文字区
   const contentHTML = `
     <div class="content-card">
-      <h4 style="text-align: center; margin-bottom: 0.5em;">
+      <h4 style="text-align: center; margin-bottom: 0.5em; line-height: 1.6;">
         ${exp.url
-          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer" style="border-bottom: 5px dotted #999;
+          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer" style="border-bottom: 3px dotted #999;
             transition: all 0.2s ease; text-decoration: none; color: inherit;">${exp.title}</a>`
           : exp.title}
       </h4>

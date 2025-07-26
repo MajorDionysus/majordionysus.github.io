@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
         bindClickEvents();
     });
 
-    observer.observe(document.getElementById("experiences"), { childList: true, subtree: true });
-
+    // observer.observe(document.getElementById("experiences"), { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, subtree: true });
+    
     function bindClickEvents() {
         const images = document.querySelectorAll(".gallery-item img");
         console.log(`🔍 Found ${images.length} images`);
