@@ -441,6 +441,16 @@ hr::after {
     border: 1px solid var(--border);
 }
 
+.caption {
+    font-size: 0.92rem;
+    color: var(--muted-text);
+    text-align: center;
+    margin-top: 0.42rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    opacity: 0.85;
+}
+
 .interests-list {
     list-style: none;
     padding: 0;
