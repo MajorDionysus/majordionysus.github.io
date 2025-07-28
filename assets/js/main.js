@@ -279,40 +279,40 @@ function formatExperience(exp) {
           : exp.title}
       </h4>
         <div style="text-align: center; margin-bottom: 1rem;">
-        ${exp.role ? `
+            ${exp.role ? `
             <h6 style="
             display: inline-block;
-            background-color: var(--primary);
-            color: #F0F0F0;;
+            color: var(--text-color);
             padding: 0.4em 1.2em;
-            border-radius: 24px;
-            font-weight: 700;
-            font-size: 1em;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9em;
             margin-right: 1em;
             user-select: none;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            letter-spacing: 0.03em;
+            border: 1.6px dotted #6c63ff;
+            background-color: transparent;
+            letter-spacing: 0.02em;
             ">
             <strong>Role:</strong> ${exp.role}
-            </h6>` : ''}
-
-        ${exp.year ? `
+            </h6>
+            ` : ''}
+            ${exp.year ? `
             <h6 style="
             display: inline-block;
-            background-color: var(--secondary);
-            color: #F0F0F0;;
+            color: var(--text-color);
             padding: 0.4em 1.2em;
-            border-radius: 24px;
-            font-weight: 700;
-            font-size: 1em;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9em;
             user-select: none;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            letter-spacing: 0.03em;
+            border: 1.6px dotted #63acffff;
+            background-color: transparent;
+            letter-spacing: 0.02em;
             ">
             <strong>Year:</strong> ${exp.year}
-            </h6>` : ''}
-        </div>
-
+            </h6>
+            ` : ''}
+            </div>
 
       ${exp.abstract ? `<div class="abstract-box"><p class="abstract">${exp.abstract}</p></div>`    : ''}
     </div>
