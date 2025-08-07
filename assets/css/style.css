@@ -3,7 +3,7 @@
     /* 🎨 深色主题 - Nature风格 */
     --primary: #d84423;       /* N红 */
     --secondary: #3E8DA6;     /* 岩层青 */
-    --accent: #ffc078ea;        /* 琥珀金 */
+    --accent: rgba(255, 192, 120, 0.86); /* 琥珀金 - 温暖的金色 */
     --accent-rgb: 255, 192, 120; /* 琥珀金RGB值 */
     --text: #F0F0F0;          /* 亮灰 */
     --background: #141414;    /* 深灰 */
@@ -14,7 +14,7 @@
     --link: #FFC078;          /* 强调色作为链接 */
     --primary-rgb: 42, 107, 143;
     --background-rgb: 20, 20, 20;
-    --h1: var(--accent); /* 柔和的橙色，强调性最强 */
+    --h1: #ffffff; /* 柔和的橙色，强调性最强 */
     --h2: #ffffff; /* 较亮的赤红色，有冲击力 */
     --h3: #3E8DA6; /* 冷色点缀，稳重 */
     --h4: #E0E0E0; /* 接近白色，让小标题清晰 */
@@ -26,7 +26,7 @@
     /* ☀️ 浅色主题 - 宋明古画风格 */
     --primary: #d74f31;       /* 赤茶 - 温润深棕红 */
     --secondary: #5F6D57;     /* 苍绿 - 低饱和度的青灰 */
-    --accent: #81542f;       
+    --accent: rgba(169, 139, 102, 0.86); /* 岫玉金 - 温和的金色 */
     --accent-rgb: 169, 139, 102;
     --text: #4C3B2A;          /* 书墨褐 - 仿古书墨色，略带温暖感 */
     --background: #F8F4E6;    /* 岫玉白 - 温和泛黄的古画纸色 */
@@ -37,7 +37,7 @@
     --link: #6B5C4A;          /* 笔墨棕 - 仿旧书中墨迹渐褪的色调 */
     --primary-rgb: 127, 75, 58;
     --background-rgb: 248, 244, 230;
-    --h1: var(--accent); /* 柔和橄榄绿，稳重 */
+    --h1: #000000; /* 柔和橄榄绿，稳重 */
     --h2: #000000; /* 偏暖的橙红色，强调感 */
     --h3: #5F6D57; /* 灰绿色，沉稳自然 */
     --h4: #4C3B2A; /* 深褐色，增强对比 */
@@ -134,6 +134,18 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#inkCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
 }
 
 /* 图表区域：使用 academic 主题变量，考虑左右边栏 */

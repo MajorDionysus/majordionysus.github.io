@@ -83,21 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // main.js
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM加载完成，开始初始化");
-    
-    // 调试：立即检查按钮是否存在
     const btn = document.getElementById('themeToggle');
-    console.log("按钮元素:", btn); // 应该显示按钮对象
-    
-    if (!btn) {
-        console.error("错误：找不到主题切换按钮");
-        return;
-    }
-
     // 绑定点击事件（使用更可靠的方式）
-    btn.addEventListener('click', function handleThemeToggle() {
-        console.log("点击事件触发！当前主题:", document.documentElement.getAttribute('data-theme'));
-        
+    btn.addEventListener('click', function handleThemeToggle() {        
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
          // 同时更新本地存储和DOM属性
@@ -107,8 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // 添加旋转动画
         this.style.transform = `rotate(${newTheme === 'dark' ? '-30' : '30'}deg)`;
     });
-    
-    console.log("主题切换功能已初始化");
 });
 
 // 监听存储变化（确保多标签页同步）
@@ -354,8 +340,6 @@ function formatLifeEvent(event) {
     `;
     return li;
 }
-
-
 // 在main.js顶部添加动画配置对象
 const ANIME_CONFIG = {
     navItems: {

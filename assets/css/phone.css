@@ -94,7 +94,7 @@
     .mobile-sidebar .avatar {
         width: 150px;
         height: 150px;
-        border-radius: 50%;
+        border-radius: 24%;
         object-fit: cover;
         border: 3px solid var(--primary);
         margin-bottom: 15px;
