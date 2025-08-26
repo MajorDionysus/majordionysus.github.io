@@ -178,9 +178,9 @@ li.innerHTML = `
 ">
 
     <!-- Title -->
-    <h4 style="text-align: center; margin-bottom: 0.5em;">
+    <h4 style="text-align: center; margin-bottom: 0.5em; line-height: 1.25;">
         <a href="${pub.url}" target="_blank" rel="noopener noreferrer" style="
-            color: inherit;
+            color: var(--text);
             text-decoration: none;
             border-bottom: 1px dotted #999;
             transition: all 0.2s ease;
@@ -200,44 +200,28 @@ li.innerHTML = `
         ${pub.authors}
     </h6>
 
-    <hr style="border-top: 1px solid #ccc;">
-
     <!-- Journal -->
-    <div style="
-        font-size: 1em;
-        font-weight: 600;
-        padding: 0.3em 0.8em;
-        border-left: 4px solid #6c63ff;
-        background-color: rgba(108, 99, 255, 0.08);
-        border-radius: 6px;
-        margin-bottom: 0.8em;
-    ">
-        <span style="opacity: 0.85;">Journal:</span> <i>${pub.journal}</i>
+    <div class="journal">
+    <span>Journal:</span> <i>${pub.journal}</i>
     </div>
+
 
     <!-- Year -->
-    <div style="margin-bottom: 0em;">
-        <strong>Year:</strong> ${pub.year}
-    </div>
+    <p style="margin: 0.3em 0;"><strong>Year:</strong> ${pub.year}</p>
 
     <!-- DOI -->
     ${pub.doi ? `
+        <p style="margin: 0.3em 0;">
         <strong>DOI:</strong>
-        <a href="${pub.url}" target="_blank" rel="noopener noreferrer" style="color: #4a4af4;">
+        <a href="${pub.url}" target="_blank" rel="noopener noreferrer">
             ${pub.doi}
-        </a>` : ''}
-
+        </a>
+        </p>` : ''}
+        
     <!-- Abstract -->
     ${pub.abstract ? `
-    <div class="abstract-box" style="
-        background-color: rgba(0,0,0,0.03);
-        padding: 0.75em 1em;
-        border-left: 3px solid #aaa;
-        border-radius: 6px;
-        font-size: 0.95em;
-        color: #444;
-    ">
-        <p class="abstract" style="margin: 0;">${pub.abstract}</p>
+    <div class="abstract-box">
+        <p class="abstract">${pub.abstract}</p>
     </div>` : ''}
 
 </div>
@@ -255,51 +239,52 @@ function formatExperience(exp) {
   const li = document.createElement('li');
   li.classList.add('experience-card');
 
+  // 生成标签HTML
+            let tagsHTML = '';
+            if (Array.isArray(exp.tag)) {
+                tagsHTML = '<div class="tags-container">';
+                exp.tag.forEach(tag => {
+                    tagsHTML += `<span class="tag">${tag}</span>`;
+                });
+                tagsHTML += '</div>';
+            }
+  
   // 文字区
   const contentHTML = `
     <div class="content-card">
       <h4 style="text-align: center; margin-bottom: 0.5em; line-height: 1.6;">
         ${exp.url
-          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer" style="border-bottom: 3px dotted #999;
-            transition: all 0.2s ease; text-decoration: none; color: inherit;">${exp.title}</a>`
+          ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer">${exp.title}</a>`
           : exp.title}
       </h4>
         <div style="text-align: center; margin-bottom: 1rem;">
-            ${exp.role ? `
-            <h6 style="
-            display: inline-block;
-            color: var(--text-color);
-            padding: 0.4em 1.2em;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9em;
-            margin-right: 1em;
-            user-select: none;
-            border: 1.6px dotted #6c63ff;
-            background-color: transparent;
-            letter-spacing: 0.02em;
+            <span style="
+                color: var(--blueprint-dark);
+                display: inline-block;
+                padding: 0.16em 1em;
+                border-radius: 1px;
+                font-size: 1.05em;
+                margin-right: 0.6em;
+                font-family: 'Courier New', monospace;
+                font-weight: 560;
             ">
-            <strong>Role:</strong> ${exp.role}
-            </h6>
-            ` : ''}
+                ${exp.role ? `✦ ${exp.role}` : ''}
+            </span>
             ${exp.year ? `
-            <h6 style="
-            display: inline-block;
-            color: var(--text-color);
-            padding: 0.4em 1.2em;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9em;
-            user-select: none;
-            border: 1.6px dotted #63acffff;
-            background-color: transparent;
-            letter-spacing: 0.02em;
+             <span style="
+                color: var(--blueprint-dark);
+                display: inline-block;
+                padding: 0.16em 1em;
+                border-radius: 1px;
+                font-size: 1.05em;
+                margin-right: 0.6em;
+                font-family: 'Courier New', monospace;
+                font-weight: 560;
             ">
-            <strong>Year:</strong> ${exp.year}
-            </h6>
-            ` : ''}
-            </div>
-
+            📅 ${exp.year}
+            </span>` : ''}
+            ${tagsHTML}
+        </div>
       ${exp.abstract ? `<div class="abstract-box"><p class="abstract">${exp.abstract}</p></div>`    : ''}
     </div>
   `;

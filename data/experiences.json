@@ -1,16 +1,16 @@
 [
   {
-    "title":    "Electrophysiological recording based on the three-dimensional mesh-MPC integrated in the Transwell device (Ongoing)",
+    "title":    "Electrophysiological recording based on the three-dimensional mesh-MPC integrated in the Transwell device",
     "url":      "",
     "role":     "Independent Researcher",
     "year":     "2025",
     "abstract": "This project is a work in progress and will be updated soon.",
     "images": [
     ],
-    "tag": "Learning"
+   "tag": ["Lab Proj.4","On-going"]
   },  
   {
-    "title":    "Elastic TPU/Graphene Microneedle-Mesh Interfaces via Microfluidic Patterning for Electrophysiology in Neural Organoids (Published)",
+    "title":    "Elastic TPU/Graphene Microneedle-Mesh Interfaces via Microfluidic Patterning for Electrophysiology in Neural Organoids",
     "url":      "",
     "role":     "Assistant",
     "year":     "2024-2025",
@@ -18,10 +18,10 @@
     "images": [
       "https://img.mrj.today/images/Lab/41.jpg"
     ],
-    "tag": "Learning"
+    "tag": ["Lab Proj.3","Fast Coupling","Graphene Microneedles","Published"]
   },  
   {
-    "title":    "Organoid Vascularization through Perfusion Vessel Model utilizing mesh-MPC Scaffold (Failed)",
+    "title":    "Organoid Vascularization through Perfusion Vessel Model utilizing mesh-MPC Scaffold",
     "url":      "",
     "role":     "Assistant",
     "year":     "2023-2024",
@@ -32,14 +32,14 @@
       "https://img.mrj.today/images/Lab/34.jpg",
       "https://img.mrj.today/images/Lab/35.jpg"
     ],
-    "tag": "Learning"
+    "tag": ["Lab Proj.2","3D Modeling","Vascularization","Larger Mesh-MPC","Failed"]
   },
   {
     "title":    "Three-dimensional Liquid Metal-based Neuro-interfaces for Human Hippocampal Organoids",
     "url":      "https://rdcu.be/efXIq",
     "role":     "Learner",
     "year":     "2023",
-    "abstract": "It was an invaluable experience to involved in a newly accepted top-tier journal, through which I gained experimental proficiency and started my research journey. Throughout this process, I have mastered the principles and protocols underlying the fabrication of metal-polymer conductors via microfluidic patterning based on polydimethylsiloxane (PDMS). Concurrently, I have attained proficiency in the electrochemical impedance spectroscopy (EIS) system, encompassing both its hardware configuration and software operation. Furthermore, I have acquired a diverse array of research-relevant skills, for which I am deeply indebted to Postdoctoral Researcher Wu Yan.",
+    "abstract": "It was an invaluable experience to involved in a newly accepted top-tier journal, through which I gained experimental proficiency and started my research journey. Throughout this process, I have mastered the principles and protocols underlying the fabrication of metal-polymer conductors via microfluidic patterning based on polydimethylsiloxane (PDMS). Concurrently, I have attained proficiency in the electrochemical impedance spectroscopy (EIS) system, encompassing both its hardware configuration and software operation. Furthermore, I have acquired a diverse array of research-relevant skills, for which I am deeply indebted to my research mentor  Dr. Wu Yan.",
     "images": [
       "https://img.mrj.today/images/Lab/11.jpg",
       "https://img.mrj.today/images/Lab/12.jpg",
@@ -49,7 +49,7 @@
       "https://img.mrj.today/images/Lab/24.jpg",
       "https://img.mrj.today/images/Lab/25.jpg"
     ],
-    "tag": "Learning"
+    "tag": ["Lab Proj.1","MPC Fabrication","EIS Testing","Starting Research"]
   }
 ]
 

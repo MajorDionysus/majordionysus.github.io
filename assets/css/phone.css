@@ -303,8 +303,7 @@
     }
     
     .publication-card .image-container {
-        max-width: 100% !important;
-        margin-bottom: 1.2rem !important;
+        display: none !important;
     }
     
     /* 经历卡片调整 */

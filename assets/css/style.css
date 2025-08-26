@@ -1,48 +1,50 @@
-/* ==================== 学术高级感配色方案 ==================== */
+/* ==================== 学术极简配色方案 ==================== */
 :root {
-    /* 🎨 深色主题 - Nature风格 */
-    --primary: #d84423;       /* N红 */
-    --secondary: #3E8DA6;     /* 岩层青 */
-    --accent: rgba(255, 192, 120, 0.86); /* 琥珀金 - 温暖的金色 */
-    --accent-rgb: 255, 192, 120; /* 琥珀金RGB值 */
-    --text: #F0F0F0;          /* 亮灰 */
-    --background: #141414;    /* 深灰 */
-    --card-bg: #222222;       /* 炭灰 */
-    --card-border: #383838;   /* 中灰 */
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-    --muted-text: #8A8A8A;
-    --link: #FFC078;          /* 强调色作为链接 */
-    --primary-rgb: 42, 107, 143;
+    --primary: #8c3d3d;       /* 低饱和暗陶红，主色点 */
+    --secondary: #4f6b72;     /* 深冷青灰，辅助色 */
+    --accent: rgba(240, 189, 176, 0.85); /* 柔和暖米色点缀 */
+    --accent-rgb: 180, 140, 100;
+    --text: #e6e6e6;          /* 柔和亮灰，正文 */
+    --background: #141414;    /* 深墨黑背景 */
+    --card-bg: #1e1e1e;       /* 炭黑灰卡片 */
+    --card-border: #2b2b2b;   /* 深边框灰 */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --muted-text: #8d8d8d;    /* 次要灰 */
+    --link: #b89a6a;          /* 低调柔金色链接 */
+    --primary-rgb: 140, 61, 61;
     --background-rgb: 20, 20, 20;
-    --h1: #ffffff; /* 柔和的橙色，强调性最强 */
-    --h2: #ffffff; /* 较亮的赤红色，有冲击力 */
-    --h3: #3E8DA6; /* 冷色点缀，稳重 */
-    --h4: #E0E0E0; /* 接近白色，让小标题清晰 */
-    --h5: #cecdcd; /* 中灰，减少对比 */
-    --h6: #b8b8b8; /* 深灰，更次要 */
+
+    /* 标题灰阶层次 - 更偏冷灰 */
+    --h1: #f1f1f1;  /* 接近白 */
+    --h2: #d4d4d4;  /* 浅灰 */
+    --h3: #b8b8b8;  /* 中浅灰 */
+    --h4: #9c9c9c;  /* 中灰 */
+    --h5: #7f7f7f;  /* 深灰 */
+    --h6: #646464;  /* 最弱灰 */
 }
 
 [data-theme="light"] {
-    /* ☀️ 浅色主题 - 宋明古画风格 */
-    --primary: #d74f31;       /* 赤茶 - 温润深棕红 */
-    --secondary: #5F6D57;     /* 苍绿 - 低饱和度的青灰 */
-    --accent: rgba(41, 67, 109, 0.86); /* 岫玉金 - 温和的金色 */
-    --accent-rgb: 169, 139, 102;
-    --text: #4C3B2A;          /* 书墨褐 - 仿古书墨色，略带温暖感 */
-    --background: #F8F4E6;    /* 岫玉白 - 温和泛黄的古画纸色 */
-    --card-bg: #F3EDE1;       /* 宣纸色 */
-    --card-border: #C8B6A0;   /* 岩棕 - 柔和低对比度 */
-    --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    --muted-text: #857667;    /* 旧茶褐 - 低对比度辅助文字 */
-    --link: #6B5C4A;          /* 笔墨棕 - 仿旧书中墨迹渐褪的色调 */
-    --primary-rgb: 127, 75, 58;
-    --background-rgb: 248, 244, 230;
-    --h1: #000000; /* 柔和橄榄绿，稳重 */
-    --h2: #000000; /* 偏暖的橙红色，强调感 */
-    --h3: #5F6D57; /* 灰绿色，沉稳自然 */
-    --h4: #4C3B2A; /* 深褐色，增强对比 */
-    --h5: #857667; /* 中性色，减少抢眼感 */
-    --h6: #6B5C4A; /* 稍浅，低强调度 */
+    --primary: #325c80;       /* 水墨靛青 */
+    --secondary: #6c8ea0;     /* 淡墨青灰 */
+    --accent: rgb(90, 120, 140); /* 水墨蓝调点缀 */
+    --accent-rgb: 90, 120, 140;
+    --text: #1e2933;          /* 深墨灰（接近水墨笔触的黑蓝） */
+    --background: #ffffff;    /* 宣纸感淡灰白 */
+    --card-bg: #f2f2f6;       /* 浅水墨纸白 */
+    --card-border: #cfd6da;   /* 水墨灰 */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --muted-text: #6b7c85;    /* 青墨灰调 */
+    --link: #2c4c68;          /* 墨蓝色链接 */
+    --primary-rgb: 50, 92, 128;
+    --background-rgb: 245, 246, 247;
+
+    /* 标题灰阶层次 - 水墨蓝渐变 */
+    --h1: #0f1a26;  /* 墨黑蓝 */
+    --h2: #1c2c3a;  /* 深水墨 */
+    --h3: #2f4a5c;  /* 墨蓝灰 */
+    --h4: #4b6575;  /* 青灰 */
+    --h5: #708693;  /* 浅青灰 */
+    --h6: #94a6b0;  /* 更淡的水墨蓝灰 */
 }
 
 
@@ -399,7 +401,7 @@ hr::after {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     border: 1px solid var(--border);
 }
 
@@ -451,7 +453,7 @@ hr::after {
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 12px; /* 统一圆角 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     border: 1px solid var(--border);
 }
 
@@ -526,11 +528,6 @@ hr::after {
     border: 1px solid var(--border);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
-}
-
-.timeline-item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 16px 28px var(--shadow);
 }
 
 /* 左侧图片 logo */
@@ -649,17 +646,17 @@ hr::after {
 }
 
 .publication-card {
-    display: grid; /* 使用 CSS Grid 布局 */
-    grid-template-columns: 320px 1fr; /* 左侧图片列固定宽度 270px，右侧内容列占据剩余空间 */
-    gap: 12px; /* 列之间的间距 */
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 16px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem;
 }
 
 .publication-card::before {
@@ -675,7 +672,7 @@ hr::after {
 }
 
 .publication-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow);
 }
 
@@ -687,37 +684,35 @@ hr::after {
     position: relative;
 }
 
-.publication-card .image-container img { /* 图片样式 */
+.publication-card .image-container img {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 8px rgba(var(--background-rgb), 0.6);
 }
 
-.tag { /* 标签样式 */
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f0ad4e;
-    color: white;
-    padding: 3px 6px; /* 缩小 padding */
-    border-radius: 4px;
-    font-size: 8px; /* 缩小字体大小 */
-    transition: font-size 0.3s ease; /* 添加字体大小过渡效果 */
+.publication-card .content-card h3 {
+    color: var(--h3);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    margin-bottom: 0.6em;
+    text-align: center;
 }
 
- .tag :hover{ /* 鼠标悬停时标签样式 */
-    font-size: 14px; /* 放大字体大小 */
+.publication-card .content-card h3 a {
+    color: var(--h3);
+    text-decoration: none;
+    border-bottom: 1px solid var(--muted-text);
+    transition: all 0.2s ease;
 }
 
-.publication-card .content-card h3 { /* 内容卡片标题样式 */
-    color: var(--accent);
-    margin-bottom: 10px;
+.publication-card .content-card h3 a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
 }
 
-.publication-card .content-card p { /* 内容卡片段落样式 */
+.publication-card .content-card p {
     color: var(--text);
-    font-size: 14px;
+    font-size: 0.95em;
 }
 
 .publication-card .content-card a { /* 内容卡片链接样式 */
@@ -736,92 +731,207 @@ hr::after {
     color: var(--accent);
 }
 
+.journal {
+  font-size: 1.05rem;
+  font-weight: 500;
+  background: var(--card-bg);
+  border-radius: 3px;
+  color: var(--text);
+}
+
+.journal span {
+  margin-right: 0.3em;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+
+
 .abstract { /* 摘要样式,两端对齐*/
     font-size: 16px !important;
     text-align: justify; /* 两端对齐 */
     font-family: 'Times New Romans', Times, serif;
     font-style: bold;
-    color: var(--muted-text);
+    color: var(--text);
 }
-.abstract-box{ /* 边框渐变色细，透明背景填充，左上带Abstract标签（便利签式） */
-    position: relative;
+
+.abstract-box {
     border: 2px solid var(--card-border);
-    background: rgba(var(--card-border), 0.08);
+    background: rgba(var(--background-rgb), 0.05);
     border-radius: 10px;
-    padding: 1.2rem 1rem 0.5rem 1rem;
-    margin: 1.5rem 0;
+    padding: 1.2rem 1rem 0.6rem;
+    margin: 1.2rem 0;
+    position: relative;
 }
 
 .abstract-box::before {
     content: "ABSTRACT";
     position: absolute;
     top: -14px;
-    left: 18px;
+    left: 24px;
     background: var(--card-border);
     color: var(--text);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: bold;
-    padding: 2px 10px;
+    padding: 2px 8px;
+    border-left: 3px solid var(--primary);
     border-radius: 6px 6px 6px 0;
-    box-shadow: 0 2px 8px rgba(var(--card-border), 0.18);
+    box-shadow: 0 2px 6px rgba(var(--background-rgb), 0.2);
     letter-spacing: 0.5px;
-    z-index: 2;
 }
 
-/* ==================== Experiences 卡片 ==================== */
+/* ==================== Experiences 卡片（工业草图风格） ==================== */
 .experience-section {
     margin: 2rem 0;
     padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border);
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 255, 0.05) 1px, transparent 1px),
+        var(--card-bg);
+    background-size: 20px 20px;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 0 1px var(--primary),
+        inset 0 0 0 1px var(--primary);
+    position: relative;
+    border: none;
 }
 
-/* 整体改为上下排列，删除原来的两栏 Grid */
 .experience-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border-radius: 6px;
+    padding: 1.8rem;
+    margin-top: 3rem;
+    font-family: 'Courier Prime', 'Source Code Pro', monospace;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
 }
 
 .experience-card::before {
-    content: '';
+    content: "";
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3.6px solid var(--accent);
+    pointer-events: none;
+    z-index: -1;
 }
 
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
+.experience-card::after {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    background: 
+        radial-gradient(circle, var(--accent) 2px, transparent 2px),
+        var(--card-bg);
+    border: 5px solid var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--card-bg);
 }
 
-.experience-card:hover::before {
-    transform: scaleY(1);
+.experience-card h4 {
+    text-align: center;
+    margin-bottom: 0.8em;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    align-self: center;
+    padding: 0 10px;
+}
+
+.experience-card h4::before,
+.experience-card h4::after {
+    content: "//";
+    position: relative;
+    color: var(--primary);
+    margin: 0 6px;
+    font-weight: 600;
+}
+
+.experience-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.experience-card a:hover {
+    color: var(--primary);
+    transition: all 0.2s ease;
+    border-bottom: 1px dashed var(--primary);
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+}
+
+.experience-card .tag {
+    display: inline-block;
+    font-weight: 600;
+    padding: 0.2em 0.8em;
+    border: 1.2px dotted var(--link);
+    border-radius: 5px;
+    font-size: 0.85em;
+    margin: -1.2rem 0 -.75rem 0;
+    background: rgba(var(--primary-rgb), 0.05);
+    color: var(--link);
+    position: relative;
+    font-family: 'Courier Prime', 'Source Code Pro', monospace;
+    filter: contrast(1.2) saturate(1.2) brightness(1.1);
+}
+
+.experience-card .tag::before {
+    content: "# ";
+    margin-right: 3px;
+    font-weight: bold;
+    color: var(--link);
+}
+
+.experience-card .abstract-box {
+    border-left: 2px solid var(--primary);
+    padding-left: 1.2em;
+    font-size: 0.95em;
+    color: var(--muted-text);
+    position: relative;
+    margin: 1rem 0;
+}
+
+.experience-card .abstract-box::before {
+    content: "→";
+    position: absolute;
+    left: 2px;
+    color: var(--primary);
+    border-left: 0;
+    font-weight: bold;
+    font-size: 1.15em;
+}
+/* 添加一些手绘风格的粗糙边缘 */
+.experience-card::before, .experience-card::after{
+    filter: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="roughpaper" x="0%" y="0%" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.07" result="noise" numOctaves="7" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="5" /></filter></svg>#roughpaper');
 }
 
 /* 相册区：使用 CSS Grid Masonry 效果 */
 .gallery {
   column-count: 4;
-  column-gap: 20px;
+  column-gap: 18px;
   margin-top: 1.5rem;
   user-select: none;
-
-  /* 玻璃背景 */
-  background: rgba(var(--background-rgb), 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
@@ -831,17 +941,20 @@ hr::after {
 
 
 .gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 18px;     /* 每个图片底部间距 */
+    border: 1.6px dashed var(--text);
+    border-radius: 10px;
+    margin-bottom: 18px;
+    padding: 4px;
+    background: var(--card-bg);
+    box-shadow: 1px 1px 0 var(--card-border);
+    overflow: hidden;
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
-  object-fit: cover;      /* 实际上 auto 配合 masonry 效果更佳 */
+  border-radius: 6px;
+  object-fit: auto;      /* 实际上 auto 配合 masonry 效果更佳 */
   display: block;
   cursor: pointer;
   transition: transform 0.3s;
@@ -901,32 +1014,6 @@ hr::after {
     font-size: 30px;
     color: white;
     cursor: pointer;
-}
-
-.experience-card .content-card h3 { /* 内容卡片标题样式 */
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.experience-card .content-card p { /* 内容卡片段落样式 */
-    color: var(--text);
-    font-size: 14px;
-}
-
-.experience-card .content-card a { /* 内容卡片链接样式 */
-    color: var(--link-blue);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.experience-card .content-card a:hover {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--primary);
-}
-
-.experience-card .content-card a:active {
-    color: var(--accent);
 }
 
 /* ==================== 联系模块优化 ==================== */
