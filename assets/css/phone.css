@@ -315,7 +315,11 @@
         max-width: 100% !important;
         margin-bottom: 1.2rem !important;
     }
-    
+
+   .tags-container {
+        display: none !important;
+    }
+
     /* 联系区域调整 */
     .contact-grid {
         grid-template-columns: 1fr !important;
