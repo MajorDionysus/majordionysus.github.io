@@ -35,7 +35,7 @@
     "tag": ["Lab Proj.2","3D Modeling","Vascularization","Larger Mesh-MPC","Failed"]
   },
   {
-    "title":    "Three-dimensional Liquid Metal-based Neuro-interfaces for Human Hippocampal Organoids",
+    "title":    "3D Liquid Metal-based Neuro-interfaces for Human Hippocampal Organoids",
     "url":      "https://rdcu.be/efXIq",
     "role":     "Learner",
     "year":     "2023",
@@ -50,6 +50,20 @@
       "https://img.mrj.today/images/Lab/25.jpg"
     ],
     "tag": ["Lab Proj.1","MPC Fabrication","EIS Testing","Starting Research"]
+  },
+  {
+    "title":    "Course Work: Seam Carving Application with GUI in Java (Team Project)",
+    "url":      "https://github.com/MajorDionysus/SeamCarver-SUSTech-DSAA-B2024Spring",
+    "role":     "Teammate",
+    "year":     "2024",
+    "abstract": "This project, cooperating with Zhengyang C., implements a Seam Carving application in Java, providing a graphical user interface (GUI) for intelligent image resizing. Seam Carving is a content-aware image resizing technique that allows for the reduction or expansion of images by intelligently removing or inserting 'seams' (paths of least importance) without distorting the main content of the image. This application includes features for both shrinking and expanding images, along with tools for visualizing energy maps and protecting/deleting specific regions using masks.",
+    "images": [
+      "https://img.mrj.today/images/Course/DSAA-B/guiScreenshot.jpg",
+      "https://img.mrj.today/images/Course/DSAA-B/Different sizes.png",
+      "https://img.mrj.today/images/Course/DSAA-B/art.png",
+      "https://img.mrj.today/images/Course/DSAA-B/Pro and de.png"
+    ],
+    "tag": ["Course Proj.1","Image Processing","Data Structure & Algorithm","Java Programming"]
   }
 ]
 
