@@ -1,51 +1,50 @@
 /* ==================== 学术极简配色方案 ==================== */
 :root {
-    --primary: #8c3d3d;       /* 低饱和暗陶红，主色点 */
-    --secondary: #4f6b72;     /* 深冷青灰，辅助色 */
-    --accent: rgba(240, 189, 176, 0.85); /* 柔和暖米色点缀 */
-    --accent-rgb: 180, 140, 100;
-    --text: #e6e6e6;          /* 柔和亮灰，正文 */
-    --background: #141414;    /* 深墨黑背景 */
-    --card-bg: #1e1e1e;       /* 炭黑灰卡片 */
-    --card-border: #2b2b2b;   /* 深边框灰 */
-    --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    --muted-text: #8d8d8d;    /* 次要灰 */
-    --link: #b89a6a;          /* 低调柔金色链接 */
-    --primary-rgb: 140, 61, 61;
-    --background-rgb: 20, 20, 20;
+    --primary: #d4af37;       /* 琥珀金主色，低饱和柔金 */
+    --secondary: #3e5960;     /* 冷青灰，辅助色 */
+    --accent: #e6c27a;        /* 浅琥珀黄，点缀色 */
+    --accent-rgb: 230, 194, 122;
+    --text: #e8e8e8;          /* 柔和亮灰 */
+    --background: #121212;    /* 深青黑背景 */
+    --card-bg: #1b1b1b;       /* 稍浅卡片底 */
+    --card-border: #2a2a2a;   /* 暗灰边框 */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --muted-text: #8c8c8c;    /* 次要文字灰 */
+    --link: #c9a94d;          /* 柔金色链接 */
+    --primary-rgb: 212, 175, 55;
+    --background-rgb: 18, 18, 18;
 
-    /* 标题灰阶层次 - 更偏冷灰 */
-    --h1: #f1f1f1;  /* 接近白 */
-    --h2: #d4d4d4;  /* 浅灰 */
-    --h3: #b8b8b8;  /* 中浅灰 */
-    --h4: #9c9c9c;  /* 中灰 */
-    --h5: #7f7f7f;  /* 深灰 */
-    --h6: #646464;  /* 最弱灰 */
+    --h1: #f1f1f1;
+    --h2: #d5d5d5;
+    --h3: #b9b9b9;
+    --h4: #9c9c9c;
+    --h5: #7f7f7f;
+    --h6: #626262;
 }
 
 [data-theme="light"] {
-    --primary: #325c80;       /* 水墨靛青 */
-    --secondary: #6c8ea0;     /* 淡墨青灰 */
+    --primary: #325c80;       /* 水墨靛青主色 */
+    --secondary: #6c8ea0;     /* 青灰 */
     --accent: rgb(90, 120, 140); /* 水墨蓝调点缀 */
     --accent-rgb: 90, 120, 140;
-    --text: #1e2933;          /* 深墨灰（接近水墨笔触的黑蓝） */
-    --background: #ffffff;    /* 宣纸感淡灰白 */
-    --card-bg: #f2f2f6;       /* 浅水墨纸白 */
-    --card-border: #cfd6da;   /* 水墨灰 */
-    --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    --muted-text: #6b7c85;    /* 青墨灰调 */
-    --link: #2c4c68;          /* 墨蓝色链接 */
+    --text: #1f2833;          /* 深墨黑 */
+    --background: #fdfdfc;    /* 宣纸白 */
+    --card-bg: #f7f7f5;       /* 浅纸灰 */
+    --card-border: #d7d7d2;   /* 水墨灰 */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --muted-text: #6b7c85;    /* 青墨灰 */
+    --link: #2c4c68; /* 墨蓝色链接 */
     --primary-rgb: 50, 92, 128;
-    --background-rgb: 245, 246, 247;
+    --background-rgb: 253, 253, 252;
 
-    /* 标题灰阶层次 - 水墨蓝渐变 */
-    --h1: #0f1a26;  /* 墨黑蓝 */
-    --h2: #1c2c3a;  /* 深水墨 */
-    --h3: #2f4a5c;  /* 墨蓝灰 */
-    --h4: #4b6575;  /* 青灰 */
-    --h5: #708693;  /* 浅青灰 */
-    --h6: #94a6b0;  /* 更淡的水墨蓝灰 */
+    --h1: #0f1a26;
+    --h2: #1c2c3a;
+    --h3: #2f4a5c;
+    --h4: #4b6575;
+    --h5: #708693;
+    --h6: #94a6b0;
 }
+
 
 
 /* ==================== 主要内容区域调整 ==================== */
@@ -841,7 +840,7 @@ hr::after {
 .experience-card h4 {
     text-align: center;
     margin-bottom: 0.8em;
-    color: var(--accent);
+    color: var(--text);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -861,7 +860,7 @@ hr::after {
 }
 
 .experience-card a {
-    color: var(--accent);
+    color: var(--text);
     text-decoration: none;
     font-weight: 600;
 }
@@ -892,7 +891,6 @@ hr::after {
     color: var(--link);
     position: relative;
     font-family: 'Courier Prime', 'Source Code Pro', monospace;
-    filter: contrast(1.2) saturate(1.2) brightness(1.1);
 }
 
 .experience-card .tag::before {
