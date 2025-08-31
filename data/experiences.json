@@ -1,6 +1,6 @@
 [
   {
-    "title":    "Electrophysiological recording based on the three-dimensional mesh-MPC integrated in the Transwell device",
+    "title":    "Mesh-BELT: Mesh Bag Electrode Loaded in Transwell for Organoid Electrophysiology",
     "url":      "",
     "role":     "Independent Researcher",
     "year":     "2025",
@@ -16,7 +16,10 @@
     "year":     "2024-2025",
     "abstract": "Connecting electronics to neural organoids is key for brain-machine interfaces and studying neural systems, but 3D tissue surfaces make electrophysiology difficult. We present a stretchable mesh electrode array with graphene microneedles, made via microfluidic patterning for low-cost, reproducible fabrication. The device's microneedles and liquid metal-polymer interconnects withstand 200% strain, improving electrode-tissue contact and enabling robust multisite recordings. Over 60% of channels were activated, outperforming standard 2D electrodes. This biocompatible interface addresses mechanical mismatch issues, advancing studies of neural networks in 3D models.",
     "images": [
-      "https://img.mrj.today/images/Lab/41.jpg"
+      "https://img.mrj.today/images/Lab/111.jpg",
+      "https://img.mrj.today/images/Lab/102.jpg",
+      "https://img.mrj.today/images/Lab/107.jpg",
+      "https://img.mrj.today/images/Lab/110.jpg"
     ],
     "tag": ["Lab Proj.3","Fast Coupling","Graphene Microneedles","Published"]
   },  
