@@ -55,6 +55,20 @@
     "tag": ["Lab Proj.1","MPC Fabrication","EIS Testing","Starting Research"]
   },
   {
+    "title":    "Course Work: Task and Gender Classification using Machine Learning via Human Connectome Project (Team Project)",
+    "url":      "https://img.mrj.today/images/Course/MedML/report.pdf",
+    "role":     "Teammate",
+    "year":     "2024",
+    "abstract": "This study analyzes functional brain connectivity patterns from Chinese (CHCP) and Western (HCP) populations to identify cultural and gender-specific features. Using clustering algorithms and a convolutional neural network (CNN), we successfully classified task states and gender based on functional connectivity matrices. Results show that connectivity patterns are highly task-dependent and exhibit significant cross-cultural and gender-based differences. This work provides a data-driven framework for cross-cultural connectomics and enhances the diversity of neuroscientific research.",
+    "images": [
+      "https://img.mrj.today/images/Course/MedML/CodeWorkFlow.png",
+      "https://img.mrj.today/images/Course/MedML/result.jpg",
+      "https://img.mrj.today/images/Course/MedML/gender-distrubution.png",
+      "https://img.mrj.today/images/Course/MedML/Violin.png"
+    ],
+    "tag": ["Course Proj.2","Machine Learning","HCP and CHCP Dataset","Python Programming"]
+  },
+  {
     "title":    "Course Work: Seam Carving Application with GUI in Java (Team Project)",
     "url":      "https://github.com/MajorDionysus/SeamCarver-SUSTech-DSAA-B2024Spring",
     "role":     "Teammate",
