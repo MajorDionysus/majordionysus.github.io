@@ -1,6 +1,6 @@
 [
   {
-    "title":    "Mesh-BELT: Mesh Bag Electrode Loaded in Transwell for Organoid Electrophysiology",
+    "title":    "A Novel Architecture of MPC for device integration applied on Organoids (Graduation project)",
     "url":      "",
     "role":     "Independent Researcher",
     "year":     "2025",
@@ -28,14 +28,10 @@
     "url":      "",
     "role":     "Assistant",
     "year":     "2023-2024",
-    "abstract": "This project represents a purposeful and significant initiative dedicated to developing a perfusion vessel model for organoid vascularization. My responsibilities included assisting in the fabrication and characterization of the mesh-MPC scaffold, which plays a critical role in both supporting endothelial cell seeding and providing spatial cues for capillary neovascularization. Despite the project's ultimate fail, the absence of observable capillary networks surrounding the artificial vessel, with the underlying causes remaining undetermined—this experience has substantially deepened my comprehension of tissue engineering principles and the intricate dynamics inherent to organoid development.",
+    "abstract": "For protecting intelligent properties, I cannot share specific details about this project. Generally speaking, this project aims to develop a perfusion vessel model using mesh-MPC scaffolds to introduce organoid vascularization. This work has the potential to advance organoid technology and its applications in disease modeling and regenerative medicine.",
     "images": [
-      "https://img.mrj.today/images/Lab/30.jpg",
-      "https://img.mrj.today/images/Lab/36.jpg",
-      "https://img.mrj.today/images/Lab/34.jpg",
-      "https://img.mrj.today/images/Lab/35.jpg"
     ],
-    "tag": ["Lab Proj.2","3D Modeling","Vascularization","Larger Mesh-MPC","Failed"]
+    "tag": ["Lab Proj.2","3D Modeling","Vascularization","Larger Mesh-MPC"]
   },
   {
     "title":    "3D Liquid Metal-based Neuro-interfaces for Human Hippocampal Organoids",
