@@ -1,13 +1,13 @@
 [
   {
-    "title":    "A Novel Architecture of MPC for device integration applied on Organoids (Graduation project)",
+    "title":    "A Novel Architecture of MPC for common device integration enabling electrophysiology interrogation",
     "url":      "",
     "role":     "Independent Researcher",
     "year":     "2025",
     "abstract": "This project is a work in progress and will be updated soon.",
     "images": [
     ],
-   "tag": ["Lab Proj.4","On-going"]
+   "tag": ["Lab Proj.4","On-going","Graduation Project"]
   },  
   {
     "title":    "Elastic TPU/Graphene Microneedle-Mesh Interfaces via Microfluidic Patterning for Electrophysiology in Neural Organoids",
@@ -22,17 +22,7 @@
       "https://img.mrj.today/images/Lab/110.jpg"
     ],
     "tag": ["Lab Proj.3","Fast Coupling","Graphene Microneedles","Published"]
-  },  
-  {
-    "title":    "Organoid Vascularization through Perfusion Vessel Model utilizing mesh-MPC Scaffold",
-    "url":      "",
-    "role":     "Assistant",
-    "year":     "2023-2024",
-    "abstract": "For protecting intelligent properties, I cannot share specific details about this project. Generally speaking, this project aims to develop a perfusion vessel model using mesh-MPC scaffolds to introduce organoid vascularization. This work has the potential to advance organoid technology and its applications in disease modeling and regenerative medicine.",
-    "images": [
-    ],
-    "tag": ["Lab Proj.2","3D Modeling","Vascularization","Larger Mesh-MPC"]
-  },
+  }, 
   {
     "title":    "3D Liquid Metal-based Neuro-interfaces for Human Hippocampal Organoids",
     "url":      "https://rdcu.be/efXIq",
@@ -51,7 +41,7 @@
     "tag": ["Lab Proj.1","MPC Fabrication","EIS Testing","Starting Research"]
   },
   {
-    "title":    "Course Work: Task and Gender Classification using Machine Learning via Human Connectome Project (Team Project)",
+    "title":    "Course Work: Task and Gender Classification using Machine Learning via Human Connectome Project",
     "url":      "https://img.mrj.today/images/Course/MedML/report.pdf",
     "role":     "Teammate",
     "year":     "2024",
@@ -65,7 +55,7 @@
     "tag": ["Course Proj.2","Machine Learning","HCP and CHCP Dataset","Python Programming"]
   },
   {
-    "title":    "Course Work: Seam Carving Application with GUI in Java (Team Project)",
+    "title":    "Course Work: Seam Carving -- Graphical User Interface for the Application of Classical Image Scaling Algorithms implemented with Java",
     "url":      "https://github.com/MajorDionysus/SeamCarver-SUSTech-DSAA-B2024Spring",
     "role":     "Teammate",
     "year":     "2024",
