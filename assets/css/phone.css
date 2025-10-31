@@ -362,6 +362,63 @@
   .gallery { column-count: 1; }
 }
 
+/* ==================== Mobile Minimal News Section ==================== */
+@media (max-width: 768px) {
+    .minimal-news-section {
+        padding: 1.5rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .news-slider-wrapper {
+        height: 350px !important; /* 移动端调整高度 */
+    }
+    
+    .news-content-overlay {
+        padding: 1.5rem !important;
+    }
+    
+    .news-title-minimal {
+        font-size: 1.3rem !important;
+    }
+    
+    .minimal-controls {
+        gap: 1rem !important;
+    }
+    
+    .minimal-control-btn {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .minimal-progress {
+        max-width: 200px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-slider-wrapper {
+        height: 280px !important;
+    }
+    
+    .news-content-overlay {
+        padding: 1rem !important;
+    }
+    
+    .news-title-minimal {
+        font-size: 1.1rem !important;
+    }
+    
+    .news-excerpt-minimal {
+        font-size: 0.9rem !important;
+    }
+    
+    .news-meta-minimal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 0.8rem !important;
+    }
+}
 
 /* 小屏幕设备进一步优化 (<=480px) */
 @media (max-width: 480px) {

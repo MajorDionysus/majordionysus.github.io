@@ -1,0 +1,25 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "date": "2025-10-17",
+      "title": "My First Paper Work Published by ACS Nano",
+      "excerpt": "We developed a stretchable mesh electrode array integrated with graphene microneedles to overcome the challenge of interfacing with 3D neural organoids. Fabricated via a low-cost microfluidic patterning technique, this device withstands 200% strain, ensures stable electrode-tissue contact, and enables robust multisite recording—achieving over 60% channel activation and outperforming conventional 2D electrodes.",
+      "image": "https://img.mrj.today/images/News/News-1.png"
+    },
+    {
+      "id": 2,
+      "date": "2025-09-14",
+      "title": "A Talk About My Research: 2 Years of Work and Recent Progress",
+      "excerpt": "How can we better collect the electrical signals of miniature human brains in a dish? Over the past two years, my research has been dedicated to solving this by creating flexible, mesh-based interfaces. My presentation at the SUSTech Open Meeting shared this journey—from an initial concept that improved upon rigid electrodes and finally to our latest MESH-GRIP innovation that secures organoids for stable, long-term recording.",
+      "image": "https://img.mrj.today/images/News/News-2.png"
+    },
+    {
+      "id": 3,
+      "date": "2025-10-02",
+      "title": "First sea fishing experience",
+      "excerpt": "🌊During the National Day holiday, I unlocked my first sea fishing experience in my life! I was extremely lucky and caught blue mackerel scad and rabbitfish. I also came across a stunning seaside sunset. Now, my mind is filled with anticipation for the next sea trip.🐟",
+      "image": "https://img.mrj.today/images/News/News-3.jpg"
+    }
+  ]
+}

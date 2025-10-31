@@ -207,7 +207,7 @@ li.innerHTML = `
 
 
     <!-- Year -->
-    <p style="margin: 0.3em 0;"><strong>Year:</strong> ${pub.year}</p>
+    <p style="margin: 0.3em 0;"><strong>Pub-info:</strong> ${pub.year}</p>
 
     <!-- DOI -->
     ${pub.doi ? `
@@ -441,4 +441,251 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+
+// ==================== Minimal News Module ====================
+
+/**
+ * Initialize Minimal News Module
+ */
+function initializeMinimalNews() {
+    const newsSection = document.querySelector('.minimal-news-section');
+    if (!newsSection) return;
+
+    loadNewsData();
+}
+
+/**
+ * Load News Data from JSON
+ */
+function loadNewsData() {
+    fetch('../data/minimal-news.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load news data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.news && Array.isArray(data.news)) {
+                setupNewsSlider(data.news);
+            }
+        })
+        .catch(error => {
+            console.error('Error loading news data:', error);
+            setupNewsSlider(getDefaultNewsData());
+        });
+}
+
+/**
+ * Default news data as fallback
+ */
+function getDefaultNewsData() {
+    return [];
+}
+
+/**
+ * Setup News Slider
+ */
+function setupNewsSlider(newsData) {
+    let currentIndex = 0;
+    let isAnimating = false;
+    let autoScrollInterval;
+    const autoScrollDelay = 6000;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    // DOM Elements
+    const sliderTrack = document.getElementById('newsSliderTrack');
+    const newsDate = document.getElementById('newsDateMinimal');
+    const newsTitle = document.getElementById('newsTitleMinimal');
+    const newsExcerpt = document.getElementById('newsExcerptMinimal');
+    const progressFill = document.getElementById('minimalProgressFill');
+    const prevBtn = document.getElementById('minimalPrevBtn');
+    const nextBtn = document.getElementById('minimalNextBtn');
+
+    // Create slides
+    function createSlides() {
+        sliderTrack.innerHTML = '';
+        
+        newsData.forEach((news, index) => {
+            const slide = document.createElement('div');
+            slide.className = `news-slide ${index === 0 ? 'active' : ''}`;
+            slide.innerHTML = `
+                <img src="${news.image}" alt="${news.title}" class="news-slide-image" 
+                     onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=500&fit=crop'">
+            `;
+            sliderTrack.appendChild(slide);
+        });
+        
+        updateContentDisplay();
+    }
+
+    // Format date
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+
+    // Update content display
+    function updateContentDisplay() {
+        const news = newsData[currentIndex];
+        if (!news) return;
+
+        newsDate.textContent = formatDate(news.date);
+        newsTitle.textContent = news.title;
+        newsExcerpt.textContent = news.excerpt;
+        
+        // Update progress
+        const progress = ((currentIndex + 1) / newsData.length) * 100;
+        progressFill.style.width = progress + '%';
+    }
+
+    // Go to slide with smooth animation
+    function goToSlide(index, direction = 1) {
+        if (isAnimating || index === currentIndex) return;
+        
+        isAnimating = true;
+        const newIndex = (index + newsData.length) % newsData.length;
+        
+        // Update slides
+        const slides = document.querySelectorAll('.news-slide');
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Animate track
+        const trackWidth = sliderTrack.offsetWidth;
+        sliderTrack.style.transform = `translateX(-${newIndex * trackWidth}px)`;
+        
+        // Update current index after animation
+        setTimeout(() => {
+            currentIndex = newIndex;
+            slides[newIndex].classList.add('active');
+            updateContentDisplay();
+            isAnimating = false;
+        }, 200);
+    }
+
+    // Next slide
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+        resetAutoScroll();
+    }
+
+    // Previous slide
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+        resetAutoScroll();
+    }
+
+    // Auto scroll
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(nextSlide, autoScrollDelay);
+    }
+
+    function resetAutoScroll() {
+        clearInterval(autoScrollInterval);
+        startAutoScroll();
+    }
+
+    // Touch/Mouse drag handling
+    function setupDragHandling() {
+        const wrapper = document.querySelector('.news-slider-wrapper');
+        
+        // Mouse events
+        wrapper.addEventListener('mousedown', handleDragStart);
+        wrapper.addEventListener('mousemove', handleDragMove);
+        wrapper.addEventListener('mouseup', handleDragEnd);
+        wrapper.addEventListener('mouseleave', handleDragEnd);
+        
+        // Touch events
+        wrapper.addEventListener('touchstart', handleDragStart);
+        wrapper.addEventListener('touchmove', handleDragMove);
+        wrapper.addEventListener('touchend', handleDragEnd);
+    }
+
+    function handleDragStart(e) {
+        if (isAnimating) return;
+        
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        currentX = startX;
+        
+        clearInterval(autoScrollInterval);
+        sliderTrack.style.transition = 'none';
+    }
+
+    function handleDragMove(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        const diff = currentX - startX;
+        
+        if (Math.abs(diff) > 10) {
+            const trackWidth = sliderTrack.offsetWidth;
+            const dragOffset = -currentIndex * trackWidth + diff;
+            sliderTrack.style.transform = `translateX(${dragOffset}px)`;
+        }
+    }
+
+    function handleDragEnd(e) {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        sliderTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        
+        const diff = currentX - startX;
+        const threshold = 50;
+        
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                prevSlide();
+            } else {
+                nextSlide();
+            }
+        } else {
+            // Return to current position
+            goToSlide(currentIndex);
+        }
+        
+        startAutoScroll();
+    }
+
+    // Pause on hover
+    function setupHoverPause() {
+        const wrapper = document.querySelector('.news-slider-wrapper');
+        wrapper.addEventListener('mouseenter', () => {
+            clearInterval(autoScrollInterval);
+        });
+        wrapper.addEventListener('mouseleave', () => {
+            startAutoScroll();
+        });
+    }
+
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    // Initialize
+    if (newsData.length > 0) {
+        createSlides();
+        startAutoScroll();
+        setupDragHandling();
+        setupHoverPause();
+
+        // Add entrance animation
+        anime({
+            targets: '.news-slider-wrapper',
+            opacity: [0, 1],
+            translateY: [30, 0],
+            duration: 800,
+            easing: 'easeOutCubic'
+        });
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeMinimalNews();
 });

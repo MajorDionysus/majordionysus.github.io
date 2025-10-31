@@ -86,7 +86,7 @@
                 <div class="profile-content">
                     <div class="profile-text">
                         <p>
-                            I am <em style="font-family: 'Times New Romans' !important; font-size: 1.08rem; font-weight: 800;">Renjie (Rayn Jay) Mei</em>, a potential researcher specializing in 
+                            I am <em style="font-size: 1.08rem; font-weight: 800; text-decoration: underline;">Renjie (Rayn Jay) Mei</em>, a potential researcher specializing in 
                             <strong style="color: var(--accent)">Bio-Electronics Interface</strong> and an enthusiastist at<strong style="color: var(--accent)"> Brain-Computer Interface</strong>. Currently, I am pursuing my undergraduate degree in Intelligent Medical Engineering at 
                             <strong>Southern University of Science and Technology (SUSTech), P.R. China</strong>. My research experiences center on 
                             <strong>liquid metal-polymer condutor</strong> for bioelectronics applications.
@@ -100,6 +100,49 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Minimal News Section -->
+            <section class="minimal-news-section">
+                <h2>Latest News</h2>
+                <div class="minimal-news-container">
+                    <div class="news-slider-wrapper">
+                        <div class="news-slider-track" id="newsSliderTrack">
+                            <!-- News slides will be populated by JavaScript -->
+                        </div>
+                        
+                        <div class="news-content-overlay">
+                            <div class="news-overlay-content">
+                                <div class="news-meta-minimal">
+                                    <span class="news-date-minimal" id="newsDateMinimal"></span>
+                                </div>
+                                <h3 class="news-title-minimal" id="newsTitleMinimal"></h3>
+                                <p class="news-excerpt-minimal" id="newsExcerptMinimal"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="minimal-controls">
+                        <button id="minimalPrevBtn" class="minimal-control-btn" title="Previous">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="minimal-progress">
+                            <div class="minimal-progress-bar">
+                                <div class="minimal-progress-fill" id="minimalProgressFill"></div>
+                            </div>
+                        </div>
+                        
+                        <button id="minimalNextBtn" class="minimal-control-btn" title="Next">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
             <section class="education-background">
                 <h2>Education Background</h2>
 

@@ -422,6 +422,203 @@ hr::after {
     text-align: center;
 }
 
+/* ==================== Minimal News Section ==================== */
+.minimal-news-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border);
+}
+
+.minimal-news-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.news-slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.news-slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.news-slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+}
+
+.news-slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center!important;
+}
+
+.news-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 100%,
+        rgba(0, 0, 0, 0.3) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.news-slider-wrapper:hover .news-content-overlay {
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0.7) 60%,
+        rgba(0, 0, 0, 0.9) 100%
+    );
+}
+
+.news-overlay-content {
+    width: 100%;
+    opacity: 1;
+    transform: translateY(180px);
+    transition: transform 0.6s ease;
+}
+
+.news-slider-wrapper:hover .news-overlay-content {
+    transform: translateY(0px);
+    transition: transform 0.6s ease;
+}
+
+.news-meta-minimal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.news-date-minimal {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+
+.news-title-minimal {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.news-excerpt-minimal {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.75rem;
+    line-height: 1.25;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.news-slider-wrapper:hover .news-excerpt-minimal {
+    opacity: 1;
+}
+
+/* Minimal Controls */
+.minimal-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.minimal-control-btn {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 2px solid var(--card-border);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.minimal-control-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.minimal-progress {
+    flex: 1;
+    max-width: 300px;
+}
+
+.minimal-progress-bar {
+    height: 4px;
+    background: var(--card-border);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.minimal-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 0%;
+    position: relative;
+}
+
+.minimal-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    border-radius: 2px;
+}
+
+/* Slide transition animations */
+.news-slide {
+    opacity: 0.7;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.news-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /* ==================== 作品集头像 ==================== */
 .profile-image img {
     width: 200px;  /* 放大作品集头像尺寸 */
