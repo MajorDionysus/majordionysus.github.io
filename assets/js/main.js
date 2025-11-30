@@ -491,7 +491,7 @@ function setupNewsSlider(newsData) {
     let currentIndex = 0;
     let isAnimating = false;
     let autoScrollInterval;
-    const autoScrollDelay = 6000;
+    const autoScrollDelay = 12000;
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
