@@ -8,7 +8,7 @@
         "url": "https://doi.org/10.1021/acsnano.5c08827",
         "abstract": "Connecting electronics to neural organoids is key for brain-machine interfaces and studying neural systems, but 3D tissue surfaces make electrophysiology difficult. We present a stretchable mesh electrode array with graphene microneedles, made via microfluidic patterning for low-cost, reproducible fabrication. The device's microneedles and liquid metal-polymer interconnects withstand 200% strain, improving electrode-tissue contact and enabling robust multisite recordings. Over 60% of channels were activated, outperforming standard 2D electrodes. This biocompatible interface addresses mechanical mismatch issues, advancing studies of neural networks in 3D models.",
         "tag": "ACS Nano",
-        "imageUrl": "https://img.mrj.today/images/cover/pub/ACS_Nano_1.png"
+        "imageUrl": "https://mrj2026.today/images/cover/pub/ACS_Nano_1.png"
     },
     {
         "title": "To be continued...",
@@ -19,6 +19,6 @@
         "url": "####",
         "abstract": "",
         "tag": "Unknown",
-        "imageUrl": "https://img.mrj.today/images/cover/tbc.jpg"
+        "imageUrl": "https://mrj2026.today/images/cover/tbc.jpg"
     }
 ]

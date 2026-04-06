@@ -16,10 +16,10 @@
     "year":     "2024-2025",
     "abstract": "Connecting electronics to neural organoids is key for brain-machine interfaces and studying neural systems, but 3D tissue surfaces make electrophysiology difficult. We present a stretchable mesh electrode array with graphene microneedles, made via microfluidic patterning for low-cost, reproducible fabrication. The device's microneedles and liquid metal-polymer interconnects withstand 200% strain, improving electrode-tissue contact and enabling robust multisite recordings. Over 60% of channels were activated, outperforming standard 2D electrodes. This biocompatible interface addresses mechanical mismatch issues, advancing studies of neural networks in 3D models.",
     "images": [
-      "https://img.mrj.today/images/Lab/111.jpg",
-      "https://img.mrj.today/images/Lab/102.jpg",
-      "https://img.mrj.today/images/Lab/107.jpg",
-      "https://img.mrj.today/images/Lab/110.jpg"
+      "https://mrj2026.today/images/Lab/111.jpg",
+      "https://mrj2026.today/images/Lab/102.jpg",
+      "https://mrj2026.today/images/Lab/107.jpg",
+      "https://mrj2026.today/images/Lab/110.jpg"
     ],
     "tag": ["Lab Proj.3","Fast Coupling","Graphene Microneedles","Published"]
   }, 
@@ -30,27 +30,27 @@
     "year":     "2023",
     "abstract": "It was an invaluable experience to involved in a newly accepted top-tier journal, through which I gained experimental proficiency and started my research journey. Throughout this process, I have mastered the principles and protocols underlying the fabrication of metal-polymer conductors via microfluidic patterning based on polydimethylsiloxane (PDMS). Concurrently, I have attained proficiency in the electrochemical impedance spectroscopy (EIS) system, encompassing both its hardware configuration and software operation. Furthermore, I have acquired a diverse array of research-relevant skills, for which I am deeply indebted to my research mentor  Dr. Wu Yan.",
     "images": [
-      "https://img.mrj.today/images/Lab/11.jpg",
-      "https://img.mrj.today/images/Lab/12.jpg",
-      "https://img.mrj.today/images/Lab/21.jpg", 
-      "https://img.mrj.today/images/Lab/22.jpg",
-      "https://img.mrj.today/images/Lab/23.jpg",
-      "https://img.mrj.today/images/Lab/24.jpg",
-      "https://img.mrj.today/images/Lab/25.jpg"
+      "https://mrj2026.today/images/Lab/11.jpg",
+      "https://mrj2026.today/images/Lab/12.jpg",
+      "https://mrj2026.today/images/Lab/21.jpg", 
+      "https://mrj2026.today/images/Lab/22.jpg",
+      "https://mrj2026.today/images/Lab/23.jpg",
+      "https://mrj2026.today/images/Lab/24.jpg",
+      "https://mrj2026.today/images/Lab/25.jpg"
     ],
     "tag": ["Lab Proj.1","MPC Fabrication","EIS Testing","Starting Research"]
   },
   {
     "title":    "Course Work: Task and Gender Classification using Machine Learning via Human Connectome Project",
-    "url":      "https://img.mrj.today/images/Course/MedML/report.pdf",
+    "url":      "https://mrj2026.today/images/Course/MedML/report.pdf",
     "role":     "Teammate",
     "year":     "2024",
     "abstract": "This study analyzes functional brain connectivity patterns from Chinese (CHCP) and Western (HCP) populations to identify cultural and gender-specific features. Using clustering algorithms and a convolutional neural network (CNN), we successfully classified task states and gender based on functional connectivity matrices. Results show that connectivity patterns are highly task-dependent and exhibit significant cross-cultural and gender-based differences. This work provides a data-driven framework for cross-cultural connectomics and enhances the diversity of neuroscientific research.",
     "images": [
-      "https://img.mrj.today/images/Course/MedML/CodeWorkFlow.png",
-      "https://img.mrj.today/images/Course/MedML/result.jpg",
-      "https://img.mrj.today/images/Course/MedML/gender-distrubution.png",
-      "https://img.mrj.today/images/Course/MedML/Violin.png"
+      "https://mrj2026.today/images/Course/MedML/CodeWorkFlow.png",
+      "https://mrj2026.today/images/Course/MedML/result.jpg",
+      "https://mrj2026.today/images/Course/MedML/gender-distrubution.png",
+      "https://mrj2026.today/images/Course/MedML/Violin.png"
     ],
     "tag": ["Course Proj.2","Machine Learning","HCP and CHCP Dataset","Python Programming"]
   },
@@ -61,10 +61,10 @@
     "year":     "2024",
     "abstract": "This project, cooperating with Zhengyang C., implements a Seam Carving application in Java, providing a graphical user interface (GUI) for intelligent image resizing. Seam Carving is a content-aware image resizing technique that allows for the reduction or expansion of images by intelligently removing or inserting 'seams' (paths of least importance) without distorting the main content of the image. This application includes features for both shrinking and expanding images, along with tools for visualizing energy maps and protecting/deleting specific regions using masks.",
     "images": [
-      "https://img.mrj.today/images/Course/DSAA-B/guiScreenshot.jpg",
-      "https://img.mrj.today/images/Course/DSAA-B/Different sizes.png",
-      "https://img.mrj.today/images/Course/DSAA-B/art.png",
-      "https://img.mrj.today/images/Course/DSAA-B/Pro and de.png"
+      "https://mrj2026.today/images/Course/DSAA-B/guiScreenshot.jpg",
+      "https://mrj2026.today/images/Course/DSAA-B/Different sizes.png",
+      "https://mrj2026.today/images/Course/DSAA-B/art.png",
+      "https://mrj2026.today/images/Course/DSAA-B/Pro and de.png"
     ],
     "tag": ["Course Proj.1","Image Processing","Data Structure & Algorithm","Java Programming"]
   }
