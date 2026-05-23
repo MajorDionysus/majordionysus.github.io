@@ -1,155 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Renjie Mei</title>
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
-    <link rel="stylesheet" href="../assets/css/phone.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-    // 全局主题初始化（必须放在所有页面）
-    document.addEventListener('DOMContentLoaded', function() {
-        // 从localStorage读取主题状态
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    });
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · Renjie Mei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/phone.css">
+  <script src="../assets/js/theme-init.js"></script>
+  <script src="../assets/js/site-core.js" defer></script>
 </head>
-<body>
-    <div class="container">
-        <!-- 左侧固定导航栏 -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <img src="../assets/images/mrj_logo.png" alt="Renjie Mei" class="avatar">
-            </div>
-            <h1>Renjie Mei</h1> 
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="experiences.html">Research & Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- 将 footer 内容移动到 sidebar 下方 -->
-            <div class="sidebar-footer">
-                <p>© 2025 Academic for Mei <br> All rights reserved</p>
-            </div>
-        </aside>
+<body data-page="contact" data-root="../">
+  <header id="site-header"></header>
+  <main class="page">
+    <div class="page-inner">
+      <div class="anim">
+        <h1 style="margin-bottom:0.4rem">Contact</h1>
+        <p style="color:var(--text-3);font-size:0.95rem;margin-bottom:2rem">Collaborations, questions, or a brief hello — all welcome.</p>
+      </div>
 
-        <!-- 移动端导航 -->
-        <header class="mobile-header">
-            <div class="mobile-header-content">
-                <button class="hamburger-menu">
-                    <img src='../assets/images/icons/menu.png' alt="Menu Icon" class="menu-icon">
-                </button>
-            </div>
-            <h2 style="text-align: center;">Contact</h2>        
-        </header>
-        
-        <!-- 移动端侧边菜单 -->
-        <aside class="mobile-sidebar">
-            <section class="mobile-sidebar-content">
-                <img src="../assets/images/mrj_logo.png" alt="Renjie Mei" class="avatar">
-            </section>
-            <nav class="mobile-nav">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="experiences.html">Research & Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- 移动端页脚 -->
-            <div class="mobile-sidebar-footer">
-                <p>© 2025 Academic for Mei <br> All rights reserved</p>
-            </div>
-        </aside>
+      <div class="contact-grid anim anim-d1">
+        <a class="contact-card" href="mailto:mrj100110@outlook.com">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">mrj100110@outlook.com</div>
+          </div>
+        </a>
 
-        <!-- overlay -->
-        <div class="overlay"></div>
+        <a class="contact-card" href="https://www.facebook.com/raynjay.mei" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Facebook</div>
+            <div class="contact-value">@Rayn Jay Mei</div>
+          </div>
+        </a>
 
-        <!-- 主要内容区域 -->
-        <main class="main-content" style="padding: clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 75px) clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 30px);">
-            <!-- Contact 模块 -->
-            <section class="contact-section">
-                <div class="contact-header">
-                    <h1>Contact Me</h1>
-                    <p>Feel free to reach out for collaborations, questions, or just to say hello!</p>
-                </div>
-                <div class="contact-grid">
-                    <!-- Email -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-item-content">
-                            <h4>Email</h4>
-                            <p><a href="mailto: mrj100110@outlook.com">click to email me</a></p>
-                        </div>
-                    </div>
-                    <!-- Facebook -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fa-brands fa-facebook"></i> 
-                        </div>
-                        <div class="contact-item-content">
-                            <h4>Facebook</h4>
-                            <p><a href="https://www.facebook.com/profile.php?id=61574133742017" target="_blank">@Rayn Jay Mei</a></p>
-                        </div>
-                    </div>
-                    <!-- LinkedIn -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-item-content">
-                            <h4>LinkedIn</h4>
-                            <p><a href="https://linkedin.com/in/renjiemei" target="_blank">linkedin.com/in/renjiemei</a></p>
-                        </div>
-                    </div>
-                    <!-- GitHub -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-item-content">
-                            <h4>GitHub</h4>
-                            <p><a href="https://github.com/MajorDionysus" target="_blank">@MajorDionysus</a></p>
-                        </div>
-                    </div>
-                    <!-- Google Scholar -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="contact-item-content">
-                            <h4>CV</h4>
-                            <p><a href="https://mrj2026.today/MyCV.pdf" target="_blank">Get My CV</a></p>
-                        </div>
-                    </div>
-                    <!-- ORCID -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fab fa-orcid"></i>
-                        </div>
-                        <div class="contact-item-content">
-                            <h4>ORCID</h4>
-                            <p><a href="https://orcid.org/0009-0000-8999-5881" target="_blank">ORCID Profile</a></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <a class="contact-card" href="https://www.linkedin.com/in/renjiemei" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/in/renjiemei</div>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://github.com/MajorDionysus" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">@MajorDionysus</div>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://orcid.org/0009-0000-8999-5881" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+              <text x="12" y="16" text-anchor="middle" font-size="6.5" font-family="Outfit,sans-serif" font-weight="700" fill="currentColor">ORCID</text>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">ORCID</div>
+            <div class="contact-value">0009-0000-8999-5881</div>
+          </div>
+        </a>
+
+        <a class="contact-card" href="#">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">CV</div>
+            <div class="contact-value">Download CV</div>
+          </div>
+        </a>
+      </div>
+
+      <footer class="footer"><p>© 2025 Renjie Mei</p></footer>
     </div>
-    <button class="theme-toggle" id="themeToggle">
-        <svg viewBox="0 0 24 24">
-            <!-- 月亮图标 -->
-            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
-        </svg>
-    </button>
+  </main>
 </body>
 </html>

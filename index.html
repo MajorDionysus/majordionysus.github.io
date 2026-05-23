@@ -1,407 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=GoogleChrome=1">
-    <title>Academic Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/phone.css">
-    <script src="assets/js/main.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-    // 全局主题初始化（必须放在所有页面）
-    document.addEventListener('DOMContentLoaded', function () {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    });
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renjie Mei · Bioelectronics &amp; BCI</title>
+  <meta name="description" content="Academic portfolio — bioelectronics, brain-computer interfaces, and research at SUSTech.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/phone.css">
+  <script src="assets/js/theme-init.js"></script>
+  <script src="assets/js/site-core.js" defer></script>
+  <script src="assets/js/site-pages.js" defer></script>
 </head>
-<body>
-    <div class="container">  
-       <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <img src="assets/images/mrj_logo.png" alt="Renjie Mei" class="avatar">
-            </div>
-            <h1>Renjie Mei</h1> 
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="content/publications.html">Publications</a></li>
-                    <li><a href="content/experiences.html">Research & Projects</a></li>
-                    <li><a href="content/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- Sidebar Footer -->
-            <div class="sidebar-footer">
-                <p>© 2025 Academic for Mei <br> All rights reserved</p>
-            </div>
-        </aside>
-        
-        <!-- 移动端导航 -->
-        <header class="mobile-header">
-            <div class="mobile-header-content">
-                <button class="hamburger-menu">
-                    <img src='assets/images/icons/menu.png' alt="Menu Icon" class="menu-icon">
-                </button>
-            </div>
-            <h2 style="text-align: center;">Home</h2>        
-        </header>
-        
-        <!-- 移动端侧边菜单 -->
-        <aside class="mobile-sidebar">
-            <section class="mobile-sidebar-content">
-                <img src="assets/images/mrj_logo.png" alt="Renjie Mei" class="avatar">
-            </section>
-            <nav class="mobile-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="content/publications.html">Publications</a></li>
-                    <li><a href="content/experiences.html">Research & Projects</a></li>
-                    <li><a href="content/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- 移动端页脚 -->
-            <div class="mobile-sidebar-footer">
-                <p>© 2025 Academic for Mei <br> All rights reserved</p>
-            </div>
-        </aside>
+<body data-page="home" data-root="">
 
-        <!-- overlay -->
-        <div class="overlay"></div>
-        
+  <header id="site-header"></header>
 
-        <!-- 主要内容区域 -->
-        <main class="main-content">
-            <!-- 欢迎部分 -->
-            <section class="welcome">
-                <h1>Welcome to My Academic Site</h1>
-                <h5><strong>M</strong>edInnovate | <strong>E</strong>volveHealth | <strong>I</strong>nspireBio</h5>
-            </section>
+  <main class="page">
+    <div class="page-inner">
 
-            <!-- 个人简介部分 -->
-            <section class="profile">
-                <h1>About Me</h1>
-                <div class="profile-content">
-                    <div class="profile-text">
-                        <p>
-                            I am <strong>Renjie (Rayn Jay) Mei</strong>, a researcher specializing in 
-                            <strong style="color: var(--accent)">Bio-Electronics Interface</strong> and 
-                            <strong style="color: var(--accent)">Brain-Computer Interface</strong>. 
-                            Currently pursuing my undergraduate degree in Intelligent Medical Engineering at 
-                            <strong>Southern University of Science and Technology (SUSTech)</strong>, P.R. China. 
-                            My research centers on liquid metal–polymer conductors for bioelectronics applications, 
-                            with publications available on 
-                            <a href="https://scholar.google.com/citations?user=AAx56ugAAAAJ&hl=en" 
-                            target="_blank" rel="noopener noreferrer" class="inline-link">Google Scholar</a>.
-                        </p>
-                        <p>
-                            Outside of academia, I enjoy visiting museums, playing video games, billiards (including snooker), 
-                            photography, and exploring the intersection of technology and art.
-                        </p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="https://mrj2026.today/images/mei.jpg" alt="Renjie Mei">
-                    </div>
-                </div>
-            </section>
+      <!-- Hero -->
+      <section class="hero anim">
+        <p class="hero-eyebrow">Academic Portfolio</p>
+        <h1 id="pageTitle">Renjie Mei</h1>
+        <p class="hero-tagline"><strong>M</strong>edInnovate · <strong>E</strong>volveHealth · <strong>I</strong>nspireBio</p>
+      </section>
 
-            <!-- Minimal News Section -->
-            <section class="minimal-news-section">
-                <h2>Latest News</h2>
-                <div class="minimal-news-container">
-                    <div class="news-slider-wrapper">
-                        <div class="news-slider-track" id="newsSliderTrack">
-                            <!-- News slides will be populated by JavaScript -->
-                        </div>
-                        
-                        <div class="news-content-overlay">
-                            <div class="news-overlay-content">
-                                <div class="news-meta-minimal">
-                                    <span class="news-date-minimal" id="newsDateMinimal"></span>
-                                </div>
-                                <h3 class="news-title-minimal" id="newsTitleMinimal"></h3>
-                                <p class="news-excerpt-minimal" id="newsExcerptMinimal"></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="minimal-controls">
-                        <button id="minimalPrevBtn" class="minimal-control-btn" title="Previous">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                            </svg>
-                        </button>
-                        
-                        <div class="minimal-progress">
-                            <div class="minimal-progress-bar">
-                                <div class="minimal-progress-fill" id="minimalProgressFill"></div>
-                            </div>
-                        </div>
-                        
-                        <button id="minimalNextBtn" class="minimal-control-btn" title="Next">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </section>
+      <!-- About -->
+      <div class="about-card anim anim-d1">
+        <div class="about-card-text">
+          <h2>About</h2>
+          <p>Researching bio-electronic interfaces and brain–computer interfaces at SUSTech.</p>
+          <a href="content/about.html">Research statement &amp; tools →</a>
+        </div>
+        <div class="about-card-img">
+          <img src="https://mrj2026.today/images/mei.jpg" alt="Renjie Mei">
+        </div>
+      </div>
 
-            <section class="education-background">
-                <h2>Education Background</h2>
+      <!-- Explore -->
+      <div class="hub anim anim-d2">
+        <div class="section-head">
+          <h2>Explore</h2>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card hub-card--fill" href="content/experiences.html">
+            <span class="hub-card-label">Research</span>
+            <h3>Research &amp; Projects</h3>
+            <p>Flexible bioelectronics, organoid platforms, MESH-GRIP</p>
+          </a>
+          <a class="hub-card" href="content/publications.html">
+            <span class="hub-card-label">Publications</span>
+            <h3>Publications</h3>
+            <p>Peer-reviewed papers in ACS Nano and beyond</p>
+          </a>
+          <a class="hub-card" href="content/gallery.html">
+            <span class="hub-card-label">Gallery</span>
+            <h3>Gallery</h3>
+            <p>Campus, travel, life →</p>
+          </a>
+        </div>
+      </div>
 
-                <div class="timeline-item">
-                    <img src="assets/images/school/sustech-university.png" alt="Southern University of Science and Technology" class="school-logo">
-                    <div class="timeline-content">
-                        <h4 class="timeline-title">Southern University of Science and Technology, P. R. China</h4>
-                        <span class="timeline-date">Aug. 2022 - Jun. 2026</span>
-                        <p class="timeline-subtitle">B.E. in Intelligent Medical Engineering, Department of Biomedical Engineering</p>
-                        <p>Advisor: 
-                            <a href="https://scholar.google.com/citations?hl=en&user=J0e3jhwAAAAJ" 
-                            target="_blank" rel="noopener noreferrer" class="external-link">
-                             Prof. Xingyu Jiang 
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <!-- 研究兴趣部分 -->
-            <section class="research-interests">
-                <h1>Research Interests</h1>
-                <ul class="interests-list">
-                    <li>
-                        <img src="assets/images/icons/bci.png" alt="Brain Computer Interfaces">
-                        <span>Bio-computer Interface</span>
-                    </li>
-                    <li>
-                        <img src="assets/images/icons/wd.png" alt="Flexible Electronics">
-                        <span>Flexible Electronics</span>
-                    </li>
-                    <li>
-                        <img src="assets/images/icons/ns.png" alt="Neuroscience for Vision">
-                        <span>Neuroscience, especially vision</span>
-                    </li>
-                    <li>
-                        <img src="assets/images/icons/on.png" alt="Biohybrid Systems">
-                        <span>Biohybrid electronic systems</span>
-                    </li>
-                </ul>
-            </section>
-            
-            <section class="academic-background">
-                <h2>Internship Experience</h2>
+      <!-- News -->
+      <div class="news-section anim anim-d3">
+        <div class="section-head">
+          <h2>Latest News</h2>
+        </div>
+        <div class="news-slider-wrap">
+          <div class="news-track" id="newsSliderTrack"></div>
+        </div>
+        <div class="news-info">
+          <div class="news-date" id="newsDateMinimal"></div>
+          <div class="news-title" id="newsTitleMinimal"></div>
+          <div class="news-excerpt" id="newsExcerptMinimal"></div>
+          <div class="news-controls">
+            <button class="news-btn" id="minimalPrevBtn" aria-label="Previous">←</button>
+            <div class="news-progress"><div class="news-progress-fill" id="minimalProgressFill"></div></div>
+            <button class="news-btn" id="minimalNextBtn" aria-label="Next">→</button>
+          </div>
+        </div>
+      </div>
 
-                <div class="timeline-item">
-                    <img src="https://mrj2026.today/images/school/%E6%9F%94%E8%84%89%E5%8C%BB%E7%96%97bg.png" alt="Roumai Medical" class="school-logo">
-                    <div class="timeline-content">
-                        <h4 class="timeline-title">Roumai Medical, Nanshan Distinct, Shenzhen, China</h4>
-                        <span class="timeline-date">Jun. 2025 - Sep. 2025</span>
-                        <p class="timeline-subtitle">Research & Development Assistant Intern</p>
-                        <p>Focus on flexible electrodes fabrication for Electronic Artificial Blood Vessel Scaffold.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- SOP -->
-            <section class="profile">
-                <h1>BME YES! BUT WHY?</h1>
-                <div class="profile-content">
-                    <div class="profile-text">
-                        <p>As human longevity continues to rise, the challenges posed by neurodegenerative disorders and chronic conditions have become increasingly salient. Mere extension of lifespan is no longer sufficient; instead, the preservation of high-quality life—encompassing both physical and cognitive vitality—has emerged as a critical priority. This imperative underscores the need for sophisticated biomedical technologies capable of seamless integration with the human body, facilitating early diagnosis, real-time physiological monitoring, and targeted therapeutic intervention.</p>
-                        
-                        <p>My academic and research endeavors are centered on the intersection of Bioelectronic Interfaces and flexible electrode systems, with the objective of advancing next-generation neurotechnologies that enhance human health and functional performance. Currently pursuing a Bachelor's degree in Intelligent Medical Engineering at the Southern University of Science and Technology, my work mainly focuses on two key areas: the development of liquid metal-polymer conductors for biomedical applications, and the construction of electrophysiological monitoring platforms for in vitro organoid models.</p>
+      <div class="spacer"></div>
 
-                        <p>By harnessing interdisciplinary advancements in materials science and bioelectronics, I seek to make a modest but valuable contribution to uncovering disease mechanisms, and developing innovative diagnostic and therapeutic technologies.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- 技能部分 -->
-            <div class="skills-card">
-                <h4>Soft Skills</h4>
-                <div class="skills-list">
-                    <img src="assets/images/icons/photoshop.png" alt="Photoshop">
-                    <img src="assets/images/icons/pr.svg" alt="Premiere">
-                    <img src="assets/images/icons/illustrator.png" alt="Illustrator">
-                    <img src="assets/images/icons/Matlab.png" alt="Matlab">
-                    <img src="assets/images/icons/solidworks.png" alt="SolidWorks">
-                    <img src="assets/images/icons/python.png" alt="Python">
-                    <img src="assets/images/icons/java.png" alt="Java">
-                    <img src="assets/images/icons/obsidian.svg" alt="Obsidian">
-                    <img src="assets/images/icons/blender.png" alt="Blender">
-                    <img src="assets/images/icons/Origin.png" alt="Origin">
-                    <img src="assets/images/icons/arduino.svg" alt="Arduino">
-                    <img src="assets/images/icons/raspberry.png" alt="Raspberry">
-                    <img src="assets/images/icons/steam.png" alt="Steam">
-                    <img src="assets/images/icons/MiHoYo.svg" alt="MiHoYo">
-                </div>
-            </div>
+      <!-- Blog -->
+      <div class="anim anim-d4">
+        <div class="section-head">
+          <h2>From the Blog</h2>
+          <a href="content/blog.html" class="section-link">View all →</a>
+        </div>
+        <div id="blogPreview" class="blog-preview-grid"></div>
+      </div>
 
-            
-            <section>
-            <!--拉大间隔-->
-            <div style="height: 72px;"></div>
-            <!-- LIFE -->
-            <h4>Something Not That Important</h4>
-            <div style="height: 18px;"></div>
-            <h4 style="text-align: center;">SUSTech</h4>
-            <hr>
-            <div class="profile" style="font-style: normal; font-weight: 200; font-size: 0.96em; text-align: justify;">
-            First, I want to share some information of the SUSTech. As a vibrant and innovative institution founded in the dynamic city of Shenzhen, SUSTech embodies the spirit of youth, progress, and possibility. The campus is a blend of modern architecture and natural beauty, fostering an environment that encourages creativity, collaboration, and academic excellence. Here, students and faculty work together to push the boundaries of science and technology, making SUSTech a truly inspiring place to learn and grow.<br>
-            Here are some photos I took at SUSTech and nearby locations, capturing the vibrant campus life and beautiful surroundings.
-            </div>
-                <div class="gallery">   
-                    <div class="gallery-item">
-                        <!--带caption-->
-                        <img src="https://mrj2026.today/images/SUSTech/colorNight.jpg" alt="1">
-                        <div class="caption">Colorful Night at SUSTech</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/SUSTech/CofE.jpg" alt="2">
-                        <div class="caption">College of Engineering</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/SUSTech/MountTL.jpg" alt="3">
-                        <div class="caption">Mountain Park near SUSTech</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/SUSTech/Subway.jpg" alt="4">
-                        <div class="caption">Subway near SUSTech</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/SUSTech/cat1.jpg" alt="5">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/SUSTech/cat2.jpg" alt="6">
-                        <div class="caption">SUSTech Senior Cat</div>
-                    </div>
-                </div>
-            
-            <div style="height: 18px;"></div>
-            <h4 style="text-align: center;">Jiang's Lab</h4>
-            <hr>
-            <div class="profile" style="font-style: normal; font-weight: 200; font-size: 0.96em; text-align: justify;">
-            Next, I would like to introduce Jiang's Lab, where I conduct my research at SUSTech. Our lab specializes not only in flexible bioelectrodes, but also in cutting-edge areas such as DNA data storage and advanced drug delivery systems. The environment is highly collaborative and intellectually stimulating, encouraging interdisciplinary innovation and scientific rigor. Below are some photos highlighting our lab activities and team events.
-            </div>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Lab/Jiang1.png" alt="1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Lab/Jiang2.jpg" alt="2">
-                    </div>
-                </div>
+      <div class="spacer"></div>
 
-            <div style="height: 18px;"></div>
-            <h4 style="text-align: center;">Hometown</h4>
-            <hr>
-            <div class="profile" style="font-style: normal; font-weight: 200; font-size: 0.96em; text-align: justify;">
-            My hometown, Dengfeng, is a small town nestled at the foot of the majestic Songshan Mountain, renowned as one of China's Five Great Mountains. This region is steeped in history and culture, most famously as the home of the legendary Shaolin Temple, a cradle of Chan Buddhism and martial arts. Dengfeng offers a harmonious blend of ancient heritage and natural beauty, with scenic landscapes, tranquil temples, and vibrant local traditions. The area's unique atmosphere inspires both reflection and exploration, making it a truly special place to grow up. Here are some photos capturing the essence of Dengfeng, from the serene mountain views to the historic sites.
-            </div>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Hometown/MuntainSong.jpg" alt="1">
-                        <div class="caption">Songshan Mountain</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Hometown/Shaolin.jpg" alt="2">
-                        <div class="caption">Shaolin Temple</div>
-                    </div>
-                </div>
-            <!-- Travel -->
-            <div style="height: 18px;"></div>
-            <h4 style="text-align: center;">Travel</h4>
-            <hr>
-            <div class="profile" style="font-style: normal; font-weight: 200; font-size: 0.96em; text-align: justify;">
-            Traveling has always been a source of inspiration and growth for me. Each journey, whether to bustling cities or tranquil natural landscapes, offers new perspectives and unforgettable experiences. I enjoy capturing moments from my travels through photography, documenting the vibrant cultures, stunning scenery, and unique stories I encounter along the way. These travel memories not only enrich my life but also fuel my curiosity and creativity, motivating me to explore even more of the world. Here are some photos from my recent trips, showcasing the diverse places and beautiful moments I've experienced.
-            </div>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/LY1.jpg" alt="14">
-                        <div class="caption">Longmen, Luoyang</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/LY2.jpg" alt="15">
-                        <div class="caption">Yingtian Gate, Luoyang</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/HK1.jpg" alt="1">
-                        <div class="caption">Victoria Harbour, H.K.</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/HK2.jpg" alt="2">
-                        <div class="caption">Golden Bauhinia Square, H.K.</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/HK3.jpg" alt="3">
-                        <div class="caption">Clock Tower, H.K.</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/HK4.jpg" alt="4">
-                        <div class="caption">Taxi, H.K.</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/HK5.jpg" alt="5">
-                        <div class="caption">Night City, H.K.</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/SH1.jpg" alt="6">
-                        <div class="caption">Oriental Pearl, Shanghai</div> 
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/SH2.jpg" alt="7">
-                        <div class="caption">The Bund, Shanghai</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/HZ1.jpg" alt="8">
-                        <div class="caption">Lingyin Temple, Hangzhou</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/JX1.jpg" alt="9">
-                        <div class="caption">Wuzhen, Jiaxing</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/GZ1.jpg" alt="10">
-                        <div class="caption">Guangzhou Tower</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/GZ2.jpg" alt="11">
-                        <div class="caption">Bruce Lee's Residence, Guangzhou</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Museum/bmy2.jpg" alt="12">
-                        <div class="caption">Terracotta Warriors, Xi'an</div>
-                    </div>
-                </div>
-            
-            <!-- Grand Prix -->
-            <div style="height: 18px;"></div>
-            <h4 style="text-align: center;">Grand Prix</h4>
-            <hr>
-            <div class="profile" style="font-style: normal; font-weight: 200; font-size: 0.96em; text-align: justify;">
-            The 2025 Grand Prix Final was an unforgettable experience for me as a fan and traveler. Held at the Hong Kong Kai Tak Sports Park, the event brought together world-class players and an enthusiastic crowd, creating an electric atmosphere. Watching top professionals, Robertson and Bingham, compete at such a high level was both thrilling and inspiring. Even more astonishing was Robertson's incredible 10-0 sweep -- a truly historic scoreline in snooker. Bingham, unfortunately, was far from his best. After the match, he revealed that he had been deeply affected by the recent passing of his uncle, which understandably impacted his performance.
-            </div>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/GrandPrix1.jpg" alt="12">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://mrj2026.today/images/Travel/GrandPrix2.jpg" alt="13">
-                    </div>
-                </div>
-            </section>
-        </main>
+      <!-- Gallery -->
+      <div class="anim anim-d5">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <a href="content/gallery.html" class="section-link">Open album →</a>
+        </div>
+        <div class="gallery-grid">
+          <a class="gallery-thumb" href="content/gallery.html"><img src="https://mrj2026.today/images/SUSTech/colorNight.jpg" alt="SUSTech Night"></a>
+          <a class="gallery-thumb" href="content/gallery.html"><img src="https://mrj2026.today/images/Travel/HK5.jpg" alt="Hong Kong Night"></a>
+          <a class="gallery-thumb" href="content/gallery.html"><img src="https://mrj2026.today/images/Travel/HK1.jpg" alt="Victoria Harbour"></a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>© 2025 Renjie Mei</p>
+      </footer>
+
     </div>
-    <button class="theme-toggle" id="themeToggle">
-        <svg viewBox="0 0 24 24">
-            <!-- 月亮图标 -->
-            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
-        </svg>
-    </button>
-    <div class="lightbox" id="lightbox">
-        <img id="lightbox-img" src="" alt="Preview">
-    </div>
-    <script src="assets/js/imgclick.js"></script>
+  </main>
+
+  <div class="lightbox" id="lightbox"><img id="lightbox-img" src="" alt=""></div>
+
 </body>
 </html>

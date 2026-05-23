@@ -1,0 +1,33 @@
+{
+  "slug": "open-meeting-talk",
+  "date": "2025-09-14",
+  "title": "Two Years of Organoid Electrophysiology — SUSTech Open Meeting",
+  "excerpt": "A talk on collecting signals from miniature brains in a dish: from rigid electrodes to MESH-GRIP.",
+  "cover": "https://mrj2026.today/images/News/News-2.png",
+  "tags": ["Talk", "Research"],
+  "body": [
+    "<p>How do we record meaningful electrophysiology from organoids that reshape themselves over days? That question guided the narrative of my SUSTech Open Meeting presentation.</p>",
+    "<p>I walked through the arc of the project:</p>",
+    "<ol>",
+    "<li>Early rigid approaches — good contact, bad compliance</li>",
+    "<li>Lessons in mechanical mismatch and contact area</li>",
+    "<li>The shift toward mesh-structured, organoid-gripping interfaces</li>",
+    "<li>MESH-GRIP as the current stable platform</li>",
+    "</ol>",
+    "<h2>Evolution of the Interface</h2>",
+    "<p>The biggest shift was realizing that <em>conformity</em> matters more than conductivity. A perfect electrode that loses contact gives you nothing.</p>",
+    "<h3>Rigid to Flexible to Stretchable</h3>",
+    "<p>Each transition brought new problems:</p>",
+    "<ul>",
+    "<li><strong>Rigid (Si/SiO2)</strong>: Excellent recording, but organoids detach within 24h</li>",
+    "<li><strong>Flexible (PI/PET)</strong>: Better contact, but creasing causes electrode fracture</li>",
+    "<li><strong>Stretchable (mesh)</strong>: Conforms to organoid surface, survives cyclic strain</li>",
+    "</ul>",
+    "<div class='callout'><div class='callout-title'>Core Insight</div>The organoid doesn't care about impedance. It cares about proximity. Get close, stay close.</div>",
+    "<h2>Presentation Takeaways</h2>",
+    "<p>Feedback from faculty and peers helped sharpen how we explain the <em>why</em> behind flexible bioelectronics to a general technical audience. That clarity feeds back into the paper drafts, so the loop is worth it.</p>",
+    "<blockquote><p>If you can't explain it to a first-year graduate student, you don't understand it well enough.</p></blockquote>",
+    "<hr>",
+    "<p>Slides available on request.</p>"
+  ]
+}

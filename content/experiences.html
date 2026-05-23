@@ -1,94 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research & Projects | Renjie Mei</title>
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- 修正 CSS 路径 -->
-    <link rel="stylesheet" href="../assets/css/phone.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="../assets/js/main.js" defer></script> <!-- 修正 JS 路径 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-        // 全局主题初始化（必须放在所有页面）
-        document.addEventListener('DOMContentLoaded', function() {
-            // 从localStorage读取主题状态
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        });
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research · Renjie Mei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/phone.css">
+  <script src="../assets/js/theme-init.js"></script>
+  <script src="../assets/js/site-core.js" defer></script>
+  <script src="../assets/js/site-pages.js" defer></script>
 </head>
-<body>
-    <div class="container">
-        <!-- 左侧固定导航栏 -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <img src="../assets/images/mrj_logo.png" alt="Renjie Mei" class="avatar">
-            </div>
-            <h1>Renjie Mei</h1> 
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="experiences.html">Research & Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- 将 footer 内容移动到 sidebar 下方 -->
-            <div class="sidebar-footer">
-                <p>© 2025 Academic for Mei <br> All rights reserved</p>
-            </div>
-        </aside>
-
-        <!-- 移动端导航 -->
-        <header class="mobile-header">
-            <div class="mobile-header-content">
-                <button class="hamburger-menu">
-                    <img src='../assets/images/icons/menu.png' alt="Menu Icon" class="menu-icon">
-                </button>
-            </div>
-            <h2 style="text-align: center;">Experience</h2>        
-        </header>
-        
-        <!-- 移动端侧边菜单 -->
-        <aside class="mobile-sidebar">
-            <section class="mobile-sidebar-content">
-                <img src="../assets/images/mrj_logo.png" alt="Renjie Mei" class="avatar">
-            </section>
-            <nav class="mobile-nav">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="experiences.html">Research & Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- 移动端页脚 -->
-            <div class="mobile-sidebar-footer">
-                <p>© 2025 Academic for Mei <br> All rights reserved</p>
-            </div>
-        </aside>
-    
-        <!-- overlay -->
-        <div class="overlay"></div>
-
-        <!-- 主要内容区域 -->
-        <main class="main-content" style="padding: clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 75px) clamp(2rem, 4vw, 3rem) calc(clamp(2rem, 4vw, 3rem) + 30px);">
-            <section id="experience-section">
-                <h2>Research & Projects</h2>
-                <ul id="experiences" class="card-container"></ul> <!-- 动态加载研究项目 -->
-            </section>
-        </main>
+<body data-page="research" data-root="../">
+  <header id="site-header"></header>
+  <main class="page">
+    <div class="page-inner">
+      <div class="anim">
+        <h1 style="margin-bottom:0.4rem">Research &amp; Projects</h1>
+        <p style="color:var(--text-3);font-size:0.95rem;margin-bottom:2rem">Flexible bioelectronics, organoid platforms, and related engineering.</p>
+      </div>
+      <div class="anim anim-d1">
+        <div class="section-head" style="margin-bottom:0.75rem">
+          <h2>Projects</h2>
+        </div>
+        <ul class="exp-list" id="experiences"></ul>
+      </div>
+      <footer class="footer"><p>© 2025 Renjie Mei</p></footer>
     </div>
-    <button class="theme-toggle" id="themeToggle">
-        <svg viewBox="0 0 24 24">
-            <!-- 月亮图标 -->
-            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
-        </svg>
-    </button>
-    <div class="lightbox" id="lightbox">
-        <img id="lightbox-img" src="" alt="Preview">
-    </div>
-    <script src="../assets/js/imgclick.js"></script>
+  </main>
+  <div class="lightbox" id="lightbox"><img id="lightbox-img" src="" alt=""></div>
 </body>
 </html>

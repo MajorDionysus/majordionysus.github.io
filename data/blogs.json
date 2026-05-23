@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "slug": "mesh-grip-cntv",
+      "date": "2025-11-20",
+      "title": "MESH-GRIP on CNTV: Cell CPU and 3D Organoid Recording",
+      "excerpt": "CNTV featured Tianjin University's \"cell CPU\" story — our MESH-GRIP platform enables stable electrical interfacing with 3D neural organoids.",
+      "cover": "https://mrj2026.today/images/News/News-4.png",
+      "tags": ["Research", "News"]
+    },
+    {
+      "slug": "first-paper-acs-nano",
+      "date": "2025-10-17",
+      "title": "First Paper: Stretchable Mesh Electrodes in ACS Nano",
+      "excerpt": "Mesh electrode arrays with graphene microneedles — >60% channel activation, 200% strain survival, and low-cost microfluidic fabrication.",
+      "cover": "https://mrj2026.today/images/News/News-1.png",
+      "tags": ["Publication", "Research"]
+    },
+    {
+      "slug": "open-meeting-talk",
+      "date": "2025-09-14",
+      "title": "Two Years of Organoid Electrophysiology — SUSTech Open Meeting",
+      "excerpt": "A talk on collecting signals from miniature brains in a dish: from rigid electrodes to MESH-GRIP.",
+      "cover": "https://mrj2026.today/images/News/News-2.png",
+      "tags": ["Talk", "Research"]
+    },
+    {
+      "slug": "first-sea-fishing",
+      "date": "2025-10-02",
+      "title": "First Sea Fishing — National Day on the Coast",
+      "excerpt": "Blue mackerel scad, rabbitfish, and a seaside sunset during my first deep-sea fishing trip.",
+      "cover": "https://mrj2026.today/images/News/News-3.jpg",
+      "tags": ["Life"]
+    },
+    {
+      "slug": "lab-protocol-optimization",
+      "date": "2025-08-20",
+      "title": "Protocol Optimization: From 40% Yield to 85%",
+      "excerpt": "How systematically varying one parameter at a time transformed our organoid-electrode coupling efficiency.",
+      "cover": "https://mrj2026.today/images/News/News-5.png",
+      "tags": ["Protocol", "Research"]
+    },
+    {
+      "slug": "conference-highlights-smi",
+      "date": "2025-07-15",
+      "title": "SMI 2025 Conference Highlights: Neural Interfaces and Beyond",
+      "excerpt": "Notes from the Summer Meeting on Neural Interfaces — poster sessions, unexpected conversations, and the state of the field.",
+      "cover": "https://mrj2026.today/images/News/News-6.png",
+      "tags": ["Conference", "Research"]
+    }
+  ]
+}

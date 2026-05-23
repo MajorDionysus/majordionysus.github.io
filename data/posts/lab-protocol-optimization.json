@@ -1,0 +1,30 @@
+{
+  "slug": "lab-protocol-optimization",
+  "date": "2025-08-20",
+  "title": "Protocol Optimization: From 40% Yield to 85%",
+  "excerpt": "How systematically varying one parameter at a time transformed our organoid-electrode coupling efficiency.",
+  "cover": "https://mrj2026.today/images/News/News-5.png",
+  "tags": ["Protocol", "Research"],
+  "body": [
+    "<p>Six months ago, our organoid-electrode coupling yield sat around 40%. Today it's approaching 85%. Here's what changed.</p>",
+    "<h2>The Problem</h2>",
+    "<p>Not all organoids form clean spheroids. Some are irregular, some clump together, and some don't attach well to our mesh. We needed a way to handle variability without discarding too many samples.</p>",
+    "<h2>Systematic Variation</h2>",
+    "<p>I built a simple experiment matrix in Python to track variables. The key finding: matrigel concentration matters most. Optimal concentration is 2.5 mg/mL (vs. our old 4 mg/mL).</p>",
+    "<h2>Key Findings</h2>",
+    "<table>",
+    "<thead><tr><th>Parameter</th><th>Before</th><th>After</th><th>Impact</th></tr></thead>",
+    "<tbody>",
+    "<tr><td>Matrigel concentration</td><td>4.0 mg/mL</td><td>2.5 mg/mL</td><td>+25% yield</td></tr>",
+    "<tr><td>Seeding density</td><td>1M cells/mL</td><td>800K cells/mL</td><td>+10% yield</td></tr>",
+    "<tr><td>Culture days before transfer</td><td>Day 5</td><td>Day 7</td><td>+8% yield</td></tr>",
+    "<tr><td>Mesh pre-wetting</td><td>None</td><td>3x PBS wash</td><td>+12% yield</td></tr>",
+    "</tbody>",
+    "</table>",
+    "<div class='callout warning'><div class='callout-title'>Warning</div>Lower matrigel = more fragile organoids. Handle with extra care during transfer.</div>",
+    "<h2>The Real Lesson</h2>",
+    "<p>Optimizing one variable at a time is slow but necessary. The literature gives you starting points, not final answers. Your organoids, your protocols, your results.</p>",
+    "<hr>",
+    "<p>Full protocol document available upon request.</p>"
+  ]
+}

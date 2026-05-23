@@ -1,0 +1,64 @@
+{
+  "chapters": [
+    {
+      "id": "sustech",
+      "title": "SUSTech",
+      "summary": "Campus life in Shenzhen — modern architecture, mountain trails, and the cats that own the quad.",
+      "images": [
+        { "src": "https://mrj2026.today/images/SUSTech/colorNight.jpg", "caption": "Colorful Night at SUSTech" },
+        { "src": "https://mrj2026.today/images/SUSTech/CofE.jpg", "caption": "College of Engineering" },
+        { "src": "https://mrj2026.today/images/SUSTech/MountTL.jpg", "caption": "Mountain Park near SUSTech" },
+        { "src": "https://mrj2026.today/images/SUSTech/Subway.jpg", "caption": "Subway near SUSTech" },
+        { "src": "https://mrj2026.today/images/SUSTech/cat1.jpg", "caption": "Campus cat" },
+        { "src": "https://mrj2026.today/images/SUSTech/cat2.jpg", "caption": "SUSTech Senior Cat" }
+      ]
+    },
+    {
+      "id": "lab",
+      "title": "Jiang's Lab",
+      "summary": "Flexible bioelectrodes, DNA storage, and drug delivery — snapshots from the bench and the team.",
+      "images": [
+        { "src": "https://mrj2026.today/images/Lab/Jiang1.png", "caption": "Lab workspace" },
+        { "src": "https://mrj2026.today/images/Lab/Jiang2.jpg", "caption": "Team gathering" }
+      ]
+    },
+    {
+      "id": "hometown",
+      "title": "Hometown",
+      "summary": "Dengfeng at the foot of Songshan — Shaolin Temple and the landscapes I grew up with.",
+      "images": [
+        { "src": "https://mrj2026.today/images/Hometown/MuntainSong.jpg", "caption": "Songshan Mountain" },
+        { "src": "https://mrj2026.today/images/Hometown/Shaolin.jpg", "caption": "Shaolin Temple" }
+      ]
+    },
+    {
+      "id": "travel",
+      "title": "Travel",
+      "summary": "Cities, temples, and coastlines — a rolling album from recent journeys.",
+      "images": [
+        { "src": "https://mrj2026.today/images/Travel/HK5.jpg", "caption": "Night City, Hong Kong" },
+        { "src": "https://mrj2026.today/images/Travel/HK1.jpg", "caption": "Victoria Harbour" },
+        { "src": "https://mrj2026.today/images/Travel/HK2.jpg", "caption": "Golden Bauhinia Square" },
+        { "src": "https://mrj2026.today/images/Travel/HK3.jpg", "caption": "Clock Tower" },
+        { "src": "https://mrj2026.today/images/Travel/HK4.jpg", "caption": "Taxi, H.K." },
+        { "src": "https://mrj2026.today/images/Travel/LY1.jpg", "caption": "Longmen, Luoyang" },
+        { "src": "https://mrj2026.today/images/Travel/LY2.jpg", "caption": "Yingtian Gate, Luoyang" },
+        { "src": "https://mrj2026.today/images/Travel/SH1.jpg", "caption": "Oriental Pearl, Shanghai" },
+        { "src": "https://mrj2026.today/images/Travel/SH2.jpg", "caption": "The Bund, Shanghai" },
+        { "src": "https://mrj2026.today/images/Travel/HZ1.jpg", "caption": "Lingyin Temple, Hangzhou" },
+        { "src": "https://mrj2026.today/images/Travel/JX1.jpg", "caption": "Wuzhen, Jiaxing" },
+        { "src": "https://mrj2026.today/images/Travel/GZ1.jpg", "caption": "Guangzhou Tower" },
+        { "src": "https://mrj2026.today/images/Museum/bmy2.jpg", "caption": "Terracotta Warriors, Xi'an" }
+      ]
+    },
+    {
+      "id": "snooker",
+      "title": "Grand Prix",
+      "summary": "Hong Kong Kai Tak, 2025 — witnessing Robertson's historic 10–0 final.",
+      "images": [
+        { "src": "https://mrj2026.today/images/Travel/GrandPrix1.jpg", "caption": "Grand Prix Final" },
+        { "src": "https://mrj2026.today/images/Travel/GrandPrix2.jpg", "caption": "Kai Tak Sports Park" }
+      ]
+    }
+  ]
+}

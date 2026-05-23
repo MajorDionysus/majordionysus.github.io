@@ -1,0 +1,22 @@
+{
+  "slug": "mesh-grip-cntv",
+  "date": "2025-11-20",
+  "title": "MESH-GRIP on CNTV: Cell CPU and 3D Organoid Recording",
+  "excerpt": "CNTV featured Tianjin University's \"cell CPU\" story — our MESH-GRIP platform enables stable electrical interfacing with 3D neural organoids.",
+  "cover": "https://mrj2026.today/images/News/News-4.png",
+  "tags": ["Research", "News"],
+  "body": [
+    "<p>CNTV's TikTok account recently highlighted frontier work on carbon-based biological computers at Tianjin University. The piece underscored how reliable electrophysiology in three dimensions remains a bottleneck — and why mesh-based interfaces matter.</p>",
+    "<p>Our MESH-GRIP platform is cited for enabling robust recordings from 3D neural organoids: stretch-tolerant layouts, graphene microneedle integration, and fabrication flows compatible with microfluidic assembly.</p>",
+    "<blockquote><p>Seeing bench work reach a broader audience is a reminder that bioelectronics is as much about communication as it is about materials.</p></blockquote>",
+    "<h2>Why 3D Matters</h2>",
+    "<p>Traditional planar electrode arrays struggle with organoids because these 3D structures change shape over time. A static interface quickly loses contact.</p>",
+    "<div class='callout info'><div class='callout-title'>Key Insight</div>The mesh geometry adapts to organoid growth while maintaining consistent electrode proximity.</div>",
+    "<p>The collaboration between Tianjin University and our group at SUSTech shows how platform technologies cross institutional boundaries — which is exactly what the field needs right now.</p>",
+    "<h3>Fabrication Pipeline</h3>",
+    "<p>The process follows these main steps: PDMS spin-coating and curing, graphene needle array transfer via CVD and PMMA, and photolithographic mesh interconnection with Ti/Au deposition.</p>",
+    "<p>Each step requires careful optimization to ensure mechanical compliance doesn't compromise electrical performance.</p>",
+    "<hr>",
+    "<p>If you're working on similar interfaces, feel free to reach out. We're always looking for collaborators.</p>"
+  ]
+}
