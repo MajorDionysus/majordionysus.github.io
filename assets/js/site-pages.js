@@ -91,15 +91,17 @@ function formatPublication(pub) {
 }
 
 /* ── Research formatter ── */
-function formatExperience(exp) {
+function formatExperience(exp, type) {
     var li = document.createElement('li');
-    li.className = 'exp-card';
+    li.className = 'exp-card exp-card--' + type;
+
     var tags = '';
     if (Array.isArray(exp.tag)) {
         tags = '<div class="exp-meta">' + exp.tag.map(function(t) {
             return '<span class="exp-tag">' + Site.escapeHTML(t) + '</span>';
         }).join('') + '</div>';
     }
+
     var gallery = '';
     if (Array.isArray(exp.images) && exp.images.length) {
         gallery = '<div class="exp-gallery">' + exp.images.map(function(img) {
@@ -107,14 +109,33 @@ function formatExperience(exp) {
             return '<img src="' + src + '" alt="" loading="lazy" onerror="onImgError(this)">';
         }).join('') + '</div>';
     }
+
+    var badge = '';
+    if (exp.role) {
+        var roleSlug = exp.role.toLowerCase().replace(/\s+/g, '-');
+        badge = '<span class="exp-role-pill exp-role-pill--' + roleSlug + '">' + Site.escapeHTML(exp.role) + '</span>';
+    }
+
     li.innerHTML =
-        '<h4>' + (exp.url ? '<a href="' + exp.url + '" target="_blank" rel="noopener noreferrer">' + Site.escapeHTML(exp.title) + '</a>' : Site.escapeHTML(exp.title)) + '</h4>' +
-        (exp.role ? '<div style="font-size:0.82rem;color:var(--text-3);margin-top:0.3rem">' + Site.escapeHTML(exp.role) + '</div>' : '') +
-        (exp.year ? '<div style="font-size:0.75rem;color:var(--text-3);margin-top:0.2rem">' + Site.escapeHTML(exp.year) + '</div>' : '') +
-        tags +
-        (exp.abstract ? '<div class="exp-abstract" style="margin-top:0.6rem">' + Site.escapeHTML(exp.abstract) + '</div>' : '') +
+        '<div class="exp-card-top">' +
+        (exp.url ? '<h4><a href="' + exp.url + '" target="_blank" rel="noopener noreferrer">' + Site.escapeHTML(exp.title) + '</a></h4>' : '<h4>' + Site.escapeHTML(exp.title) + '</h4>') +
+        '</div>' +
+        '<div class="exp-pills">' + badge + tags + (exp.year ? '<span class="exp-year-pill">' + Site.escapeHTML(exp.year) + '</span>' : '') + '</div>' +
+        (exp.abstract ? '<div class="exp-abstract">' + Site.escapeHTML(exp.abstract) + '</div>' : '') +
         gallery;
     return li;
+}
+
+function renderExperiencesList(id, data, formatter) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (!Array.isArray(data)) { el.innerHTML = '<li class="error-msg">No content available.</li>'; return; }
+    var frag = document.createDocumentFragment();
+    data.forEach(function(item) {
+        var node = formatter(item);
+        if (node) frag.appendChild(node);
+    });
+    el.replaceChildren(frag);
 }
 
 function renderList(id, data, formatter) {
@@ -245,8 +266,23 @@ function initPublications() {
 /* ── Research ── */
 function initResearch() {
     fetchJSON(dataURL('experiences.json'))
-        .then(function(data) { renderList('experiences', data, formatExperience); })
-        .catch(function(err) { console.error('[Research]', err); showError('experiences'); });
+        .then(function(data) {
+            if (!Array.isArray(data)) { showError('experiences-lab'); showError('experiences-course'); return; }
+            var LAB_TAGS = ['Lab Proj'];
+            var labData = data.filter(function(item) {
+                return Array.isArray(item.tag) && item.tag.some(function(t) {
+                    return LAB_TAGS.some(function(lt) { return t.indexOf(lt) === 0; });
+                });
+            });
+            var courseData = data.filter(function(item) {
+                return Array.isArray(item.tag) && !item.tag.some(function(t) {
+                    return LAB_TAGS.some(function(lt) { return t.indexOf(lt) === 0; });
+                });
+            });
+            renderExperiencesList('experiences-lab', labData, function(exp) { return formatExperience(exp, 'lab'); });
+            renderExperiencesList('experiences-course', courseData, function(exp) { return formatExperience(exp, 'course'); });
+        })
+        .catch(function(err) { console.error('[Research]', err); showError('experiences-lab'); showError('experiences-course'); });
 }
 
 /* ── Gallery ── */

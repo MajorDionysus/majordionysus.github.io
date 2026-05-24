@@ -11,7 +11,7 @@
   },  
   {
     "title":    "Elastic TPU/Graphene Microneedle-Mesh Interfaces via Microfluidic Patterning for Electrophysiology in Neural Organoids",
-    "url":      "",
+    "url":      "https://doi.org/10.1021/acsnano.5c08827",
     "role":     "Assistant",
     "year":     "2024-2025",
     "abstract": "Connecting electronics to neural organoids is key for brain-machine interfaces and studying neural systems, but 3D tissue surfaces make electrophysiology difficult. We present a stretchable mesh electrode array with graphene microneedles, made via microfluidic patterning for low-cost, reproducible fabrication. The device's microneedles and liquid metal-polymer interconnects withstand 200% strain, improving electrode-tissue contact and enabling robust multisite recordings. Over 60% of channels were activated, outperforming standard 2D electrodes. This biocompatible interface addresses mechanical mismatch issues, advancing studies of neural networks in 3D models.",
@@ -25,7 +25,7 @@
   }, 
   {
     "title":    "3D Liquid Metal-based Neuro-interfaces for Human Hippocampal Organoids",
-    "url":      "https://rdcu.be/efXIq",
+    "url":      "https://www.nature.com/articles/s41467-024-48452-5",
     "role":     "Learner",
     "year":     "2023",
     "abstract": "It was an invaluable experience to involved in a newly accepted top-tier journal, through which I gained experimental proficiency and started my research journey. Throughout this process, I have mastered the principles and protocols underlying the fabrication of metal-polymer conductors via microfluidic patterning based on polydimethylsiloxane (PDMS). Concurrently, I have attained proficiency in the electrochemical impedance spectroscopy (EIS) system, encompassing both its hardware configuration and software operation. Furthermore, I have acquired a diverse array of research-relevant skills, for which I am deeply indebted to my research mentor  Dr. Wu Yan.",
