@@ -35,15 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Reading progress bar
         var progress = document.createElement('div');
         progress.className = 'reading-progress';
-        progress.innerHTML = '<div class="progress-ball"></div>';
+        progress.innerHTML = '<div class="progress-fill"></div><div class="progress-ball"></div>';
         document.body.appendChild(progress);
-        window.addEventListener('scroll', function () {
-            var scrollTop = window.scrollY;
-            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            var pct = docHeight > 0 ? (scrollTop / docHeight * 100) : 0;
-            progress.style.width = pct + '%';
-            progress.querySelector('.progress-ball').style.left = pct + '%';
-        }, { passive: true });
 
         // Back to top button
         var btt = document.createElement('button');
@@ -54,9 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
         btt.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        window.addEventListener('scroll', function () {
-            btt.classList.toggle('visible', window.scrollY > 400);
-        }, { passive: true });
     })();
 
     var NAV_ITEMS = [
@@ -111,22 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var lastY = 0;
         var hidden = false;
 
-        document.addEventListener('mousemove', function () {
-            if (hidden) {
-                nav.classList.remove('hidden');
-                hidden = false;
-                clearTimeout(nav._hideTimer);
-                nav._hideTimer = setTimeout(function () {
-                    if (window.scrollY > 80) {
-                        nav.classList.add('hidden');
-                        hidden = true;
-                    }
-                }, 2500);
-            }
-        });
-
-        document.addEventListener('scroll', function () {
-            var y = window.scrollY;
+        Site._navOnScroll = function (y) {
             if (y < 60) {
                 nav.classList.remove('hidden');
                 hidden = false;
@@ -140,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 hidden = false;
             }
             lastY = y;
-        }, { passive: true });
+        };
     })();
 
     /* ── Mobile menu ── */
@@ -194,6 +169,56 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') lightbox.classList.remove('show');
         });
+    })();
+
+    /* ── Unified scroll (rAF throttled) ── */
+    (function () {
+        var ticking = false;
+        var progress = document.querySelector('.reading-progress');
+        var fill = progress && progress.querySelector('.progress-fill');
+        var ball = progress && progress.querySelector('.progress-ball');
+        var btt = document.querySelector('.back-to-top');
+
+        document.addEventListener('scroll', function () {
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    var y = window.scrollY;
+                    var docH = document.documentElement.scrollHeight - window.innerHeight;
+                    var pct = docH > 0 ? (y / docH) : 0;
+
+                    if (fill) fill.style.transform = 'scaleX(' + pct + ')';
+                    if (ball) ball.style.left = (pct * 100) + '%';
+                    if (btt) btt.classList.toggle('visible', y > 400);
+                    if (Site._navOnScroll) Site._navOnScroll(y);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    })();
+
+    /* ── Intersection Observer for entrance animations ── */
+    (function () {
+        if (!('IntersectionObserver' in window)) {
+            var all = document.querySelectorAll('.anim');
+            for (var i = 0; i < all.length; i++) all[i].classList.add('visible');
+            return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.anim').forEach(function (el) { observer.observe(el); });
+
+        Site.observeAnim = function (root) {
+            (root || document).querySelectorAll('.anim:not(.visible)').forEach(function (el) {
+                observer.observe(el);
+            });
+        };
     })();
 
 }); // end DOMContentLoaded

@@ -2,58 +2,6 @@
    site-pages.js — Renjie Mei Portfolio
    ═════════════════════════════════════ */
 
-/* ── Markdown parser (lightweight, no dependencies) ── */
-var _mdCache = {};
-function parseMarkdown(text) {
-    if (!text || typeof text !== 'string') return '';
-    if (_mdCache[text]) return _mdCache[text];
-    var html = text
-        .replace(/```(\w*)\n?([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
-        .replace(/`([^`]+)`/g, '<code>$1</code>')
-        .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
-        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-        .replace(/__(.+?)__/g, '<strong>$1</strong>')
-        .replace(/\*(.+?)\*/g, '<em>$1</em>')
-        .replace(/_(.+?)_/g, '<em>$1</em>')
-        .replace(/^###### (.+)$/gm, '<h6>$1</h6>')
-        .replace(/^##### (.+)$/gm, '<h5>$1</h5>')
-        .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
-        .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-        .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-        .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
-        .replace(/^---+$/gm, '<hr>')
-        .replace(/^\*\*\*+$/gm, '<hr>')
-        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-        .replace(/((?:^[*-] .+\n?)+)/gm, function(m) {
-            return '<ul>' + m.trim().split('\n').filter(function(l){return l.trim();}).map(function(l){return '<li>' + l.replace(/^[*-] /,'') + '</li>';}).join('') + '</ul>';
-        })
-        .replace(/((?:^\d+\. .+\n?)+)/gm, function(m) {
-            return '<ol>' + m.trim().split('\n').filter(function(l){return l.trim();}).map(function(l){return '<li>' + l.replace(/^\d+\. /,'') + '</li>';}).join('') + '</ol>';
-        })
-        .replace(/^(?!<[a-z][\s\S]*<\/|<hr|<ul|<ol|<h[1-6])(.+)$/gm, '<p>$1</p>')
-        .replace(/<\/blockquote>\n<blockquote>/g, '\n');
-    _mdCache[text] = html;
-    return html;
-}
-
-function isHTML(str) {
-    if (!str) return false;
-    var s = Array.isArray(str) ? String(str[0]) : String(str);
-    return /<[a-z][\s\S]*>/i.test(s);
-}
-
-function renderBody(body) {
-    if (!body) return '';
-    if (Array.isArray(body)) {
-        if (isHTML(body[0])) return body.join('');
-        return body.map(parseMarkdown).join('');
-    }
-    if (isHTML(body)) return body;
-    return parseMarkdown(body);
-}
-
 /* ── Gallery: normalize image from string or object ── */
 function parseGalleryImage(img) {
     if (typeof img === 'string') return { src: img, caption: '' };
@@ -155,27 +103,11 @@ function showError(id) {
     if (el) el.innerHTML = '<li class="error-msg">Failed to load content.</li>';
 }
 
-function dataURL(file) {
-    return (document.body.getAttribute('data-root') || '') + 'data/' + file;
-}
-
-function fetchJSON(url) {
-    console.log('[fetchJSON] GET', url);
-    return fetch(url).then(function(r) {
-        console.log('[fetchJSON] status:', r.status, url);
-        if (!r.ok) throw new Error('HTTP ' + r.status + ' for ' + url);
-        return r.json();
-    }).catch(function(err) {
-        console.error('[fetchJSON] ERROR:', err.message);
-        throw err;
-    });
-}
-
 /* ── Home ── */
 function initHome() {
-    setupNewsSlider([]);
-    fetchJSON(dataURL('minimal-news.json'))
-        .then(function(data) { if (data.news) setupNewsSlider(data.news); })
+    fetch(Site.dataPath('minimal-news.json'))
+        .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function(data) { if (data.news && data.news.length) setupNewsSlider(data.news); })
         .catch(function() {});
     initHomeBlogPreview();
 }
@@ -183,7 +115,7 @@ function initHome() {
 function initHomeBlogPreview() {
     var mount = document.getElementById('blogPreview');
     if (!mount) return;
-    fetchJSON(dataURL('blogs.json')).then(function(data) {
+    Site.fetchJSON('blogs.json').then(function(data) {
         var posts = (data.posts || []).slice(0, 2);
         if (!posts.length) { mount.innerHTML = '<p class="error-msg">No posts yet.</p>'; return; }
         mount.innerHTML = posts.map(function(post) {
@@ -243,7 +175,11 @@ function setupNewsSlider(newsData) {
     if (nextBtn) nextBtn.addEventListener('click', function() { go(idx + 1); reset(); });
     wrap.addEventListener('mouseenter', function() { clearInterval(timer); });
     wrap.addEventListener('mouseleave', reset);
-    window.addEventListener('resize', function() { go(idx); });
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() { go(idx); }, 200);
+    });
 
     function reset() {
         clearInterval(timer);
@@ -258,14 +194,14 @@ function setupNewsSlider(newsData) {
 function initPublications() {
     var el = document.getElementById('publications');
     if (!el) return;
-    fetchJSON(dataURL('publications.json'))
+    Site.fetchJSON('publications.json')
         .then(function(data) { renderList('publications', data, formatPublication); })
         .catch(function(err) { console.error('[Publications]', err); showError('publications'); });
 }
 
 /* ── Research ── */
 function initResearch() {
-    fetchJSON(dataURL('experiences.json'))
+    Site.fetchJSON('experiences.json')
         .then(function(data) {
             if (!Array.isArray(data)) { showError('experiences-lab'); showError('experiences-course'); return; }
             var LAB_TAGS = ['Lab Proj'];
@@ -308,7 +244,7 @@ function initGallery() {
     var activeChapter = 0;
     var activeIndex = 0;
 
-    fetchJSON(dataURL('galleries.json'))
+    Site.fetchJSON('galleries.json')
         .then(function(data) {
             // Support both {chapters:[]} and {albums:[]} formats
             var raw = data.chapters || data.albums || [];
@@ -371,7 +307,7 @@ function initGallery() {
             mainImg.alt = img.caption || ch.title;
             mainImg.onerror = function() { onImgError(mainImg); };
             mainImg.style.opacity = '1';
-        }, 120);
+        }, 150);
         if (counter) counter.textContent = (activeIndex + 1) + ' / ' + ch.images.length;
         if (caption) caption.textContent = img.caption || '';
         if (strip) {
@@ -432,7 +368,7 @@ function initGallery() {
 function initBlogList() {
     var grid = document.getElementById('blogGrid');
     if (!grid) return;
-    fetchJSON(dataURL('blogs.json'))
+    Site.fetchJSON('blogs.json')
         .then(function(data) {
             var posts = data.posts || [];
             if (!posts.length) { grid.innerHTML = '<p class="error-msg">No posts yet.</p>'; return; }
@@ -465,13 +401,13 @@ function initBlogPost() {
         mount.innerHTML = '<p class="error-msg">No article selected. <a href="' + Site.pagePath('content/blog.html') + '">← All posts</a></p>';
         return;
     }
-    fetchJSON(dataURL('posts/' + slug + '.json'))
+    Site.fetchJSON('posts/' + slug + '.json')
         .then(function(post) {
             document.title = Site.escapeHTML(post.title) + ' | Renjie Mei';
             var tags = (post.tags || []).map(function(t) {
                 return '<span class="tag-pill">' + Site.escapeHTML(t) + '</span>';
             }).join('');
-            var bodyHtml = renderBody(post.body);
+            var bodyHtml = Array.isArray(post.body) ? post.body.join('') : post.body;
             mount.innerHTML =
                 '<header class="article-header anim">' +
                 '<a class="back-link" href="' + Site.pagePath('content/blog.html') + '">← All posts</a>' +
@@ -481,6 +417,7 @@ function initBlogPost() {
                 '</header>' +
                 '<figure class="article-cover anim anim-d1"><img src="' + post.cover + '" alt="" data-lightbox onerror="onImgError(this)"></figure>' +
                 '<div class="article-body anim anim-d2">' + bodyHtml + '</div>';
+            if (Site.observeAnim) Site.observeAnim(mount);
         })
         .catch(function(err) {
             console.error('[BlogPost]', err);
