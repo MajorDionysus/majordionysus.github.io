@@ -257,7 +257,7 @@ body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rot
 .about-degree { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.65rem; }
 .degree-tag { font-family: var(--f-ui); font-size: 0.68rem; font-weight: 600; color: #fff; background: var(--accent); padding: 0.15rem 0.55rem; border-radius: var(--r); letter-spacing: 0.02em; white-space: nowrap; }
 .degree-tag--school { background: var(--text-3); }
-.btn-thesis { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0.6rem 0.35rem 0 0; font-family: var(--f-ui); font-size: 0.72rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1.5px solid var(--border-2); padding: 0.45rem 0.9rem; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.btn-thesis { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0.6rem 0.9rem 0 0; font-family: var(--f-ui); font-size: 0.72rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1.5px solid var(--border-2); padding: 0.45rem 0.9rem; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
 .btn-thesis:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
 .about-more-link { display: inline-block; margin-top: 0.5rem; font-family: var(--f-ui); font-size: 0.75rem; font-weight: 700; color: var(--accent); }
 .about-card-img img { width: 120px; height: 145px; object-fit: cover; object-position: top; border: 1px solid var(--border); }
