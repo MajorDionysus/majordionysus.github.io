@@ -1,10 +1,18 @@
 {
   "posts": [
     {
+      "slug": "format-showcase",
+      "date": "2026-06-08",
+      "title": "Blog Format Showcase — All Components",
+      "excerpt": "A living style reference for every formatting element available in the blog: headings, callouts, tables, blockquotes, images, and more.",
+      "cover": "https://mrj2026.today/images/News/News-2.png",
+      "tags": ["Reference"]
+    },
+    {
       "slug": "mesh-grip-cntv",
       "date": "2025-11-20",
-      "title": "MESH-GRIP on CNTV: Cell CPU and 3D Organoid Recording",
-      "excerpt": "CNTV featured Tianjin University's \"cell CPU\" story — our MESH-GRIP platform enables stable electrical interfacing with 3D neural organoids.",
+      "title": "MESH-GRIP on ACS Nano: Graphene Microneedle-Mesh Interfaces for 3D Organoid Electrophysiology",
+      "excerpt": "Our MESH-GRIP platform, published in ACS Nano, addresses the 3D electrophysiology bottleneck highlighted by CNTV's recent coverage of carbon-based biological computing.",
       "cover": "https://mrj2026.today/images/News/News-4.png",
       "tags": ["Research", "News"]
     },
@@ -20,7 +28,7 @@
       "slug": "open-meeting-talk",
       "date": "2025-09-14",
       "title": "Two Years of Organoid Electrophysiology — SUSTech Open Meeting",
-      "excerpt": "A talk on collecting signals from miniature brains in a dish: from rigid electrodes to MESH-GRIP.",
+      "excerpt": "From rigid MEA to MESH-GRIP: the road to better electrophysiology monitoring on organoids, across three generations of mesh liquid metal-polymer conductor interfaces.",
       "cover": "https://mrj2026.today/images/News/News-2.png",
       "tags": ["Talk", "Research"]
     },
@@ -28,25 +36,9 @@
       "slug": "first-sea-fishing",
       "date": "2025-10-02",
       "title": "First Sea Fishing — National Day on the Coast",
-      "excerpt": "Blue mackerel scad, rabbitfish, and a seaside sunset during my first deep-sea fishing trip.",
+      "excerpt": "Blue mackerel scad, rabbitfish, stolen bait, and a fisherman's wisdom: Go lighter.",
       "cover": "https://mrj2026.today/images/News/News-3.jpg",
       "tags": ["Life"]
-    },
-    {
-      "slug": "lab-protocol-optimization",
-      "date": "2025-08-20",
-      "title": "Protocol Optimization: From 40% Yield to 85%",
-      "excerpt": "How systematically varying one parameter at a time transformed our organoid-electrode coupling efficiency.",
-      "cover": "https://mrj2026.today/images/News/News-5.png",
-      "tags": ["Protocol", "Research"]
-    },
-    {
-      "slug": "conference-highlights-smi",
-      "date": "2025-07-15",
-      "title": "SMI 2025 Conference Highlights: Neural Interfaces and Beyond",
-      "excerpt": "Notes from the Summer Meeting on Neural Interfaces — poster sessions, unexpected conversations, and the state of the field.",
-      "cover": "https://mrj2026.today/images/News/News-6.png",
-      "tags": ["Conference", "Research"]
     }
   ]
 }

@@ -410,13 +410,51 @@ function initBlogPost() {
             var bodyHtml = Array.isArray(post.body) ? post.body.join('') : post.body;
             mount.innerHTML =
                 '<header class="article-header anim">' +
+                '<div class="article-rubric">Journal Entry</div>' +
                 '<a class="back-link" href="' + Site.pagePath('content/blog.html') + '">← All posts</a>' +
                 '<div class="article-meta"><time datetime="' + post.date + '">' + Site.formatDate(post.date) + '</time>' + tags + '</div>' +
-                '<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.75rem">' + Site.escapeHTML(post.title) + '</h1>' +
+                '<h1>' + Site.escapeHTML(post.title) + '</h1>' +
                 '<p class="article-deck">' + Site.escapeHTML(post.excerpt) + '</p>' +
                 '</header>' +
-                '<figure class="article-cover anim anim-d1"><img src="' + post.cover + '" alt="" data-lightbox onerror="onImgError(this)"></figure>' +
+                '<figure class="article-cover anim anim-d1 collapsed">' +
+                '<button class="cover-toggle" title="Toggle cover" aria-label="Toggle cover image">+</button>' +
+                '<span class="cover-label">Cover hidden</span>' +
+                '<img src="' + post.cover + '" alt="" data-lightbox onerror="onImgError(this)">' +
+                '</figure>' +
                 '<div class="article-body anim anim-d2">' + bodyHtml + '</div>';
+            /* Wrap body images (except .img-x) in anchors for right-gutter positioning */
+            var bodyImgs = mount.querySelectorAll('.article-body img');
+            bodyImgs.forEach(function(img) {
+                if (img.classList.contains('img-x')) return;
+                var target = img.closest('figure') || img;
+                var p = target.closest('p');
+                if (p) { p.parentNode.insertBefore(target, p.nextSibling); }
+                var anchor = document.createElement('span');
+                anchor.className = 'img-anchor';
+                target.parentNode.insertBefore(anchor, target);
+                anchor.appendChild(target);
+            });
+            /* Alternate left/right when anchors are too close */
+            requestAnimationFrame(function() {
+                var anchors = Array.from(mount.querySelectorAll('.img-anchor'));
+                var side = 0; // 0=right, 1=left
+                for (var i = 1; i < anchors.length; i++) {
+                    var gap = anchors[i].getBoundingClientRect().top - anchors[i - 1].getBoundingClientRect().top;
+                    if (gap < 220) {
+                        side = 1 - side; // flip side
+                    } else {
+                        side = 0; // reset to right
+                    }
+                    if (side === 1) {
+                        anchors[i].querySelector('img, figure').classList.add('img-left');
+                    }
+                }
+            });
+            mount.querySelector('.cover-toggle').addEventListener('click', function() {
+                var cover = mount.querySelector('.article-cover');
+                cover.classList.toggle('collapsed');
+                this.textContent = cover.classList.contains('collapsed') ? '+' : '−';
+            });
             if (Site.observeAnim) Site.observeAnim(mount);
         })
         .catch(function(err) {

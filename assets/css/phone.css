@@ -112,9 +112,9 @@
     .social-sidebar { display: none; }
     .back-to-top { bottom: 1rem; right: 1rem; width: 36px; height: 36px; }
 
-    .article-body { font-size: 0.95rem; }
-    .article-body h2 { font-size: 1.15rem; }
-    .article-body h3 { font-size: 1rem; }
+    .article-body { font-size: 0.88rem; }
+    .article-body h2 { font-size: 1.08rem; }
+    .article-body h3 { font-size: 0.95rem; }
 
     .footer-inner { gap: 0.4rem; }
     .footer-tagline { display: none; }
