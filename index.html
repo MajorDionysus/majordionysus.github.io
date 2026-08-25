@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renjie Mei · Bioelectronics &amp; BCI</title>
   <meta name="description" content="Academic portfolio — bioelectronics, brain-computer interfaces, and research at SUSTech.">
-  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f0f14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f2e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://mrj2026.today">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/phone.css">
+  <link rel="stylesheet" href="assets/css/elegant.css">
+  <link rel="stylesheet" href="assets/css/raw.css?v=10">
   <script src="assets/js/theme-init.js"></script>
-  <script src="assets/js/site-core.js" defer></script>
-  <script src="assets/js/site-pages.js" defer></script>
+  <script src="assets/js/site-core.js?v=4" defer></script>
+  <script src="assets/js/elegant.js" defer></script>
+  <script src="assets/js/site-pages.js?v=6" defer></script>
 </head>
 <body data-page="home" data-root="">
 
@@ -24,62 +27,56 @@
   <main class="page">
     <div class="page-inner">
 
-      <!-- Hero -->
-      <section class="hero anim">
-        <p class="hero-eyebrow">Academic Portfolio</p>
-        <h1 id="pageTitle">Renjie Mei</h1>
-        <p class="hero-tagline"><strong>M</strong>edInnovate · <strong>E</strong>volveHealth · <strong>I</strong>nspireBio</p>
+      <section class="identity-sheet anim" aria-labelledby="pageTitle">
+        <div class="raw-label">
+          <span class="journal-name">Research portfolio</span>
+          <span>Renjie Mei · Bioelectronics</span>
+          <span>Selected work · 2026</span>
+        </div>
+        <div class="identity-grid">
+          <div class="identity-copy">
+            <p class="identity-field">Cover profile / Bioelectronics</p>
+            <h1 id="pageTitle">Renjie Mei</h1>
+            <p class="identity-role">Research Assistant at SUSTech</p>
+            <p class="identity-summary">I develop soft bioelectronic interfaces for neural recording and organoid electrophysiology.</p>
+          </div>
+          <figure class="identity-portrait">
+            <div class="portrait-print">
+              <img src="assets/images/optimized/mei-pixel-redraw.webp" alt="Pixel-art portrait of Renjie Mei" width="900" height="900" decoding="async">
+            </div>
+            <figcaption><b>Fig. 01</b> — Pixel redraw from portrait, 2026.</figcaption>
+          </figure>
+        </div>
+        <dl class="identity-data">
+          <div><dt>Degree</dt><dd>B.E. Intelligent Medical Engineering</dd></div>
+          <div><dt>Institution</dt><dd>Southern University of Science and Technology</dd></div>
+          <div><dt>Focus</dt><dd>Soft bioelectronics · Neural organoids</dd></div>
+          <div><dt>Status</dt><dd>Open to PhD opportunities · Fall 2027</dd></div>
+        </dl>
+        <div class="identity-links">
+          <a href="content/experiences.html">Research →</a>
+          <a href="content/publications.html">Publications →</a>
+          <a href="https://scholar.google.com/citations?user=AAx56ugAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Google Scholar ↗</a>
+        </div>
       </section>
 
-      <!-- About -->
-      <div class="about-card anim anim-d1">
-        <div class="about-card-text">
-          <h2>About</h2>
-          <div class="about-degree">
-            <span class="degree-tag">B.E.</span>
-            <span class="degree-tag">Intelligent Medical Engineering</span>
-            <span class="degree-tag degree-tag--school">SUSTech</span>
+      <section class="raw-statement anim anim-d1">
+        <div class="raw-section-id">01 / ABSTRACT</div>
+        <div>
+          <h2>Soft bioelectronic interfaces for living systems.</h2>
+          <div class="journal-copy">
+            <p>My work connects biomedical engineering, flexible electronics, and computational analysis. I translate device concepts into experimental platforms for electrophysiology and human–machine interaction.</p>
+            <p class="journal-keywords"><b>Keywords</b><br>neural interfaces · organoids · flexible electronics · electrophysiology</p>
           </div>
-          <p>Researching bio-electronic interfaces and brain–computer interfaces at SUSTech.</p>
-          <a class="btn-thesis" href="https://scholar.google.com/citations?user=AAx56ugAAAAJ&hl=zh-CN" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 4 6 4s6-2 6-4v-5"/></svg>
-            Google Scholar
-          </a>
-          <a href="content/about.html" class="about-more-link">Research statement &amp; tools →</a>
+          <a href="content/about.html">Background, methods, and tools →</a>
         </div>
-        <div class="about-card-img">
-          <img src="https://mrj2026.today/images/mei.jpg" alt="Renjie Mei">
-        </div>
-      </div>
-
-      <!-- Explore -->
-      <div class="hub anim anim-d2">
-        <div class="section-head">
-          <h2>Explore</h2>
-        </div>
-        <div class="hub-grid">
-          <a class="hub-card hub-card--fill" href="content/experiences.html">
-            <span class="hub-card-label">Research</span>
-            <h3>Research &amp; Projects</h3>
-            <p>Flexible bioelectronics, organoid platforms, MESH-GRIP</p>
-          </a>
-          <a class="hub-card" href="content/publications.html">
-            <span class="hub-card-label">Publications</span>
-            <h3>Publications</h3>
-            <p>Peer-reviewed papers in ACS Nano and beyond</p>
-          </a>
-          <a class="hub-card" href="content/gallery.html">
-            <span class="hub-card-label">Gallery</span>
-            <h3>Gallery</h3>
-            <p>Campus, travel, life →</p>
-          </a>
-        </div>
-      </div>
+      </section>
 
       <!-- News -->
-      <div class="news-section anim anim-d3">
+      <div class="news-section raw-log anim anim-d2" id="researchLog">
         <div class="section-head">
-          <h2>Latest News</h2>
+          <h2>02 / Research Log</h2>
+          <span class="section-note">Notes, milestones, and field dispatches</span>
         </div>
         <div class="news-slider-wrap">
           <div class="news-track" id="newsSliderTrack"></div>
@@ -96,32 +93,6 @@
         </div>
       </div>
 
-      <div class="spacer"></div>
-
-      <!-- Blog -->
-      <div class="anim anim-d4">
-        <div class="section-head">
-          <h2>From the Blog</h2>
-          <a href="content/blog.html" class="section-link">View all →</a>
-        </div>
-        <div id="blogPreview" class="blog-preview-grid"></div>
-      </div>
-
-      <div class="spacer"></div>
-
-      <!-- Gallery -->
-      <div class="anim anim-d5">
-        <div class="section-head">
-          <h2>Gallery</h2>
-          <a href="content/gallery.html" class="section-link">Open album →</a>
-        </div>
-        <div class="gallery-grid">
-          <a class="gallery-thumb" href="content/gallery.html"><img src="https://mrj2026.today/images/SUSTech/colorNight.jpg" alt="SUSTech Night"></a>
-          <a class="gallery-thumb" href="content/gallery.html"><img src="https://mrj2026.today/images/Travel/HK5.jpg" alt="Hong Kong Night"></a>
-          <a class="gallery-thumb" href="content/gallery.html"><img src="https://mrj2026.today/images/Travel/HK1.jpg" alt="Victoria Harbour"></a>
-        </div>
-      </div>
-
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-copy">© 2026 Renjie Mei</p>
@@ -132,7 +103,7 @@
     </div>
   </main>
 
-  <div class="lightbox" id="lightbox"><img id="lightbox-img" src="" alt=""></div>
+  <div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
 
 </body>
 </html>

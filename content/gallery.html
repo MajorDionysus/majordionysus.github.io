@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f0f14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f2e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
   <title>Gallery · Renjie Mei</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/phone.css">
+  <link rel="stylesheet" href="../assets/css/elegant.css">
+  <link rel="stylesheet" href="../assets/css/raw.css?v=10">
   <script src="../assets/js/theme-init.js"></script>
-  <script src="../assets/js/site-core.js" defer></script>
-  <script src="../assets/js/site-pages.js" defer></script>
+  <script src="../assets/js/site-core.js?v=4" defer></script>
+  <script src="../assets/js/elegant.js" defer></script>
+  <script src="../assets/js/site-pages.js?v=6" defer></script>
 </head>
 <body data-page="gallery" data-root="../">
   <header id="site-header"></header>
   <main class="page">
     <div class="page-inner">
-      <div class="gallery-header anim">
+      <div class="gallery-header page-title-block anim">
         <h1 style="margin-bottom:0.4rem">Gallery</h1>
         <p style="color:var(--text-3);font-size:0.95rem">Editorial albums — one story at a time.</p>
         <div class="gallery-tabs" id="galleryChapterTabs"></div>
@@ -28,7 +31,7 @@
 
       <div class="gallery-stage anim anim-d1" id="galleryViewer">
         <button class="gallery-arrow gallery-arrow-prev" id="galleryPrev" aria-label="Previous">←</button>
-        <img id="galleryMainImg" src="" alt="">
+        <img id="galleryMainImg" alt="">
         <button class="gallery-arrow gallery-arrow-next" id="galleryNext" aria-label="Next">→</button>
         <div class="gallery-caption-bar">
           <span class="gallery-counter" id="galleryCounter"></span>
@@ -51,7 +54,7 @@
   <div class="gallery-fs" id="galleryFsOverlay">
     <button class="gallery-fs-close" id="galleryFsClose" aria-label="Close">×</button>
     <button class="gallery-fs-arrow gallery-fs-prev" id="galleryFsPrev" aria-label="Previous">←</button>
-    <img class="gallery-fs-img" id="galleryFsImg" src="" alt="">
+    <img class="gallery-fs-img" id="galleryFsImg" alt="">
     <button class="gallery-fs-arrow gallery-fs-next" id="galleryFsNext" aria-label="Next">→</button>
     <div class="gallery-fs-caption" id="galleryFsCaption"></div>
   </div>

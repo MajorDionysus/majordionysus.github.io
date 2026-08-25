@@ -1,0 +1,540 @@
+{
+  "generatedAt": "2026-08-25T11:35:28.953Z",
+  "algorithm": "sharp: auto-rotate → fit-inside resize → WebP quality 76–82 / effort 5 / metadata stripped",
+  "sourcePrefix": "https://mrj2026.today/images/",
+  "sourceBytes": 178539752,
+  "outputBytes": 7249126,
+  "savedPercent": 95.9,
+  "images": [
+    {
+      "source": "https://mrj2026.today/images/Course/DSAA-B/art.png",
+      "output": "assets/images/optimized/Course/DSAA-B/art.webp",
+      "sourceBytes": 827664,
+      "outputBytes": 308748,
+      "width": 1146,
+      "height": 1440,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/DSAA-B/Different sizes.png",
+      "output": "assets/images/optimized/Course/DSAA-B/Different sizes.webp",
+      "sourceBytes": 9751037,
+      "outputBytes": 234920,
+      "width": 1600,
+      "height": 1194,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/DSAA-B/guiScreenshot.jpg",
+      "output": "assets/images/optimized/Course/DSAA-B/guiScreenshot.webp",
+      "sourceBytes": 360433,
+      "outputBytes": 267738,
+      "width": 1200,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/DSAA-B/Pro and de.png",
+      "output": "assets/images/optimized/Course/DSAA-B/Pro and de.webp",
+      "sourceBytes": 2504508,
+      "outputBytes": 290128,
+      "width": 1528,
+      "height": 1098,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/MedML/CodeWorkFlow.png",
+      "output": "assets/images/optimized/Course/MedML/CodeWorkFlow.webp",
+      "sourceBytes": 6249049,
+      "outputBytes": 86050,
+      "width": 1600,
+      "height": 1033,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/MedML/gender-distrubution.png",
+      "output": "assets/images/optimized/Course/MedML/gender-distrubution.webp",
+      "sourceBytes": 1063070,
+      "outputBytes": 69576,
+      "width": 1600,
+      "height": 852,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/MedML/result.jpg",
+      "output": "assets/images/optimized/Course/MedML/result.webp",
+      "sourceBytes": 108377,
+      "outputBytes": 37194,
+      "width": 1565,
+      "height": 950,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Course/MedML/Violin.png",
+      "output": "assets/images/optimized/Course/MedML/Violin.webp",
+      "sourceBytes": 416274,
+      "outputBytes": 38880,
+      "width": 1600,
+      "height": 1063,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/cover/pub/ACS_Nano_1.png",
+      "output": "assets/images/optimized/cover/pub/ACS_Nano_1.webp",
+      "sourceBytes": 4784979,
+      "outputBytes": 217310,
+      "width": 1062,
+      "height": 1400,
+      "quality": 82,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/cover/tbc.jpg",
+      "output": "assets/images/optimized/cover/tbc.webp",
+      "sourceBytes": 726411,
+      "outputBytes": 207968,
+      "width": 1400,
+      "height": 1120,
+      "quality": 82,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Hometown/MuntainSong.jpg",
+      "output": "assets/images/optimized/Hometown/MuntainSong.webp",
+      "sourceBytes": 2867812,
+      "outputBytes": 101374,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Hometown/Shaolin.jpg",
+      "output": "assets/images/optimized/Hometown/Shaolin.webp",
+      "sourceBytes": 247206,
+      "outputBytes": 106492,
+      "width": 1200,
+      "height": 800,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/102.jpg",
+      "output": "assets/images/optimized/Lab/102.webp",
+      "sourceBytes": 599074,
+      "outputBytes": 83768,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/107.jpg",
+      "output": "assets/images/optimized/Lab/107.webp",
+      "sourceBytes": 554082,
+      "outputBytes": 58390,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/11.jpg",
+      "output": "assets/images/optimized/Lab/11.webp",
+      "sourceBytes": 2539921,
+      "outputBytes": 64594,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/110.jpg",
+      "output": "assets/images/optimized/Lab/110.webp",
+      "sourceBytes": 626979,
+      "outputBytes": 87508,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/111.jpg",
+      "output": "assets/images/optimized/Lab/111.webp",
+      "sourceBytes": 890620,
+      "outputBytes": 167828,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/12.jpg",
+      "output": "assets/images/optimized/Lab/12.webp",
+      "sourceBytes": 3653956,
+      "outputBytes": 68118,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/21.jpg",
+      "output": "assets/images/optimized/Lab/21.webp",
+      "sourceBytes": 1261679,
+      "outputBytes": 65050,
+      "width": 900,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/22.jpg",
+      "output": "assets/images/optimized/Lab/22.webp",
+      "sourceBytes": 2217312,
+      "outputBytes": 70046,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/23.jpg",
+      "output": "assets/images/optimized/Lab/23.webp",
+      "sourceBytes": 3955182,
+      "outputBytes": 87546,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/24.jpg",
+      "output": "assets/images/optimized/Lab/24.webp",
+      "sourceBytes": 3770863,
+      "outputBytes": 95648,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/25.jpg",
+      "output": "assets/images/optimized/Lab/25.webp",
+      "sourceBytes": 4024479,
+      "outputBytes": 106622,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/Jiang1.png",
+      "output": "assets/images/optimized/Lab/Jiang1.webp",
+      "sourceBytes": 18221837,
+      "outputBytes": 207266,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Lab/Jiang2.jpg",
+      "output": "assets/images/optimized/Lab/Jiang2.webp",
+      "sourceBytes": 3338509,
+      "outputBytes": 155328,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/mei.jpg",
+      "output": "assets/images/optimized/mei.webp",
+      "sourceBytes": 366791,
+      "outputBytes": 45478,
+      "width": 702,
+      "height": 720,
+      "quality": 82,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Museum/bmy2.jpg",
+      "output": "assets/images/optimized/Museum/bmy2.webp",
+      "sourceBytes": 4082387,
+      "outputBytes": 266964,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/News/News-1.png",
+      "output": "assets/images/optimized/News/News-1.webp",
+      "sourceBytes": 16120070,
+      "outputBytes": 218272,
+      "width": 1600,
+      "height": 913,
+      "quality": 79,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/News/News-2.png",
+      "output": "assets/images/optimized/News/News-2.webp",
+      "sourceBytes": 17311692,
+      "outputBytes": 197708,
+      "width": 1600,
+      "height": 900,
+      "quality": 79,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/News/News-3.jpg",
+      "output": "assets/images/optimized/News/News-3.webp",
+      "sourceBytes": 966378,
+      "outputBytes": 138044,
+      "width": 1600,
+      "height": 1200,
+      "quality": 79,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/News/News-4.png",
+      "output": "assets/images/optimized/News/News-4.webp",
+      "sourceBytes": 6722572,
+      "outputBytes": 181668,
+      "width": 1600,
+      "height": 1579,
+      "quality": 79
+    },
+    {
+      "source": "https://mrj2026.today/images/school/%E6%9F%94%E8%84%89%E5%8C%BB%E7%96%97bg.png",
+      "output": "assets/images/optimized/school/柔脉医疗bg.webp",
+      "sourceBytes": 738107,
+      "outputBytes": 12946,
+      "width": 639,
+      "height": 640,
+      "quality": 82,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/school/sustech-university.png",
+      "output": "assets/images/optimized/school/sustech-university.webp",
+      "sourceBytes": 11875,
+      "outputBytes": 14048,
+      "width": 413,
+      "height": 297,
+      "quality": 82,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/SUSTech/cat1.jpg",
+      "output": "assets/images/optimized/SUSTech/cat1.webp",
+      "sourceBytes": 281962,
+      "outputBytes": 77958,
+      "width": 1600,
+      "height": 1064,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/SUSTech/cat2.jpg",
+      "output": "assets/images/optimized/SUSTech/cat2.webp",
+      "sourceBytes": 308657,
+      "outputBytes": 90060,
+      "width": 1600,
+      "height": 1064,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/SUSTech/CofE.jpg",
+      "output": "assets/images/optimized/SUSTech/CofE.webp",
+      "sourceBytes": 2239692,
+      "outputBytes": 83764,
+      "width": 1200,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/SUSTech/colorNight.jpg",
+      "output": "assets/images/optimized/SUSTech/colorNight.webp",
+      "sourceBytes": 639732,
+      "outputBytes": 84752,
+      "width": 1439,
+      "height": 1080,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/SUSTech/MountTL.jpg",
+      "output": "assets/images/optimized/SUSTech/MountTL.webp",
+      "sourceBytes": 3548880,
+      "outputBytes": 202240,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/SUSTech/Subway.jpg",
+      "output": "assets/images/optimized/SUSTech/Subway.webp",
+      "sourceBytes": 3296809,
+      "outputBytes": 166362,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/GrandPrix1.jpg",
+      "output": "assets/images/optimized/Travel/GrandPrix1.webp",
+      "sourceBytes": 2477430,
+      "outputBytes": 103332,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/GrandPrix2.jpg",
+      "output": "assets/images/optimized/Travel/GrandPrix2.webp",
+      "sourceBytes": 585251,
+      "outputBytes": 93762,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/GZ1.jpg",
+      "output": "assets/images/optimized/Travel/GZ1.webp",
+      "sourceBytes": 3216900,
+      "outputBytes": 213194,
+      "width": 1200,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/HK1.jpg",
+      "output": "assets/images/optimized/Travel/HK1.webp",
+      "sourceBytes": 3025164,
+      "outputBytes": 131280,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/HK2.jpg",
+      "output": "assets/images/optimized/Travel/HK2.webp",
+      "sourceBytes": 3596454,
+      "outputBytes": 180080,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/HK3.jpg",
+      "output": "assets/images/optimized/Travel/HK3.webp",
+      "sourceBytes": 2600478,
+      "outputBytes": 70736,
+      "width": 1200,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/HK4.jpg",
+      "output": "assets/images/optimized/Travel/HK4.webp",
+      "sourceBytes": 3114999,
+      "outputBytes": 179656,
+      "width": 1200,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/HK5.jpg",
+      "output": "assets/images/optimized/Travel/HK5.webp",
+      "sourceBytes": 2699398,
+      "outputBytes": 114792,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/HZ1.jpg",
+      "output": "assets/images/optimized/Travel/HZ1.webp",
+      "sourceBytes": 848550,
+      "outputBytes": 188620,
+      "width": 1080,
+      "height": 810,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/JX1.jpg",
+      "output": "assets/images/optimized/Travel/JX1.webp",
+      "sourceBytes": 3648395,
+      "outputBytes": 156316,
+      "width": 1200,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/LY1.jpg",
+      "output": "assets/images/optimized/Travel/LY1.webp",
+      "sourceBytes": 5442781,
+      "outputBytes": 452890,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/LY2.jpg",
+      "output": "assets/images/optimized/Travel/LY2.webp",
+      "sourceBytes": 2735332,
+      "outputBytes": 126964,
+      "width": 1600,
+      "height": 1200,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/SH1.jpg",
+      "output": "assets/images/optimized/Travel/SH1.webp",
+      "sourceBytes": 2790804,
+      "outputBytes": 69584,
+      "width": 1200,
+      "height": 1600,
+      "quality": 76,
+      "reused": true
+    },
+    {
+      "source": "https://mrj2026.today/images/Travel/SH2.jpg",
+      "output": "assets/images/optimized/Travel/SH2.webp",
+      "sourceBytes": 9560899,
+      "outputBytes": 103566,
+      "width": 1600,
+      "height": 1121,
+      "quality": 76,
+      "reused": true
+    }
+  ],
+  "failures": []
+}

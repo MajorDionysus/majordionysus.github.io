@@ -20,7 +20,16 @@ function parseGalleryChapter(ch) {
 
 /* ── Img error fallback ── */
 function onImgError(img) {
-    if (img) { img.style.opacity = '0.18'; img.onerror = null; }
+    if (!img) return;
+    var current = img.getAttribute('src');
+    var fallback = window.Site && Site.imageFallbacks && Site.imageFallbacks[current];
+    if (fallback && !img.dataset.fallbackUsed) {
+        img.dataset.fallbackUsed = 'true';
+        img.src = fallback;
+        return;
+    }
+    img.style.opacity = '0.18';
+    img.onerror = null;
 }
 
 /* ── Publication formatter ── */
@@ -105,8 +114,7 @@ function showError(id) {
 
 /* ── Home ── */
 function initHome() {
-    fetch(Site.dataPath('minimal-news.json'))
-        .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    Site.fetchJSON('minimal-news.json')
         .then(function(data) { if (data.news && data.news.length) setupNewsSlider(data.news); })
         .catch(function() {});
     initHomeBlogPreview();
@@ -140,6 +148,7 @@ function setupNewsSlider(newsData) {
     var timer;
     var track = document.getElementById('newsSliderTrack');
     var wrap = document.querySelector('.news-slider-wrap');
+    var info = document.querySelector('.raw-log .news-info');
     if (!track || !wrap) return;
 
     track.replaceChildren();
@@ -157,15 +166,23 @@ function setupNewsSlider(newsData) {
         var e = document.getElementById('newsExcerptMinimal');
         var f = document.getElementById('minimalProgressFill');
         if (d) d.textContent = Site.formatDate(n.date);
-        if (t) t.textContent = n.title;
-        if (e) e.textContent = n.excerpt;
+        if (t) { t.textContent = n.title; t.title = n.title; }
+        if (e) { e.textContent = n.excerpt; e.title = n.excerpt; }
         if (f) f.style.width = ((idx + 1) / newsData.length * 100) + '%';
+        if (info) {
+            info.classList.remove('ink-refresh');
+            void info.offsetWidth;
+            info.classList.add('ink-refresh');
+        }
     }
 
     function go(i) {
         idx = ((i % newsData.length) + newsData.length) % newsData.length;
+        Array.prototype.forEach.call(track.children, function(slide, slideIndex) {
+            slide.classList.toggle('is-current', slideIndex === idx);
+        });
         track.style.transition = 'transform 0.45s cubic-bezier(.4,0,.2,1)';
-        track.style.transform = 'translateX(-' + (idx * track.offsetWidth) + 'px)';
+        track.style.transform = 'translate3d(-' + (idx * 100) + '%,0,0)';
         update();
     }
 

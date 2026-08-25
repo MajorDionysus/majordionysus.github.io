@@ -5,11 +5,35 @@ document.addEventListener('DOMContentLoaded', function () {
     Site.getRoot = function () { return document.body.getAttribute('data-root') || ''; };
     Site.dataPath = function (f) { return Site.getRoot() + 'data/' + f; };
     Site.pagePath = function (f) { return Site.getRoot() + f; };
+    Site.imageFallbacks = {};
+    Site.optimizedImageUrl = function (url) {
+        if (typeof url !== 'string' || !/^https:\/\/mrj2026\.today\/images\//i.test(url) || !/\.(png|jpe?g|webp)$/i.test(url)) return url;
+        try {
+            var relative = decodeURIComponent(new URL(url).pathname.split('/images/')[1]);
+            var local = Site.getRoot() + 'assets/images/optimized/' + relative.replace(/\.(png|jpe?g|webp)$/i, '.webp');
+            Site.imageFallbacks[local] = url;
+            return local;
+        } catch (e) {
+            return url;
+        }
+    };
+    Site.localizeImageUrls = function (value) {
+        if (typeof value === 'string') {
+            return value.replace(/https:\/\/mrj2026\.today\/images\/[^"'<>]+?\.(png|jpe?g|webp)/gi, function (url) {
+                return Site.optimizedImageUrl(url);
+            });
+        }
+        if (Array.isArray(value)) return value.map(Site.localizeImageUrls);
+        if (value && typeof value === 'object') {
+            Object.keys(value).forEach(function (key) { value[key] = Site.localizeImageUrls(value[key]); });
+        }
+        return value;
+    };
     Site.fetchJSON = function (file) {
-        return fetch(Site.dataPath(file)).then(function (r) {
+        return fetch(Site.dataPath(file), { cache: 'no-store' }).then(function (r) {
             if (!r.ok) throw new Error('Failed to load ' + file);
             return r.json();
-        });
+        }).then(Site.localizeImageUrls);
     };
     Site.formatDate = function (str) {
         return new Date(str).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -81,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             '<div style="display:flex;flex-direction:column;line-height:1.1;margin-left:0.5rem">' +
             '<span class="nav-brand-ghost-red" aria-hidden="true">Renjie Mei</span>' +
             '<span class="nav-brand-ghost-cyan" aria-hidden="true">Renjie Mei</span>' +
-            '<span class="nav-brand-name">Renjie Mei</span>' +
+            '<span class="nav-brand-name">Renjie Mei</span><span class="nav-seal" aria-hidden="true">梅</span>' +
             '<span class="nav-brand-sub">Bioelectronics · BCI</span></div></a>' +
             '<button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">' +
             '<span></span><span></span><span></span></button>' +
